@@ -15,7 +15,7 @@ export function InvitationCTA() {
       </h2>
       <div style={{ display: 'flex', justifyContent: 'center', gap: 14, flexWrap: 'wrap' }}>
         <a
-          href="/contact-us/?intent=tour"
+          href="/contact-us?intent=tour"
           style={{
             fontSize: 12,
             fontWeight: 700,
@@ -45,7 +45,7 @@ export function InvitationCTA() {
           Call 248.656.8830
         </a>
         <a
-          href="mailto:inquiry@landrhomes.com"
+          href="mailto:info@landrhomes.com"
           style={{
             fontSize: 12,
             fontWeight: 700,

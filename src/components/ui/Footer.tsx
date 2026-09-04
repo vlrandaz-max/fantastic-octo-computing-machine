@@ -35,7 +35,7 @@ export function Footer() {
           </p>
         </div>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-          <a href="#top" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
+          <a href="/homes-available" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
             Homes Available
           </a>
           <a href="#land" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
@@ -44,8 +44,8 @@ export function Footer() {
           <a href="tel:2486568830" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
             248.656.8830
           </a>
-          <a href="mailto:inquiry@landrhomes.com" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
-            inquiry@landrhomes.com
+          <a href="mailto:info@landrhomes.com" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
+            info@landrhomes.com
           </a>
           <a href="/sitemap.xml" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
             Sitemap

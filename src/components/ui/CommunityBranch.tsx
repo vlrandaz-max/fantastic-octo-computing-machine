@@ -2,9 +2,10 @@
  * Act VI's primary funnel branch. Per Part 2, Falcon Estates is the only
  * community with a dedicated cinematic pass "given asset availability" —
  * that second Quarry-to-Threshold pass doesn't exist yet in this build
- * (no second set of photography/materials was handed off for it), so its
- * link is flagged rather than faked. Pine Woods and Homes Available hand
- * off to conventional pages, as specified.
+ * (no second set of photography/materials was handed off for it), so it
+ * hands off to the Falcon Estates section on the conventional /simple
+ * page instead of a fabricated cinematic route. Pine Woods and Homes
+ * Available hand off to their own conventional pages.
  */
 export function CommunityBranch() {
   return (
@@ -24,8 +25,8 @@ export function CommunityBranch() {
       </p>
       <nav aria-label="Communities" style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
         <a
-          href="/communities/falcon-estates"
-          title="Dedicated cinematic pass — pending photography/material handoff for this community"
+          href="/simple#falcon-estates"
+          title="No dedicated cinematic pass exists yet for this community — links to its section on the conventional page"
           style={{
             padding: '16px 28px',
             border: '1px solid rgba(196,160,90,0.4)',
@@ -38,7 +39,7 @@ export function CommunityBranch() {
           Falcon Estates
         </a>
         <a
-          href="/communities/pine-woods"
+          href="/pine-woods"
           style={{
             padding: '16px 28px',
             border: '1px solid rgba(255,255,255,0.14)',

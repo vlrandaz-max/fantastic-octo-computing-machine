@@ -1,3 +1,5 @@
+import { COMPANY, NAV_LINKS } from '../../data/site';
+
 /** Plain, light multi-column footer matching rh.house's structure. */
 export function SimpleFooter() {
   const year = new Date().getFullYear();
@@ -31,18 +33,18 @@ export function SimpleFooter() {
           <p style={line}>
             2490 Walton Boulevard, Suite 103
             <br />
-            Rochester Hills, Michigan 48309
+            Rochester Hills, MI 48309
           </p>
         </div>
         <div style={col}>
           <p style={heading}>Contact</p>
           <p style={line}>
-            <a href="mailto:inquiry@landrhomes.com" style={{ color: 'var(--fg2)' }}>
-              inquiry@landrhomes.com
+            <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--fg2)' }}>
+              {COMPANY.email}
             </a>
             <br />
-            <a href="tel:2486568830" style={{ color: 'var(--fg2)' }}>
-              248.656.8830
+            <a href={COMPANY.phoneHref} style={{ color: 'var(--fg2)' }}>
+              {COMPANY.phone}
             </a>
           </p>
         </div>
@@ -53,7 +55,7 @@ export function SimpleFooter() {
         <div style={col}>
           <p style={heading}>Schedule a Tour</p>
           <a
-            href="/contact-us/?intent=tour"
+            href="/contact-us?intent=tour"
             style={{
               display: 'inline-block',
               border: '1px solid var(--color-brand-gold)',
@@ -81,14 +83,19 @@ export function SimpleFooter() {
           color: 'var(--fg3)',
         }}
       >
-        <span>&copy; {year} L&amp;R Homes, Inc.</span>
-        <nav aria-label="Footer" style={{ display: 'flex', gap: 20 }}>
-          <a href="#" style={{ color: 'var(--fg3)' }}>
-            Homes Available
-          </a>
-          <a href="#" style={{ color: 'var(--fg3)' }}>
-            Communities
-          </a>
+        <span>
+          {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
+          <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-dark)' }}>
+            {COMPANY.email}
+          </a>{' '}
+          | Copyright &copy; {year}
+        </span>
+        <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+          {NAV_LINKS.map((link) => (
+            <a key={link.label} href={link.href} style={{ color: 'var(--fg3)' }}>
+              {link.label}
+            </a>
+          ))}
           <a href="/" style={{ color: 'var(--fg3)' }}>
             The Full Experience
           </a>

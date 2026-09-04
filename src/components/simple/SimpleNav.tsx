@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { NAV_LINKS, COMPANY } from '../../data/site';
 
-const LINKS = ['Homes Available', 'Communities', 'Build With Us', 'About'];
+const LINKS = NAV_LINKS.filter((l) => l.label !== 'Home');
 
 /**
  * Conventional utility-bar + logo + nav + CTA header, styled after
@@ -25,12 +26,12 @@ export function SimpleNav() {
           color: 'rgba(242,240,230,0.75)',
         }}
       >
-        <span>2490 Walton Boulevard, Suite 103, Rochester Hills, MI 48309</span>
-        <a href="tel:2486568830" style={{ color: 'inherit' }}>
-          248.656.8830
+        <span>{COMPANY.address}</span>
+        <a href={COMPANY.phoneHref} style={{ color: 'inherit' }}>
+          {COMPANY.phone}
         </a>
-        <a href="mailto:inquiry@landrhomes.com" style={{ color: 'inherit' }}>
-          inquiry@landrhomes.com
+        <a href={`mailto:${COMPANY.email}`} style={{ color: 'inherit' }}>
+          {COMPANY.email}
         </a>
       </div>
 
@@ -53,8 +54,8 @@ export function SimpleNav() {
         <div className="simple-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 34 }}>
           {LINKS.map((link) => (
             <a
-              key={link}
-              href="#"
+              key={link.label}
+              href={link.href}
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: 12,
@@ -64,11 +65,11 @@ export function SimpleNav() {
                 color: 'rgba(242,240,230,0.9)',
               }}
             >
-              {link}
+              {link.label}
             </a>
           ))}
           <a
-            href="/contact-us/?intent=tour"
+            href="/contact-us?intent=tour"
             style={{
               border: '1px solid var(--color-brand-gold)',
               color: '#F2F0E6',
@@ -108,15 +109,15 @@ export function SimpleNav() {
         >
           {LINKS.map((link) => (
             <a
-              key={link}
-              href="#"
+              key={link.label}
+              href={link.href}
               style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F2F0E6' }}
             >
-              {link}
+              {link.label}
             </a>
           ))}
           <a
-            href="/contact-us/?intent=tour"
+            href="/contact-us?intent=tour"
             style={{
               border: '1px solid var(--color-brand-gold)',
               color: '#F2F0E6',

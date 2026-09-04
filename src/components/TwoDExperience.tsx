@@ -35,7 +35,7 @@ export function TwoDExperience() {
           L&amp;R Homes, Inc.
         </span>
         <a
-          href="/contact-us/?intent=tour"
+          href="/contact-us?intent=tour"
           style={{
             fontSize: 11,
             fontWeight: 700,
