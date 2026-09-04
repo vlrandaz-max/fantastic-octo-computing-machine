@@ -115,7 +115,7 @@ export function HomesAvailablePage() {
       </section>
 
       {/* CTA band */}
-      <section style={{ background: 'linear-gradient(135deg, #1c2840 0%, #2a2018 60%, #1e1a10 100%)', padding: '64px 40px' }}>
+      <section style={{ background: '#131210', padding: '64px 40px' }}>
         <div
           style={{
             maxWidth: 1280,

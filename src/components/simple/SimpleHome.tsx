@@ -194,13 +194,11 @@ export function SimpleHome() {
       </section>
 
       {/* See What We've Built */}
-      <section style={{ padding: '88px 40px', background: 'linear-gradient(180deg, #1c2840 0%, #192038 100%)' }}>
+      <section style={{ padding: '88px 40px', background: 'var(--bg1)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, color: 'var(--color-brand-gold-light)' }}>Our Homes</p>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 'clamp(2.25rem,4vw,3rem)', color: '#F2F0E6', margin: '14px 0 20px' }}>
-            See What We&rsquo;ve Built
-          </h2>
-          <p style={{ fontSize: 16, lineHeight: 1.8, color: 'rgba(242,240,230,0.7)', maxWidth: 720, margin: '0 auto 44px' }}>
+          <p style={eyebrow}>Our Homes</p>
+          <h2 style={sectionHeading}>See What We&rsquo;ve Built</h2>
+          <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--fg2)', maxWidth: 720, margin: '0 auto 44px' }}>
             Each home is designed with its own distinct style and character, shaped by the property and its
             surroundings, built with a timeless quality meant to last. The Grandeur is our current move-in ready
             home — the homes below are examples of that same craftsmanship, each already sold.
@@ -210,7 +208,7 @@ export function SimpleHome() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, textAlign: 'left' }}
           >
             {FALCON_ESTATES_HOMES.map((home) => (
-              <HomeCard key={home.name} home={home} dark />
+              <HomeCard key={home.name} home={home} />
             ))}
           </div>
         </div>
