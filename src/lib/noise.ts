@@ -94,6 +94,50 @@ export class SimplexNoise2D {
   }
 }
 
+/**
+ * Converts a grayscale height canvas into a tangent-space normal map via
+ * finite differences (Sobel-style) — genuinely directional surface shading,
+ * unlike the much weaker `bumpMap` approximation.
+ */
+export function heightCanvasToNormalMap(heightCanvas: HTMLCanvasElement, strength: number): HTMLCanvasElement {
+  const size = heightCanvas.width;
+  const srcCtx = heightCanvas.getContext('2d')!;
+  const src = srcCtx.getImageData(0, 0, size, size).data;
+  const h = (x: number, y: number) => {
+    const cx = (x + size) % size;
+    const cy = (y + size) % size;
+    return src[(cy * size + cx) * 4] / 255;
+  };
+
+  const out = document.createElement('canvas');
+  out.width = size;
+  out.height = size;
+  const ctx = out.getContext('2d')!;
+  const img = ctx.createImageData(size, size);
+
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      const dx =
+        (h(x + 1, y - 1) + 2 * h(x + 1, y) + h(x + 1, y + 1) - (h(x - 1, y - 1) + 2 * h(x - 1, y) + h(x - 1, y + 1))) *
+        strength;
+      const dy =
+        (h(x - 1, y + 1) + 2 * h(x, y + 1) + h(x + 1, y + 1) - (h(x - 1, y - 1) + 2 * h(x, y - 1) + h(x + 1, y - 1))) *
+        strength;
+      const nx = -dx;
+      const ny = -dy;
+      const nz = 1;
+      const len = Math.sqrt(nx * nx + ny * ny + nz * nz);
+      const idx = (y * size + x) * 4;
+      img.data[idx] = Math.round(((nx / len) * 0.5 + 0.5) * 255);
+      img.data[idx + 1] = Math.round(((ny / len) * 0.5 + 0.5) * 255);
+      img.data[idx + 2] = Math.round(((nz / len) * 0.5 + 0.5) * 255);
+      img.data[idx + 3] = 255;
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+  return out;
+}
+
 /** Bakes a grayscale fbm field to a canvas — used for bump/roughness/AO maps. */
 export function bakeNoiseCanvas(
   size: number,

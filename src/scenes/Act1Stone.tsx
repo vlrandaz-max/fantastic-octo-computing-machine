@@ -5,24 +5,47 @@ import { buildStoneSlab } from '../materials/stoneSlab';
 import { DustMotes } from './DustMotes';
 import { experienceStore } from '../state/experience';
 
-function buildMonogramTexture(): THREE.CanvasTexture {
-  const size = 512;
-  const canvas = document.createElement('canvas');
-  canvas.width = size;
-  canvas.height = size;
-  const ctx = canvas.getContext('2d')!;
-  ctx.clearRect(0, 0, size, size);
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  // 'Cormorant Garamond' if the webfont has loaded by now; a serif
-  // fallback otherwise — canvas text needs no network fetch either way,
-  // unlike drei's default remote-font Text component.
-  ctx.font = '300 220px "Cormorant Garamond", Garamond, Georgia, serif';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText('L & R', size / 2, size / 2 + 8);
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.needsUpdate = true;
-  return texture;
+/**
+ * Two textures for the monogram: a crisp `coverage` mask (pure letterforms,
+ * used for the cutout alpha so edges stay sharp) and a `shaded` map with a
+ * dark shadow offset one way and a bright highlight offset the other —
+ * simulating a bevel catching the raking key light, so the mark reads as
+ * incised into the stone rather than a flat gold sticker on top of it.
+ */
+function buildMonogramTextures(): { coverage: THREE.CanvasTexture; shaded: THREE.CanvasTexture } {
+  const size = 1024;
+  const font = '300 440px "Cormorant Garamond", Garamond, Georgia, serif';
+  const draw = (ctx: CanvasRenderingContext2D, dx: number, dy: number, alpha: number, blur: number) => {
+    ctx.save();
+    ctx.filter = blur > 0 ? `blur(${blur}px)` : 'none';
+    ctx.globalAlpha = alpha;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = font;
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText('L & R', size / 2 + dx, size / 2 + 16 + dy);
+    ctx.restore();
+  };
+
+  const coverageCanvas = document.createElement('canvas');
+  coverageCanvas.width = coverageCanvas.height = size;
+  draw(coverageCanvas.getContext('2d')!, 0, 0, 1, 0);
+
+  const shadedCanvas = document.createElement('canvas');
+  shadedCanvas.width = shadedCanvas.height = size;
+  const sctx = shadedCanvas.getContext('2d')!;
+  // Shadow (recess, away from the raking light) then highlight (catching
+  // it), then the base fill — order matters, each layer partially covers
+  // the last so the edge reads as a rounded incision, not a hard outline.
+  draw(sctx, 9, 10, 0.55, 6);
+  draw(sctx, -6, -7, 0.9, 4);
+  draw(sctx, 0, 0, 1, 0);
+
+  const coverage = new THREE.CanvasTexture(coverageCanvas);
+  const shaded = new THREE.CanvasTexture(shadedCanvas);
+  coverage.needsUpdate = true;
+  shaded.needsUpdate = true;
+  return { coverage, shaded };
 }
 
 /**
@@ -36,7 +59,7 @@ export function Act1Stone() {
     built.material.transparent = true;
     return built;
   }, []);
-  const monogramTexture = useMemo(() => buildMonogramTexture(), []);
+  const monogramTextures = useMemo(() => buildMonogramTextures(), []);
   const stoneRef = useRef<THREE.Mesh>(null);
   const monogramRef = useRef<THREE.Mesh>(null);
   const monogramMaterial = useRef<THREE.MeshStandardMaterial>(null);
@@ -69,13 +92,13 @@ export function Act1Stone() {
           ref={monogramMaterial}
           transparent
           opacity={0}
-          alphaMap={monogramTexture}
+          alphaMap={monogramTextures.coverage}
           color="#c4a05a"
-          emissive="#c4a05a"
-          emissiveMap={monogramTexture}
+          emissive="#e8c88a"
+          emissiveMap={monogramTextures.shaded}
           emissiveIntensity={0}
-          roughness={0.35}
-          metalness={0.4}
+          roughness={0.4}
+          metalness={0.35}
           depthWrite={false}
         />
       </mesh>

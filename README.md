@@ -20,8 +20,13 @@ npm run preview  # serve the production build
   (`CameraRig.tsx`, `cameraKeyframes.ts`) that drives the whole scene from
   a single damped scroll-progress value.
 - `src/materials/` — the procedural stone slab (`stoneSlab.ts`, built on a
-  self-contained simplex-noise implementation in `src/lib/noise.ts`) and
-  the luminance-wipe crossfade shader used for Act V's photography.
+  self-contained simplex-noise implementation in `src/lib/noise.ts`,
+  displaced geometry + a normal map baked from the same height field).
+- Act V (`scenes/Act5Household.tsx`) plays real walkthrough footage
+  (`public/assets/video/household-tour.mp4`) as a looping background video
+  via a hand-built `THREE.VideoTexture` — deliberately not drei's
+  `useVideoTexture`, which statically pulls in hls.js for streaming this
+  local file never needs (~550KB of dead weight otherwise).
 - `src/components/CinematicExperience.tsx` — wires GSAP ScrollTrigger to a
   pinned canvas and the real, semantic DOM overlay text for each act
   (`components/ui/actContent.tsx`).
@@ -42,12 +47,10 @@ handed off. Flagging what's approximated rather than letting it pass as
 finished:
 
 - **Act I stone material** is fully procedural (noise-driven displacement +
-  baked canvas textures) — no real limestone PBR scans were provided.
+  baked albedo/roughness/normal maps from the same height field) — no real
+  limestone PBR scans were provided.
 - **Text reveals** use opacity/GSAP rather than a true shader-based
   light-mask synced to the key light, per Part 4's ideal.
-- **Act V image transitions** use a luminance-biased diagonal wipe shader —
-  a reasonable approximation of "light passing across the frame," not a
-  bespoke effect.
 - **Act VI's Falcon Estates branch** does not have its own dedicated
   cinematic Quarry-to-Threshold pass (Part 2 recommends this only "given
   asset availability," which doesn't exist here); it currently links out

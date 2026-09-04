@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { SimplexNoise2D, bakeNoiseCanvas } from '../lib/noise';
+import { SimplexNoise2D, bakeNoiseCanvas, heightCanvasToNormalMap } from '../lib/noise';
 
 /**
  * Act I — "The Quarry": a single massive slab of raw-cut limestone.
@@ -39,31 +39,37 @@ export function buildStoneSlab() {
   pos.needsUpdate = true;
   geometry.computeVertexNormals();
 
+  // 1024px is plenty for a texture that only ever fills part of a macro
+  // shot — the earlier 1536px pass plus a redundant extra noise bake made
+  // this synchronous, main-thread-blocking setup noticeably slow to first
+  // paint for no visible benefit. Three baked canvases, not four.
   const texSize = 1024;
-  const albedoCanvas = bakeNoiseCanvas(texSize, noise, reliefScale * 9, { octaves: 5, contrast: 0.7 });
-  const roughnessCanvas = bakeNoiseCanvas(texSize, noise, reliefScale * 14, { octaves: 4, contrast: 1.2, bias: 0.05 });
-  const bumpCanvas = bakeNoiseCanvas(texSize, noise, reliefScale * 22, { octaves: 4, contrast: 1.4 });
+  const albedoCanvas = bakeNoiseCanvas(texSize, noise, reliefScale * 9, { octaves: 4, contrast: 1.1 });
+  const roughnessCanvas = bakeNoiseCanvas(texSize, noise, reliefScale * 14, { octaves: 3, contrast: 1.4, bias: 0.05 });
+  const heightCanvas = bakeNoiseCanvas(texSize, noise, reliefScale * 9, { octaves: 4, contrast: 1 });
+  const normalCanvas = heightCanvasToNormalMap(heightCanvas, 2.6);
 
   // Tint the grayscale albedo bake into a warm limestone palette.
-  tintCanvas(albedoCanvas, [0x8f, 0x89, 0x7c], [0xc9, 0xc0, 0xac]);
+  tintCanvas(albedoCanvas, [0x82, 0x7b, 0x6c], [0xd2, 0xc8, 0xb2]);
 
   const albedoMap = new THREE.CanvasTexture(albedoCanvas);
   albedoMap.colorSpace = THREE.SRGBColorSpace;
   const roughnessMap = new THREE.CanvasTexture(roughnessCanvas);
-  const bumpMap = new THREE.CanvasTexture(bumpCanvas);
-  [albedoMap, roughnessMap, bumpMap].forEach((t) => {
+  const normalMap = new THREE.CanvasTexture(normalCanvas);
+  [albedoMap, roughnessMap, normalMap].forEach((t) => {
     t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    t.anisotropy = 8;
     t.needsUpdate = true;
   });
 
   const material = new THREE.MeshStandardMaterial({
     map: albedoMap,
     roughnessMap,
-    bumpMap,
-    bumpScale: 0.6,
-    roughness: 0.92,
-    metalness: 0.02,
-    color: new THREE.Color('#b9ae9c'),
+    normalMap,
+    normalScale: new THREE.Vector2(1.4, 1.4),
+    roughness: 0.88,
+    metalness: 0.015,
+    color: new THREE.Color('#c2b8a4'),
   });
 
   return { geometry, material };

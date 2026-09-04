@@ -5,13 +5,36 @@ import { experienceStore } from '../state/experience';
 
 /**
  * Act III (The Frame) — lateral glide along steel mullions and timber.
- * Low-poly instanced bars; the light rig (CameraRig) carries the mood,
- * this geometry just needs to read as structural framing.
+ * Low-poly bars sharing one material each (so the fade-in opacity actually
+ * reaches every bar, not just the first) with enough roughness/warmth to
+ * read as solid steel against a dark scene rather than near-invisible
+ * reflective slivers.
  */
 export function Act3Frame() {
   const group = useRef<THREE.Group>(null);
-  const steel = useRef<THREE.MeshStandardMaterial>(null);
-  const timber = useRef<THREE.MeshStandardMaterial>(null);
+  const steelMaterial = useMemo(
+    () =>
+      new THREE.MeshStandardMaterial({
+        color: '#a8a4a0',
+        metalness: 0.55,
+        roughness: 0.42,
+        emissive: '#3a3632',
+        emissiveIntensity: 0.15,
+        transparent: true,
+        opacity: 0,
+      }),
+    [],
+  );
+  const timberMaterial = useMemo(
+    () =>
+      new THREE.MeshStandardMaterial({
+        color: '#6b543c',
+        roughness: 0.75,
+        transparent: true,
+        opacity: 0,
+      }),
+    [],
+  );
 
   const mullions = useMemo(
     () =>
@@ -26,27 +49,19 @@ export function Act3Frame() {
     const progress = experienceStore.get().smoothProgress;
     const visibility = THREE.MathUtils.smoothstep(progress, 1.1, 1.9) * (1 - THREE.MathUtils.smoothstep(progress, 2.85, 3.4));
     if (group.current) group.current.visible = visibility > 0.01;
-    if (steel.current) steel.current.opacity = visibility;
-    if (timber.current) timber.current.opacity = visibility;
+    steelMaterial.opacity = visibility;
+    timberMaterial.opacity = visibility;
   });
 
   return (
     <group ref={group}>
       {mullions.map((m, i) => (
-        <mesh key={i} position={m.position}>
-          <boxGeometry args={[0.03, m.height, 0.03]} />
-          <meshStandardMaterial
-            ref={i === 0 ? steel : undefined}
-            color="#8a8a8a"
-            metalness={0.85}
-            roughness={0.32}
-            transparent
-          />
+        <mesh key={i} position={m.position} material={steelMaterial}>
+          <boxGeometry args={[0.045, m.height, 0.045]} />
         </mesh>
       ))}
-      <mesh position={[1.6, -0.55, -1.1]}>
-        <boxGeometry args={[2.6, 0.09, 0.09]} />
-        <meshStandardMaterial ref={timber} color="#5a4632" roughness={0.7} transparent />
+      <mesh position={[1.6, -0.55, -1.1]} material={timberMaterial}>
+        <boxGeometry args={[2.6, 0.1, 0.1]} />
       </mesh>
     </group>
   );

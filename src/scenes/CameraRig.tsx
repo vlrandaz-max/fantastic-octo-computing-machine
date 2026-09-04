@@ -9,6 +9,7 @@ import {
   sampleAtProgress,
 } from './cameraKeyframes';
 import { experienceStore } from '../state/experience';
+import { focusTarget } from './focusTarget';
 
 const DAMPING_LAMBDA = 6.2; // ≈ 0.1 damping factor per 60fps frame — weight, not a snap.
 
@@ -45,6 +46,7 @@ export function CameraRig({
     camera.position.set(...camState.position);
     lookTarget.current.set(...camState.lookAt);
     camera.lookAt(lookTarget.current);
+    focusTarget.copy(lookTarget.current);
     if (camera instanceof THREE.PerspectiveCamera) {
       camera.fov = camState.fov;
       camera.updateProjectionMatrix();

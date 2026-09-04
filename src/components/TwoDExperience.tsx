@@ -1,6 +1,7 @@
 import { Footer } from './ui/Footer';
 import { CommunityBranch } from './ui/CommunityBranch';
 import { InvitationCTA } from './ui/InvitationCTA';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 /**
  * The `prefers-reduced-motion` / mobile path (Part 2's accessibility note
@@ -9,6 +10,12 @@ import { InvitationCTA } from './ui/InvitationCTA';
  * laid out as a conventional scroll — no camera choreography, no canvas.
  */
 export function TwoDExperience() {
+  // This page serves two different audiences: mobile visitors (motion is
+  // fine) and visitors who explicitly asked for prefers-reduced-motion
+  // (autoplaying video is exactly what that preference exists to avoid).
+  // Only autoplay the walkthrough footage for the former.
+  const reducedMotion = usePrefersReducedMotion();
+
   return (
     <div id="top" style={{ background: 'var(--color-brand-black)' }}>
       <a href="#footer-content" className="skip-link">
@@ -103,21 +110,34 @@ export function TwoDExperience() {
         <h2 style={{ fontSize: 'var(--text-display-md)', color: 'var(--color-brand-dark)', marginBottom: 32 }}>
           Every Detail, Considered.
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-          {[
-            ['/assets/home/kitchen-full-run.jpg', "Chef's kitchen"],
-            ['/assets/home/family-room-1-staged.jpg', 'Great room'],
-            ['/assets/home/primary-suite-1-staged.png', 'Primary suite'],
-          ].map(([src, alt]) => (
-            <img
-              key={src}
-              src={src}
-              alt={alt}
-              loading="lazy"
-              style={{ width: '100%', height: 260, objectFit: 'cover', borderRadius: 'var(--radius-sm)' }}
-            />
-          ))}
-        </div>
+        {reducedMotion ? (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+            {[
+              ['/assets/home/kitchen-full-run.jpg', "Chef's kitchen"],
+              ['/assets/home/family-room-1-staged.jpg', 'Great room'],
+              ['/assets/home/primary-suite-1-staged.png', 'Primary suite'],
+            ].map(([src, alt]) => (
+              <img
+                key={src}
+                src={src}
+                alt={alt}
+                loading="lazy"
+                style={{ width: '100%', height: 260, objectFit: 'cover', borderRadius: 'var(--radius-sm)' }}
+              />
+            ))}
+          </div>
+        ) : (
+          <video
+            src="/assets/video/household-tour.mp4"
+            poster="/assets/home/kitchen-full-run.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+            style={{ width: '100%', maxHeight: 480, objectFit: 'cover', borderRadius: 'var(--radius-sm)' }}
+          />
+        )}
         <a
           href="/gallery"
           style={{
