@@ -1,0 +1,119 @@
+/**
+ * L&R Homes design tokens — carried verbatim from the design-system handoff
+ * (design_handoff_landrhomes/design-system/colors_and_type.css), plus a
+ * monospace family added for the preload beat and act-marker UI.
+ */
+
+:root {
+  /* Brand core */
+  --color-brand-dark: #2e2820;
+  --color-brand-black: #1c1a18;
+  --color-brand-gold: #c4a05a;
+  --color-brand-gold-light: #d4b87a;
+  --color-brand-gold-dark: #b89438;
+  --color-brand-stone: #78736c;
+  --color-brand-oak: #b09070;
+
+  /* Backgrounds */
+  --color-bg-alabaster: #f2f0e6;
+  --color-bg-warm: #eae4d6;
+  --color-bg-dark: #2e2820;
+  --color-bg-card: #ffffff;
+
+  /* Text */
+  --color-text-primary: #1e1a16;
+  --color-text-secondary: #5a5248;
+  --color-text-tertiary: #8a8078;
+  --color-text-inverse: #f2f0e6;
+  --color-text-gold: #c4a05a;
+
+  /* Borders */
+  --color-border: #d8d0bc;
+  --color-border-gold: #c4a05a;
+  --color-border-dark: #3a3530;
+
+  /* Deep navy / espresso bands, used across the site chrome */
+  --color-navy-1: #1c2840;
+  --color-navy-2: #192038;
+  --color-espresso-1: #2a2018;
+  --color-espresso-2: #1e1a10;
+  --color-near-black: #131210;
+
+  /* Preserve green — used exactly once, in Act VI */
+  --color-preserve-green: #3f5b3f;
+
+  --fg1: var(--color-text-primary);
+  --fg2: var(--color-text-secondary);
+  --fg3: var(--color-text-tertiary);
+  --fg-inverse: var(--color-text-inverse);
+  --fg-accent: var(--color-brand-gold);
+
+  --bg1: var(--color-bg-alabaster);
+  --bg2: var(--color-bg-warm);
+  --bg-dark: var(--color-bg-dark);
+  --bg-card: var(--color-bg-card);
+
+  --border: var(--color-border);
+  --border-accent: var(--color-border-gold);
+
+  --accent: var(--color-brand-gold);
+  --accent-light: var(--color-brand-gold-light);
+  --accent-dark: var(--color-brand-gold-dark);
+
+  /* Type */
+  --font-display: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+  --font-body: 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --text-display-xl: clamp(3rem, 6vw, 5.5rem);
+  --text-display-lg: clamp(2.75rem, 4.5vw, 4rem);
+  --text-display-md: clamp(2rem, 3.5vw, 2.875rem);
+  --text-display-sm: clamp(1.5rem, 2.5vw, 2rem);
+
+  --text-xl: 1.25rem;
+  --text-lg: 1.125rem;
+  --text-md: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+  --text-2xs: 0.6875rem;
+
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.12em;
+  --tracking-widest: 0.2em;
+
+  /* Spacing (8px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  --max-width: 1280px;
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --shadow-1: 0 2px 8px rgba(28, 20, 10, 0.07);
+  --shadow-2: 0 8px 32px rgba(28, 20, 10, 0.12);
+  --shadow-3: 0 24px 64px rgba(28, 20, 10, 0.2);
+
+  /* Motion — single decelerating curve family, no springs/bounce */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 150ms;
+  --transition-base: 250ms;
+  --transition-slow: 400ms;
+  --transition-fade: 600ms;
+
+  --z-nav: 50;
+  --z-skip: 100;
+  --z-overlay: 200;
+}
