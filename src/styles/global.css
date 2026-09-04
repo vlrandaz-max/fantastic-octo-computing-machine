@@ -140,3 +140,28 @@ button:focus-visible {
     padding: var(--space-12) var(--space-6);
   }
 }
+
+/* SimpleHome (rh.house-style conventional page) — responsive nav + grids */
+@media (max-width: 900px) {
+  .simple-nav-links {
+    display: none !important;
+  }
+  .simple-nav-burger {
+    display: block !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .simple-nav-drawer {
+    display: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .simple-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .simple-grid-2-reverse > *:first-child {
+    order: 2;
+  }
+}
