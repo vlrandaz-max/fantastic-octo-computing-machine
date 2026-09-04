@@ -164,4 +164,13 @@ button:focus-visible {
   .simple-grid-2-reverse > *:first-child {
     order: 2;
   }
+  .simple-gallery-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 861px) {
+  .simple-gallery-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }

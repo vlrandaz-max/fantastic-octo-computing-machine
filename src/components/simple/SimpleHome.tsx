@@ -56,7 +56,7 @@ export function SimpleHome() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/home/falcon-estates-hero.jpg') center 55% / cover no-repeat",
+            background: "url('/assets/home/coachwood-aerial-twilight-2.png') center 60% / cover no-repeat",
           }}
         />
         <div
@@ -123,13 +123,13 @@ export function SimpleHome() {
           </div>
           <div style={{ position: 'relative', height: 440 }}>
             <img
-              src="/assets/home/coachwood-front-twilight.jpg"
-              alt="L&amp;R Homes custom residence at twilight"
+              src="/assets/home/coachwood-exterior-2.png"
+              alt="L&amp;R Homes custom residence"
               loading="lazy"
               style={{ position: 'absolute', top: 0, left: 0, width: '78%', height: '85%', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
             />
             <img
-              src="/assets/home/kitchen-full-run.jpg"
+              src="/assets/home/kitchen-staged-1.png"
               alt="Custom kitchen"
               loading="lazy"
               style={{ position: 'absolute', bottom: 0, right: 0, width: '52%', height: '55%', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-3)', border: '6px solid #fff' }}
@@ -142,8 +142,8 @@ export function SimpleHome() {
       <section style={{ padding: '0 40px 96px', background: 'var(--bg1)' }}>
         <div className="simple-grid-2" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <img
-            src="/assets/home/grandeur-exterior.jpg"
-            alt="The Grandeur — a custom L&amp;R Homes residence"
+            src="/assets/home/family-room-3-staged.png"
+            alt="A great room in a custom L&amp;R Homes residence"
             loading="lazy"
             style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
           />
@@ -176,11 +176,37 @@ export function SimpleHome() {
             </a>
           </div>
           <img
-            src="/assets/home/829-crestwood-front.jpg"
-            alt="A home in Falcon Estates"
+            src="/assets/home/foyer-staged.png"
+            alt="A foyer in a home in Falcon Estates"
             loading="lazy"
             style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
           />
+        </div>
+      </section>
+
+      {/* Interiors gallery */}
+      <section style={{ padding: '0 40px 96px', background: 'var(--bg1)' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
+          <p style={eyebrow}>Proof of Craft</p>
+          <h2 style={sectionHeading}>Every Detail, Considered.</h2>
+          <div
+            className="simple-gallery-3"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 36 }}
+          >
+            {[
+              ['/assets/home/kitchen-staged-2.png', "Chef's kitchen"],
+              ['/assets/home/primary-suite-staged-4.png', 'Primary suite'],
+              ['/assets/home/butlers-pantry-staged.jpg', "Butler's pantry"],
+            ].map(([src, alt]) => (
+              <img
+                key={src}
+                src={src}
+                alt={alt}
+                loading="lazy"
+                style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -200,7 +226,7 @@ export function SimpleHome() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/home/family-room-1-staged.jpg') center / cover no-repeat",
+            background: "url('/assets/home/sitting-room-staged-3.jpg') center / cover no-repeat",
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(12,10,8,0.68)' }} />
