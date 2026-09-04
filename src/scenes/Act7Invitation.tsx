@@ -26,16 +26,27 @@ export function Act7Invitation() {
 
   useFrame(() => {
     const progress = experienceStore.get().smoothProgress;
-    const opacity = THREE.MathUtils.smoothstep(progress, 5.9, 6.3);
-    if (glowMaterial.current) glowMaterial.current.opacity = opacity;
-    if (glow.current) glow.current.visible = opacity > 0.01;
-    if (light.current) light.current.intensity = opacity * 0.8;
+    const strength = THREE.MathUtils.smoothstep(progress, 5.9, 6.3);
+    // Additive blending + a low ceiling keeps this a soft warm wash behind
+    // the CTA text, not a giant flat opaque disc — it previously ran up to
+    // opacity 1 with normal alpha blending at a scale close enough to the
+    // camera to fill the whole frame, blotting out the Invitation copy.
+    if (glowMaterial.current) glowMaterial.current.opacity = strength * 0.45;
+    if (glow.current) glow.current.visible = strength > 0.01;
+    if (light.current) light.current.intensity = strength * 0.8;
   });
 
   return (
     <group position={[0, -0.15, -0.4]}>
-      <sprite ref={glow} scale={[1.4, 1.4, 1.4]}>
-        <spriteMaterial ref={glowMaterial} map={glowTexture} transparent opacity={0} depthWrite={false} />
+      <sprite ref={glow} scale={[0.55, 0.55, 0.55]}>
+        <spriteMaterial
+          ref={glowMaterial}
+          map={glowTexture}
+          transparent
+          opacity={0}
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+        />
       </sprite>
       <pointLight ref={light} color="#ff9d52" intensity={0} distance={3} decay={2} />
     </group>

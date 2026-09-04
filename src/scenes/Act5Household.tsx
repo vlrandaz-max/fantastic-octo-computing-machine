@@ -17,11 +17,27 @@ import { experienceStore } from '../state/experience';
 export function Act5Household() {
   const video = useMemo(() => {
     const el = document.createElement('video');
-    el.src = '/assets/video/household-tour.mp4';
     el.muted = true;
+    el.defaultMuted = true;
+    el.setAttribute('muted', ''); // some browsers gate autoplay on the attribute, not just the property
     el.loop = true;
     el.playsInline = true;
+    el.setAttribute('playsinline', '');
     el.crossOrigin = 'anonymous';
+    el.preload = 'auto';
+    // A handful of browsers won't reliably decode/play a video element
+    // that's never attached to the document, even when only used as a
+    // WebGL texture source — it rendered solid black without this.
+    // Kept out of layout and hidden from the accessibility tree; it's
+    // purely a texture source, the real content is the mesh below.
+    el.style.position = 'fixed';
+    el.style.width = '1px';
+    el.style.height = '1px';
+    el.style.opacity = '0';
+    el.style.pointerEvents = 'none';
+    el.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(el);
+    el.src = '/assets/video/household-tour.mp4';
     el.play().catch(() => {
       // Autoplay can be blocked before any user gesture on some browsers —
       // the poster-less first frame just stays black until it can play.
@@ -38,6 +54,7 @@ export function Act5Household() {
   useEffect(() => () => {
     video.pause();
     video.src = '';
+    video.remove();
     texture.dispose();
   }, [video, texture]);
 
