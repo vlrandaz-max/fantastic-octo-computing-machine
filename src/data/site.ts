@@ -74,8 +74,8 @@ export const FALCON_ESTATES_HOMES: HomeListing[] = [
 ];
 
 export const PINE_WOODS_HOMES: HomeListing[] = [
-  { name: 'The Majestic', status: 'immediate-occupancy', image: '/assets/home/coachwood-aerial-twilight-2.png', community: 'Pine Woods' },
-  { name: 'The Heritage', status: 'immediate-occupancy', image: '/assets/home/coachwood-twilight-2.png', community: 'Pine Woods' },
+  { name: 'The Majestic', status: 'immediate-occupancy', image: '/assets/pine-woods/majestic-exterior.jpg', community: 'Pine Woods' },
+  { name: 'The Heritage', status: 'immediate-occupancy', image: '/assets/pine-woods/heritage-exterior.jpg', community: 'Pine Woods' },
 ];
 
 export const FALCON_ESTATES = {

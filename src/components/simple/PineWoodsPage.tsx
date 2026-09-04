@@ -46,7 +46,7 @@ export function PineWoodsPage() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/home/coachwood-aerial-twilight-2.png') center 55% / cover no-repeat",
+            background: "url('/assets/pine-woods/heritage-exterior-twilight.jpg') center 55% / cover no-repeat",
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(12,10,8,0.5) 0%, rgba(12,10,8,0.2) 40%, rgba(12,10,8,0.8) 100%)' }} />
@@ -133,6 +133,93 @@ export function PineWoodsPage() {
                 </p>
                 <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--fg2)' }}>{item.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Site plan */}
+      <section style={{ padding: '0 40px 88px', background: 'var(--bg1)' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center' }}>
+          <p style={eyebrow}>Lot &amp; Site Plan</p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 400,
+              fontSize: 'clamp(1.75rem,3.5vw,2.5rem)',
+              color: 'var(--color-brand-dark)',
+              margin: '10px 0 32px',
+            }}
+          >
+            Find Your <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>Homesite</em>
+          </h2>
+          <img
+            src="/assets/pine-woods/site-plan.jpg"
+            alt="Pine Woods site plan showing individual homesites"
+            loading="lazy"
+            style={{ width: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}
+          />
+        </div>
+      </section>
+
+      {/* Inside the homes */}
+      <section style={{ padding: '0 40px 96px', background: 'var(--bg1)' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <p style={{ ...eyebrow, textAlign: 'center' }}>Inside the Homes</p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 400,
+              fontSize: 'clamp(1.75rem,3.5vw,2.5rem)',
+              color: 'var(--color-brand-dark)',
+              textAlign: 'center',
+              margin: '10px 0 48px',
+            }}
+          >
+            Every Detail, Considered.
+          </h2>
+
+          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 22, color: 'var(--color-brand-dark)', marginBottom: 18 }}>
+            The Majestic
+          </p>
+          <div
+            className="simple-gallery-3"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 48 }}
+          >
+            {[
+              ['/assets/pine-woods/majestic-great-room.png', 'The Majestic — great room'],
+              ['/assets/pine-woods/majestic-kitchen.png', 'The Majestic — kitchen'],
+              ['/assets/pine-woods/majestic-owners-suite.jpg', "The Majestic — owner's suite"],
+            ].map(([src, alt]) => (
+              <img
+                key={src}
+                src={src}
+                alt={alt}
+                loading="lazy"
+                style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
+              />
+            ))}
+          </div>
+
+          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 22, color: 'var(--color-brand-dark)', marginBottom: 18 }}>
+            The Heritage
+          </p>
+          <div
+            className="simple-gallery-3"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}
+          >
+            {[
+              ['/assets/pine-woods/heritage-family-room.jpg', 'The Heritage — family room'],
+              ['/assets/pine-woods/heritage-kitchen.jpg', 'The Heritage — kitchen'],
+              ['/assets/pine-woods/heritage-primary-bedroom.jpg', 'The Heritage — primary bedroom'],
+            ].map(([src, alt]) => (
+              <img
+                key={src}
+                src={src}
+                alt={alt}
+                loading="lazy"
+                style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
+              />
             ))}
           </div>
         </div>
