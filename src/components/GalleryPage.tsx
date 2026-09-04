@@ -48,7 +48,7 @@ export function GalleryPage() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/home/family-room-3-staged.png') center / cover no-repeat",
+            background: "url('/assets/home/family-room-3-staged.jpg') center / cover no-repeat",
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(12,10,8,0.6)' }} />

@@ -23,7 +23,7 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: '829-crestwood-front.jpg', alt: '829 Crestwood — front', category: 'exterior' },
   { src: '835-crestwood-front.jpg', alt: '835 Crestwood — front', category: 'exterior' },
 
-  { src: 'foyer-staged.png', alt: 'Foyer', category: 'interior' },
+  { src: 'foyer-staged.jpg', alt: 'Foyer', category: 'interior' },
   { src: 'kitchen-staged-1.png', alt: 'Kitchen', category: 'interior' },
   { src: 'kitchen-staged-2.png', alt: 'Kitchen', category: 'interior' },
   { src: 'kitchen-full-run.jpg', alt: 'Kitchen', category: 'interior' },
@@ -31,7 +31,7 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'nook-staged.png', alt: 'Breakfast nook', category: 'interior' },
   { src: 'dining-room-staged.jpg', alt: 'Dining room', category: 'interior' },
   { src: 'dining-room-staged-2.jpg', alt: 'Dining room', category: 'interior' },
-  { src: 'family-room-3-staged.png', alt: 'Great room', category: 'interior' },
+  { src: 'family-room-3-staged.jpg', alt: 'Great room', category: 'interior' },
   { src: 'family-room-1-staged.jpg', alt: 'Family room', category: 'interior' },
   { src: 'family-room-alt-1-staged.jpg', alt: 'Family room', category: 'interior' },
   { src: 'family-room-bath-staged.jpg', alt: 'Family room — bath', category: 'interior' },

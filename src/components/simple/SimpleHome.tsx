@@ -142,7 +142,7 @@ export function SimpleHome() {
       <section style={{ padding: '0 40px 96px', background: 'var(--bg1)' }}>
         <div className="simple-grid-2" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <img
-            src="/assets/home/family-room-3-staged.png"
+            src="/assets/home/family-room-3-staged.jpg"
             alt="A great room in a custom L&amp;R Homes residence"
             loading="lazy"
             style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
@@ -176,7 +176,7 @@ export function SimpleHome() {
             </a>
           </div>
           <img
-            src="/assets/home/foyer-staged.png"
+            src="/assets/home/foyer-staged.jpg"
             alt="A foyer in a home in Falcon Estates"
             loading="lazy"
             style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
