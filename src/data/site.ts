@@ -92,6 +92,10 @@ export interface HomeDetail {
   introHeadingEmphasis: string;
   introParagraphs: string[];
   stats?: { value: string; label: string }[];
+  floorPlanHeadingPlain: string;
+  floorPlanHeadingEmphasis: string;
+  floorPlanDescription: string;
+  floorPlans: { src: string; caption: string }[];
   galleryCaption: string;
   gallery: { src: string; alt: string; caption: string }[];
   ctaEyebrow: string;
@@ -121,6 +125,14 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     introParagraphs: [
       'The Majestic pairs a classic brick-and-stone façade with an open, light-filled interior — designed around the way families actually live. A sweeping great room flows directly into the kitchen and dining nook, while a private primary suite, main-floor library, and two additional bedrooms complete the first level.',
       'Upstairs, a versatile loft and bonus room offer flexible space for a media room, second family room, or home gym — whatever the household needs it to be.',
+    ],
+    floorPlanHeadingPlain: 'One-Level Living,',
+    floorPlanHeadingEmphasis: 'Room to Grow',
+    floorPlanDescription:
+      'First floor: Foyer, Great Room, Kitchen, Nook, Pantry, a Primary Suite with Bath & walk-in closet, Library, Bedrooms 2–3 with a shared Bath, Laundry, and a 3-car garage. Second floor: a Loft, Bath, and Bonus Room above the garage.',
+    floorPlans: [
+      { src: '/assets/pine-woods/majestic-floorplan-1.jpg', caption: 'First Floor Plan' },
+      { src: '/assets/pine-woods/majestic-floorplan-2.jpg', caption: 'Second Floor Plan' },
     ],
     galleryCaption: 'Photography shown is of the actual home, professionally staged and ready for immediate occupancy.',
     gallery: [
@@ -152,6 +164,14 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
       { value: '3', label: 'Bathrooms' },
       { value: '3-Car', label: 'Garage' },
       { value: '2-Story', label: 'Colonial' },
+    ],
+    floorPlanHeadingPlain: '18-Foot Foyer to',
+    floorPlanHeadingEmphasis: 'a Private Upstairs Retreat',
+    floorPlanDescription:
+      '3,143 sq ft of total habitable space. First floor: Foyer, Family Room, Kitchen, Dinette, Command Center, Pantry, Library, Mud Room, Laundry, Bath, and a 3-car garage. Second floor: Primary Suite with Primary Bath & Closet, Bedrooms 2-4, and a shared Main Bath.',
+    floorPlans: [
+      { src: '/assets/pine-woods/heritage-floorplan-1.jpg', caption: 'First Floor Plan' },
+      { src: '/assets/pine-woods/heritage-floorplan-2.jpg', caption: 'Second Floor Plan' },
     ],
     galleryCaption: 'Photography shown is of the actual home at 3110 Raffler Dr, Lot 7, professionally staged and ready for immediate occupancy.',
     gallery: [

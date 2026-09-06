@@ -166,6 +166,45 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
         </div>
       )}
 
+      {/* Floor plan */}
+      <section style={{ padding: '88px 40px', background: 'var(--bg1)', textAlign: 'center' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <p style={eyebrow}>Floor Plan</p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 400,
+              fontSize: 'clamp(2rem,4vw,2.75rem)',
+              color: 'var(--color-brand-dark)',
+              margin: '14px 0 20px',
+            }}
+          >
+            {home.floorPlanHeadingPlain} <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>{home.floorPlanHeadingEmphasis}</em>
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--fg2)', maxWidth: 760, margin: '0 auto 48px' }}>{home.floorPlanDescription}</p>
+
+          <div
+            className="simple-grid-2"
+            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, textAlign: 'center', marginBottom: 20 }}
+          >
+            {home.floorPlans.map((plan) => (
+              <div key={plan.src}>
+                <img
+                  src={plan.src}
+                  alt={`${home.name} — ${plan.caption}`}
+                  loading="lazy"
+                  style={{ width: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}
+                />
+                <p style={{ fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--fg3)', marginTop: 12 }}>{plan.caption}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 11, color: 'var(--fg3)' }}>
+            Built by {PINE_WOODS.builder} · {PINE_WOODS.builderNote}
+          </p>
+        </div>
+      </section>
+
       {/* Standard Features — full spec sheet */}
       <section style={{ padding: '80px 40px', background: '#131210' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
