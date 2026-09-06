@@ -126,6 +126,13 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
       'The Majestic pairs a classic brick-and-stone façade with an open, light-filled interior — designed around the way families actually live. A sweeping great room flows directly into the kitchen and dining nook, while a private primary suite, main-floor library, and two additional bedrooms complete the first level.',
       'Upstairs, a versatile loft and bonus room offer flexible space for a media room, second family room, or home gym — whatever the household needs it to be.',
     ],
+    stats: [
+      { value: '2,662 sq ft', label: 'Total Habitable' },
+      { value: '3', label: 'Bedrooms' },
+      { value: '3 Full · 1 Half', label: 'Bathrooms' },
+      { value: '3-Car', label: 'Garage' },
+      { value: 'Walk-Out', label: 'Basement' },
+    ],
     floorPlanHeadingPlain: 'One-Level Living,',
     floorPlanHeadingEmphasis: 'Room to Grow',
     floorPlanDescription:
