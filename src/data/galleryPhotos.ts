@@ -19,9 +19,10 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'coachwood-aerial-mls-3.png', alt: 'Coachwood — aerial', category: 'exterior' },
   { src: 'coachwood-rear-aerial-mls.jpg', alt: 'Coachwood — rear aerial', category: 'exterior' },
   { src: 'coachwood-rear-aerial-mls-2.jpg', alt: 'Coachwood — rear aerial', category: 'exterior' },
-  { src: 'grandeur-exterior.jpg', alt: 'The Grandeur — exterior', category: 'exterior' },
+  { src: 'grandeur-exterior-twilight.jpg', alt: 'The Grandeur — exterior at twilight', category: 'exterior' },
   { src: '829-crestwood-front.jpg', alt: '829 Crestwood — front', category: 'exterior' },
   { src: '835-crestwood-front.jpg', alt: '835 Crestwood — front', category: 'exterior' },
+  { src: 'madison-exterior.jpg', alt: 'The Madison — exterior', category: 'exterior' },
 
   { src: 'foyer-staged.jpg', alt: 'Foyer', category: 'interior' },
   { src: 'kitchen-staged-1.png', alt: 'Kitchen', category: 'interior' },

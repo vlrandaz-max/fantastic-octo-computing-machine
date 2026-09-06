@@ -18,15 +18,16 @@ import { SimpleFooter } from './SimpleFooter';
  * and prefixing every selector in the stylesheet with `.falcon-page`.
  *
  * Photos: the real site's own home-card images map by street address, not
- * by home name — Grandeur → 3836 Coachwood Lane (confirmed, matches
- * grandeur-exterior.jpg), Cambridge → 835 Crestwood, Stratford → 829
- * Crestwood, while Crestwood and Madison have no dedicated address photo on
- * the live site and reuse a generic exterior. That mapping is applied here
- * and was also used to correct FALCON_ESTATES_HOMES in data/site.ts, which
- * previously had Crestwood/Stratford's addressed photos swapped. The hero
- * background, overview aerial, and Grandeur/Cambridge/Stratford cards use
- * real local /assets/home photos; Crestwood and Madison use the same
- * generic stand-ins the real site itself falls back to.
+ * by home name — Grandeur → 3836 Coachwood Lane (confirmed), Cambridge →
+ * 835 Crestwood, Stratford → 829 Crestwood, while Crestwood has no
+ * dedicated address photo on the live site and reuses a generic exterior.
+ * Madison's real photo (madison-exterior.jpg, matching the real site's own
+ * hotlinked filename) was later uploaded and wired in here too. That
+ * mapping is applied here and was also used to correct FALCON_ESTATES_HOMES
+ * in data/site.ts, which previously had Crestwood/Stratford's addressed
+ * photos swapped. Grandeur uses the twilight exterior (matching its use as
+ * a listing thumbnail everywhere else in the app); Crestwood is still the
+ * only card without a dedicated photo, same as on the real site.
  */
 
 const FALCON_STYLE = `
@@ -261,7 +262,7 @@ const FALCON_BODY = `
     <h2 class="homes-h2">Homes in Falcon Estates</h2>
     <div class="homes-grid">
       <a class="home-card" href="/grandeur">
-        <img decoding="async" src="/assets/home/grandeur-exterior.jpg" alt="The Grandeur">
+        <img decoding="async" src="/assets/home/grandeur-exterior-twilight.jpg" alt="The Grandeur">
         <div class="home-card-body">
           <div class="home-card-name">The Grandeur</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
@@ -282,7 +283,7 @@ const FALCON_BODY = `
         </div>
       </a>
       <a class="home-card" href="https://landrhomes.com/madison/" target="_blank" rel="noopener">
-        <img decoding="async" src="/assets/home/coachwood-exterior-2.png" alt="The Madison">
+        <img decoding="async" src="/assets/home/madison-exterior.jpg" alt="The Madison">
         <div class="home-card-body">
           <div class="home-card-name">The Madison</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>

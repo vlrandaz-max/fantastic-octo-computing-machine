@@ -151,7 +151,7 @@ export function SimpleHome() {
           </div>
           <div style={{ position: 'relative', height: 440 }}>
             <img
-              src="/assets/home/grandeur-exterior.jpg"
+              src="/assets/home/grandeur-exterior-twilight.jpg"
               alt="The Grandeur — an L&amp;R Homes residence at twilight"
               loading="lazy"
               style={{ position: 'absolute', top: 0, left: 0, width: '78%', height: '65%', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
