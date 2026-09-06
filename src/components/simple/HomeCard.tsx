@@ -55,7 +55,7 @@ export function HomeCard({ home, dark = false }: { home: HomeListing; dark?: boo
           {home.name}
         </p>
         <a
-          href="/contact-us"
+          href={home.href ?? '/contact-us'}
           style={{
             fontSize: 11,
             fontWeight: 700,

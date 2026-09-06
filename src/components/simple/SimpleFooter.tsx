@@ -1,4 +1,4 @@
-import { COMPANY } from '../../data/site';
+import { COMPANY, NAV_LINKS } from '../../data/site';
 
 /** Plain, light multi-column footer matching rh.house's structure. */
 export function SimpleFooter() {
@@ -83,14 +83,19 @@ export function SimpleFooter() {
           color: 'var(--fg3)',
         }}
       >
-        <span>&copy; {year} {COMPANY.name}</span>
-        <nav aria-label="Footer" style={{ display: 'flex', gap: 20 }}>
-          <a href="/homes-available" style={{ color: 'var(--fg3)' }}>
-            Homes Available
-          </a>
-          <a href="/simple#falcon-estates" style={{ color: 'var(--fg3)' }}>
-            Falcon Estates
-          </a>
+        <span>
+          {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
+          <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-dark)' }}>
+            {COMPANY.email}
+          </a>{' '}
+          | Copyright &copy; {year}
+        </span>
+        <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+          {NAV_LINKS.map((link) => (
+            <a key={link.label} href={link.href} style={{ color: 'var(--fg3)' }}>
+              {link.label}
+            </a>
+          ))}
           <a href="/" style={{ color: 'var(--fg3)' }}>
             The Full Experience
           </a>

@@ -5,7 +5,9 @@ import { SimpleHome } from './components/simple/SimpleHome';
 import { HomesAvailablePage } from './components/simple/HomesAvailablePage';
 import { PineWoodsPage } from './components/simple/PineWoodsPage';
 import { ContactUsPage } from './components/simple/ContactUsPage';
+import { HomeDetailPage } from './components/simple/HomeDetailPage';
 import { GalleryPage } from './components/GalleryPage';
+import { HOME_DETAILS } from './data/site';
 
 function App() {
   const mode = useMotionPreference();
@@ -20,6 +22,8 @@ function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname : '';
   if (path.startsWith('/gallery')) return <GalleryPage />;
   if (path.startsWith('/homes-available')) return <HomesAvailablePage />;
+  if (path.startsWith('/majestic')) return <HomeDetailPage home={HOME_DETAILS.majestic} />;
+  if (path.startsWith('/heritage')) return <HomeDetailPage home={HOME_DETAILS.heritage} />;
   if (path.startsWith('/pine-woods')) return <PineWoodsPage />;
   if (path.startsWith('/contact-us')) return <ContactUsPage />;
   if (path.startsWith('/simple')) return <SimpleHome />;

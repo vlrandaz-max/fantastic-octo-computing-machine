@@ -63,6 +63,8 @@ export interface HomeListing {
   status: HomeStatus;
   image: string;
   community: 'Falcon Estates' | 'Pine Woods';
+  /** Dedicated detail-page route, when one exists — falls back to /contact-us. */
+  href?: string;
 }
 
 export const FALCON_ESTATES_HOMES: HomeListing[] = [
@@ -74,9 +76,93 @@ export const FALCON_ESTATES_HOMES: HomeListing[] = [
 ];
 
 export const PINE_WOODS_HOMES: HomeListing[] = [
-  { name: 'The Majestic', status: 'immediate-occupancy', image: '/assets/pine-woods/majestic-exterior.jpg', community: 'Pine Woods' },
-  { name: 'The Heritage', status: 'immediate-occupancy', image: '/assets/pine-woods/heritage-exterior.jpg', community: 'Pine Woods' },
+  { name: 'The Majestic', status: 'immediate-occupancy', image: '/assets/pine-woods/majestic-exterior.jpg', community: 'Pine Woods', href: '/majestic' },
+  { name: 'The Heritage', status: 'immediate-occupancy', image: '/assets/pine-woods/heritage-exterior.jpg', community: 'Pine Woods', href: '/heritage' },
 ];
+
+export interface HomeDetail {
+  slug: 'majestic' | 'heritage';
+  name: string;
+  tagline: string;
+  badge: string;
+  addressLine: string;
+  heroImage: string;
+  introEyebrow: string;
+  introHeadingPlain: string;
+  introHeadingEmphasis: string;
+  introParagraphs: string[];
+  stats?: { value: string; label: string }[];
+  galleryCaption: string;
+  gallery: { src: string; alt: string; caption: string }[];
+  ctaEyebrow: string;
+  ctaAddressLine: string;
+}
+
+/**
+ * Individual home detail pages, transcribed from landrhomes.com/majestic/
+ * and /heritage/. Both homes share Pine Woods' standard-features spec
+ * sheet and community info (below) — only what's specific to each home
+ * lives here. Heritage's opening intro sentence is a light paraphrase
+ * bridging into the verbatim copy that follows (the real site's first
+ * sentence scrolled past too quickly in the source recording to transcribe
+ * exactly); everything else on both pages is verbatim.
+ */
+export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
+  majestic: {
+    slug: 'majestic',
+    name: 'The Majestic',
+    tagline: 'Classic Brick & Stone Architecture',
+    badge: 'Now Open · Immediate Occupancy',
+    addressLine: 'Rochester Hills, MI 48309',
+    heroImage: '/assets/pine-woods/majestic-exterior.jpg',
+    introEyebrow: 'Welcome to The Majestic',
+    introHeadingPlain: 'A Floor Plan Built for',
+    introHeadingEmphasis: 'Real Life',
+    introParagraphs: [
+      'The Majestic pairs a classic brick-and-stone façade with an open, light-filled interior — designed around the way families actually live. A sweeping great room flows directly into the kitchen and dining nook, while a private primary suite, main-floor library, and two additional bedrooms complete the first level.',
+      'Upstairs, a versatile loft and bonus room offer flexible space for a media room, second family room, or home gym — whatever the household needs it to be.',
+    ],
+    galleryCaption: 'Photography shown is of the actual home, professionally staged and ready for immediate occupancy.',
+    gallery: [
+      { src: '/assets/pine-woods/majestic-kitchen-nook.jpg', alt: 'The Majestic — kitchen and breakfast nook', caption: 'Kitchen · Breakfast Nook' },
+      { src: '/assets/pine-woods/majestic-owners-suite.jpg', alt: 'The Majestic — bedroom suite', caption: 'Bedroom Suite' },
+      { src: '/assets/pine-woods/majestic-study.jpg', alt: 'The Majestic — library and home office', caption: 'Library / Home Office' },
+    ],
+    ctaEyebrow: 'Ready to Make It Yours',
+    ctaAddressLine: 'Pine Woods · Rochester Hills, MI',
+  },
+  heritage: {
+    slug: 'heritage',
+    name: 'The Heritage',
+    tagline: 'Colonial Architecture · Stone Elevation',
+    badge: 'New Construction · Immediate Occupancy',
+    addressLine: '3110 Raffler Dr · Lot 7 · Rochester Hills, MI 48309',
+    heroImage: '/assets/pine-woods/heritage-exterior-twilight-front.jpg',
+    introEyebrow: 'Welcome to The Heritage',
+    introHeadingPlain: 'Effortless Living,',
+    introHeadingEmphasis: 'Classic Style',
+    introParagraphs: [
+      'The Heritage brings colonial architecture and a stone elevation together with a thoughtfully designed floor plan. The great room opens directly to the kitchen, dinette, and a large walk-in pantry — the kind of open, connected first floor built for everyday life and entertaining alike.',
+      'Upstairs, the primary suite offers a stepped ceiling, an expansive walk-in closet, and a spa-style bath with a soaking tub and oversized shower. Three additional bedrooms share a full bath, each with direct access for privacy and convenience.',
+      'Lot 7 at 3110 Raffler Dr is move-in ready now. The Heritage is one of the homes available in Pine Woods, an exclusive enclave in Rochester Hills developed by L&R Homes, Inc. and built by Town Properties, LLC — an L&R Homes affiliate.',
+    ],
+    stats: [
+      { value: '3,143 sq ft', label: 'Total Habitable' },
+      { value: '4', label: 'Bedrooms' },
+      { value: '3', label: 'Bathrooms' },
+      { value: '3-Car', label: 'Garage' },
+      { value: '2-Story', label: 'Colonial' },
+    ],
+    galleryCaption: 'Photography shown is of the actual home at 3110 Raffler Dr, Lot 7, professionally staged and ready for immediate occupancy.',
+    gallery: [
+      { src: '/assets/pine-woods/heritage-family-room.jpg', alt: 'The Heritage — family room', caption: 'Family Room' },
+      { src: '/assets/pine-woods/heritage-kitchen.jpg', alt: 'The Heritage — kitchen', caption: 'Kitchen' },
+      { src: '/assets/pine-woods/heritage-primary-bedroom.jpg', alt: 'The Heritage — primary bedroom', caption: 'Primary Bedroom' },
+    ],
+    ctaEyebrow: 'Ready Now · Lot 7',
+    ctaAddressLine: '3110 Raffler Dr · Pine Woods · Rochester Hills, MI',
+  },
+};
 
 export const FALCON_ESTATES = {
   eyebrow: 'Rochester Hills · European-Inspired',
@@ -158,6 +244,43 @@ export const PINE_WOODS = {
       },
     ],
   },
+  /** Second row of the full spec sheet shown on individual home detail pages. */
+  extraSpecs: [
+    {
+      title: 'Exterior & Basement',
+      items: [
+        'Stone elevation with premium brick / Hardie-plank siding',
+        'Maintenance-free Pella windows',
+        'Custom stone address',
+        'CertainTeed Landmark dimensional shingles',
+        '3-car garage, drywalled & skim coated',
+        "8' raised-panel roll-up garage doors, prepped for openers",
+        "Concrete driveway & walkway; double side-lite 8' tall front door",
+        'Lawn with irrigation system',
+        'Fully excavated 8\'-10" height basement walls, egress window, prepped for future bathroom',
+      ],
+    },
+    {
+      title: 'Systems & Efficiency',
+      items: [
+        'Energy Seal Package',
+        'R-19 2x6 exterior wall insulation, R-38 ceiling',
+        '95% high-efficiency furnace',
+        '50-gallon high-efficiency hot water heater',
+        'PEX® plumbing system & central air conditioning',
+        '200-amp electrical service with circuit breakers',
+        'Automatic sump pump, smoke & CO detectors',
+        'Whole-house humidifier, furnace media filter & Google Nest smart thermostat',
+      ],
+    },
+  ],
+  developmentAmenities: [
+    'Easy access to major thoroughfares',
+    'Minutes to major retail, the Village of Rochester Hills & downtown Rochester shopping',
+    'Avondale School System',
+    'Proximity to Oakland University & Meadow Brook',
+    'Municipal water & sewer, underground utilities',
+  ],
   discoverCta: {
     eyebrow: 'Ready When You Are',
     heading: 'Discover Pine Woods',
