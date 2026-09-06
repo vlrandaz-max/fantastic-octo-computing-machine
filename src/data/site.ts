@@ -68,7 +68,7 @@ export interface HomeListing {
 }
 
 export const FALCON_ESTATES_HOMES: HomeListing[] = [
-  { name: 'The Grandeur', status: 'move-in-ready', image: '/assets/home/grandeur-exterior.jpg', community: 'Falcon Estates' },
+  { name: 'The Grandeur', status: 'move-in-ready', image: '/assets/home/grandeur-exterior.jpg', community: 'Falcon Estates', href: '/grandeur' },
   { name: 'The Crestwood', status: 'sold', image: '/assets/home/829-crestwood-front.jpg', community: 'Falcon Estates' },
   { name: 'The Cambridge', status: 'sold', image: '/assets/home/coachwood-front-twilight.jpg', community: 'Falcon Estates' },
   { name: 'The Madison', status: 'sold', image: '/assets/home/coachwood-exterior-2.png', community: 'Falcon Estates' },
