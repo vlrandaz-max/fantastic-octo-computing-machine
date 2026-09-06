@@ -121,6 +121,14 @@ export interface HomeDetail {
  * bridging into the verbatim copy that follows (the real site's first
  * sentence scrolled past too quickly in the source recording to transcribe
  * exactly); everything else on both pages is verbatim.
+ *
+ * Photography note: majestic-kitchen-nook.jpg and majestic-dining-nook.jpg
+ * were mislabeled at the file level — the file named "kitchen-nook" was
+ * actually a dining/living room shot, and "dining-nook" was the real
+ * kitchen + breakfast nook. Swapped the underlying files so each filename
+ * matches its content and the "Kitchen · Breakfast Nook" gallery caption
+ * below shows the right photo; the freed-up dining/living shot is kept as
+ * majestic-dining-living.jpg, currently unused.
  */
 export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
   majestic: {
