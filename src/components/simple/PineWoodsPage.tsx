@@ -46,7 +46,7 @@ export function PineWoodsPage() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/pine-woods/heritage-exterior-twilight.jpg') center 55% / cover no-repeat",
+            background: "url('/assets/pine-woods/pine-woods-hero.jpg') center / cover no-repeat",
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(12,10,8,0.5) 0%, rgba(12,10,8,0.2) 40%, rgba(12,10,8,0.8) 100%)' }} />
