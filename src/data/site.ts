@@ -67,12 +67,19 @@ export interface HomeListing {
   href?: string;
 }
 
+/**
+ * Image assignments follow the real site's own home-card photos, which map
+ * by street address, not by home name: Grandeur → 3836 Coachwood Lane,
+ * Cambridge → 835 Crestwood, Stratford → 829 Crestwood. Crestwood and
+ * Madison have no dedicated address photo on the live site and reuse a
+ * generic exterior there too — mirrored here.
+ */
 export const FALCON_ESTATES_HOMES: HomeListing[] = [
   { name: 'The Grandeur', status: 'move-in-ready', image: '/assets/home/grandeur-exterior.jpg', community: 'Falcon Estates', href: '/grandeur' },
-  { name: 'The Crestwood', status: 'sold', image: '/assets/home/829-crestwood-front.jpg', community: 'Falcon Estates' },
-  { name: 'The Cambridge', status: 'sold', image: '/assets/home/coachwood-front-twilight.jpg', community: 'Falcon Estates' },
+  { name: 'The Crestwood', status: 'sold', image: '/assets/home/falcon-estates-hero.jpg', community: 'Falcon Estates' },
+  { name: 'The Cambridge', status: 'sold', image: '/assets/home/835-crestwood-front.jpg', community: 'Falcon Estates' },
   { name: 'The Madison', status: 'sold', image: '/assets/home/coachwood-exterior-2.png', community: 'Falcon Estates' },
-  { name: 'The Stratford', status: 'sold', image: '/assets/home/835-crestwood-front.jpg', community: 'Falcon Estates' },
+  { name: 'The Stratford', status: 'sold', image: '/assets/home/829-crestwood-front.jpg', community: 'Falcon Estates' },
 ];
 
 export const PINE_WOODS_HOMES: HomeListing[] = [

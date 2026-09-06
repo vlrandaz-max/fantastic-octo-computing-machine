@@ -7,6 +7,7 @@ import { PineWoodsPage } from './components/simple/PineWoodsPage';
 import { ContactUsPage } from './components/simple/ContactUsPage';
 import { HomeDetailPage } from './components/simple/HomeDetailPage';
 import { GrandeurPage } from './components/simple/GrandeurPage';
+import { FalconEstatesPage } from './components/simple/FalconEstatesPage';
 import { GalleryPage } from './components/GalleryPage';
 import { HOME_DETAILS } from './data/site';
 
@@ -24,6 +25,7 @@ function App() {
   if (path.startsWith('/gallery')) return <GalleryPage />;
   if (path.startsWith('/homes-available')) return <HomesAvailablePage />;
   if (path.startsWith('/grandeur')) return <GrandeurPage />;
+  if (path.startsWith('/falcon-estates')) return <FalconEstatesPage />;
   if (path.startsWith('/majestic')) return <HomeDetailPage home={HOME_DETAILS.majestic} />;
   if (path.startsWith('/heritage')) return <HomeDetailPage home={HOME_DETAILS.heritage} />;
   if (path.startsWith('/pine-woods')) return <PineWoodsPage />;
