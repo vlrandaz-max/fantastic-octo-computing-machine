@@ -11,10 +11,13 @@ import { SimpleFooter } from './SimpleFooter';
  * content is first-party (the site owner's own copy), not third-party
  * input, so that's safe here.
  *
- * Photos (grandeur-01 through grandeur-14, plus the Matterport QR code)
- * aren't in this repo's local asset set — only grandeur-exterior.jpg
- * (used elsewhere) was ever uploaded — so they're hotlinked directly from
- * landrhomes.com for now. Upload local copies and they can be swapped in.
+ * Photos: 6 of the real photos have been uploaded and matched to their
+ * captions (cover/twilight exterior, family room, dining room, kitchen,
+ * prep kitchen, primary suite) — those use local /assets/home files. The
+ * rest (foyer, second fireplace angle, breakfast nook, study, flex room,
+ * second primary-suite/bath angles, and the Matterport QR code) are still
+ * hotlinked from landrhomes.com pending matching uploads — swap those in
+ * as they're confirmed rather than guessing at a match.
  */
 
 const GRANDEUR_STYLE = `
@@ -53,7 +56,7 @@ const GRANDEUR_STYLE = `
 
   .grandeur-page .cover-photo {
     position: absolute; inset: 0;
-    background-image: url('https://landrhomes.com/wp-content/uploads/grandeur-01.jpg');
+    background-image: url('/assets/home/grandeur-exterior-twilight.jpg');
     background-size: cover;
     background-position: center 62%;
   }
@@ -963,15 +966,15 @@ const GRANDEUR_BODY = `
 
     <div class="gal-grid">
       <div class="gal-item full"><img src="${CDN}/grandeur-03.jpg" alt="Grand Foyer · Oak Staircase &amp; Wrought Iron"><div class="gal-cap">Grand Foyer &middot; Oak Staircase &amp; Wrought Iron</div></div>
-      <div class="gal-item full"><img src="${CDN}/grandeur-04.jpg" alt="Two-Story Family Room"><div class="gal-cap">Two-Story Family Room &middot; Floor-to-Ceiling Windows</div></div>
+      <div class="gal-item full"><img src="/assets/home/grandeur-family-room.jpg" alt="Two-Story Family Room"><div class="gal-cap">Two-Story Family Room &middot; Floor-to-Ceiling Windows</div></div>
       <div class="gal-item"><img src="${CDN}/grandeur-05.jpg" alt="Family Room · Stone Fireplace"><div class="gal-cap">Family Room &middot; Stone Fireplace</div></div>
-      <div class="gal-item"><img src="${CDN}/grandeur-06.jpg" alt="Formal Dining Room"><div class="gal-cap">Formal Dining Room</div></div>
-      <div class="gal-item"><img src="${CDN}/grandeur-07.jpg" alt="Gourmet Kitchen"><div class="gal-cap">Gourmet Kitchen &middot; Quartz &amp; Custom Cabinetry</div></div>
-      <div class="gal-item"><img src="${CDN}/grandeur-08.jpg" alt="Prep Kitchen · Farmhouse Sink"><div class="gal-cap">Prep Kitchen &middot; Farmhouse Sink</div></div>
+      <div class="gal-item"><img src="/assets/home/grandeur-dining-room.jpg" alt="Formal Dining Room"><div class="gal-cap">Formal Dining Room</div></div>
+      <div class="gal-item"><img src="/assets/home/grandeur-kitchen.jpg" alt="Gourmet Kitchen"><div class="gal-cap">Gourmet Kitchen &middot; Quartz &amp; Custom Cabinetry</div></div>
+      <div class="gal-item"><img src="/assets/home/grandeur-kitchen-prep.png" alt="Prep Kitchen · Farmhouse Sink"><div class="gal-cap">Prep Kitchen &middot; Farmhouse Sink</div></div>
       <div class="gal-item"><img src="${CDN}/grandeur-09.jpg" alt="Breakfast Nook"><div class="gal-cap">Breakfast Nook</div></div>
       <div class="gal-item"><img src="${CDN}/grandeur-10.jpg" alt="Private Study"><div class="gal-cap">Private Study</div></div>
       <div class="gal-item"><img src="${CDN}/grandeur-11.jpg" alt="Flex Room"><div class="gal-cap">Flex Room &middot; Built-In Desk &amp; Cabinetry</div></div>
-      <div class="gal-item full"><img src="${CDN}/grandeur-12.jpg" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
+      <div class="gal-item full"><img src="/assets/home/grandeur-primary-suite.jpg" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
       <div class="gal-item full"><img src="${CDN}/grandeur-13.jpg" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
       <div class="gal-item full"><img src="${CDN}/grandeur-14.jpg" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
     </div>
