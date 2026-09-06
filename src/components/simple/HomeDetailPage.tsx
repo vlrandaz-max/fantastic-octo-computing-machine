@@ -57,6 +57,12 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
             pointerEvents: 'none',
           }}
         />
+        <div style={{ position: 'absolute', right: 48, bottom: 44, zIndex: 5, textAlign: 'right' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 15, color: 'rgba(242,240,230,0.85)' }}>{COMPANY.name}</p>
+          <p style={{ fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.5)' }}>
+            Custom Home Builder · Est. Rochester Hills
+          </p>
+        </div>
         <div style={{ position: 'relative', zIndex: 5, width: '100%', padding: '0 40px 64px', textAlign: 'center' }}>
           <a
             href="/pine-woods"
@@ -130,6 +136,12 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
               }}
             >
               {home.introHeadingPlain} <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>{home.introHeadingEmphasis}</em>
+              {home.introHeadingPlain2 && (
+                <>
+                  <br />
+                  {home.introHeadingPlain2}
+                </>
+              )}
             </h2>
           </div>
           <div>
@@ -180,6 +192,12 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
             }}
           >
             {home.floorPlanHeadingPlain} <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>{home.floorPlanHeadingEmphasis}</em>
+            {home.floorPlanHeadingPlain2 && (
+              <>
+                <br />
+                {home.floorPlanHeadingPlain2}
+              </>
+            )}
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--fg2)', maxWidth: 760, margin: '0 auto 48px' }}>{home.floorPlanDescription}</p>
 

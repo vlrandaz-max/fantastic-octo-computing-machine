@@ -90,10 +90,12 @@ export interface HomeDetail {
   introEyebrow: string;
   introHeadingPlain: string;
   introHeadingEmphasis: string;
+  introHeadingPlain2?: string;
   introParagraphs: string[];
   stats?: { value: string; label: string }[];
   floorPlanHeadingPlain: string;
   floorPlanHeadingEmphasis: string;
+  floorPlanHeadingPlain2?: string;
   floorPlanDescription: string;
   floorPlans: { src: string; caption: string }[];
   galleryCaption: string;
@@ -118,25 +120,28 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     tagline: 'Classic Brick & Stone Architecture',
     badge: 'Now Open · Immediate Occupancy',
     addressLine: 'Rochester Hills, MI 48309',
-    heroImage: '/assets/pine-woods/majestic-exterior.jpg',
+    heroImage: '/assets/pine-woods/majestic-exterior-twilight.png',
     introEyebrow: 'Welcome to The Majestic',
-    introHeadingPlain: 'A Floor Plan Built for',
-    introHeadingEmphasis: 'Real Life',
+    introHeadingPlain: 'A Floor Plan',
+    introHeadingEmphasis: 'Built for Real',
+    introHeadingPlain2: 'Everyday Life',
     introParagraphs: [
       'The Majestic pairs a classic brick-and-stone façade with an open, light-filled interior — designed around the way families actually live. A sweeping great room flows directly into the kitchen and dining nook, while a private primary suite, main-floor library, and two additional bedrooms complete the first level.',
       'Upstairs, a versatile loft and bonus room offer flexible space for a media room, second family room, or home gym — whatever the household needs it to be.',
+      'The Majestic is one of the homes available in Pine Woods, an exclusive enclave of 28 homesites in Rochester Hills developed by L&R Homes, Inc. and built by Town Properties, LLC — an L&R Homes affiliate.',
     ],
     stats: [
       { value: '2,662 sq ft', label: 'Total Habitable' },
       { value: '3', label: 'Bedrooms' },
-      { value: '3 Full · 1 Half', label: 'Bathrooms' },
-      { value: '3-Car', label: 'Garage' },
-      { value: 'Walk-Out', label: 'Basement' },
+      { value: '3 Car', label: 'Garage' },
+      { value: '2 Story', label: 'Plus Bonus Level' },
+      { value: 'Open', label: 'Concept Living' },
     ],
-    floorPlanHeadingPlain: 'One-Level Living,',
-    floorPlanHeadingEmphasis: 'Room to Grow',
+    floorPlanHeadingPlain: 'Thoughtfully',
+    floorPlanHeadingEmphasis: 'Designed',
+    floorPlanHeadingPlain2: 'from Foyer to Bonus Room',
     floorPlanDescription:
-      'First floor: Foyer, Great Room, Kitchen, Nook, Pantry, a Primary Suite with Bath & walk-in closet, Library, Bedrooms 2–3 with a shared Bath, Laundry, and a 3-car garage. Second floor: a Loft, Bath, and Bonus Room above the garage.',
+      '2,662 sq ft of total habitable space. First floor: Foyer, Great Room, Kitchen & Nook, Library, Primary Suite, Bedrooms 2 & 3, Laundry, and a 3-car garage. Second floor: Loft, Bonus Room, and full bath.',
     floorPlans: [
       { src: '/assets/pine-woods/majestic-floorplan-1.jpg', caption: 'First Floor Plan' },
       { src: '/assets/pine-woods/majestic-floorplan-2.jpg', caption: 'Second Floor Plan' },
