@@ -3,9 +3,9 @@
  * community with a dedicated cinematic pass "given asset availability" —
  * that second Quarry-to-Threshold pass doesn't exist yet in this build
  * (no second set of photography/materials was handed off for it), so it
- * hands off to the Falcon Estates section on the conventional /simple
- * page instead of a fabricated cinematic route. Pine Woods and Homes
- * Available hand off to their own conventional pages.
+ * hands off to the conventional Falcon Estates community page instead of
+ * a fabricated cinematic route. Pine Woods and Homes Available hand off
+ * to their own conventional pages.
  */
 export function CommunityBranch() {
   return (
@@ -25,8 +25,8 @@ export function CommunityBranch() {
       </p>
       <nav aria-label="Communities" style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
         <a
-          href="/simple#falcon-estates"
-          title="No dedicated cinematic pass exists yet for this community — links to its section on the conventional page"
+          href="/falcon-estates-rochester-hills"
+          title="No dedicated cinematic pass exists yet for this community — links to its conventional page"
           style={{
             padding: '16px 28px',
             border: '1px solid rgba(196,160,90,0.4)',

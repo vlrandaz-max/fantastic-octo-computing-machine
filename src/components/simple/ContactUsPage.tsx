@@ -118,7 +118,7 @@ export function ContactUsPage() {
               <a href="/homes-available" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Homes Available →
               </a>
-              <a href="/simple#falcon-estates" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href="/falcon-estates-rochester-hills" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Falcon Estates →
               </a>
               <a href="/pine-woods" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>

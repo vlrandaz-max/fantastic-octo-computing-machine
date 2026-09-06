@@ -43,7 +43,7 @@ export const COMPANY = {
 
 export const NAV_LINKS = [
   { label: 'Home', href: '/simple' },
-  { label: 'Falcon Estates', href: '/simple#falcon-estates' },
+  { label: 'Falcon Estates', href: '/falcon-estates-rochester-hills' },
   { label: 'Homes Available', href: '/homes-available' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Pine Woods', href: '/pine-woods' },
