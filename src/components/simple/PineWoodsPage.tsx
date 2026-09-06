@@ -162,6 +162,65 @@ export function PineWoodsPage() {
         </div>
       </section>
 
+      {/* Discover Pine Woods CTA */}
+      <section style={{ padding: '80px 40px', background: '#131210', textAlign: 'center' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <p style={{ ...eyebrow, marginBottom: 8 }}>{PINE_WOODS.discoverCta.eyebrow}</p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 400,
+              fontSize: 'clamp(2rem,4vw,2.75rem)',
+              color: '#F2F0E6',
+              margin: '10px 0 20px',
+            }}
+          >
+            Discover <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-light)' }}>Pine Woods</em>
+          </h2>
+          <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(242,240,230,0.65)', marginBottom: 40 }}>{PINE_WOODS.discoverCta.body}</p>
+
+          <p style={{ ...eyebrow, fontSize: 10, marginBottom: 20 }}>Available Homes</p>
+          <div
+            className="simple-gallery-3"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, minmax(0, 320px))',
+              gap: 20,
+              justifyContent: 'center',
+              textAlign: 'left',
+              marginBottom: 40,
+            }}
+          >
+            {PINE_WOODS_HOMES.map((home) => (
+              <HomeCard key={home.name} home={home} dark />
+            ))}
+          </div>
+
+          <a
+            href="/contact-us"
+            style={{
+              display: 'inline-block',
+              border: '1px solid var(--color-brand-gold)',
+              color: '#F2F0E6',
+              fontSize: 12,
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              padding: '15px 32px',
+              marginBottom: 20,
+            }}
+          >
+            Contact Us
+          </a>
+          <p style={{ fontSize: 14, color: 'rgba(242,240,230,0.6)' }}>
+            {COMPANY.phone} &middot;{' '}
+            <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-light)' }}>
+              {COMPANY.email}
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* Inside the homes */}
       <section style={{ padding: '0 40px 96px', background: 'var(--bg1)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
@@ -262,65 +321,6 @@ export function PineWoodsPage() {
           </div>
           <p style={{ fontSize: 11, color: 'rgba(242,240,230,0.35)', marginTop: 12 }}>
             Built by {PINE_WOODS.builder} · {PINE_WOODS.builderNote}
-          </p>
-        </div>
-      </section>
-
-      {/* Discover Pine Woods CTA */}
-      <section style={{ padding: '80px 40px', background: '#131210', borderTop: '1px solid rgba(255,255,255,0.06)', textAlign: 'center' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <p style={{ ...eyebrow, marginBottom: 8 }}>{PINE_WOODS.discoverCta.eyebrow}</p>
-          <h2
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 400,
-              fontSize: 'clamp(2rem,4vw,2.75rem)',
-              color: '#F2F0E6',
-              margin: '10px 0 20px',
-            }}
-          >
-            Discover <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-light)' }}>Pine Woods</em>
-          </h2>
-          <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(242,240,230,0.65)', marginBottom: 40 }}>{PINE_WOODS.discoverCta.body}</p>
-
-          <p style={{ ...eyebrow, fontSize: 10, marginBottom: 20 }}>Available Homes</p>
-          <div
-            className="simple-gallery-3"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, minmax(0, 320px))',
-              gap: 20,
-              justifyContent: 'center',
-              textAlign: 'left',
-              marginBottom: 40,
-            }}
-          >
-            {PINE_WOODS_HOMES.map((home) => (
-              <HomeCard key={home.name} home={home} dark />
-            ))}
-          </div>
-
-          <a
-            href="/contact-us"
-            style={{
-              display: 'inline-block',
-              border: '1px solid var(--color-brand-gold)',
-              color: '#F2F0E6',
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              padding: '15px 32px',
-              marginBottom: 20,
-            }}
-          >
-            Contact Us
-          </a>
-          <p style={{ fontSize: 14, color: 'rgba(242,240,230,0.6)' }}>
-            {COMPANY.phone} &middot;{' '}
-            <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-light)' }}>
-              {COMPANY.email}
-            </a>
           </p>
         </div>
       </section>
