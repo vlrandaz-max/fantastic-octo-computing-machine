@@ -49,14 +49,6 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
         <div style={{ position: 'absolute', inset: 0, background: `url('${home.heroImage}') center 45% / cover no-repeat` }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,12,16,0.55) 0%, rgba(10,12,16,0.35) 40%, rgba(10,12,16,0.85) 100%)' }} />
         <SimpleNav />
-        <div
-          style={{
-            position: 'absolute',
-            inset: '96px 24px 24px',
-            border: '1px solid rgba(212,184,122,0.45)',
-            pointerEvents: 'none',
-          }}
-        />
         <div style={{ position: 'absolute', right: 48, bottom: 44, zIndex: 5, textAlign: 'right' }}>
           <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 15, color: 'rgba(242,240,230,0.85)' }}>{COMPANY.name}</p>
           <p style={{ fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.5)' }}>
