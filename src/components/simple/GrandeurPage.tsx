@@ -711,6 +711,25 @@ const GRANDEUR_STYLE = `
     .grandeur-page .back-title { font-size: 38px; }
     .grandeur-page .contact-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   }
+
+  @media print {
+    .grandeur-page .cover, .grandeur-page .intro-wrap, .grandeur-page .plans-section,
+    .grandeur-page .features-section, .grandeur-page .arch-section, .grandeur-page .community-section,
+    .grandeur-page .gallery-section { page-break-after: always; }
+    .grandeur-page { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @keyframes grandeurFadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .grandeur-page .cover-eyebrow { animation: grandeurFadeUp 0.8s ease 0.2s both; }
+  .grandeur-page .cover-rule { animation: grandeurFadeUp 0.8s ease 0.4s both; }
+  .grandeur-page .cover-title { animation: grandeurFadeUp 0.9s ease 0.5s both; }
+  .grandeur-page .cover-subtitle { animation: grandeurFadeUp 0.8s ease 0.7s both; }
+  .grandeur-page .cover-divider { animation: grandeurFadeUp 0.8s ease 0.9s both; }
+  .grandeur-page .cover-location { animation: grandeurFadeUp 0.8s ease 1.0s both; }
+  .grandeur-page .cover-badge { animation: grandeurFadeUp 0.8s ease 1.1s both; }
 `;
 
 const CDN = 'https://landrhomes.com/wp-content/uploads';
