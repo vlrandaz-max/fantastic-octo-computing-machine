@@ -8,6 +8,7 @@ import { ContactUsPage } from './components/simple/ContactUsPage';
 import { HomeDetailPage } from './components/simple/HomeDetailPage';
 import { GrandeurPage } from './components/simple/GrandeurPage';
 import { FalconEstatesPage } from './components/simple/FalconEstatesPage';
+import { ClassicHomePage } from './components/simple/ClassicHomePage';
 import { GalleryPage } from './components/GalleryPage';
 import { HOME_DETAILS } from './data/site';
 
@@ -20,7 +21,10 @@ function App() {
   // experience rather than a replacement for it; `/gallery` is the full
   // photo gallery every "View Full Gallery" link on the site points to;
   // `/homes-available`, `/pine-woods`, and `/contact-us` mirror real pages
-  // on the live landrhomes.com site that didn't exist in this build yet.
+  // on the live landrhomes.com site that didn't exist in this build yet;
+  // `/classic` is a third homepage variant styled after a bold-sans,
+  // video-hero homebuilder marketing template (requested to mimic
+  // lassalehomes.com's layout), built from L&R's own copy and photography.
   const path = typeof window !== 'undefined' ? window.location.pathname : '';
   if (path.startsWith('/gallery')) return <GalleryPage />;
   if (path.startsWith('/homes-available')) return <HomesAvailablePage />;
@@ -30,6 +34,7 @@ function App() {
   if (path.startsWith('/heritage')) return <HomeDetailPage home={HOME_DETAILS.heritage} />;
   if (path.startsWith('/pine-woods')) return <PineWoodsPage />;
   if (path.startsWith('/contact-us')) return <ContactUsPage />;
+  if (path.startsWith('/classic')) return <ClassicHomePage />;
   if (path.startsWith('/simple')) return <SimpleHome />;
 
   return mode === 'cinematic' ? <CinematicExperience /> : <TwoDExperience />;

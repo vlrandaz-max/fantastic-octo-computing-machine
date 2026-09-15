@@ -174,3 +174,97 @@ button:focus-visible {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+/* ClassicHomePage (bold-sans homebuilder template) */
+@media (max-width: 900px) {
+  .classic-nav-links {
+    display: none !important;
+  }
+  .classic-nav-burger {
+    display: block !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .classic-nav-drawer {
+    display: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .classic-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .classic-footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.accordion-gallery-item:hover {
+  flex: 2.4 !important;
+}
+
+@media (max-width: 700px) {
+  .accordion-gallery {
+    flex-wrap: wrap;
+    height: auto !important;
+  }
+  .accordion-gallery-item {
+    flex: 1 1 50% !important;
+    height: 220px;
+  }
+  .accordion-gallery-item:hover {
+    flex: 1 1 50% !important;
+  }
+}
+
+.classic-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: classic-bg-fade 18s infinite;
+}
+
+.classic-bg-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.classic-bg-slide:nth-child(2) {
+  animation-delay: 6s;
+}
+
+.classic-bg-slide:nth-child(3) {
+  animation-delay: 12s;
+}
+
+@keyframes classic-bg-fade {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  8% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  41% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .classic-bg-slide {
+    animation: none;
+    opacity: 1;
+  }
+  .classic-bg-slide:not(:first-child) {
+    display: none;
+  }
+}
