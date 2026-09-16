@@ -64,13 +64,16 @@ export function ClassicNav() {
           justifyContent: 'space-between',
         }}
       >
-        <a href="/classic" style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
-          <span className="classic-title" style={{ fontSize: 24, letterSpacing: '0.05em', color: '#F2F0E6' }}>
-            L&amp;R Homes
-          </span>
-          <span style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 10, fontWeight: 500, letterSpacing: '0.28em', color: 'var(--color-brand-gold-light)' }}>
-            TIME-HONORED SINCE 1973
-          </span>
+        <a href="/classic" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <img src="/assets/lr-logo-badge.png" alt="" style={{ width: 42, height: 42, objectFit: 'contain' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+            <span className="classic-title" style={{ fontSize: 24, letterSpacing: '0.05em', color: '#F2F0E6' }}>
+              L&amp;R Homes
+            </span>
+            <span style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 10, fontWeight: 500, letterSpacing: '0.28em', color: 'var(--color-brand-gold-light)' }}>
+              TIME-HONORED SINCE 1973
+            </span>
+          </div>
         </a>
 
         <nav aria-label="Primary" className="classic-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
