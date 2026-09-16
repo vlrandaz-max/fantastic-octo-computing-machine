@@ -86,9 +86,6 @@ export function ClassicFooter() {
               {link.label}
             </a>
           ))}
-          <a href="/" style={{ color: 'var(--fg3)' }}>
-            The Full Experience
-          </a>
         </nav>
       </div>
     </footer>
