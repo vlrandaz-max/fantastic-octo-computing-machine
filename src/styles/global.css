@@ -196,25 +196,37 @@ button:focus-visible {
     grid-template-columns: 1fr !important;
   }
   .classic-footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .classic-info-bar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .classic-footer-grid {
     grid-template-columns: 1fr !important;
   }
+  .classic-collage {
+    height: 340px !important;
+  }
+  .classic-collage-offset {
+    display: none;
+  }
 }
 
-.accordion-gallery-item:hover {
-  flex: 2.4 !important;
+@media (max-width: 900px) {
+  .classic-explore-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
-@media (max-width: 700px) {
-  .accordion-gallery {
-    flex-wrap: wrap;
-    height: auto !important;
-  }
-  .accordion-gallery-item {
-    flex: 1 1 50% !important;
-    height: 220px;
-  }
-  .accordion-gallery-item:hover {
-    flex: 1 1 50% !important;
+@media (max-width: 520px) {
+  .classic-explore-row {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -267,4 +279,102 @@ button:focus-visible {
   .classic-bg-slide:not(:first-child) {
     display: none;
   }
+}
+
+/* rh.house-inspired type system for ClassicHomePage — thin uppercase
+   Cormorant Garamond display type paired with Jost for nav/body/kickers,
+   a bordered "badge" subtitle, underline-only buttons, and the
+   float-on-hover button micro-interaction. */
+.classic-title {
+  font-family: 'Cormorant Garamond', var(--font-display);
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.classic-kicker {
+  font-family: 'Jost', var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.classic-flanked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-family: 'Jost', var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.classic-flanked::before,
+.classic-flanked::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.classic-pattern-bg {
+  background-color: var(--bg1);
+  background-image: linear-gradient(45deg, rgba(196, 160, 90, 0.12) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(196, 160, 90, 0.12) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.classic-stem-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.classic-stem-line {
+  width: 1px;
+  height: 40px;
+  background: var(--color-brand-gold);
+}
+
+.classic-btn-outline {
+  display: inline-block;
+  font-family: 'Jost', var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-brand-gold);
+  padding: 15px 32px;
+  transition: transform var(--transition-base) var(--ease-out), background var(--transition-base) var(--ease-out), color var(--transition-base) var(--ease-out);
+}
+
+.classic-btn-underline {
+  display: inline-block;
+  font-family: 'Jost', var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-dark);
+  border-bottom: 1px solid var(--color-brand-gold);
+  padding-bottom: 4px;
+  transition: transform var(--transition-base) var(--ease-out), letter-spacing var(--transition-base) var(--ease-out);
+}
+
+.classic-hover-float:hover {
+  transform: translateY(-4px);
+}
+
+.classic-btn-outline:hover {
+  background: var(--color-brand-gold);
+  color: #161310;
+}
+
+.classic-btn-underline:hover {
+  letter-spacing: 0.2em;
 }

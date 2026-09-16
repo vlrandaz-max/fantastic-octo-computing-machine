@@ -1,36 +1,34 @@
 import { ClassicNav } from './ClassicNav';
 import { ClassicFooter } from './ClassicFooter';
-import { AccordionGallery } from './AccordionGallery';
 import { COMPANY } from '../../data/site';
 
-const eyebrow: React.CSSProperties = {
-  fontFamily: "'Montserrat', var(--font-body)",
+const kicker: React.CSSProperties = {
+  fontFamily: "'Jost', var(--font-body)",
   fontSize: 13,
-  fontWeight: 700,
-  letterSpacing: '0.14em',
+  fontWeight: 500,
+  letterSpacing: '0.2em',
   textTransform: 'uppercase',
   color: 'var(--color-brand-gold-dark)',
 };
 
 const heading: React.CSSProperties = {
-  fontFamily: "'Montserrat', var(--font-body)",
-  fontWeight: 800,
-  fontSize: 'clamp(2.25rem, 4vw, 3.1rem)',
+  fontFamily: "'Cormorant Garamond', var(--font-display)",
+  fontWeight: 300,
+  textTransform: 'uppercase',
+  letterSpacing: '0.04em',
+  fontSize: 'clamp(2.5rem, 4.5vw, 3.6rem)',
   color: 'var(--color-brand-dark)',
-  lineHeight: 1.1,
-  margin: '14px 0 22px',
+  lineHeight: 1.05,
+  margin: '16px 0 22px',
+  overflowWrap: 'break-word',
 };
 
-const solidButton: React.CSSProperties = {
-  display: 'inline-block',
-  background: 'var(--color-brand-gold)',
-  color: '#161310',
-  fontFamily: "'Montserrat', var(--font-body)",
-  fontSize: 13,
-  fontWeight: 700,
-  letterSpacing: '0.06em',
-  padding: '15px 30px',
-};
+const EXPLORE_CARDS = [
+  { label: 'Falcon Estates', image: '/assets/home/falcon-estates-hero.jpg', href: '/falcon-estates-rochester-hills' },
+  { label: 'Pine Woods', image: '/assets/pine-woods/heritage-exterior-twilight.jpg', href: '/pine-woods' },
+  { label: 'Homes Available', image: '/assets/home/grandeur-exterior-twilight.jpg', href: '/homes-available' },
+  { label: 'Gallery', image: '/assets/home/dining-room-staged-2.jpg', href: '/gallery' },
+];
 
 const CTA_SLIDES = [
   '/assets/home/grandeur-exterior-twilight.jpg',
@@ -39,12 +37,14 @@ const CTA_SLIDES = [
 ];
 
 /**
- * A homepage variant structured after a bold-sans, video-hero
- * homebuilder marketing template (sticky black nav with a "Build"
- * dropdown, full-bleed video hero, an About Us split section, a
- * hover-accordion photo band, a dark CTA band with a slow-crossfading
- * background, and a light contact footer) — built entirely from L&R
- * Homes' own real copy, facts, and photography.
+ * A homepage variant structured after rh.house's restaurant-marketing
+ * template: sticky two-tier dark nav, full-bleed video hero with a
+ * flanking-line subtitle badge, an offset two-photo collage in the About
+ * section against a faint gold trellis pattern, stem-labeled photo cards,
+ * a dark crossfading CTA band, and a centered contact footer — carrying
+ * rh.house's Cormorant Garamond / Jost type pairing and outline/underline
+ * button language, built entirely from L&R Homes' own real copy, facts,
+ * and photography.
  */
 export function ClassicHomePage() {
   return (
@@ -52,7 +52,7 @@ export function ClassicHomePage() {
       <ClassicNav />
 
       {/* Hero */}
-      <section style={{ position: 'relative', minHeight: '88vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+      <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <video
           autoPlay
           muted
@@ -63,98 +63,117 @@ export function ClassicHomePage() {
         >
           <source src="/assets/video/household-tour.mp4" type="video/mp4" />
         </video>
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(15,13,10,0.5)' }} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: 980, margin: '0 auto', textAlign: 'center', padding: '0 24px' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(11,11,11,0.48)' }} />
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: 1000, margin: '0 auto', textAlign: 'center', padding: '0 24px' }}>
           <h1
             style={{
-              fontFamily: "'Montserrat', var(--font-body)",
-              fontWeight: 800,
-              fontSize: 'clamp(2.5rem, 5.5vw, 3.75rem)',
+              fontFamily: "'Cormorant Garamond', var(--font-display)",
+              fontWeight: 300,
+              textTransform: 'uppercase',
+              letterSpacing: '0.03em',
+              fontSize: 'clamp(2rem, 6vw, 4.5rem)',
               color: '#F8F4EE',
-              lineHeight: 1.15,
-              marginBottom: 20,
+              lineHeight: 1.1,
+              marginBottom: 26,
+              overflowWrap: 'break-word',
             }}
           >
             Time-Honored Craftsmanship, Built To Last
           </h1>
-          <p style={{ fontFamily: "'Montserrat', var(--font-body)", fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'rgba(248,244,238,0.85)', marginBottom: 32 }}>
-            Metro Detroit&rsquo;s Custom Home Builder Since 1973
+          <p className="classic-flanked" style={{ color: '#F8F4EE', marginBottom: 36 }}>
+            L&amp;R Homes
           </p>
-          <a
-            href="#about-us"
-            style={{
-              display: 'inline-block',
-              border: '1px solid rgba(248,244,238,0.7)',
-              color: '#F8F4EE',
-              fontFamily: "'Montserrat', var(--font-body)",
-              fontSize: 13,
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              padding: '16px 34px',
-            }}
-          >
-            LEARN MORE
+          <a href="#about-us" className="classic-btn-outline classic-hover-float" style={{ color: '#F8F4EE' }}>
+            Learn More
           </a>
         </div>
       </section>
 
       {/* About Us */}
-      <section id="about-us" style={{ padding: '96px 32px' }}>
-        <div className="classic-grid-2" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+      <section id="about-us" className="classic-pattern-bg" style={{ padding: '100px 32px' }}>
+        <div className="classic-grid-2" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
           <div>
-            <p style={eyebrow}>About Us</p>
-            <h2 style={heading}>{COMPANY.ourStory.heading}</h2>
+            <p style={kicker}>Modern Craftsmanship in a Trusted Name</p>
+            <h2 style={heading}>
+              Welcome
+              <br />
+              To L&amp;R Homes
+            </h2>
             {COMPANY.ourStory.body.map((p) => (
-              <p key={p} style={{ fontSize: 16, lineHeight: 1.85, color: 'var(--fg2)', marginBottom: 16, maxWidth: 480 }}>
+              <p key={p} style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 16, lineHeight: 1.85, color: 'var(--fg2)', marginBottom: 16, maxWidth: 480 }}>
                 {p}
               </p>
             ))}
-            <a href="/homes-available" style={{ ...solidButton, marginTop: 10 }}>
-              Discover More
+            <a href="/homes-available" className="classic-btn-underline" style={{ marginTop: 10 }}>
+              About Us
             </a>
           </div>
-          <img
-            src="/assets/home/grandeur-exterior-twilight.jpg"
-            alt="An L&amp;R Homes residence at twilight"
-            loading="lazy"
-            style={{ width: '100%', height: 480, objectFit: 'cover', borderRadius: '4px 4px 4px 120px', boxShadow: 'var(--shadow-2)' }}
-          />
+          <div className="classic-collage" style={{ position: 'relative', height: 520 }}>
+            <img
+              src="/assets/home/grandeur-exterior-twilight.jpg"
+              alt="An L&amp;R Homes residence at twilight"
+              loading="lazy"
+              style={{ position: 'absolute', left: 0, bottom: 0, width: '58%', height: '82%', objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
+            />
+            <img
+              className="classic-collage-offset"
+              src="/assets/home/kitchen-full-run.jpg"
+              alt="A kitchen in an L&amp;R Homes residence"
+              loading="lazy"
+              style={{ position: 'absolute', right: 0, top: 0, width: '48%', height: '68%', objectFit: 'cover', boxShadow: 'var(--shadow-3)' }}
+            />
+          </div>
         </div>
       </section>
 
-      {/* Photo accordion */}
-      <AccordionGallery
-        images={[
-          { src: '/assets/home/kitchen-full-run.jpg', alt: "A chef's kitchen in an L&R Homes residence" },
-          { src: '/assets/home/primary-suite-staged-4.png', alt: 'A primary suite in an L&R Homes residence' },
-          { src: '/assets/home/family-room-3-staged.jpg', alt: 'A family room in an L&R Homes residence' },
-          { src: '/assets/home/foyer-staged.jpg', alt: 'A foyer in an L&R Homes residence' },
-          { src: '/assets/home/dining-room-staged-2.jpg', alt: 'A dining room in an L&R Homes residence' },
-        ]}
-      />
+      {/* Explore */}
+      <section style={{ padding: '100px 32px', background: 'var(--bg1)' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
+          <p className="classic-flanked" style={{ color: 'var(--color-brand-gold-dark)', marginBottom: 20 }}>
+            Where We Build
+          </p>
+          <h2 style={heading}>Explore Our Communities</h2>
+          <div className="classic-explore-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, marginTop: 56 }}>
+            {EXPLORE_CARDS.map((card) => (
+              <a key={card.label} href={card.href} className="classic-stem-card">
+                <img
+                  src={card.image}
+                  alt={card.label}
+                  loading="lazy"
+                  style={{ width: '100%', height: 300, objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
+                />
+                <span className="classic-stem-line" />
+                <span
+                  className="classic-btn-outline classic-hover-float"
+                  style={{ color: 'var(--color-brand-dark)', borderColor: 'var(--color-brand-gold)' }}
+                >
+                  {card.label}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* New Construction CTA */}
-      <section style={{ position: 'relative', minHeight: 520, display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+      <section style={{ position: 'relative', minHeight: 540, display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
           {CTA_SLIDES.map((src) => (
             <div key={src} className="classic-bg-slide" style={{ backgroundImage: `url('${src}')` }} />
           ))}
         </div>
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(12,10,8,0.68)' }} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: 1280, margin: '0 auto', padding: '0 32px', width: '100%' }}>
-          <div style={{ maxWidth: 560 }}>
-            <p style={{ ...eyebrow, color: 'var(--color-brand-gold-light)' }}>New Construction</p>
-            <h2 style={{ ...heading, color: '#F8F4EE' }}>Specializing In Move-In Ready Homes</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.85, color: 'rgba(248,244,238,0.8)', marginBottom: 12 }}>
-              {COMPANY.ourStory.body[2]}
-            </p>
-            <p style={{ fontSize: 14, color: 'rgba(248,244,238,0.65)', marginBottom: 26 }}>
-              Learn More About Our Current Homes
-            </p>
-            <a href="/homes-available" style={solidButton}>
-              View Homes
-            </a>
-          </div>
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(11,11,11,0.66)' }} />
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: 1280, margin: '0 auto', padding: '0 32px', width: '100%', textAlign: 'center' }}>
+          <p className="classic-flanked" style={{ color: 'var(--color-brand-gold-light)', marginBottom: 20 }}>
+            New Construction
+          </p>
+          <h2 style={{ ...heading, color: '#F8F4EE', margin: '0 auto 24px' }}>Specializing In Move-In Ready Homes</h2>
+          <p style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 16, lineHeight: 1.85, color: 'rgba(248,244,238,0.82)', maxWidth: 640, margin: '0 auto 32px' }}>
+            {COMPANY.ourStory.body[2]}
+          </p>
+          <a href="/homes-available" className="classic-btn-outline classic-hover-float" style={{ color: '#F8F4EE' }}>
+            View Homes
+          </a>
         </div>
       </section>
 

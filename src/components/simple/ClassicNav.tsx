@@ -17,17 +17,18 @@ const LINKS = [
 ];
 
 const linkStyle: React.CSSProperties = {
-  fontFamily: "'Montserrat', var(--font-body)",
+  fontFamily: "'Jost', var(--font-body)",
   fontSize: 14,
-  fontWeight: 600,
+  fontWeight: 500,
   color: '#F2F0E6',
 };
 
 /**
- * Sticky, always-solid dark header — logo left, horizontal nav with a
- * hover/click "Build" dropdown right, styled after the bold-sans
- * homebuilder-marketing-site template this page mimics rather than the
- * serif L&R brand chrome used elsewhere in this build.
+ * Sticky, always-solid dark header — a thin info bar (address / phone /
+ * email) over a main row with logo left and a hover/click "Build"
+ * dropdown right, styled after rh.house's two-tier restaurant-site
+ * header: Jost for nav/body type, an outlined CTA button rather than a
+ * filled one.
  */
 export function ClassicNav() {
   const [open, setOpen] = useState(false);
@@ -39,23 +40,48 @@ export function ClassicNav() {
         position: 'sticky',
         top: 0,
         zIndex: 30,
-        background: 'rgba(19,18,16,0.94)',
+        background: 'rgba(11,11,11,0.96)',
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}
     >
       <div
+        className="classic-info-bar"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 36,
+          padding: '9px 24px',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          fontFamily: "'Jost', var(--font-body)",
+          fontSize: 12,
+          letterSpacing: '0.04em',
+          color: 'rgba(242,240,230,0.7)',
+        }}
+      >
+        <span>{COMPANY.addressShort}</span>
+        <a href={COMPANY.phoneHref} style={{ color: 'inherit' }}>
+          {COMPANY.phone}
+        </a>
+        <a href={`mailto:${COMPANY.email}`} style={{ color: 'inherit' }}>
+          {COMPANY.email}
+        </a>
+      </div>
+
+      <div
         style={{
           maxWidth: 1400,
           margin: '0 auto',
-          padding: '14px 32px',
+          padding: '16px 32px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
       >
         <a href="/classic" style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
-          <span style={{ fontFamily: 'var(--font-display)', fontSize: 28, color: '#F2F0E6' }}>L&amp;R Homes</span>
-          <span style={{ fontFamily: "'Montserrat', var(--font-body)", fontSize: 10, fontWeight: 600, letterSpacing: '0.28em', color: 'var(--color-brand-gold-light)' }}>
+          <span className="classic-title" style={{ fontSize: 24, letterSpacing: '0.05em', color: '#F2F0E6' }}>
+            L&amp;R Homes
+          </span>
+          <span style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 10, fontWeight: 500, letterSpacing: '0.28em', color: 'var(--color-brand-gold-light)' }}>
             TIME-HONORED SINCE 1973
           </span>
         </a>
@@ -85,7 +111,7 @@ export function ClassicNav() {
                       top: '100%',
                       left: 0,
                       marginTop: 10,
-                      background: '#131210',
+                      background: '#0b0b0b',
                       border: '1px solid rgba(255,255,255,0.1)',
                       minWidth: 200,
                       padding: '8px 0',
@@ -96,7 +122,7 @@ export function ClassicNav() {
                       <a
                         key={child.label}
                         href={child.href}
-                        style={{ ...linkStyle, display: 'block', padding: '10px 18px', fontWeight: 500 }}
+                        style={{ ...linkStyle, display: 'block', padding: '10px 18px' }}
                       >
                         {child.label}
                       </a>
@@ -110,16 +136,8 @@ export function ClassicNav() {
               </a>
             )
           )}
-          <a
-            href={COMPANY.phoneHref}
-            style={{
-              ...linkStyle,
-              background: 'var(--color-brand-gold)',
-              color: '#131210',
-              padding: '11px 20px',
-            }}
-          >
-            {COMPANY.phone}
+          <a href={COMPANY.phoneHref} className="classic-btn-outline classic-hover-float" style={{ color: '#F2F0E6' }}>
+            Find a Home
           </a>
         </nav>
 
@@ -136,7 +154,7 @@ export function ClassicNav() {
       </div>
 
       {open && (
-        <div className="classic-nav-drawer" style={{ background: '#131210', padding: '10px 24px 26px', display: 'flex', flexDirection: 'column', gap: 4 }}>
+        <div className="classic-nav-drawer" style={{ background: '#0b0b0b', padding: '10px 24px 26px', display: 'flex', flexDirection: 'column', gap: 4 }}>
           {LINKS.flatMap((link) => (link.children ? link.children : [link])).map((link) => (
             <a key={link.label} href={link.href} style={{ ...linkStyle, padding: '10px 0' }}>
               {link.label}
@@ -144,14 +162,8 @@ export function ClassicNav() {
           ))}
           <a
             href={COMPANY.phoneHref}
-            style={{
-              ...linkStyle,
-              background: 'var(--color-brand-gold)',
-              color: '#131210',
-              padding: '13px 20px',
-              textAlign: 'center',
-              marginTop: 10,
-            }}
+            className="classic-btn-outline"
+            style={{ color: '#F2F0E6', textAlign: 'center', marginTop: 10 }}
           >
             {COMPANY.phone}
           </a>
