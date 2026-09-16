@@ -1,20 +1,7 @@
 import { useState } from 'react';
-import { COMPANY } from '../../data/site';
+import { COMPANY, NAV_LINKS } from '../../data/site';
 
-const LINKS = [
-  { label: 'Home', href: '/classic' },
-  { label: 'About Us', href: '#about-us' },
-  {
-    label: 'Build',
-    children: [
-      { label: 'Falcon Estates', href: '/falcon-estates-rochester-hills' },
-      { label: 'Homes Available', href: '/homes-available' },
-      { label: 'Pine Woods', href: '/pine-woods' },
-    ],
-  },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Contact', href: '/contact-us' },
-];
+const LINKS = NAV_LINKS.filter((l) => l.label !== 'Home');
 
 const linkStyle: React.CSSProperties = {
   fontFamily: "'Jost', var(--font-body)",
@@ -25,14 +12,14 @@ const linkStyle: React.CSSProperties = {
 
 /**
  * Sticky, always-solid dark header — a thin info bar (address / phone /
- * email) over a main row with logo left and a hover/click "Build"
- * dropdown right, styled after rh.house's two-tier restaurant-site
- * header: Jost for nav/body type, an outlined CTA button rather than a
- * filled one.
+ * email) over a main row with logo left and nav right, styled after
+ * rh.house's two-tier restaurant-site header (Jost for nav/body type, an
+ * outlined CTA button rather than a filled one), sharing the same
+ * NAV_LINKS as the rest of the site's conventional pages (e.g.
+ * /pine-woods).
  */
 export function ClassicNav() {
   const [open, setOpen] = useState(false);
-  const [buildOpen, setBuildOpen] = useState(false);
 
   return (
     <header
@@ -87,55 +74,11 @@ export function ClassicNav() {
         </a>
 
         <nav aria-label="Primary" className="classic-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
-          {LINKS.map((link) =>
-            link.children ? (
-              <div
-                key={link.label}
-                style={{ position: 'relative' }}
-                onMouseEnter={() => setBuildOpen(true)}
-                onMouseLeave={() => setBuildOpen(false)}
-              >
-                <button
-                  type="button"
-                  onClick={() => setBuildOpen((v) => !v)}
-                  aria-expanded={buildOpen}
-                  style={{ ...linkStyle, display: 'flex', alignItems: 'center', gap: 6 }}
-                >
-                  {link.label}
-                  <span style={{ fontSize: 10 }}>▾</span>
-                </button>
-                {buildOpen && (
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '100%',
-                      left: 0,
-                      marginTop: 10,
-                      background: '#0b0b0b',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      minWidth: 200,
-                      padding: '8px 0',
-                      boxShadow: 'var(--shadow-3)',
-                    }}
-                  >
-                    {link.children.map((child) => (
-                      <a
-                        key={child.label}
-                        href={child.href}
-                        style={{ ...linkStyle, display: 'block', padding: '10px 18px' }}
-                      >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <a key={link.label} href={link.href} style={linkStyle}>
-                {link.label}
-              </a>
-            )
-          )}
+          {LINKS.map((link) => (
+            <a key={link.label} href={link.href} style={linkStyle}>
+              {link.label}
+            </a>
+          ))}
           <a href={COMPANY.phoneHref} className="classic-btn-outline classic-hover-float" style={{ color: '#F2F0E6' }}>
             Find a Home
           </a>
@@ -155,7 +98,7 @@ export function ClassicNav() {
 
       {open && (
         <div className="classic-nav-drawer" style={{ background: '#0b0b0b', padding: '10px 24px 26px', display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {LINKS.flatMap((link) => (link.children ? link.children : [link])).map((link) => (
+          {LINKS.map((link) => (
             <a key={link.label} href={link.href} style={{ ...linkStyle, padding: '10px 0' }}>
               {link.label}
             </a>

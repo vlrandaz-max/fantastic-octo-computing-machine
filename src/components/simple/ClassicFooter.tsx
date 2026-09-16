@@ -1,4 +1,4 @@
-import { COMPANY } from '../../data/site';
+import { COMPANY, NAV_LINKS } from '../../data/site';
 
 const colHeading: React.CSSProperties = {
   fontFamily: "'Jost', var(--font-body)",
@@ -78,15 +78,11 @@ export function ClassicFooter() {
           &copy;{year} {COMPANY.name}
         </span>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-          <a href="/homes-available" style={{ color: 'var(--fg3)' }}>
-            Homes Available
-          </a>
-          <a href="/gallery" style={{ color: 'var(--fg3)' }}>
-            Gallery
-          </a>
-          <a href="/contact-us" style={{ color: 'var(--fg3)' }}>
-            Contact
-          </a>
+          {NAV_LINKS.map((link) => (
+            <a key={link.label} href={link.href} style={{ color: 'var(--fg3)' }}>
+              {link.label}
+            </a>
+          ))}
         </nav>
       </div>
     </footer>
