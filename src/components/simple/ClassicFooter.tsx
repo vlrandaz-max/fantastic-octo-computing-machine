@@ -70,12 +70,15 @@ export function ClassicFooter() {
           gap: 12,
           fontFamily: "'Jost', var(--font-body)",
           fontSize: 12,
-          letterSpacing: '0.04em',
           color: 'var(--fg3)',
         }}
       >
         <span>
-          &copy;{year} {COMPANY.name}
+          {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
+          <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-dark)' }}>
+            {COMPANY.email}
+          </a>{' '}
+          | Copyright &copy; {year}
         </span>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
           {NAV_LINKS.map((link) => (
@@ -83,6 +86,9 @@ export function ClassicFooter() {
               {link.label}
             </a>
           ))}
+          <a href="/" style={{ color: 'var(--fg3)' }}>
+            The Full Experience
+          </a>
         </nav>
       </div>
     </footer>

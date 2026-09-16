@@ -45,7 +45,7 @@ export function ClassicNav() {
           color: 'rgba(242,240,230,0.7)',
         }}
       >
-        <span>{COMPANY.addressShort}</span>
+        <span>{COMPANY.address}</span>
         <a href={COMPANY.phoneHref} style={{ color: 'inherit' }}>
           {COMPANY.phone}
         </a>
