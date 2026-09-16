@@ -1,6 +1,7 @@
 import { ClassicNav } from './ClassicNav';
 import { ClassicFooter } from './ClassicFooter';
 import { COMPANY } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const kicker: React.CSSProperties = {
   fontFamily: "'Jost', var(--font-body)",
@@ -24,16 +25,16 @@ const heading: React.CSSProperties = {
 };
 
 const EXPLORE_CARDS = [
-  { label: 'Falcon Estates', image: '/assets/home/falcon-estates-hero.jpg', href: '/falcon-estates-rochester-hills' },
-  { label: 'Pine Woods', image: '/assets/pine-woods/heritage-exterior-twilight.jpg', href: '/pine-woods' },
-  { label: 'Homes Available', image: '/assets/home/grandeur-exterior-twilight.jpg', href: '/homes-available' },
-  { label: 'Gallery', image: '/assets/home/dining-room-staged-2.jpg', href: '/gallery' },
+  { label: 'Falcon Estates', image: withBase('/assets/home/falcon-estates-hero.jpg'), href: withBase('/falcon-estates-rochester-hills') },
+  { label: 'Pine Woods', image: withBase('/assets/pine-woods/heritage-exterior-twilight.jpg'), href: withBase('/pine-woods') },
+  { label: 'Homes Available', image: withBase('/assets/home/grandeur-exterior-twilight.jpg'), href: withBase('/homes-available') },
+  { label: 'Gallery', image: withBase('/assets/home/dining-room-staged-2.jpg'), href: withBase('/gallery') },
 ];
 
 const CTA_SLIDES = [
-  '/assets/home/grandeur-exterior-twilight.jpg',
-  '/assets/home/coachwood-front-twilight.jpg',
-  '/assets/home/family-room-3-staged.jpg',
+  withBase('/assets/home/grandeur-exterior-twilight.jpg'),
+  withBase('/assets/home/coachwood-front-twilight.jpg'),
+  withBase('/assets/home/family-room-3-staged.jpg'),
 ];
 
 /**
@@ -58,10 +59,10 @@ export function ClassicHomePage() {
           muted
           loop
           playsInline
-          poster="/assets/home/grandeur-exterior-twilight.jpg"
+          poster={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
         >
-          <source src="/assets/video/household-tour.mp4" type="video/mp4" />
+          <source src={withBase('/assets/video/household-tour.mp4')} type="video/mp4" />
         </video>
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(11,11,11,0.48)' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: 1000, margin: '0 auto', textAlign: 'center', padding: '0 24px' }}>
@@ -104,20 +105,20 @@ export function ClassicHomePage() {
                 {p}
               </p>
             ))}
-            <a href="/homes-available" className="classic-btn-underline" style={{ marginTop: 10 }}>
+            <a href={withBase('/homes-available')} className="classic-btn-underline" style={{ marginTop: 10 }}>
               About Us
             </a>
           </div>
           <div className="classic-collage" style={{ position: 'relative', height: 520 }}>
             <img
-              src="/assets/home/grandeur-exterior-twilight.jpg"
+              src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
               alt="An L&amp;R Homes residence at twilight"
               loading="lazy"
               style={{ position: 'absolute', left: 0, bottom: 0, width: '58%', height: '82%', objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
             />
             <img
               className="classic-collage-offset"
-              src="/assets/home/kitchen-full-run.jpg"
+              src={withBase('/assets/home/kitchen-full-run.jpg')}
               alt="A kitchen in an L&amp;R Homes residence"
               loading="lazy"
               style={{ position: 'absolute', right: 0, top: 0, width: '48%', height: '68%', objectFit: 'cover', boxShadow: 'var(--shadow-3)' }}
@@ -171,7 +172,7 @@ export function ClassicHomePage() {
           <p style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 16, lineHeight: 1.85, color: 'rgba(248,244,238,0.82)', maxWidth: 640, margin: '0 auto 32px' }}>
             {COMPANY.ourStory.body[2]}
           </p>
-          <a href="/homes-available" className="classic-btn-outline classic-hover-float" style={{ color: '#F8F4EE' }}>
+          <a href={withBase('/homes-available')} className="classic-btn-outline classic-hover-float" style={{ color: '#F8F4EE' }}>
             View Homes
           </a>
         </div>

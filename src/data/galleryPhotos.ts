@@ -1,3 +1,5 @@
+import { withBase } from '../lib/url';
+
 export interface GalleryPhoto {
   src: string;
   alt: string;
@@ -51,4 +53,4 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'laundry-upstairs-staged.png', alt: 'Laundry room — upstairs', category: 'interior' },
 ];
 
-export const GALLERY_PHOTOS: GalleryPhoto[] = RAW_PHOTOS.map((p) => ({ ...p, src: `/assets/home/${p.src}` }));
+export const GALLERY_PHOTOS: GalleryPhoto[] = RAW_PHOTOS.map((p) => ({ ...p, src: withBase(`/assets/home/${p.src}`) }));

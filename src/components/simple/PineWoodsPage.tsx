@@ -2,6 +2,7 @@ import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
 import { COMPANY, PINE_WOODS, PINE_WOODS_HOMES } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const eyebrow: React.CSSProperties = {
   fontFamily: 'var(--font-body)',
@@ -46,7 +47,7 @@ export function PineWoodsPage() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/pine-woods/pine-woods-hero.jpg') center / cover no-repeat",
+            background: `url('${withBase('/assets/pine-woods/pine-woods-hero.jpg')}') center / cover no-repeat`,
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(12,10,8,0.5) 0%, rgba(12,10,8,0.2) 40%, rgba(12,10,8,0.8) 100%)' }} />
@@ -154,7 +155,7 @@ export function PineWoodsPage() {
             Find Your <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>Homesite</em>
           </h2>
           <img
-            src="/assets/pine-woods/site-plan.jpg"
+            src={withBase('/assets/pine-woods/site-plan.jpg')}
             alt="Pine Woods site plan showing individual homesites"
             loading="lazy"
             style={{ width: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}
@@ -197,7 +198,7 @@ export function PineWoodsPage() {
           </div>
 
           <a
-            href="/contact-us"
+            href={withBase('/contact-us')}
             style={{
               display: 'inline-block',
               border: '1px solid var(--color-brand-gold)',
@@ -246,9 +247,9 @@ export function PineWoodsPage() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 48 }}
           >
             {[
-              ['/assets/pine-woods/majestic-great-room.png', 'The Majestic — great room'],
-              ['/assets/pine-woods/majestic-kitchen.png', 'The Majestic — kitchen'],
-              ['/assets/pine-woods/majestic-owners-suite.jpg', "The Majestic — owner's suite"],
+              [withBase('/assets/pine-woods/majestic-great-room.png'), 'The Majestic — great room'],
+              [withBase('/assets/pine-woods/majestic-kitchen.png'), 'The Majestic — kitchen'],
+              [withBase('/assets/pine-woods/majestic-owners-suite.jpg'), "The Majestic — owner's suite"],
             ].map(([src, alt]) => (
               <img
                 key={src}
@@ -268,9 +269,9 @@ export function PineWoodsPage() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}
           >
             {[
-              ['/assets/pine-woods/heritage-family-room.jpg', 'The Heritage — family room'],
-              ['/assets/pine-woods/heritage-kitchen.jpg', 'The Heritage — kitchen'],
-              ['/assets/pine-woods/heritage-primary-bedroom.jpg', 'The Heritage — primary bedroom'],
+              [withBase('/assets/pine-woods/heritage-family-room.jpg'), 'The Heritage — family room'],
+              [withBase('/assets/pine-woods/heritage-kitchen.jpg'), 'The Heritage — kitchen'],
+              [withBase('/assets/pine-woods/heritage-primary-bedroom.jpg'), 'The Heritage — primary bedroom'],
             ].map(([src, alt]) => (
               <img
                 key={src}

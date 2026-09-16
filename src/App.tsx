@@ -25,7 +25,11 @@ function App() {
   // `/classic` is a third homepage variant styled after a bold-sans,
   // video-hero homebuilder marketing template (requested to mimic
   // lassalehomes.com's layout), built from L&R's own copy and photography.
-  const path = typeof window !== 'undefined' ? window.location.pathname : '';
+  // Normalize against the deploy base ("/" in dev, a GitHub Pages project
+  // subpath in prod) so route matching below works in both.
+  const rawPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  const base = import.meta.env.BASE_URL;
+  const path = rawPath.startsWith(base) ? `/${rawPath.slice(base.length)}` : rawPath;
   if (path.startsWith('/gallery')) return <GalleryPage />;
   if (path.startsWith('/homes-available')) return <HomesAvailablePage />;
   if (path.startsWith('/grandeur')) return <GrandeurPage />;

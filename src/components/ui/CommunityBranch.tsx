@@ -7,6 +7,8 @@
  * a fabricated cinematic route. Pine Woods and Homes Available hand off
  * to their own conventional pages.
  */
+import { withBase } from '../../lib/url';
+
 export function CommunityBranch() {
   return (
     <div>
@@ -25,7 +27,7 @@ export function CommunityBranch() {
       </p>
       <nav aria-label="Communities" style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
         <a
-          href="/falcon-estates-rochester-hills"
+          href={withBase('/falcon-estates-rochester-hills')}
           title="No dedicated cinematic pass exists yet for this community — links to its conventional page"
           style={{
             padding: '16px 28px',
@@ -39,7 +41,7 @@ export function CommunityBranch() {
           Falcon Estates
         </a>
         <a
-          href="/pine-woods"
+          href={withBase('/pine-woods')}
           style={{
             padding: '16px 28px',
             border: '1px solid rgba(255,255,255,0.14)',
@@ -52,7 +54,7 @@ export function CommunityBranch() {
           Pine Woods
         </a>
         <a
-          href="/homes-available"
+          href={withBase('/homes-available')}
           style={{
             padding: '16px 28px',
             border: '1px solid rgba(255,255,255,0.14)',

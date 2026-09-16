@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { COMPANY, NAV_LINKS } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const LINKS = NAV_LINKS.filter((l) => l.label !== 'Home');
 
@@ -64,8 +65,8 @@ export function ClassicNav() {
           justifyContent: 'space-between',
         }}
       >
-        <a href="/classic" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <img src="/assets/lr-logo-badge.png" alt="" style={{ width: 42, height: 42, objectFit: 'contain' }} />
+        <a href={withBase('/classic')} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <img src={withBase('/assets/lr-logo-badge.png')} alt="" style={{ width: 42, height: 42, objectFit: 'contain' }} />
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
             <span className="classic-title" style={{ fontSize: 24, letterSpacing: '0.05em', color: '#F2F0E6' }}>
               L&amp;R Homes

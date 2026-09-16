@@ -2,6 +2,7 @@ import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
 import { FALCON_ESTATES, FALCON_ESTATES_HOMES, PINE_WOODS, PINE_WOODS_HOMES, HOMES_AVAILABLE_INTRO } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const eyebrow: React.CSSProperties = {
   fontFamily: 'var(--font-body)',
@@ -96,7 +97,7 @@ export function HomesAvailablePage() {
             ))}
           </div>
           <a
-            href="/pine-woods"
+            href={withBase('/pine-woods')}
             style={{
               display: 'inline-block',
               marginTop: 32,
@@ -134,7 +135,7 @@ export function HomesAvailablePage() {
             </h2>
           </div>
           <a
-            href="/contact-us"
+            href={withBase('/contact-us')}
             style={{
               fontSize: 12,
               fontWeight: 700,

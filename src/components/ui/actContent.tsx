@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { withBase } from '../../lib/url';
 
 export interface ActContentDef {
   id: string;
@@ -95,7 +96,7 @@ export const ACT_CONTENT: ActContentDef[] = [
         <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: '1.9rem', color: '#F2F0E6', margin: '10px 0 16px' }}>
           Every Detail, Considered.
         </h3>
-        <a href="/gallery" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-brand-gold-light)' }}>
+        <a href={withBase('/gallery')} style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-brand-gold-light)' }}>
           View Full Gallery →
         </a>
       </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NAV_LINKS, COMPANY } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const LINKS = NAV_LINKS.filter((l) => l.label !== 'Home');
 
@@ -44,8 +45,8 @@ export function SimpleNav() {
           padding: '18px 40px',
         }}
       >
-        <a href="/simple" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <img src="/assets/lr-logo-badge.png" alt="" style={{ width: 44, height: 44, objectFit: 'contain' }} />
+        <a href={withBase('/simple')} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <img src={withBase('/assets/lr-logo-badge.png')} alt="" style={{ width: 44, height: 44, objectFit: 'contain' }} />
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 26, color: '#F2F0E6' }}>L&amp;R Homes</span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 10, letterSpacing: '0.28em', color: 'var(--color-brand-gold-light)' }}>
@@ -72,7 +73,7 @@ export function SimpleNav() {
             </a>
           ))}
           <a
-            href="/contact-us?intent=tour"
+            href={withBase('/contact-us?intent=tour')}
             style={{
               border: '1px solid var(--color-brand-gold)',
               color: '#F2F0E6',
@@ -120,7 +121,7 @@ export function SimpleNav() {
             </a>
           ))}
           <a
-            href="/contact-us?intent=tour"
+            href={withBase('/contact-us?intent=tour')}
             style={{
               border: '1px solid var(--color-brand-gold)',
               color: '#F2F0E6',

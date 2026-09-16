@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { SimpleNav } from './simple/SimpleNav';
 import { SimpleFooter } from './simple/SimpleFooter';
 import { GALLERY_PHOTOS } from '../data/galleryPhotos';
+import { withBase } from '../lib/url';
 
 type Filter = 'all' | 'exterior' | 'interior';
 
@@ -48,7 +49,7 @@ export function GalleryPage() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/home/family-room-3-staged.jpg') center / cover no-repeat",
+            background: `url('${withBase('/assets/home/family-room-3-staged.jpg')}') center / cover no-repeat`,
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(12,10,8,0.6)' }} />

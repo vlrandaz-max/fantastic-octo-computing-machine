@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { COMPANY } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const eyebrow: React.CSSProperties = {
   fontFamily: 'var(--font-body)',
@@ -115,16 +116,16 @@ export function ContactUsPage() {
           >
             <p style={eyebrow}>Explore</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 16 }}>
-              <a href="/homes-available" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href={withBase('/homes-available')} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Homes Available →
               </a>
-              <a href="/falcon-estates-rochester-hills" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href={withBase('/falcon-estates-rochester-hills')} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Falcon Estates →
               </a>
-              <a href="/pine-woods" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href={withBase('/pine-woods')} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Pine Woods →
               </a>
-              <a href="/gallery" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href={withBase('/gallery')} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Photo Gallery →
               </a>
             </div>
