@@ -81,7 +81,7 @@ export function ClassicHomePage() {
               overflowWrap: 'break-word',
             }}
           >
-            Time-Honored Craftsmanship, Thoughtfully Built
+            Time-Honored Craftsmanship, Thoughtfully Designed
           </h1>
           <p className="classic-flanked" style={{ color: '#F8F4EE', marginBottom: 36 }}>
             L&amp;R Homes
