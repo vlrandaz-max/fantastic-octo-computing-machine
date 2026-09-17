@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { ClassicNav } from './ClassicNav';
 import { ClassicFooter } from './ClassicFooter';
 import { COMPANY } from '../../data/site';
@@ -49,7 +50,18 @@ const CTA_SLIDES = [
  * button language, built entirely from L&R Homes' own real copy, facts,
  * and photography.
  */
+const HERO_POSTER_HOLD_MS = 2500;
+
 export function ClassicHomePage() {
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      heroVideoRef.current?.play().catch(() => {});
+    }, HERO_POSTER_HOLD_MS);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <div style={{ background: '#FFFFFF' }}>
       <ClassicNav />
@@ -57,7 +69,7 @@ export function ClassicHomePage() {
       {/* Hero */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <video
-          autoPlay
+          ref={heroVideoRef}
           muted
           loop
           playsInline
