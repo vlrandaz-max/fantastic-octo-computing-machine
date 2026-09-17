@@ -67,16 +67,16 @@ export function ClassicHomePage() {
           <source src={withBase('/assets/video/household-tour.mp4')} type="video/mp4" />
         </video>
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(11,11,11,0.48)' }} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: 1000, margin: '0 auto', textAlign: 'center', padding: '0 24px' }}>
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: 1150, margin: '0 auto', textAlign: 'center', padding: '0 24px' }}>
           <h1
             style={{
               fontFamily: "'Cormorant Garamond', var(--font-display)",
               fontWeight: 300,
               textTransform: 'uppercase',
               letterSpacing: '0.03em',
-              fontSize: 'clamp(2rem, 6vw, 4.5rem)',
+              fontSize: 'clamp(1.8rem, 4.6vw, 3.6rem)',
               color: '#F8F4EE',
-              lineHeight: 1.1,
+              lineHeight: 1.15,
               marginBottom: 26,
               overflowWrap: 'break-word',
             }}
