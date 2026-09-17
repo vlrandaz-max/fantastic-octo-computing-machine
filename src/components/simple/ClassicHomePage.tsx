@@ -34,8 +34,9 @@ const EXPLORE_CARDS = [
 
 const CTA_SLIDES = [
   withBase('/assets/home/coachwood-aerial-twilight-2.jpg'),
-  withBase('/assets/home/coachwood-aerial-dusk-front.jpg'),
+  withBase('/assets/home/grandeur-kitchen-optimized.jpg'),
   withBase('/assets/home/coachwood-rear-aerial-mls-2.jpg'),
+  withBase('/assets/home/grandeur-primary-suite.jpg'),
   withBase('/assets/home/coachwood-rear-aerial-mls.jpg'),
   withBase('/assets/home/family-room-3-staged.jpg'),
 ];
@@ -50,7 +51,7 @@ const CTA_SLIDES = [
  * button language, built entirely from L&R Homes' own real copy, facts,
  * and photography.
  */
-const HERO_POSTER_HOLD_MS = 2500;
+const HERO_POSTER_HOLD_MS = 2000;
 
 export function ClassicHomePage() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);

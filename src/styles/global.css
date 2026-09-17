@@ -236,7 +236,7 @@ button:focus-visible {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  animation: classic-bg-fade 30s infinite;
+  animation: classic-bg-fade 36s infinite;
 }
 
 .classic-bg-slide:nth-child(1) {
@@ -259,19 +259,23 @@ button:focus-visible {
   animation-delay: 24s;
 }
 
+.classic-bg-slide:nth-child(6) {
+  animation-delay: 30s;
+}
+
 @keyframes classic-bg-fade {
   0% {
     opacity: 0;
     transform: scale(1);
   }
-  5% {
+  4% {
     opacity: 1;
   }
-  20% {
+  17% {
     opacity: 1;
     transform: scale(1.08);
   }
-  25% {
+  21% {
     opacity: 0;
   }
   100% {
