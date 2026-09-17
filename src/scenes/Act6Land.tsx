@@ -3,6 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { PhotoPlane } from './PhotoPlane';
 import { experienceStore } from '../state/experience';
+import { withBase } from '../lib/url';
 
 /**
  * Act VI (The Land) — pull-out to golden-hour exterior. Preserve green
@@ -25,7 +26,7 @@ export function Act6Land() {
   return (
     <group>
       <PhotoPlane
-        url="/assets/home/coachwood-aerial-dusk-front.jpg"
+        url={withBase('/assets/home/coachwood-aerial-dusk-front.jpg')}
         position={[0, 0, -5]}
         size={[6.4, 3.4]}
         fadeWindow={[4.75, 5.1, 5.85, 6.15]}

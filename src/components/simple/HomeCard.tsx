@@ -1,5 +1,6 @@
 import type { HomeListing } from '../../data/site';
 import { STATUS_LABEL } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const badgeColor: Record<HomeListing['status'], { bg: string; fg: string }> = {
   'move-in-ready': { bg: 'var(--color-brand-gold)', fg: '#131210' },
@@ -55,7 +56,7 @@ export function HomeCard({ home, dark = false }: { home: HomeListing; dark?: boo
           {home.name}
         </p>
         <a
-          href={home.href ?? '/contact-us'}
+          href={home.href ?? withBase('/contact-us')}
           style={{
             fontSize: 11,
             fontWeight: 700,

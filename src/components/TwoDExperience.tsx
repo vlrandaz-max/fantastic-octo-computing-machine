@@ -2,6 +2,7 @@ import { Footer } from './ui/Footer';
 import { CommunityBranch } from './ui/CommunityBranch';
 import { InvitationCTA } from './ui/InvitationCTA';
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
+import { withBase } from '../lib/url';
 
 /**
  * The `prefers-reduced-motion` / mobile path (Part 2's accessibility note
@@ -35,7 +36,7 @@ export function TwoDExperience() {
           L&amp;R Homes, Inc.
         </span>
         <a
-          href="/contact-us?intent=tour"
+          href={withBase('/contact-us?intent=tour')}
           style={{
             fontSize: 11,
             fontWeight: 700,
@@ -60,7 +61,7 @@ export function TwoDExperience() {
           flexDirection: 'column',
           justifyContent: 'flex-end',
           background:
-            "linear-gradient(180deg, rgba(12,10,8,0.55) 0%, rgba(12,10,8,0.15) 45%, rgba(12,10,8,0.75) 100%), url('/assets/home/falcon-estates-hero.jpg') center 55% / cover no-repeat",
+            `linear-gradient(180deg, rgba(12,10,8,0.55) 0%, rgba(12,10,8,0.15) 45%, rgba(12,10,8,0.75) 100%), url('${withBase('/assets/home/falcon-estates-hero.jpg')}') center 55% / cover no-repeat`,
         }}
       >
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'rgba(242,240,230,0.7)', marginBottom: 18 }}>
@@ -113,9 +114,9 @@ export function TwoDExperience() {
         {reducedMotion ? (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
             {[
-              ['/assets/home/kitchen-full-run.jpg', "Chef's kitchen"],
-              ['/assets/home/family-room-1-staged.jpg', 'Great room'],
-              ['/assets/home/primary-suite-1-staged.png', 'Primary suite'],
+              [withBase('/assets/home/kitchen-full-run.jpg'), "Chef's kitchen"],
+              [withBase('/assets/home/family-room-1-staged.jpg'), 'Great room'],
+              [withBase('/assets/home/primary-suite-1-staged.png'), 'Primary suite'],
             ].map(([src, alt]) => (
               <img
                 key={src}
@@ -128,8 +129,8 @@ export function TwoDExperience() {
           </div>
         ) : (
           <video
-            src="/assets/video/household-tour.mp4"
-            poster="/assets/home/kitchen-full-run.jpg"
+            src={withBase('/assets/video/household-tour.mp4')}
+            poster={withBase('/assets/home/kitchen-full-run.jpg')}
             autoPlay
             muted
             loop
@@ -139,7 +140,7 @@ export function TwoDExperience() {
           />
         )}
         <a
-          href="/gallery"
+          href={withBase('/gallery')}
           style={{
             display: 'inline-block',
             marginTop: 24,
@@ -159,7 +160,7 @@ export function TwoDExperience() {
         id="land"
         className="section-2d"
         style={{
-          background: "linear-gradient(180deg, rgba(28,40,64,0.82), rgba(25,32,56,0.92)), url('/assets/home/coachwood-aerial-dusk-front.jpg') center / cover no-repeat",
+          background: `linear-gradient(180deg, rgba(28,40,64,0.82), rgba(25,32,56,0.92)), url('${withBase('/assets/home/coachwood-aerial-dusk-front.jpg')}') center / cover no-repeat`,
           textAlign: 'center',
         }}
       >
