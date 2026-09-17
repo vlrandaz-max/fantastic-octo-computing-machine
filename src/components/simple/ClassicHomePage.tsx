@@ -61,7 +61,7 @@ export function ClassicHomePage() {
           muted
           loop
           playsInline
-          poster={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
+          poster={withBase('/assets/home/coachwood-aerial-twilight-2.jpg')}
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
         >
           <source src={withBase('/assets/video/household-tour.mp4')} type="video/mp4" />
