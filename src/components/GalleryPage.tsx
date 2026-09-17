@@ -106,7 +106,8 @@ export function GalleryPage() {
               key={photo.src}
               type="button"
               onClick={() => setLightboxIndex(i)}
-              style={{ padding: 0, border: 'none', background: 'none', cursor: 'pointer', display: 'block' }}
+              className="gallery-thumb"
+              style={{ padding: 0, border: 'none', background: 'none', cursor: 'pointer', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
               aria-label={`View larger: ${photo.alt}`}
             >
               <img
@@ -117,12 +118,8 @@ export function GalleryPage() {
                   width: '100%',
                   height: 240,
                   objectFit: 'cover',
-                  borderRadius: 'var(--radius-sm)',
-                  boxShadow: 'var(--shadow-1)',
-                  transition: 'opacity 200ms',
+                  display: 'block',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
               />
             </button>
           ))}

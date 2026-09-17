@@ -390,3 +390,42 @@ button:focus-visible {
 .classic-btn-underline:hover {
   letter-spacing: 0.2em;
 }
+
+.gallery-thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-thumb img {
+  transition: transform 500ms var(--ease-out, ease);
+}
+
+.gallery-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 9, 8, 0);
+  transition: background 400ms ease;
+  pointer-events: none;
+}
+
+.gallery-thumb:hover img,
+.gallery-thumb:focus-visible img {
+  transform: scale(1.08);
+}
+
+.gallery-thumb:hover::after,
+.gallery-thumb:focus-visible::after {
+  background: rgba(10, 9, 8, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-thumb img {
+    transition: none;
+  }
+  .gallery-thumb:hover img,
+  .gallery-thumb:focus-visible img {
+    transform: none;
+  }
+}
