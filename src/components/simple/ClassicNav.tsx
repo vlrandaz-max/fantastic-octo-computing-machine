@@ -72,7 +72,7 @@ export function ClassicNav() {
               L&amp;R Homes
             </span>
             <span style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 10, fontWeight: 500, letterSpacing: '0.28em', color: 'var(--color-brand-gold-light)' }}>
-              TIME-HONORED SINCE 1973
+              CUSTOM BUILDERS SINCE 1973
             </span>
           </div>
         </a>
