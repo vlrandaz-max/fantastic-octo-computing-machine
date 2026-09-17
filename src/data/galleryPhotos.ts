@@ -13,7 +13,6 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'coachwood-aerial-twilight-2.png', alt: 'Coachwood — twilight aerial', category: 'exterior' },
   { src: 'falcon-estates-hero.jpg', alt: 'Falcon Estates', category: 'exterior' },
   { src: 'coachwood-twilight-2.png', alt: 'Coachwood — twilight', category: 'exterior' },
-  { src: 'coachwood-aerial-2.jpg', alt: 'Coachwood — aerial', category: 'exterior' },
   { src: 'coachwood-aerial-mls-2.png', alt: 'Coachwood — aerial', category: 'exterior' },
   { src: 'coachwood-rear-aerial-mls.jpg', alt: 'Coachwood — rear aerial', category: 'exterior' },
   { src: 'coachwood-rear-aerial-mls-2.jpg', alt: 'Coachwood — rear aerial', category: 'exterior' },
