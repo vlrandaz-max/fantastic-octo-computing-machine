@@ -33,6 +33,8 @@ const EXPLORE_CARDS = [
 
 const CTA_SLIDES = [
   withBase('/assets/home/grandeur-exterior-twilight.jpg'),
+  withBase('/assets/home/coachwood-aerial-dusk-front.jpg'),
+  withBase('/assets/home/coachwood-aerial-twilight-2.png'),
   withBase('/assets/home/coachwood-front-twilight.jpg'),
   withBase('/assets/home/family-room-3-staged.jpg'),
 ];
@@ -79,7 +81,7 @@ export function ClassicHomePage() {
               overflowWrap: 'break-word',
             }}
           >
-            Time-Honored Craftsmanship, Built To Last
+            Time-Honored Craftsmanship, Thoughtfully Built
           </h1>
           <p className="classic-flanked" style={{ color: '#F8F4EE', marginBottom: 36 }}>
             L&amp;R Homes
