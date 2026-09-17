@@ -43,8 +43,8 @@ const CTA_SLIDES = [
 
 const ACCORDION_ITEMS = [
   { label: 'Timeless Exteriors', image: withBase('/assets/home/coachwood-aerial-twilight-2.jpg') },
-  { label: 'Chef-Ready Kitchens', image: withBase('/assets/home/grandeur-kitchen-optimized.jpg') },
-  { label: 'Private Outdoor Living', image: withBase('/assets/home/coachwood-rear-aerial-mls-2.jpg') },
+  { label: 'Chef-Ready Kitchens', image: withBase('/assets/home/kitchen-staged-1.jpg') },
+  { label: 'Functional Live/Work Space', image: withBase('/assets/home/library-staged.jpg') },
   { label: 'Serene Primary Suites', image: withBase('/assets/home/grandeur-primary-suite.jpg') },
   { label: 'Gathering Spaces', image: withBase('/assets/home/family-room-3-staged.jpg') },
 ];
@@ -207,7 +207,7 @@ export function Classic2HomePage() {
             </p>
           </Reveal>
           <Reveal type="fade-in-down" delay={120}>
-            <h2 style={heading}>What Sets a L&amp;R Home Apart</h2>
+            <h2 style={heading}>Designed For The Way You Live</h2>
           </Reveal>
           <Reveal type="fade-in" delay={280} style={{ marginTop: 40 }}>
             <div className="classic2-accordion">
