@@ -42,9 +42,9 @@ const CTA_SLIDES = [
 ];
 
 const ACCORDION_ITEMS = [
-  { label: 'Timeless Exteriors', image: withBase('/assets/home/coachwood-aerial-twilight-2.jpg') },
-  { label: 'Chef-Ready Kitchens', image: withBase('/assets/home/kitchen-staged-1.jpg') },
   { label: 'Functional Live/Work Space', image: withBase('/assets/home/library-staged.jpg') },
+  { label: 'Chef-Ready Kitchens', image: withBase('/assets/home/kitchen-staged-1.jpg') },
+  { label: 'Timeless Exteriors', image: withBase('/assets/home/coachwood-aerial-twilight-2.jpg') },
   { label: 'Serene Primary Suites', image: withBase('/assets/home/grandeur-primary-suite.jpg') },
   { label: 'Gathering Spaces', image: withBase('/assets/home/family-room-3-staged.jpg') },
 ];
