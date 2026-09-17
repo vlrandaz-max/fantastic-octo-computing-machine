@@ -189,7 +189,7 @@ export function Classic2HomePage() {
           </div>
           <Reveal type="fade-in-right" delay={200}>
             <img
-              src={withBase('/assets/home/grandeur-kitchen-optimized.jpg')}
+              src={withBase('/assets/home/grandeur-kitchen-staged.jpg')}
               alt="A staged kitchen in an L&amp;R Homes residence"
               loading="lazy"
               style={{ width: '100%', height: 520, objectFit: 'cover', boxShadow: 'var(--shadow-3)' }}
