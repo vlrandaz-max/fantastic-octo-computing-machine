@@ -13,7 +13,13 @@ const eyebrow: React.CSSProperties = {
   color: 'var(--color-brand-gold)',
 };
 
-const GALLERY = [
+const EXTERIOR_GALLERY = [
+  { src: withBase('/assets/home/stratford-twilight.jpg'), alt: 'The Stratford — twilight exterior', caption: 'Twilight' },
+  { src: withBase('/assets/home/stratford-aerial-twilight.jpg'), alt: 'The Stratford — twilight exterior, aerial view', caption: 'Twilight · Aerial View' },
+  { src: withBase('/assets/home/stratford-aerial-twilight-2.jpg'), alt: 'The Stratford — twilight exterior, aerial view', caption: 'Twilight · Aerial View' },
+];
+
+const INTERIOR_GALLERY = [
   { src: withBase('/assets/home/stratford-family-room.jpg'), alt: 'The Stratford — family room', caption: 'Family Room' },
   { src: withBase('/assets/home/stratford-family-kitchen.jpg'), alt: 'The Stratford — family room and kitchen', caption: 'Family Room · Kitchen' },
   { src: withBase('/assets/home/stratford-bar-kitchen-nook-family.jpg'), alt: 'The Stratford — bar, kitchen nook, and family room', caption: 'Bar · Kitchen Nook · Family Room' },
@@ -31,14 +37,18 @@ const GALLERY = [
  * site's own street-address photo mapping), shown here as a portfolio
  * page. Mirrors CrestwoodPage/CambridgePage's structure — self-contained
  * rather than PINE_WOODS-driven, since Stratford has no floor plans or
- * Town Properties spec sheet of its own to show.
+ * Town Properties spec sheet of its own to show. The hero and exterior
+ * gallery use twilight renders generated from the original daytime shot
+ * (829-crestwood-front.jpg), which is now also swapped for a twilight
+ * shot as the Stratford thumbnail everywhere else — see data/site.ts and
+ * FalconEstatesPage.
  */
 export function StratfordPage() {
   return (
     <div style={{ background: '#FFFFFF' }}>
       {/* Hero */}
       <section style={{ position: 'relative', minHeight: '85vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: `url('${withBase('/assets/home/829-crestwood-front.jpg')}') center 45% / cover no-repeat` }} />
+        <div style={{ position: 'absolute', inset: 0, background: `url('${withBase('/assets/home/stratford-twilight.jpg')}') center 45% / cover no-repeat` }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,12,16,0.55) 0%, rgba(10,12,16,0.35) 40%, rgba(10,12,16,0.85) 100%)' }} />
         <SimpleNav />
         <div className="hero-credit-tag" style={{ position: 'absolute', right: 48, bottom: 44, zIndex: 5, textAlign: 'right' }}>
@@ -145,8 +155,36 @@ export function StratfordPage() {
         </div>
       </section>
 
-      {/* Interior gallery */}
+      {/* Exterior gallery */}
       <section style={{ padding: '88px 40px', background: 'var(--bg1)' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
+          <p style={eyebrow}>Exterior Views</p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 400,
+              fontSize: 'clamp(2rem,4vw,2.75rem)',
+              color: 'var(--color-brand-dark)',
+              margin: '14px 0 40px',
+            }}
+          >
+            The <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>Stratford</em>, Every Angle
+          </h2>
+          <div className="simple-gallery-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            {EXTERIOR_GALLERY.map((photo, i) => (
+              <Reveal key={photo.src} type="fade-in-up" delay={i * 100}>
+                <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', marginBottom: 12 }}>
+                  <img src={photo.src} alt={photo.alt} loading="lazy" style={{ width: '100%', height: 300, objectFit: 'cover' }} />
+                </span>
+                <p style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg3)' }}>{photo.caption}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interior gallery */}
+      <section style={{ padding: '0 40px 88px', background: 'var(--bg1)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
           <p style={eyebrow}>A Closer Look</p>
           <h2
@@ -161,7 +199,7 @@ export function StratfordPage() {
             Inside <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>The Stratford</em>
           </h2>
           <div className="simple-gallery-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-            {GALLERY.map((photo, i) => (
+            {INTERIOR_GALLERY.map((photo, i) => (
               <Reveal key={photo.src} type="fade-in-up" delay={(i % 3) * 100}>
                 <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', marginBottom: 12 }}>
                   <img src={photo.src} alt={photo.alt} loading="lazy" style={{ width: '100%', height: 300, objectFit: 'cover' }} />
