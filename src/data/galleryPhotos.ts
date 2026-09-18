@@ -57,7 +57,6 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'stratford-family-room.jpg', alt: 'The Stratford — family room', category: 'interior' },
   { src: 'stratford-family-kitchen.jpg', alt: 'The Stratford — family room and kitchen', category: 'interior' },
   { src: 'stratford-bar-kitchen-nook-family.jpg', alt: 'The Stratford — bar, kitchen nook, and family room', category: 'interior' },
-  { src: 'stratford-kitchen-nook.jpg', alt: 'The Stratford — kitchen and breakfast nook', category: 'interior' },
   { src: 'stratford-dining-room.jpg', alt: 'The Stratford — dining room', category: 'interior' },
   { src: 'stratford-study.jpg', alt: 'The Stratford — study', category: 'interior' },
   { src: 'stratford-media-room.jpg', alt: 'The Stratford — media room', category: 'interior' },

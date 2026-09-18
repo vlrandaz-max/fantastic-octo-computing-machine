@@ -17,7 +17,6 @@ const GALLERY = [
   { src: withBase('/assets/home/stratford-family-room.jpg'), alt: 'The Stratford — family room', caption: 'Family Room' },
   { src: withBase('/assets/home/stratford-family-kitchen.jpg'), alt: 'The Stratford — family room and kitchen', caption: 'Family Room · Kitchen' },
   { src: withBase('/assets/home/stratford-bar-kitchen-nook-family.jpg'), alt: 'The Stratford — bar, kitchen nook, and family room', caption: 'Bar · Kitchen Nook · Family Room' },
-  { src: withBase('/assets/home/stratford-kitchen-nook.jpg'), alt: 'The Stratford — kitchen and breakfast nook', caption: 'Kitchen · Breakfast Nook' },
   { src: withBase('/assets/home/stratford-dining-room.jpg'), alt: 'The Stratford — dining room', caption: 'Dining Room' },
   { src: withBase('/assets/home/stratford-study.jpg'), alt: 'The Stratford — study', caption: 'Study' },
   { src: withBase('/assets/home/stratford-media-room.jpg'), alt: 'The Stratford — media room', caption: 'Media Room' },
