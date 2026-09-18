@@ -177,7 +177,7 @@ const FALCON_STYLE = `
   @media (max-width: 767px) {
     .falcon-page .wrap, .falcon-page .hero-content, .falcon-page .overview-band, .falcon-page .amenities-band,
     .falcon-page .homes-band, .falcon-page .location-band, .falcon-page .fe-site-footer { padding-left: 20px; padding-right: 20px; }
-    .falcon-page .hero { min-height: 460px; }
+    .falcon-page .hero { min-height: 700px; }
     .falcon-page .stat-bar { flex-wrap: wrap; }
     .falcon-page .stat-cell { flex: 1 1 50%; padding: 16px 20px; }
     .falcon-page .amenities-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
