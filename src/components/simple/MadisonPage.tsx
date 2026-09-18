@@ -14,6 +14,7 @@ const eyebrow: React.CSSProperties = {
 };
 
 const EXTERIOR_GALLERY = [
+  { src: withBase('/assets/home/madison-twilight-aerial.jpg'), alt: 'The Madison — twilight exterior, aerial view', caption: 'Twilight · Aerial View' },
   { src: withBase('/assets/home/madison-twilight.jpg'), alt: 'The Madison — twilight exterior', caption: 'Twilight' },
   { src: withBase('/assets/home/madison-exterior.jpg'), alt: 'The Madison — daytime exterior', caption: 'Daytime' },
   { src: withBase('/assets/home/madison-exteriors-2.jpg'), alt: 'The Madison — aerial exterior', caption: 'Aerial View' },
@@ -39,7 +40,7 @@ export function MadisonPage() {
     <div style={{ background: '#FFFFFF' }}>
       {/* Hero */}
       <section style={{ position: 'relative', minHeight: '85vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: `url('${withBase('/assets/home/madison-twilight.jpg')}') center 45% / cover no-repeat` }} />
+        <div style={{ position: 'absolute', inset: 0, background: `url('${withBase('/assets/home/madison-twilight-aerial.jpg')}') center 45% / cover no-repeat` }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,12,16,0.55) 0%, rgba(10,12,16,0.35) 40%, rgba(10,12,16,0.85) 100%)' }} />
         <SimpleNav />
         <div className="hero-credit-tag" style={{ position: 'absolute', right: 48, bottom: 44, zIndex: 5, textAlign: 'right' }}>

@@ -22,6 +22,7 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'stratford-aerial-twilight-2.jpg', alt: 'The Stratford — twilight exterior, aerial view', category: 'exterior' },
   { src: '835-crestwood-front.jpg', alt: 'The Cambridge — daytime exterior', category: 'exterior' },
   { src: 'cambridge-twilight.jpg', alt: 'The Cambridge — twilight exterior', category: 'exterior' },
+  { src: 'madison-twilight-aerial.jpg', alt: 'The Madison — twilight exterior, aerial view', category: 'exterior' },
   { src: 'madison-twilight.jpg', alt: 'The Madison — twilight exterior', category: 'exterior' },
   { src: 'madison-exterior.jpg', alt: 'The Madison — daytime exterior', category: 'exterior' },
   { src: 'madison-exteriors-2.jpg', alt: 'The Madison — aerial exterior', category: 'exterior' },
