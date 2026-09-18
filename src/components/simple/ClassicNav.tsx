@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { COMPANY, NAV_LINKS } from '../../data/site';
 import { withBase } from '../../lib/url';
 
-const LINKS = NAV_LINKS.filter((l) => l.label !== 'Home');
-
 const linkStyle: React.CSSProperties = {
   fontFamily: "'Jost', var(--font-body)",
   fontSize: 14,
@@ -19,8 +17,9 @@ const linkStyle: React.CSSProperties = {
  * NAV_LINKS as the rest of the site's conventional pages (e.g.
  * /pine-woods).
  */
-export function ClassicNav() {
+export function ClassicNav({ homeHref = withBase('/classic') }: { homeHref?: string } = {}) {
   const [open, setOpen] = useState(false);
+  const LINKS = [{ label: 'Home', href: homeHref }, ...NAV_LINKS.filter((l) => l.label !== 'Home')];
 
   return (
     <header
@@ -65,7 +64,7 @@ export function ClassicNav() {
           justifyContent: 'space-between',
         }}
       >
-        <a href={withBase('/classic')} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+        <a href={homeHref} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <img src={withBase('/assets/lr-logo-badge.png')} alt="" style={{ width: 42, height: 42, objectFit: 'contain' }} />
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
             <span className="classic-title" style={{ fontSize: 24, letterSpacing: '0.05em', color: '#F2F0E6' }}>

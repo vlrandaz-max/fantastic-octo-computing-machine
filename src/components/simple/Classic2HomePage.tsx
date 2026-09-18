@@ -117,7 +117,7 @@ export function Classic2HomePage() {
 
   return (
     <div style={{ background: '#FFFFFF' }}>
-      <ClassicNav />
+      <ClassicNav homeHref={withBase('/classic2')} />
 
       {/* Hero — identical to /classic */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
@@ -279,7 +279,7 @@ export function Classic2HomePage() {
         </div>
       </section>
 
-      <ClassicFooter />
+      <ClassicFooter homeHref={withBase('/classic2')} />
     </div>
   );
 }

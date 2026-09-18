@@ -18,8 +18,9 @@ const colText: React.CSSProperties = {
 };
 
 /** Centered, multi-column contact footer matching rh.house's footer structure. */
-export function ClassicFooter() {
+export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
   const year = new Date().getFullYear();
+  const footerLinks = homeHref ? NAV_LINKS.map((l) => (l.label === 'Home' ? { ...l, href: homeHref } : l)) : NAV_LINKS;
 
   return (
     <footer style={{ background: '#FFFFFF' }}>
@@ -81,7 +82,7 @@ export function ClassicFooter() {
           | Copyright &copy; {year}
         </span>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-          {NAV_LINKS.map((link) => (
+          {footerLinks.map((link) => (
             <a key={link.label} href={link.href} style={{ color: 'var(--fg3)' }}>
               {link.label}
             </a>
