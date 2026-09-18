@@ -42,6 +42,10 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'laundry-staged-1.png', alt: 'Laundry room', category: 'interior' },
   { src: 'laundry-staged-2.png', alt: 'Laundry room', category: 'interior' },
   { src: 'laundry-upstairs-staged.png', alt: 'Laundry room — upstairs', category: 'interior' },
+  { src: 'crestwood-dining-room.jpg', alt: 'The Crestwood — dining room', category: 'interior' },
+  { src: 'crestwood-family-dining.jpg', alt: 'The Crestwood — family room & dining', category: 'interior' },
+  { src: 'crestwood-owners-suite.jpg', alt: "The Crestwood — owner's suite", category: 'interior' },
+  { src: 'crestwood-study.jpg', alt: 'The Crestwood — study', category: 'interior' },
 ];
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = RAW_PHOTOS.map((p) => ({ ...p, src: withBase(`/assets/home/${p.src}`) }));
