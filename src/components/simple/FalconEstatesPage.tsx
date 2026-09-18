@@ -21,14 +21,12 @@ import { withBase } from '../../lib/url';
  *
  * Photos: the real site's own home-card images map by street address, not
  * by home name — Grandeur → 3836 Coachwood Lane (confirmed), Cambridge →
- * 835 Crestwood, Stratford → 829 Crestwood, Crestwood → its own confirmed
- * twilight photo. Madison's real photo (madison-exterior.jpg, matching the
- * real site's own hotlinked filename) was later uploaded and wired in here
- * too. That mapping is applied here and was also used to correct
- * FALCON_ESTATES_HOMES in data/site.ts, which previously had
- * Crestwood/Stratford's addressed photos swapped. Grandeur uses the
- * twilight exterior (matching its use as a listing thumbnail everywhere
- * else in the app).
+ * 835 Crestwood, Stratford → 829 Crestwood, Crestwood and Madison each have
+ * their own confirmed twilight photos. That mapping is applied here and was
+ * also used to correct FALCON_ESTATES_HOMES in data/site.ts, which
+ * previously had Crestwood/Stratford's addressed photos swapped. Grandeur
+ * uses the twilight exterior (matching its use as a listing thumbnail
+ * everywhere else in the app).
  */
 
 const FALCON_STYLE = `
@@ -286,7 +284,7 @@ const FALCON_BODY = `
         </div>
       </a>
       <a class="home-card reveal fade-in" style="animation-delay: 300ms" href="https://landrhomes.com/madison/" target="_blank" rel="noopener">
-        <img decoding="async" src="${withBase('/assets/home/madison-exterior.jpg')}" alt="The Madison">
+        <img decoding="async" src="${withBase('/assets/home/madison-twilight.jpg')}" alt="The Madison">
         <div class="home-card-body">
           <div class="home-card-name">The Madison</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
