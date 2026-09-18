@@ -1,5 +1,6 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
+import { useRevealScope } from '../Reveal';
 import { withBase } from '../../lib/url';
 
 /**
@@ -989,19 +990,19 @@ const GRANDEUR_BODY = `
     </div>
 
     <div class="gal-grid">
-      <div class="gal-item full"><img src="${withBase('/assets/home/foyer-staged.jpg')}" alt="Grand Foyer · Oak Staircase &amp; Wrought Iron"><div class="gal-cap">Grand Foyer &middot; Oak Staircase &amp; Wrought Iron</div></div>
-      <div class="gal-item full"><img src="${withBase('/assets/home/grandeur-family-room.jpg')}" alt="Two-Story Family Room"><div class="gal-cap">Two-Story Family Room &middot; Floor-to-Ceiling Windows</div></div>
-      <div class="gal-item"><img src="${withBase('/assets/home/family-room-1-staged.jpg')}" alt="Family Room · Stone Fireplace"><div class="gal-cap">Family Room &middot; Stone Fireplace</div></div>
-      <div class="gal-item"><img src="${withBase('/assets/home/grandeur-dining-room.jpg')}" alt="Formal Dining Room"><div class="gal-cap">Formal Dining Room</div></div>
-      <div class="gal-item"><img src="${withBase('/assets/home/grandeur-kitchen.jpg')}" alt="Gourmet Kitchen"><div class="gal-cap">Gourmet Kitchen &middot; Quartz &amp; Custom Cabinetry</div></div>
-      <div class="gal-item"><img src="${withBase('/assets/home/grandeur-kitchen-prep.png')}" alt="Prep Kitchen · Farmhouse Sink"><div class="gal-cap">Prep Kitchen &middot; Farmhouse Sink</div></div>
-      <div class="gal-item"><img src="${withBase('/assets/home/grandeur-butlers-pantry.png')}" alt="Butler's Pantry"><div class="gal-cap">Butler&rsquo;s Pantry</div></div>
-      <div class="gal-item"><img src="${withBase('/assets/home/laundry-staged-1.png')}" alt="First Floor Laundry"><div class="gal-cap">First Floor Laundry</div></div>
-      <div class="gal-item"><img src="${withBase('/assets/home/grandeur-laundry-room.jpg')}" alt="Second Upstairs Laundry Rm"><div class="gal-cap">Second Upstairs Laundry Rm</div></div>
-      <div class="gal-item"><img src="${withBase('/assets/home/flex-room-staged.jpg')}" alt="Flex Room"><div class="gal-cap">Flex Room &middot; Built-In Desk &amp; Cabinetry</div></div>
-      <div class="gal-item full"><img src="${withBase('/assets/home/grandeur-primary-suite.jpg')}" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
-      <div class="gal-item full"><img src="${CDN}/grandeur-13.jpg" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
-      <div class="gal-item full"><img src="${CDN}/grandeur-14.jpg" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/foyer-staged.jpg')}" alt="Grand Foyer · Oak Staircase &amp; Wrought Iron"><div class="gal-cap">Grand Foyer &middot; Oak Staircase &amp; Wrought Iron</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-family-room.jpg')}" alt="Two-Story Family Room"><div class="gal-cap">Two-Story Family Room &middot; Floor-to-Ceiling Windows</div></div>
+      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/family-room-1-staged.jpg')}" alt="Family Room · Stone Fireplace"><div class="gal-cap">Family Room &middot; Stone Fireplace</div></div>
+      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-dining-room.jpg')}" alt="Formal Dining Room"><div class="gal-cap">Formal Dining Room</div></div>
+      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-kitchen.jpg')}" alt="Gourmet Kitchen"><div class="gal-cap">Gourmet Kitchen &middot; Quartz &amp; Custom Cabinetry</div></div>
+      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-kitchen-prep.png')}" alt="Prep Kitchen · Farmhouse Sink"><div class="gal-cap">Prep Kitchen &middot; Farmhouse Sink</div></div>
+      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-butlers-pantry.png')}" alt="Butler's Pantry"><div class="gal-cap">Butler&rsquo;s Pantry</div></div>
+      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/laundry-staged-1.png')}" alt="First Floor Laundry"><div class="gal-cap">First Floor Laundry</div></div>
+      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-laundry-room.jpg')}" alt="Second Upstairs Laundry Rm"><div class="gal-cap">Second Upstairs Laundry Rm</div></div>
+      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/flex-room-staged.jpg')}" alt="Flex Room"><div class="gal-cap">Flex Room &middot; Built-In Desk &amp; Cabinetry</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-primary-suite.jpg')}" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${CDN}/grandeur-13.jpg" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${CDN}/grandeur-14.jpg" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
     </div>
   </div>
 </div>
@@ -1076,12 +1077,14 @@ const GRANDEUR_BODY = `
 `;
 
 export function GrandeurPage() {
+  const revealScope = useRevealScope<HTMLDivElement>();
+
   return (
     <div className="grandeur-page">
       <style>{GRANDEUR_STYLE}</style>
       <div style={{ position: 'relative' }}>
         <SimpleNav />
-        <div dangerouslySetInnerHTML={{ __html: GRANDEUR_BODY }} />
+        <div ref={revealScope} dangerouslySetInnerHTML={{ __html: GRANDEUR_BODY }} />
       </div>
       <SimpleFooter />
     </div>

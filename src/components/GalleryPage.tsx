@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { SimpleNav } from './simple/SimpleNav';
 import { SimpleFooter } from './simple/SimpleFooter';
+import { Reveal } from './Reveal';
 import { GALLERY_PHOTOS } from '../data/galleryPhotos';
 import { withBase } from '../lib/url';
 
@@ -102,26 +103,27 @@ export function GalleryPage() {
           }}
         >
           {photos.map((photo, i) => (
-            <button
-              key={photo.src}
-              type="button"
-              onClick={() => setLightboxIndex(i)}
-              className="gallery-thumb"
-              style={{ padding: 0, border: 'none', background: 'none', cursor: 'pointer', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
-              aria-label={`View larger: ${photo.alt}`}
-            >
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                loading="lazy"
-                style={{
-                  width: '100%',
-                  height: 240,
-                  objectFit: 'cover',
-                  display: 'block',
-                }}
-              />
-            </button>
+            <Reveal key={photo.src} type="fade-in-up" delay={(i % 6) * 70}>
+              <button
+                type="button"
+                onClick={() => setLightboxIndex(i)}
+                className="gallery-thumb"
+                style={{ padding: 0, border: 'none', background: 'none', cursor: 'pointer', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', width: '100%' }}
+                aria-label={`View larger: ${photo.alt}`}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  style={{
+                    width: '100%',
+                    height: 240,
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
+              </button>
+            </Reveal>
           ))}
         </div>
       </div>

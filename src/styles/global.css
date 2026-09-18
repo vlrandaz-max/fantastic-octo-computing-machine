@@ -430,54 +430,54 @@ button:focus-visible {
   }
 }
 
-/* /classic2 — scroll-triggered entrance animations, matching the
-   Elementor fadeInDown/fadeIn/fadeInUp/fadeInRight motion pattern used
+/* Site-wide scroll-triggered entrance animations, matching the Elementor
+   fadeInDown/fadeIn/fadeInUp/fadeInRight/fadeInLeft motion pattern used
    throughout lassalehomes.com. Applied once via IntersectionObserver
-   (see Reveal in Classic2HomePage.tsx), not re-triggered on re-scroll. */
-.classic2-reveal {
+   (see src/components/Reveal.tsx), not re-triggered on re-scroll. */
+.reveal {
   opacity: 0;
 }
 
-.classic2-reveal.is-visible {
+.reveal.is-visible {
   animation-duration: 800ms;
   animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   animation-fill-mode: forwards;
 }
 
-.classic2-reveal.is-visible.fade-in-down { animation-name: classic2-fade-in-down; }
-.classic2-reveal.is-visible.fade-in { animation-name: classic2-fade-in; animation-duration: 900ms; }
-.classic2-reveal.is-visible.fade-in-up { animation-name: classic2-fade-in-up; }
-.classic2-reveal.is-visible.fade-in-right { animation-name: classic2-fade-in-right; }
-.classic2-reveal.is-visible.fade-in-left { animation-name: classic2-fade-in-left; }
+.reveal.is-visible.fade-in-down { animation-name: reveal-fade-in-down; }
+.reveal.is-visible.fade-in { animation-name: reveal-fade-in; animation-duration: 900ms; }
+.reveal.is-visible.fade-in-up { animation-name: reveal-fade-in-up; }
+.reveal.is-visible.fade-in-right { animation-name: reveal-fade-in-right; }
+.reveal.is-visible.fade-in-left { animation-name: reveal-fade-in-left; }
 
-@keyframes classic2-fade-in-down {
+@keyframes reveal-fade-in-down {
   from { opacity: 0; transform: translateY(-28px); }
   to { opacity: 1; transform: none; }
 }
 
-@keyframes classic2-fade-in {
+@keyframes reveal-fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes classic2-fade-in-up {
+@keyframes reveal-fade-in-up {
   from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: none; }
 }
 
-@keyframes classic2-fade-in-right {
+@keyframes reveal-fade-in-right {
   from { opacity: 0; transform: translateX(40px); }
   to { opacity: 1; transform: none; }
 }
 
-@keyframes classic2-fade-in-left {
+@keyframes reveal-fade-in-left {
   from { opacity: 0; transform: translateX(-40px); }
   to { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .classic2-reveal,
-  .classic2-reveal.is-visible {
+  .reveal,
+  .reveal.is-visible {
     opacity: 1;
     animation: none;
     transform: none;

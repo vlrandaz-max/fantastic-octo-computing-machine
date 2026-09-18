@@ -1,6 +1,7 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
+import { Reveal } from '../Reveal';
 import { FALCON_ESTATES, FALCON_ESTATES_HOMES, PINE_WOODS, PINE_WOODS_HOMES, HOMES_AVAILABLE_INTRO } from '../../data/site';
 import { withBase } from '../../lib/url';
 
@@ -65,8 +66,10 @@ export function HomesAvailablePage() {
             className="simple-gallery-3"
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, textAlign: 'left' }}
           >
-            {FALCON_ESTATES_HOMES.map((home) => (
-              <HomeCard key={home.name} home={home} />
+            {FALCON_ESTATES_HOMES.map((home, i) => (
+              <Reveal key={home.name} type="fade-in-up" delay={i * 100}>
+                <HomeCard home={home} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -92,8 +95,10 @@ export function HomesAvailablePage() {
             className="simple-gallery-3"
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, maxWidth: 780, margin: '0 auto', textAlign: 'left' }}
           >
-            {PINE_WOODS_HOMES.map((home) => (
-              <HomeCard key={home.name} home={home} />
+            {PINE_WOODS_HOMES.map((home, i) => (
+              <Reveal key={home.name} type="fade-in-up" delay={i * 100}>
+                <HomeCard home={home} />
+              </Reveal>
             ))}
           </div>
           <a

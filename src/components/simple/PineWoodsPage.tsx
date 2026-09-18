@@ -1,6 +1,7 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
+import { Reveal } from '../Reveal';
 import { COMPANY, PINE_WOODS, PINE_WOODS_HOMES } from '../../data/site';
 import { withBase } from '../../lib/url';
 
@@ -154,12 +155,14 @@ export function PineWoodsPage() {
           >
             Find Your <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>Homesite</em>
           </h2>
-          <img
-            src={withBase('/assets/pine-woods/site-plan.jpg')}
-            alt="Pine Woods site plan showing individual homesites"
-            loading="lazy"
-            style={{ width: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}
-          />
+          <Reveal type="fade-in-up">
+            <img
+              src={withBase('/assets/pine-woods/site-plan.jpg')}
+              alt="Pine Woods site plan showing individual homesites"
+              loading="lazy"
+              style={{ width: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}
+            />
+          </Reveal>
         </div>
       </section>
 
@@ -192,8 +195,10 @@ export function PineWoodsPage() {
               marginBottom: 40,
             }}
           >
-            {PINE_WOODS_HOMES.map((home) => (
-              <HomeCard key={home.name} home={home} dark />
+            {PINE_WOODS_HOMES.map((home, i) => (
+              <Reveal key={home.name} type="fade-in-up" delay={i * 100}>
+                <HomeCard home={home} dark />
+              </Reveal>
             ))}
           </div>
 
@@ -250,14 +255,15 @@ export function PineWoodsPage() {
               [withBase('/assets/pine-woods/majestic-great-room.png'), 'The Majestic — great room'],
               [withBase('/assets/pine-woods/majestic-kitchen.png'), 'The Majestic — kitchen'],
               [withBase('/assets/pine-woods/majestic-owners-suite.jpg'), "The Majestic — owner's suite"],
-            ].map(([src, alt]) => (
-              <img
-                key={src}
-                src={src}
-                alt={alt}
-                loading="lazy"
-                style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
-              />
+            ].map(([src, alt], i) => (
+              <Reveal key={src} type="fade-in-left" delay={i * 100}>
+                <img
+                  src={src}
+                  alt={alt}
+                  loading="lazy"
+                  style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
+                />
+              </Reveal>
             ))}
           </div>
 
@@ -272,14 +278,15 @@ export function PineWoodsPage() {
               [withBase('/assets/pine-woods/heritage-family-room.jpg'), 'The Heritage — family room'],
               [withBase('/assets/pine-woods/heritage-kitchen.jpg'), 'The Heritage — kitchen'],
               [withBase('/assets/pine-woods/heritage-primary-bedroom.jpg'), 'The Heritage — primary bedroom'],
-            ].map(([src, alt]) => (
-              <img
-                key={src}
-                src={src}
-                alt={alt}
-                loading="lazy"
-                style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
-              />
+            ].map(([src, alt], i) => (
+              <Reveal key={src} type="fade-in-right" delay={i * 100}>
+                <img
+                  src={src}
+                  alt={alt}
+                  loading="lazy"
+                  style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
+                />
+              </Reveal>
             ))}
           </div>
         </div>

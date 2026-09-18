@@ -1,5 +1,6 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
+import { Reveal } from '../Reveal';
 import { COMPANY, PINE_WOODS, type HomeDetail } from '../../data/site';
 import { withBase } from '../../lib/url';
 
@@ -198,8 +199,8 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
             className="simple-grid-2"
             style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, textAlign: 'center', marginBottom: 20 }}
           >
-            {home.floorPlans.map((plan) => (
-              <div key={plan.src}>
+            {home.floorPlans.map((plan, i) => (
+              <Reveal key={plan.src} type={i % 2 === 0 ? 'fade-in-left' : 'fade-in-right'}>
                 <img
                   src={plan.src}
                   alt={`${home.name} — ${plan.caption}`}
@@ -207,7 +208,7 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
                   style={{ width: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}
                 />
                 <p style={{ fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--fg3)', marginTop: 12 }}>{plan.caption}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
           <p style={{ fontSize: 11, color: 'var(--fg3)' }}>
@@ -280,8 +281,8 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
           </h2>
           <p style={{ fontSize: 14, color: 'var(--fg3)', maxWidth: 640, margin: '0 auto 40px' }}>{home.galleryCaption}</p>
           <div className="simple-gallery-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-            {home.gallery.map((photo) => (
-              <div key={photo.src}>
+            {home.gallery.map((photo, i) => (
+              <Reveal key={photo.src} type="fade-in-up" delay={(i % 3) * 100}>
                 <img
                   src={photo.src}
                   alt={photo.alt}
@@ -289,7 +290,7 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
                   style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', marginBottom: 12 }}
                 />
                 <p style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg3)' }}>{photo.caption}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

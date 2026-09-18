@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { ClassicNav } from './ClassicNav';
 import { ClassicFooter } from './ClassicFooter';
+import { Reveal, useReveal, type RevealType } from '../Reveal';
 import { COMPANY } from '../../data/site';
 import { withBase } from '../../lib/url';
 
@@ -49,60 +50,6 @@ const ACCORDION_ITEMS = [
   { label: 'Gathering Spaces', image: withBase('/assets/home/family-room-3-staged.jpg') },
 ];
 
-type RevealType = 'fade-in-down' | 'fade-in' | 'fade-in-up' | 'fade-in-right' | 'fade-in-left';
-
-/** Tracks whether an element has scrolled into view, once — the shared logic
- * behind Reveal, and behind any element (like a flex/grid item) that needs
- * the animation classes applied directly rather than via a wrapper div. */
-function useReveal<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return { ref, visible };
-}
-
-/** Fades/slides a section in once, the first time it scrolls into view — mirrors the
- * Elementor `_animation` scroll-entrance pattern used throughout lassalehomes.com. */
-function Reveal({
-  children,
-  type,
-  delay = 0,
-  style,
-}: {
-  children: React.ReactNode;
-  type: RevealType;
-  delay?: number;
-  style?: React.CSSProperties;
-}) {
-  const { ref, visible } = useReveal<HTMLDivElement>();
-
-  return (
-    <div
-      ref={ref}
-      className={`classic2-reveal ${type}${visible ? ' is-visible' : ''}`}
-      style={{ animationDelay: delay ? `${delay}ms` : undefined, ...style }}
-    >
-      {children}
-    </div>
-  );
-}
-
 /** An accordion panel that slides in from alternating sides as it scrolls into
  * view, then hover-expands like the rest of the accordion once settled. */
 function AccordionPanel({ label, image, direction, delay }: { label: string; image: string; direction: RevealType; delay: number }) {
@@ -111,7 +58,7 @@ function AccordionPanel({ label, image, direction, delay }: { label: string; ima
   return (
     <div
       ref={ref}
-      className={`classic2-accordion-item classic2-reveal ${direction}${visible ? ' is-visible' : ''}`}
+      className={`classic2-accordion-item reveal ${direction}${visible ? ' is-visible' : ''}`}
       style={{ backgroundImage: `url('${image}')`, animationDelay: `${delay}ms` }}
       tabIndex={0}
       role="img"

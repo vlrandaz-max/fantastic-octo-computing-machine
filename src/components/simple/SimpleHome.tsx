@@ -1,6 +1,7 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
+import { Reveal } from '../Reveal';
 import { COMPANY, FALCON_ESTATES, FALCON_ESTATES_HOMES } from '../../data/site';
 import { withBase } from '../../lib/url';
 
@@ -139,25 +140,37 @@ export function SimpleHome() {
           className="simple-grid-2"
         >
           <div>
-            <p style={eyebrow}>{COMPANY.ourStory.eyebrow}</p>
-            <h2 style={sectionHeading}>{COMPANY.ourStory.heading}</h2>
-            {COMPANY.ourStory.body.map((p) => (
-              <p key={p} style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--fg2)', marginBottom: 16, maxWidth: 480 }}>
-                {p}
-              </p>
+            <Reveal type="fade-in-down">
+              <p style={eyebrow}>{COMPANY.ourStory.eyebrow}</p>
+            </Reveal>
+            <Reveal type="fade-in-down" delay={120}>
+              <h2 style={sectionHeading}>{COMPANY.ourStory.heading}</h2>
+            </Reveal>
+            {COMPANY.ourStory.body.map((p, i) => (
+              <Reveal key={p} type="fade-in" delay={260 + i * 100}>
+                <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--fg2)', marginBottom: 16, maxWidth: 480 }}>
+                  {p}
+                </p>
+              </Reveal>
             ))}
-            <a href={withBase('/homes-available')} style={{ ...outlineButton, marginTop: 12 }}>
-              View Available Homes
-            </a>
+            <Reveal type="fade-in-up" delay={480}>
+              <a href={withBase('/homes-available')} style={{ ...outlineButton, marginTop: 12 }}>
+                View Available Homes
+              </a>
+            </Reveal>
           </div>
           <div style={{ position: 'relative', height: 440 }}>
-            <img
-              src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
-              alt="The Grandeur — an L&amp;R Homes residence at twilight"
-              loading="lazy"
-              style={{ position: 'absolute', top: 0, left: 0, width: '78%', height: '65%', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
-            />
-            <div
+            <Reveal type="fade-in-left" style={{ position: 'absolute', top: 0, left: 0, width: '78%', height: '65%' }}>
+              <img
+                src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
+                alt="The Grandeur — an L&amp;R Homes residence at twilight"
+                loading="lazy"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
+              />
+            </Reveal>
+            <Reveal
+              type="fade-in-right"
+              delay={200}
               style={{
                 position: 'absolute',
                 bottom: 0,
@@ -189,7 +202,7 @@ export function SimpleHome() {
                   {COMPANY.ourStory.photoCaption.subtitle}
                 </p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -208,8 +221,10 @@ export function SimpleHome() {
             className="simple-gallery-3"
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, textAlign: 'left' }}
           >
-            {FALCON_ESTATES_HOMES.map((home) => (
-              <HomeCard key={home.name} home={home} />
+            {FALCON_ESTATES_HOMES.map((home, i) => (
+              <Reveal key={home.name} type="fade-in-up" delay={i * 100}>
+                <HomeCard home={home} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -219,21 +234,31 @@ export function SimpleHome() {
       <section id="falcon-estates" style={{ padding: '96px 40px', background: 'var(--bg1)' }}>
         <div className="simple-grid-2" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <div>
-            <p style={eyebrow}>{FALCON_ESTATES.eyebrow}</p>
-            <h2 style={sectionHeading}>{FALCON_ESTATES.name}</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--fg2)', marginBottom: 28, maxWidth: 480 }}>
-              {FALCON_ESTATES.body}
-            </p>
-            <a href={withBase('/homes-available')} style={outlineButton}>
-              View Homes
-            </a>
+            <Reveal type="fade-in-down">
+              <p style={eyebrow}>{FALCON_ESTATES.eyebrow}</p>
+            </Reveal>
+            <Reveal type="fade-in-down" delay={120}>
+              <h2 style={sectionHeading}>{FALCON_ESTATES.name}</h2>
+            </Reveal>
+            <Reveal type="fade-in" delay={260}>
+              <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--fg2)', marginBottom: 28, maxWidth: 480 }}>
+                {FALCON_ESTATES.body}
+              </p>
+            </Reveal>
+            <Reveal type="fade-in-up" delay={380}>
+              <a href={withBase('/homes-available')} style={outlineButton}>
+                View Homes
+              </a>
+            </Reveal>
           </div>
-          <img
-            src={withBase('/assets/home/foyer-staged.jpg')}
-            alt="A foyer in a home in Falcon Estates"
-            loading="lazy"
-            style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
-          />
+          <Reveal type="fade-in-right">
+            <img
+              src={withBase('/assets/home/foyer-staged.jpg')}
+              alt="A foyer in a home in Falcon Estates"
+              loading="lazy"
+              style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
+            />
+          </Reveal>
         </div>
       </section>
 
@@ -250,14 +275,15 @@ export function SimpleHome() {
               [withBase('/assets/home/kitchen-staged-2.png'), "Chef's kitchen"],
               [withBase('/assets/home/primary-suite-staged-4.png'), 'Primary suite'],
               [withBase('/assets/home/butlers-pantry-staged.jpg'), "Butler's pantry"],
-            ].map(([src, alt]) => (
-              <img
-                key={src}
-                src={src}
-                alt={alt}
-                loading="lazy"
-                style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
-              />
+            ].map(([src, alt], i) => (
+              <Reveal key={src} type="fade-in-up" delay={i * 100}>
+                <img
+                  src={src}
+                  alt={alt}
+                  loading="lazy"
+                  style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
+                />
+              </Reveal>
             ))}
           </div>
         </div>

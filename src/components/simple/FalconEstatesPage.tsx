@@ -1,5 +1,6 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
+import { useRevealScope } from '../Reveal';
 import { withBase } from '../../lib/url';
 
 /**
@@ -216,7 +217,7 @@ const FALCON_BODY = `
       <p class="overview-p">Every home is served by municipal water &amp; sewer and located within the sought-after Rochester School District, combining the privacy of a wooded setting with the convenience of full city-grade infrastructure.</p>
       <a class="btn btn-gold" href="https://landrhomes.com/wp-content/uploads/Falcon-Estates-2024--scaled.jpg" target="_blank" rel="noopener">View the Site Plan</a>
     </div>
-    <div class="overview-photo">
+    <div class="overview-photo reveal fade-in-right">
       <img decoding="async" src="${withBase('/assets/home/coachwood-aerial-2.jpg')}" alt="Falcon Estates aerial view of the community">
       <div class="overview-photo-label">
         <div class="yr">1973</div>
@@ -232,22 +233,22 @@ const FALCON_BODY = `
     <div class="eyebrow">Community Highlights</div>
     <h2 class="amenities-h2">Amenities &amp; Features</h2>
     <div class="amenities-grid">
-      <div class="amenity-card">
+      <div class="amenity-card reveal fade-in" style="animation-delay: 0ms">
         <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg></div>
         <div class="amenity-title">10-Acre Preserve</div>
         <div class="amenity-body">A wooded nature preserve at the heart of the community, offering privacy and natural beauty year-round.</div>
       </div>
-      <div class="amenity-card">
+      <div class="amenity-card reveal fade-in" style="animation-delay: 100ms">
         <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg></div>
         <div class="amenity-title">Rochester Schools</div>
         <div class="amenity-body">Located within the highly regarded Rochester School District, one of Metro Detroit&rsquo;s most sought-after.</div>
       </div>
-      <div class="amenity-card">
+      <div class="amenity-card reveal fade-in" style="animation-delay: 200ms">
         <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></div>
         <div class="amenity-title">Move-In Ready Homes</div>
         <div class="amenity-body">Each home is built to the same exacting standard and made available as it nears completion.</div>
       </div>
-      <div class="amenity-card">
+      <div class="amenity-card reveal fade-in" style="animation-delay: 300ms">
         <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M12 2 14.6 8.5 21.5 9 16.3 13.5 17.8 20.5 12 16.9 6.2 20.5 7.7 13.5 2.5 9 9.4 8.5 12 2z"/></svg></div>
         <div class="amenity-title">50+ Year Legacy</div>
         <div class="amenity-body">L&amp;R Homes, Inc. has been building quality custom homes in the Rochester Hills area since 1973.</div>
@@ -262,35 +263,35 @@ const FALCON_BODY = `
     <div class="eyebrow" style="color: rgba(200,180,140,0.75);">Now Available</div>
     <h2 class="homes-h2">Homes in Falcon Estates</h2>
     <div class="homes-grid">
-      <a class="home-card" href="${withBase('/grandeur')}">
+      <a class="home-card reveal fade-in" style="animation-delay: 0ms" href="${withBase('/grandeur')}">
         <img decoding="async" src="${withBase('/assets/home/grandeur-exterior-twilight.jpg')}" alt="The Grandeur">
         <div class="home-card-body">
           <div class="home-card-name">The Grandeur</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
         </div>
       </a>
-      <a class="home-card" href="https://landrhomes.com/crestwood/" target="_blank" rel="noopener">
+      <a class="home-card reveal fade-in" style="animation-delay: 100ms" href="https://landrhomes.com/crestwood/" target="_blank" rel="noopener">
         <img decoding="async" src="${withBase('/assets/home/falcon-estates-hero.jpg')}" alt="The Crestwood">
         <div class="home-card-body">
           <div class="home-card-name">The Crestwood</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
         </div>
       </a>
-      <a class="home-card" href="https://landrhomes.com/cambridge/" target="_blank" rel="noopener">
+      <a class="home-card reveal fade-in" style="animation-delay: 200ms" href="https://landrhomes.com/cambridge/" target="_blank" rel="noopener">
         <img decoding="async" src="${withBase('/assets/home/835-crestwood-front.jpg')}" alt="The Cambridge">
         <div class="home-card-body">
           <div class="home-card-name">The Cambridge</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
         </div>
       </a>
-      <a class="home-card" href="https://landrhomes.com/madison/" target="_blank" rel="noopener">
+      <a class="home-card reveal fade-in" style="animation-delay: 300ms" href="https://landrhomes.com/madison/" target="_blank" rel="noopener">
         <img decoding="async" src="${withBase('/assets/home/madison-exterior.jpg')}" alt="The Madison">
         <div class="home-card-body">
           <div class="home-card-name">The Madison</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
         </div>
       </a>
-      <a class="home-card" href="https://landrhomes.com/stratford/" target="_blank" rel="noopener">
+      <a class="home-card reveal fade-in" style="animation-delay: 400ms" href="https://landrhomes.com/stratford/" target="_blank" rel="noopener">
         <img decoding="async" src="${withBase('/assets/home/829-crestwood-front.jpg')}" alt="The Stratford">
         <div class="home-card-body">
           <div class="home-card-name">The Stratford</div>
@@ -326,12 +327,14 @@ const FALCON_BODY = `
 `;
 
 export function FalconEstatesPage() {
+  const revealScope = useRevealScope<HTMLDivElement>();
+
   return (
     <div className="falcon-page">
       <style>{FALCON_STYLE}</style>
       <div style={{ position: 'relative' }}>
         <SimpleNav />
-        <div dangerouslySetInnerHTML={{ __html: FALCON_BODY }} />
+        <div ref={revealScope} dangerouslySetInnerHTML={{ __html: FALCON_BODY }} />
       </div>
       <SimpleFooter />
     </div>

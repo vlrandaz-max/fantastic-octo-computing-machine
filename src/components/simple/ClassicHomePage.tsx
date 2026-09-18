@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { ClassicNav } from './ClassicNav';
 import { ClassicFooter } from './ClassicFooter';
+import { Reveal } from '../Reveal';
 import { COMPANY } from '../../data/site';
 import { withBase } from '../../lib/url';
 
@@ -109,35 +110,46 @@ export function ClassicHomePage() {
       <section id="about-us" className="classic-pattern-bg" style={{ padding: '100px 32px' }}>
         <div className="classic-grid-2" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
           <div>
-            <p style={kicker}>Modern Craftsmanship in a Trusted Name</p>
-            <h2 style={heading}>
-              Welcome
-              <br />
-              To L&amp;R Homes
-            </h2>
-            {COMPANY.ourStory.body.map((p) => (
-              <p key={p} style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 16, lineHeight: 1.85, color: 'var(--fg2)', marginBottom: 16, maxWidth: 480 }}>
-                {p}
-              </p>
+            <Reveal type="fade-in-down">
+              <p style={kicker}>Modern Craftsmanship in a Trusted Name</p>
+            </Reveal>
+            <Reveal type="fade-in-down" delay={120}>
+              <h2 style={heading}>
+                Welcome
+                <br />
+                To L&amp;R Homes
+              </h2>
+            </Reveal>
+            {COMPANY.ourStory.body.map((p, i) => (
+              <Reveal key={p} type="fade-in" delay={260 + i * 100}>
+                <p style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 16, lineHeight: 1.85, color: 'var(--fg2)', marginBottom: 16, maxWidth: 480 }}>
+                  {p}
+                </p>
+              </Reveal>
             ))}
-            <a href={withBase('/homes-available')} className="classic-btn-underline" style={{ marginTop: 10 }}>
-              About Us
-            </a>
+            <Reveal type="fade-in-up" delay={480}>
+              <a href={withBase('/homes-available')} className="classic-btn-underline" style={{ marginTop: 10 }}>
+                About Us
+              </a>
+            </Reveal>
           </div>
           <div className="classic-collage" style={{ position: 'relative', height: 520 }}>
-            <img
-              src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
-              alt="An L&amp;R Homes residence at twilight"
-              loading="lazy"
-              style={{ position: 'absolute', left: 0, bottom: 0, width: '58%', height: '82%', objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
-            />
-            <img
-              className="classic-collage-offset"
-              src={withBase('/assets/home/kitchen-full-run.jpg')}
-              alt="A kitchen in an L&amp;R Homes residence"
-              loading="lazy"
-              style={{ position: 'absolute', right: 0, top: 0, width: '48%', height: '68%', objectFit: 'cover', boxShadow: 'var(--shadow-3)' }}
-            />
+            <Reveal type="fade-in-left" style={{ position: 'absolute', left: 0, bottom: 0, width: '58%', height: '82%' }}>
+              <img
+                src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
+                alt="An L&amp;R Homes residence at twilight"
+                loading="lazy"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
+              />
+            </Reveal>
+            <Reveal type="fade-in-right" delay={200} className="classic-collage-offset" style={{ position: 'absolute', right: 0, top: 0, width: '48%', height: '68%' }}>
+              <img
+                src={withBase('/assets/home/kitchen-full-run.jpg')}
+                alt="A kitchen in an L&amp;R Homes residence"
+                loading="lazy"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', boxShadow: 'var(--shadow-3)' }}
+              />
+            </Reveal>
           </div>
         </div>
       </section>
@@ -150,22 +162,24 @@ export function ClassicHomePage() {
           </p>
           <h2 style={heading}>Explore Our Communities</h2>
           <div className="classic-explore-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, marginTop: 56 }}>
-            {EXPLORE_CARDS.map((card) => (
-              <a key={card.label} href={card.href} className="classic-stem-card">
-                <img
-                  src={card.image}
-                  alt={card.label}
-                  loading="lazy"
-                  style={{ width: '100%', height: 300, objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
-                />
-                <span className="classic-stem-line" />
-                <span
-                  className="classic-btn-outline classic-hover-float"
-                  style={{ color: 'var(--color-brand-dark)', borderColor: 'var(--color-brand-gold)' }}
-                >
-                  {card.label}
-                </span>
-              </a>
+            {EXPLORE_CARDS.map((card, i) => (
+              <Reveal key={card.label} type="fade-in-up" delay={i * 100}>
+                <a href={card.href} className="classic-stem-card">
+                  <img
+                    src={card.image}
+                    alt={card.label}
+                    loading="lazy"
+                    style={{ width: '100%', height: 300, objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
+                  />
+                  <span className="classic-stem-line" />
+                  <span
+                    className="classic-btn-outline classic-hover-float"
+                    style={{ color: 'var(--color-brand-dark)', borderColor: 'var(--color-brand-gold)' }}
+                  >
+                    {card.label}
+                  </span>
+                </a>
+              </Reveal>
             ))}
           </div>
         </div>
