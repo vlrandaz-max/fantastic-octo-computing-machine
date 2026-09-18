@@ -16,8 +16,7 @@ const eyebrow: React.CSSProperties = {
 const EXTERIOR_GALLERY = [
   { src: withBase('/assets/home/madison-twilight-aerial.jpg'), alt: 'The Madison — twilight exterior, aerial view', caption: 'Twilight · Aerial View' },
   { src: withBase('/assets/home/madison-twilight.jpg'), alt: 'The Madison — twilight exterior', caption: 'Twilight' },
-  { src: withBase('/assets/home/madison-exterior.jpg'), alt: 'The Madison — daytime exterior', caption: 'Daytime' },
-  { src: withBase('/assets/home/madison-exteriors-2.jpg'), alt: 'The Madison — aerial exterior', caption: 'Aerial View' },
+  { src: withBase('/assets/home/madison-exteriors-2.jpg'), alt: 'The Madison — daytime exterior', caption: 'Front View' },
 ];
 
 const INTERIOR_GALLERY = [
