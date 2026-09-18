@@ -209,12 +209,14 @@ export function Classic2HomePage() {
             {EXPLORE_CARDS.map((card, i) => (
               <Reveal key={card.label} type="fade-in-up" delay={i * 100}>
                 <a href={card.href} className="classic-stem-card">
-                  <img
-                    src={card.image}
-                    alt={card.label}
-                    loading="lazy"
-                    style={{ width: '100%', height: 300, objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
-                  />
+                  <span className="classic-stem-photo">
+                    <img
+                      src={card.image}
+                      alt={card.label}
+                      loading="lazy"
+                      style={{ width: '100%', height: 300, objectFit: 'cover', display: 'block' }}
+                    />
+                  </span>
                   <span className="classic-stem-line" />
                   <span
                     className="classic-btn-outline classic-hover-float"

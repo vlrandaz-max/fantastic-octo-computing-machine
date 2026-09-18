@@ -347,6 +347,36 @@ button:focus-visible {
   text-decoration: none;
 }
 
+.classic-stem-photo {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  position: relative;
+}
+
+.classic-stem-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 11, 11, 0.18);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.classic-stem-photo img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), filter 0.7s ease;
+}
+
+.classic-stem-card:hover .classic-stem-photo img {
+  transform: scale(1.08);
+  filter: saturate(1.08);
+}
+
+.classic-stem-card:hover .classic-stem-photo::after {
+  opacity: 1;
+}
+
 .classic-stem-line {
   width: 1px;
   height: 40px;
