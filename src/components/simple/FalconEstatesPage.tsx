@@ -21,15 +21,14 @@ import { withBase } from '../../lib/url';
  *
  * Photos: the real site's own home-card images map by street address, not
  * by home name — Grandeur → 3836 Coachwood Lane (confirmed), Cambridge →
- * 835 Crestwood, Stratford → 829 Crestwood, while Crestwood has no
- * dedicated address photo on the live site and reuses a generic exterior.
- * Madison's real photo (madison-exterior.jpg, matching the real site's own
- * hotlinked filename) was later uploaded and wired in here too. That
- * mapping is applied here and was also used to correct FALCON_ESTATES_HOMES
- * in data/site.ts, which previously had Crestwood/Stratford's addressed
- * photos swapped. Grandeur uses the twilight exterior (matching its use as
- * a listing thumbnail everywhere else in the app); Crestwood is still the
- * only card without a dedicated photo, same as on the real site.
+ * 835 Crestwood, Stratford → 829 Crestwood, Crestwood → its own confirmed
+ * twilight photo. Madison's real photo (madison-exterior.jpg, matching the
+ * real site's own hotlinked filename) was later uploaded and wired in here
+ * too. That mapping is applied here and was also used to correct
+ * FALCON_ESTATES_HOMES in data/site.ts, which previously had
+ * Crestwood/Stratford's addressed photos swapped. Grandeur uses the
+ * twilight exterior (matching its use as a listing thumbnail everywhere
+ * else in the app).
  */
 
 const FALCON_STYLE = `
@@ -273,7 +272,7 @@ const FALCON_BODY = `
         </div>
       </a>
       <a class="home-card reveal fade-in" style="animation-delay: 100ms" href="https://landrhomes.com/crestwood/" target="_blank" rel="noopener">
-        <img decoding="async" src="${withBase('/assets/home/falcon-estates-hero.jpg')}" alt="The Crestwood">
+        <img decoding="async" src="${withBase('/assets/home/crestwood-twilight-2026.jpg')}" alt="The Crestwood">
         <div class="home-card-body">
           <div class="home-card-name">The Crestwood</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>

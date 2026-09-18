@@ -6,11 +6,10 @@
  * Photography note: FALCON_ESTATES_HOMES images follow the real site's own
  * address-based home-card mapping (see FalconEstatesPage) — Grandeur is
  * 3836 Coachwood Lane, Cambridge is 835 Crestwood, Stratford is 829
- * Crestwood, and Madison has its own confirmed photo (madison-exterior.jpg,
- * matching the real site's own hotlinked filename). Crestwood has no
- * dedicated address photo on the live site either and reuses a generic
- * exterior there too, mirrored here. The Majestic and The Heritage each
- * have their own confirmed Pine Woods photography.
+ * Crestwood, Crestwood has its own confirmed twilight photo, and Madison
+ * has its own confirmed photo (madison-exterior.jpg, matching the real
+ * site's own hotlinked filename). The Majestic and The Heritage each have
+ * their own confirmed Pine Woods photography.
  */
 
 import { withBase } from '../lib/url';
@@ -74,13 +73,13 @@ export interface HomeListing {
 /**
  * Image assignments follow the real site's own home-card photos, which map
  * by street address, not by home name: Grandeur → 3836 Coachwood Lane,
- * Cambridge → 835 Crestwood, Stratford → 829 Crestwood. Crestwood and
- * Madison have no dedicated address photo on the live site and reuse a
- * generic exterior there too — mirrored here.
+ * Cambridge → 835 Crestwood, Stratford → 829 Crestwood, and Crestwood has
+ * its own confirmed twilight photo. Madison has no dedicated address photo
+ * on the live site and reuses a generic exterior there too — mirrored here.
  */
 export const FALCON_ESTATES_HOMES: HomeListing[] = [
   { name: 'The Grandeur', status: 'move-in-ready', image: withBase('/assets/home/grandeur-exterior-twilight.jpg'), community: 'Falcon Estates', href: withBase('/grandeur') },
-  { name: 'The Crestwood', status: 'sold', image: withBase('/assets/home/falcon-estates-hero.jpg'), community: 'Falcon Estates' },
+  { name: 'The Crestwood', status: 'sold', image: withBase('/assets/home/crestwood-twilight-2026.jpg'), community: 'Falcon Estates' },
   { name: 'The Cambridge', status: 'sold', image: withBase('/assets/home/835-crestwood-front.jpg'), community: 'Falcon Estates' },
   { name: 'The Madison', status: 'sold', image: withBase('/assets/home/madison-exterior.jpg'), community: 'Falcon Estates' },
   { name: 'The Stratford', status: 'sold', image: withBase('/assets/home/829-crestwood-front.jpg'), community: 'Falcon Estates' },
