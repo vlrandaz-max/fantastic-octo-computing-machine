@@ -277,7 +277,7 @@ const FALCON_BODY = `
         </div>
       </a>
       <a class="home-card reveal fade-in" style="animation-delay: 200ms" href="${withBase('/cambridge')}">
-        <img decoding="async" src="${withBase('/assets/home/835-crestwood-front.jpg')}" alt="The Cambridge">
+        <img decoding="async" src="${withBase('/assets/home/cambridge-twilight.jpg')}" alt="The Cambridge">
         <div class="home-card-body">
           <div class="home-card-name">The Cambridge</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
