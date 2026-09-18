@@ -52,6 +52,17 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'cambridge-dining-room.jpg', alt: 'The Cambridge — dining room', category: 'interior' },
   { src: 'cambridge-study.jpg', alt: 'The Cambridge — study', category: 'interior' },
   { src: 'cambridge-master-bedroom.jpg', alt: 'The Cambridge — primary bedroom', category: 'interior' },
+  { src: 'stratford-family-room.jpg', alt: 'The Stratford — family room', category: 'interior' },
+  { src: 'stratford-family-kitchen.jpg', alt: 'The Stratford — family room and kitchen', category: 'interior' },
+  { src: 'stratford-bar-kitchen-nook-family.jpg', alt: 'The Stratford — bar, kitchen nook, and family room', category: 'interior' },
+  { src: 'stratford-kitchen-nook.jpg', alt: 'The Stratford — kitchen and breakfast nook', category: 'interior' },
+  { src: 'stratford-dining-room.jpg', alt: 'The Stratford — dining room', category: 'interior' },
+  { src: 'stratford-study.jpg', alt: 'The Stratford — study', category: 'interior' },
+  { src: 'stratford-media-room.jpg', alt: 'The Stratford — media room', category: 'interior' },
+  { src: 'stratford-owners-suite.jpg', alt: "The Stratford — owner's suite", category: 'interior' },
+  { src: 'stratford-private-bedroom.jpg', alt: 'The Stratford — private bedroom', category: 'interior' },
+  { src: 'stratford-jack-bedroom.jpg', alt: 'The Stratford — Jack and Jill bedroom', category: 'interior' },
+  { src: 'stratford-jill-bedroom.jpg', alt: 'The Stratford — Jack and Jill bedroom', category: 'interior' },
 ];
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = RAW_PHOTOS.map((p) => ({ ...p, src: withBase(`/assets/home/${p.src}`) }));

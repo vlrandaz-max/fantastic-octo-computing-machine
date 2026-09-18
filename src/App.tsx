@@ -9,6 +9,7 @@ import { HomeDetailPage } from './components/simple/HomeDetailPage';
 import { GrandeurPage } from './components/simple/GrandeurPage';
 import { CrestwoodPage } from './components/simple/CrestwoodPage';
 import { CambridgePage } from './components/simple/CambridgePage';
+import { StratfordPage } from './components/simple/StratfordPage';
 import { FalconEstatesPage } from './components/simple/FalconEstatesPage';
 import { ClassicHomePage } from './components/simple/ClassicHomePage';
 import { Classic2HomePage } from './components/simple/Classic2HomePage';
@@ -38,6 +39,7 @@ function App() {
   if (path.startsWith('/grandeur')) return <GrandeurPage />;
   if (path.startsWith('/crestwood')) return <CrestwoodPage />;
   if (path.startsWith('/cambridge')) return <CambridgePage />;
+  if (path.startsWith('/stratford')) return <StratfordPage />;
   if (path.startsWith('/falcon-estates')) return <FalconEstatesPage />;
   if (path.startsWith('/majestic')) return <HomeDetailPage home={HOME_DETAILS.majestic} />;
   if (path.startsWith('/heritage')) return <HomeDetailPage home={HOME_DETAILS.heritage} />;
