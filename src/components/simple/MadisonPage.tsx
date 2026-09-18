@@ -13,17 +13,26 @@ const eyebrow: React.CSSProperties = {
   color: 'var(--color-brand-gold)',
 };
 
-const GALLERY = [
+const EXTERIOR_GALLERY = [
   { src: withBase('/assets/home/madison-twilight.jpg'), alt: 'The Madison — twilight exterior', caption: 'Twilight' },
   { src: withBase('/assets/home/madison-exterior.jpg'), alt: 'The Madison — daytime exterior', caption: 'Daytime' },
+  { src: withBase('/assets/home/madison-exteriors-2.jpg'), alt: 'The Madison — aerial exterior', caption: 'Aerial View' },
+];
+
+const INTERIOR_GALLERY = [
+  { src: withBase('/assets/home/madison-interior-26.jpg'), alt: 'The Madison — great room', caption: 'Great Room · Fireplace' },
+  { src: withBase('/assets/home/madison-interior-14.jpg'), alt: 'The Madison — kitchen', caption: 'Kitchen' },
+  { src: withBase('/assets/home/madison-interior-15.jpg'), alt: 'The Madison — kitchen island', caption: 'Kitchen · Island' },
+  { src: withBase('/assets/home/madison-kitchen-nook.jpg'), alt: 'The Madison — kitchen and breakfast nook', caption: 'Kitchen · Breakfast Nook' },
+  { src: withBase('/assets/home/madison-interior-10.jpg'), alt: "The Madison — wet bar and butler's pantry", caption: "Wet Bar · Butler's Pantry" },
+  { src: withBase('/assets/home/madison-interior-11.jpg'), alt: "The Madison — wet bar and butler's pantry", caption: "Wet Bar · Butler's Pantry" },
 ];
 
 /**
  * The Madison — a sold Falcon Estates home, shown here as a portfolio
- * page. Mirrors Crestwood/Cambridge/Stratford's structure, but unlike
- * those three, no interior photography has been uploaded for Madison —
- * only its two confirmed exterior shots (twilight + daytime) exist, so
- * the gallery section shows those instead of interior rooms.
+ * page. Mirrors Crestwood/Cambridge/Stratford's structure with a dedicated
+ * interior gallery, plus a third (aerial) exterior shot alongside the
+ * original twilight and daytime views.
  */
 export function MadisonPage() {
   return (
@@ -121,8 +130,10 @@ export function MadisonPage() {
             <Reveal type="fade-in" delay={100}>
               <p style={{ fontSize: 15, lineHeight: 1.85, color: 'var(--fg2)', marginBottom: 18 }}>
                 The Madison brought a commanding stone-and-brick elevation and a soaring arched entry to one of
-                Falcon Estates&rsquo; homesites — the same hands-on L&amp;R Homes craftsmanship carried from the
-                street all the way through the finished home.
+                Falcon Estates&rsquo; homesites — inside, a two-story great room with a stacked-stone fireplace
+                opens straight into a vaulted, gourmet kitchen with a wet bar and butler&rsquo;s pantry just off
+                the staircase, the same hands-on L&amp;R Homes craftsmanship carried from the street all the way
+                through the finished home.
               </p>
             </Reveal>
             <Reveal type="fade-in" delay={200}>
@@ -130,8 +141,7 @@ export function MadisonPage() {
             </Reveal>
             <Reveal type="fade-in" delay={300}>
               <p style={{ fontSize: 15, lineHeight: 1.85, color: 'var(--fg2)' }}>
-                The Madison has sold. Interior photography of the completed home isn&rsquo;t available yet — the
-                exterior views below are what we have on file for now.
+                The Madison has sold — the photography below shows the completed home.
               </p>
             </Reveal>
           </div>
@@ -140,7 +150,7 @@ export function MadisonPage() {
 
       {/* Exterior gallery */}
       <section style={{ padding: '88px 40px', background: 'var(--bg1)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
           <p style={eyebrow}>Exterior Views</p>
           <h2
             style={{
@@ -151,13 +161,41 @@ export function MadisonPage() {
               margin: '14px 0 40px',
             }}
           >
-            The <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>Madison</em>, Day and Night
+            The <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>Madison</em>, Every Angle
           </h2>
-          <div className="simple-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
-            {GALLERY.map((photo, i) => (
-              <Reveal key={photo.src} type={i % 2 === 0 ? 'fade-in-left' : 'fade-in-right'}>
+          <div className="simple-gallery-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            {EXTERIOR_GALLERY.map((photo, i) => (
+              <Reveal key={photo.src} type="fade-in-up" delay={i * 100}>
                 <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', marginBottom: 12 }}>
-                  <img src={photo.src} alt={photo.alt} loading="lazy" style={{ width: '100%', height: 340, objectFit: 'cover' }} />
+                  <img src={photo.src} alt={photo.alt} loading="lazy" style={{ width: '100%', height: 300, objectFit: 'cover' }} />
+                </span>
+                <p style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg3)' }}>{photo.caption}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interior gallery */}
+      <section style={{ padding: '0 40px 88px', background: 'var(--bg1)' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
+          <p style={eyebrow}>A Closer Look</p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 400,
+              fontSize: 'clamp(2rem,4vw,2.75rem)',
+              color: 'var(--color-brand-dark)',
+              margin: '14px 0 40px',
+            }}
+          >
+            Inside <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>The Madison</em>
+          </h2>
+          <div className="simple-gallery-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            {INTERIOR_GALLERY.map((photo, i) => (
+              <Reveal key={photo.src} type="fade-in-up" delay={(i % 3) * 100}>
+                <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', marginBottom: 12 }}>
+                  <img src={photo.src} alt={photo.alt} loading="lazy" style={{ width: '100%', height: 300, objectFit: 'cover' }} />
                 </span>
                 <p style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg3)' }}>{photo.caption}</p>
               </Reveal>

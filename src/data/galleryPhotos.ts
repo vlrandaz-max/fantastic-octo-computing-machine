@@ -19,6 +19,8 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: '829-crestwood-front.jpg', alt: '829 Crestwood — front', category: 'exterior' },
   { src: '835-crestwood-front.jpg', alt: '835 Crestwood — front', category: 'exterior' },
   { src: 'madison-twilight.jpg', alt: 'The Madison — twilight exterior', category: 'exterior' },
+  { src: 'madison-exterior.jpg', alt: 'The Madison — daytime exterior', category: 'exterior' },
+  { src: 'madison-exteriors-2.jpg', alt: 'The Madison — aerial exterior', category: 'exterior' },
 
   { src: 'foyer-staged.jpg', alt: 'Foyer', category: 'interior' },
   { src: 'kitchen-staged-1.png', alt: 'Kitchen', category: 'interior' },
@@ -63,6 +65,12 @@ const RAW_PHOTOS: RawPhoto[] = [
   { src: 'stratford-private-bedroom.jpg', alt: 'The Stratford — private bedroom', category: 'interior' },
   { src: 'stratford-jack-bedroom.jpg', alt: 'The Stratford — Jack and Jill bedroom', category: 'interior' },
   { src: 'stratford-jill-bedroom.jpg', alt: 'The Stratford — Jack and Jill bedroom', category: 'interior' },
+  { src: 'madison-interior-26.jpg', alt: 'The Madison — great room', category: 'interior' },
+  { src: 'madison-interior-14.jpg', alt: 'The Madison — kitchen', category: 'interior' },
+  { src: 'madison-interior-15.jpg', alt: 'The Madison — kitchen island', category: 'interior' },
+  { src: 'madison-kitchen-nook.jpg', alt: 'The Madison — kitchen and breakfast nook', category: 'interior' },
+  { src: 'madison-interior-10.jpg', alt: "The Madison — wet bar and butler's pantry", category: 'interior' },
+  { src: 'madison-interior-11.jpg', alt: "The Madison — wet bar and butler's pantry", category: 'interior' },
 ];
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = RAW_PHOTOS.map((p) => ({ ...p, src: withBase(`/assets/home/${p.src}`) }));
