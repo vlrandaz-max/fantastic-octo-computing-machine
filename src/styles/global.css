@@ -555,3 +555,16 @@ button:focus-visible {
     transition: none;
   }
 }
+
+/* HomeDetailPage hero — the bottom-right "L&R Homes, Inc." corner credit
+   is absolutely positioned at a fixed offset from the hero's bottom edge,
+   independent of the main hero content block below it. On narrow screens
+   the address line wraps to two lines, pushing it down into the same
+   bottom-right region as the credit tag and causing visible text overlap.
+   The tag is redundant with the nav's own logo directly above it, so it's
+   simplest and safest to just hide it below the tablet breakpoint. */
+@media (max-width: 767px) {
+  .hero-credit-tag {
+    display: none;
+  }
+}
