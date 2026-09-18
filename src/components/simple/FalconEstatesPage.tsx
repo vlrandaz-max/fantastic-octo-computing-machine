@@ -125,7 +125,8 @@ const FALCON_STYLE = `
     color: #2E2820; line-height: 1.15; margin-bottom: 20px; }
   .falcon-page .overview-p { font-size: 1rem; line-height: 1.8; color: var(--fe-fg2); margin-bottom: 16px; }
   .falcon-page .overview-photo { position: relative; height: 420px; border-radius: var(--fe-radius-md); overflow: hidden; box-shadow: var(--fe-shadow-2); }
-  .falcon-page .overview-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .falcon-page .overview-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms cubic-bezier(0.25,0.1,0.25,1); }
+  .falcon-page .overview-photo:hover img { transform: scale(1.08); }
   .falcon-page .overview-photo-label { position: absolute; bottom: 24px; left: 24px; }
   .falcon-page .overview-photo-label .yr { font-family: var(--fe-font-display); font-size: 3rem; font-weight: 300; color: rgba(196,160,90,0.7); line-height: 1; }
   .falcon-page .overview-photo-label .since { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(196,160,90,0.85); margin-top: 4px; }
@@ -152,7 +153,8 @@ const FALCON_STYLE = `
   .falcon-page .home-card { display: block; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--fe-radius-sm); overflow: hidden; transition: box-shadow 220ms ease, transform 220ms ease; }
   .falcon-page .home-card:hover { box-shadow: var(--fe-shadow-2); transform: translateY(-3px); }
-  .falcon-page .home-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .falcon-page .home-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 700ms cubic-bezier(0.25,0.1,0.25,1); }
+  .falcon-page .home-card:hover img { transform: scale(1.08); }
   .falcon-page .home-card-body { padding: 20px 22px 24px; }
   .falcon-page .home-card-name { font-family: var(--fe-font-display); font-style: italic; font-size: 1.5rem; font-weight: 400; color: #F2F0E6; margin-bottom: 10px; }
   .falcon-page .home-card-cta { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fe-accent-light);

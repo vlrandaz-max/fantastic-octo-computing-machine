@@ -135,20 +135,24 @@ export function ClassicHomePage() {
           </div>
           <div className="classic-collage" style={{ position: 'relative', height: 520 }}>
             <Reveal type="fade-in-left" style={{ position: 'absolute', left: 0, bottom: 0, width: '58%', height: '82%' }}>
-              <img
-                src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
-                alt="An L&amp;R Homes residence at twilight"
-                loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
-              />
+              <span className="photo-zoom" style={{ width: '100%', height: '100%', boxShadow: 'var(--shadow-2)' }}>
+                <img
+                  src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
+                  alt="An L&amp;R Homes residence at twilight"
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </span>
             </Reveal>
             <Reveal type="fade-in-right" delay={200} className="classic-collage-offset" style={{ position: 'absolute', right: 0, top: 0, width: '48%', height: '68%' }}>
-              <img
-                src={withBase('/assets/home/kitchen-full-run.jpg')}
-                alt="A kitchen in an L&amp;R Homes residence"
-                loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', boxShadow: 'var(--shadow-3)' }}
-              />
+              <span className="photo-zoom" style={{ width: '100%', height: '100%', boxShadow: 'var(--shadow-3)' }}>
+                <img
+                  src={withBase('/assets/home/kitchen-full-run.jpg')}
+                  alt="A kitchen in an L&amp;R Homes residence"
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </span>
             </Reveal>
           </div>
         </div>
@@ -165,12 +169,14 @@ export function ClassicHomePage() {
             {EXPLORE_CARDS.map((card, i) => (
               <Reveal key={card.label} type="fade-in-up" delay={i * 100}>
                 <a href={card.href} className="classic-stem-card">
-                  <img
-                    src={card.image}
-                    alt={card.label}
-                    loading="lazy"
-                    style={{ width: '100%', height: 300, objectFit: 'cover', boxShadow: 'var(--shadow-2)' }}
-                  />
+                  <span className="classic-stem-photo">
+                    <img
+                      src={card.image}
+                      alt={card.label}
+                      loading="lazy"
+                      style={{ width: '100%', height: 300, objectFit: 'cover', display: 'block' }}
+                    />
+                  </span>
                   <span className="classic-stem-line" />
                   <span
                     className="classic-btn-outline classic-hover-float"

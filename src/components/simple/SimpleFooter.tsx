@@ -40,11 +40,11 @@ export function SimpleFooter() {
         <div style={col}>
           <p style={heading}>Contact</p>
           <p style={line}>
-            <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--fg2)' }}>
+            <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--fg2)' }}>
               {COMPANY.email}
             </a>
             <br />
-            <a href={COMPANY.phoneHref} style={{ color: 'var(--fg2)' }}>
+            <a href={COMPANY.phoneHref} className="nav-link-hover" style={{ color: 'var(--fg2)' }}>
               {COMPANY.phone}
             </a>
           </p>
@@ -57,6 +57,7 @@ export function SimpleFooter() {
           <p style={heading}>Schedule a Tour</p>
           <a
             href={withBase('/contact-us?intent=tour')}
+            className="classic-btn-outline classic-hover-float"
             style={{
               display: 'inline-block',
               border: '1px solid var(--color-brand-gold)',
@@ -86,18 +87,18 @@ export function SimpleFooter() {
       >
         <span>
           {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
-          <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-dark)' }}>
+          <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--color-brand-gold-dark)' }}>
             {COMPANY.email}
           </a>{' '}
           | Copyright &copy; {year}
         </span>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
           {NAV_LINKS.map((link) => (
-            <a key={link.label} href={link.href} style={{ color: 'var(--fg3)' }}>
+            <a key={link.label} href={link.href} className="nav-link-hover" style={{ color: 'var(--fg3)' }}>
               {link.label}
             </a>
           ))}
-          <a href={withBase('/')} style={{ color: 'var(--fg3)' }}>
+          <a href={withBase('/')} className="nav-link-hover" style={{ color: 'var(--fg3)' }}>
             The Full Experience
           </a>
         </nav>

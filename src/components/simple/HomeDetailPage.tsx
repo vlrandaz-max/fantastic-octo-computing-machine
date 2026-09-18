@@ -60,6 +60,7 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
         <div style={{ position: 'relative', zIndex: 5, width: '100%', padding: '0 40px 64px', textAlign: 'center' }}>
           <a
             href={withBase('/pine-woods')}
+            className="nav-link-hover"
             style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.7)' }}
           >
             ← Pine Woods – Rochester Hills
@@ -201,12 +202,14 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
           >
             {home.floorPlans.map((plan, i) => (
               <Reveal key={plan.src} type={i % 2 === 0 ? 'fade-in-left' : 'fade-in-right'}>
-                <img
-                  src={plan.src}
-                  alt={`${home.name} — ${plan.caption}`}
-                  loading="lazy"
-                  style={{ width: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}
-                />
+                <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}>
+                  <img
+                    src={plan.src}
+                    alt={`${home.name} — ${plan.caption}`}
+                    loading="lazy"
+                    style={{ width: '100%' }}
+                  />
+                </span>
                 <p style={{ fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--fg3)', marginTop: 12 }}>{plan.caption}</p>
               </Reveal>
             ))}
@@ -283,12 +286,14 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
           <div className="simple-gallery-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {home.gallery.map((photo, i) => (
               <Reveal key={photo.src} type="fade-in-up" delay={(i % 3) * 100}>
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', marginBottom: 12 }}
-                />
+                <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', marginBottom: 12 }}>
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    style={{ width: '100%', height: 300, objectFit: 'cover' }}
+                  />
+                </span>
                 <p style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg3)' }}>{photo.caption}</p>
               </Reveal>
             ))}
@@ -381,6 +386,7 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
 
           <a
             href={withBase('/contact-us')}
+            className="classic-btn-outline classic-hover-float"
             style={{
               display: 'inline-block',
               border: '1px solid var(--color-brand-gold)',

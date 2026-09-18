@@ -103,6 +103,7 @@ export function HomesAvailablePage() {
           </div>
           <a
             href={withBase('/pine-woods')}
+            className="classic-btn-underline"
             style={{
               display: 'inline-block',
               marginTop: 32,
@@ -141,6 +142,7 @@ export function HomesAvailablePage() {
           </div>
           <a
             href={withBase('/contact-us')}
+            className="classic-hover-float"
             style={{
               fontSize: 12,
               fontWeight: 700,

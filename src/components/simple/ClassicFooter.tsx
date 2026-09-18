@@ -43,11 +43,11 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
         <div>
           <p style={colHeading}>Contact</p>
           <p style={colText}>
-            <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--fg2)' }}>
+            <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--fg2)' }}>
               {COMPANY.email}
             </a>
             <br />
-            <a href={COMPANY.phoneHref} style={{ color: 'var(--fg2)' }}>
+            <a href={COMPANY.phoneHref} className="nav-link-hover" style={{ color: 'var(--fg2)' }}>
               {COMPANY.phone}
             </a>
           </p>
@@ -76,14 +76,14 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
       >
         <span>
           {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
-          <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-dark)' }}>
+          <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--color-brand-gold-dark)' }}>
             {COMPANY.email}
           </a>{' '}
           | Copyright &copy; {year}
         </span>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
           {footerLinks.map((link) => (
-            <a key={link.label} href={link.href} style={{ color: 'var(--fg3)' }}>
+            <a key={link.label} href={link.href} className="nav-link-hover" style={{ color: 'var(--fg3)' }}>
               {link.label}
             </a>
           ))}

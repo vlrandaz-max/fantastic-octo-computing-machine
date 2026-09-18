@@ -61,6 +61,7 @@ export function SimpleNav() {
             <a
               key={link.label}
               href={link.href}
+              className="nav-link-hover"
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: 12,
@@ -75,6 +76,7 @@ export function SimpleNav() {
           ))}
           <a
             href={withBase('/contact-us?intent=tour')}
+            className="classic-btn-outline classic-hover-float"
             style={{
               border: '1px solid var(--color-brand-gold)',
               color: '#F2F0E6',
@@ -116,6 +118,7 @@ export function SimpleNav() {
             <a
               key={link.label}
               href={link.href}
+              className="nav-link-hover"
               style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F2F0E6' }}
             >
               {link.label}
@@ -123,6 +126,7 @@ export function SimpleNav() {
           ))}
           <a
             href={withBase('/contact-us?intent=tour')}
+            className="classic-btn-outline classic-hover-float"
             style={{
               border: '1px solid var(--color-brand-gold)',
               color: '#F2F0E6',

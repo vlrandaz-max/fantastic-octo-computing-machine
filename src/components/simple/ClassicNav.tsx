@@ -46,10 +46,10 @@ export function ClassicNav({ homeHref = withBase('/classic2') }: { homeHref?: st
         }}
       >
         <span>{COMPANY.address}</span>
-        <a href={COMPANY.phoneHref} style={{ color: 'inherit' }}>
+        <a href={COMPANY.phoneHref} className="nav-link-hover" style={{ color: 'inherit' }}>
           {COMPANY.phone}
         </a>
-        <a href={`mailto:${COMPANY.email}`} style={{ color: 'inherit' }}>
+        <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'inherit' }}>
           {COMPANY.email}
         </a>
       </div>
@@ -78,7 +78,7 @@ export function ClassicNav({ homeHref = withBase('/classic2') }: { homeHref?: st
 
         <nav aria-label="Primary" className="classic-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
           {LINKS.map((link) => (
-            <a key={link.label} href={link.href} style={linkStyle}>
+            <a key={link.label} href={link.href} className="nav-link-hover" style={linkStyle}>
               {link.label}
             </a>
           ))}
@@ -102,7 +102,7 @@ export function ClassicNav({ homeHref = withBase('/classic2') }: { homeHref?: st
       {open && (
         <div className="classic-nav-drawer" style={{ background: '#0b0b0b', padding: '10px 24px 26px', display: 'flex', flexDirection: 'column', gap: 4 }}>
           {LINKS.map((link) => (
-            <a key={link.label} href={link.href} style={{ ...linkStyle, padding: '10px 0' }}>
+            <a key={link.label} href={link.href} className="nav-link-hover" style={{ ...linkStyle, padding: '10px 0' }}>
               {link.label}
             </a>
           ))}

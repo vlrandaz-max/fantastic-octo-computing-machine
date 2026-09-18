@@ -67,7 +67,7 @@ export function ContactUsPage() {
                 <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--fg3)', marginBottom: 4 }}>
                   Call
                 </p>
-                <a href={COMPANY.phoneHref} style={{ fontFamily: 'var(--font-display)', fontSize: 24, color: 'var(--color-brand-dark)' }}>
+                <a href={COMPANY.phoneHref} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 24, color: 'var(--color-brand-dark)' }}>
                   {COMPANY.phone}
                 </a>
               </div>
@@ -75,7 +75,7 @@ export function ContactUsPage() {
                 <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--fg3)', marginBottom: 4 }}>
                   Email
                 </p>
-                <a href={mailtoHref} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+                <a href={mailtoHref} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                   {COMPANY.email}
                 </a>
               </div>
@@ -89,6 +89,7 @@ export function ContactUsPage() {
 
             <a
               href={mailtoHref}
+              className="classic-hover-float"
               style={{
                 display: 'inline-block',
                 marginTop: 36,
@@ -116,16 +117,16 @@ export function ContactUsPage() {
           >
             <p style={eyebrow}>Explore</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 16 }}>
-              <a href={withBase('/homes-available')} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href={withBase('/homes-available')} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Homes Available →
               </a>
-              <a href={withBase('/falcon-estates-rochester-hills')} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href={withBase('/falcon-estates-rochester-hills')} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Falcon Estates →
               </a>
-              <a href={withBase('/pine-woods')} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href={withBase('/pine-woods')} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Pine Woods →
               </a>
-              <a href={withBase('/gallery')} style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
+              <a href={withBase('/gallery')} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
                 Photo Gallery →
               </a>
             </div>

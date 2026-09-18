@@ -421,6 +421,94 @@ button:focus-visible {
   letter-spacing: 0.2em;
 }
 
+/* Generic reusable hovers — a zoom+darken photo frame (self-contained,
+   hovers on itself rather than requiring a parent wrapper class) and a
+   card lift, both sharing the same feel as .classic-stem-photo /
+   .gallery-thumb above. Used on HomeCard, home/floorplan galleries, and
+   the raw-HTML template pages (Falcon Estates, Grandeur). */
+.photo-zoom {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-zoom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 11, 11, 0.18);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.photo-zoom img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), filter 0.7s ease;
+  display: block;
+}
+
+.photo-zoom:hover img,
+.photo-zoom:focus-visible img {
+  transform: scale(1.08);
+  filter: saturate(1.08);
+}
+
+.photo-zoom:hover::after,
+.photo-zoom:focus-visible::after {
+  opacity: 1;
+}
+
+.hover-card-lift {
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.hover-card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-2);
+}
+
+/* Same zoom feel as .photo-zoom, for elements painted via CSS
+   background-image instead of an <img> (must already have overflow
+   hidden and backgroundPosition/backgroundRepeat set inline — leave
+   backgroundSize to this class so the hover rule below can win). */
+.photo-zoom-bg {
+  background-size: cover;
+  transition: background-size 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.photo-zoom-bg:hover {
+  background-size: 112%;
+}
+
+/* Plain text nav/footer links: a thin underline that sweeps in from the
+   left on hover, since these have no border/fill of their own. */
+.nav-link-hover {
+  position: relative;
+}
+
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transition: right 0.35s var(--ease-out);
+}
+
+.nav-link-hover:hover::after {
+  right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-zoom img,
+  .hover-card-lift,
+  .nav-link-hover::after {
+    transition: none;
+  }
+}
+
 .gallery-thumb {
   position: relative;
   display: block;

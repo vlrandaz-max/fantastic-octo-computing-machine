@@ -13,12 +13,13 @@ export function HomeCard({ home, dark = false }: { home: HomeListing; dark?: boo
   const badge = badgeColor[home.status];
   return (
     <div
+      className="hover-card-lift"
       style={{
         background: dark ? '#1a1815' : '#FFFFFF',
         border: dark ? '1px solid rgba(255,255,255,0.1)' : '1px solid var(--border)',
       }}
     >
-      <div style={{ position: 'relative' }}>
+      <div className="photo-zoom" style={{ position: 'relative' }}>
         <img
           src={home.image}
           alt={home.name}
@@ -57,6 +58,7 @@ export function HomeCard({ home, dark = false }: { home: HomeListing; dark?: boo
         </p>
         <a
           href={home.href ?? withBase('/contact-us')}
+          className="classic-btn-underline"
           style={{
             fontSize: 11,
             fontWeight: 700,

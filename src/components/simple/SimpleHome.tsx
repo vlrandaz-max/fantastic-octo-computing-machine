@@ -154,23 +154,26 @@ export function SimpleHome() {
               </Reveal>
             ))}
             <Reveal type="fade-in-up" delay={480}>
-              <a href={withBase('/homes-available')} style={{ ...outlineButton, marginTop: 12 }}>
+              <a href={withBase('/homes-available')} className="classic-btn-outline classic-hover-float" style={{ ...outlineButton, marginTop: 12 }}>
                 View Available Homes
               </a>
             </Reveal>
           </div>
           <div style={{ position: 'relative', height: 440 }}>
             <Reveal type="fade-in-left" style={{ position: 'absolute', top: 0, left: 0, width: '78%', height: '65%' }}>
-              <img
-                src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
-                alt="The Grandeur — an L&amp;R Homes residence at twilight"
-                loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
-              />
+              <span className="photo-zoom" style={{ width: '100%', height: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}>
+                <img
+                  src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
+                  alt="The Grandeur — an L&amp;R Homes residence at twilight"
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </span>
             </Reveal>
             <Reveal
               type="fade-in-right"
               delay={200}
+              className="photo-zoom-bg"
               style={{
                 position: 'absolute',
                 bottom: 0,
@@ -181,7 +184,9 @@ export function SimpleHome() {
                 boxShadow: 'var(--shadow-3)',
                 border: '6px solid #fff',
                 overflow: 'hidden',
-                background: `url('${withBase('/assets/home/family-room-3-staged.jpg')}') center / cover no-repeat`,
+                backgroundImage: `url('${withBase('/assets/home/family-room-3-staged.jpg')}')`,
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
               }}
             >
               <div
@@ -246,18 +251,20 @@ export function SimpleHome() {
               </p>
             </Reveal>
             <Reveal type="fade-in-up" delay={380}>
-              <a href={withBase('/homes-available')} style={outlineButton}>
+              <a href={withBase('/homes-available')} className="classic-btn-outline classic-hover-float" style={outlineButton}>
                 View Homes
               </a>
             </Reveal>
           </div>
           <Reveal type="fade-in-right">
-            <img
-              src={withBase('/assets/home/foyer-staged.jpg')}
-              alt="A foyer in a home in Falcon Estates"
-              loading="lazy"
-              style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
-            />
+            <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}>
+              <img
+                src={withBase('/assets/home/foyer-staged.jpg')}
+                alt="A foyer in a home in Falcon Estates"
+                loading="lazy"
+                style={{ width: '100%', height: 420, objectFit: 'cover' }}
+              />
+            </span>
           </Reveal>
         </div>
       </section>
@@ -277,12 +284,14 @@ export function SimpleHome() {
               [withBase('/assets/home/butlers-pantry-staged.jpg'), "Butler's pantry"],
             ].map(([src, alt], i) => (
               <Reveal key={src} type="fade-in-up" delay={i * 100}>
-                <img
-                  src={src}
-                  alt={alt}
-                  loading="lazy"
-                  style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
-                />
+                <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}>
+                  <img
+                    src={src}
+                    alt={alt}
+                    loading="lazy"
+                    style={{ width: '100%', height: 300, objectFit: 'cover' }}
+                  />
+                </span>
               </Reveal>
             ))}
           </div>
@@ -332,6 +341,7 @@ export function SimpleHome() {
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
             <a
               href={COMPANY.phoneHref}
+              className="classic-hover-float"
               style={{
                 fontSize: 12,
                 fontWeight: 700,
@@ -346,6 +356,7 @@ export function SimpleHome() {
             </a>
             <a
               href={withBase('/homes-available')}
+              className="classic-btn-outline classic-hover-float"
               style={{
                 fontSize: 12,
                 fontWeight: 700,

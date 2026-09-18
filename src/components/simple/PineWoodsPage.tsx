@@ -156,12 +156,14 @@ export function PineWoodsPage() {
             Find Your <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>Homesite</em>
           </h2>
           <Reveal type="fade-in-up">
-            <img
-              src={withBase('/assets/pine-woods/site-plan.jpg')}
-              alt="Pine Woods site plan showing individual homesites"
-              loading="lazy"
-              style={{ width: '100%', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}
-            />
+            <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)', border: '1px solid var(--border)' }}>
+              <img
+                src={withBase('/assets/pine-woods/site-plan.jpg')}
+                alt="Pine Woods site plan showing individual homesites"
+                loading="lazy"
+                style={{ width: '100%' }}
+              />
+            </span>
           </Reveal>
         </div>
       </section>
@@ -204,6 +206,7 @@ export function PineWoodsPage() {
 
           <a
             href={withBase('/contact-us')}
+            className="classic-btn-outline classic-hover-float"
             style={{
               display: 'inline-block',
               border: '1px solid var(--color-brand-gold)',
@@ -220,7 +223,7 @@ export function PineWoodsPage() {
           </a>
           <p style={{ fontSize: 14, color: 'rgba(242,240,230,0.6)' }}>
             {COMPANY.phone} &middot;{' '}
-            <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-light)' }}>
+            <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--color-brand-gold-light)' }}>
               {COMPANY.email}
             </a>
           </p>
@@ -257,12 +260,14 @@ export function PineWoodsPage() {
               [withBase('/assets/pine-woods/majestic-owners-suite.jpg'), "The Majestic — owner's suite"],
             ].map(([src, alt], i) => (
               <Reveal key={src} type="fade-in-left" delay={i * 100}>
-                <img
-                  src={src}
-                  alt={alt}
-                  loading="lazy"
-                  style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
-                />
+                <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}>
+                  <img
+                    src={src}
+                    alt={alt}
+                    loading="lazy"
+                    style={{ width: '100%', height: 280, objectFit: 'cover' }}
+                  />
+                </span>
               </Reveal>
             ))}
           </div>
@@ -280,12 +285,14 @@ export function PineWoodsPage() {
               [withBase('/assets/pine-woods/heritage-primary-bedroom.jpg'), 'The Heritage — primary bedroom'],
             ].map(([src, alt], i) => (
               <Reveal key={src} type="fade-in-right" delay={i * 100}>
-                <img
-                  src={src}
-                  alt={alt}
-                  loading="lazy"
-                  style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
-                />
+                <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}>
+                  <img
+                    src={src}
+                    alt={alt}
+                    loading="lazy"
+                    style={{ width: '100%', height: 280, objectFit: 'cover' }}
+                  />
+                </span>
               </Reveal>
             ))}
           </div>
