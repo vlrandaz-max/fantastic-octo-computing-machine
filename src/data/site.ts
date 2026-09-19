@@ -83,7 +83,7 @@ export const FALCON_ESTATES_HOMES: HomeListing[] = [
 ];
 
 export const PINE_WOODS_HOMES: HomeListing[] = [
-  { name: 'The Majestic', status: 'immediate-occupancy', image: withBase('/assets/pine-woods/majestic-exterior.jpg'), community: 'Pine Woods', href: withBase('/majestic') },
+  { name: 'The Majestic', status: 'immediate-occupancy', image: withBase('/assets/pine-woods/majestic-twilight.jpg'), community: 'Pine Woods', href: withBase('/majestic') },
   { name: 'The Heritage', status: 'immediate-occupancy', image: withBase('/assets/pine-woods/heritage-twilight-3.jpg'), community: 'Pine Woods', href: withBase('/heritage') },
 ];
 
@@ -135,7 +135,7 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     tagline: 'Classic Brick & Stone Architecture',
     badge: 'Now Open · Immediate Occupancy',
     addressLine: 'Rochester Hills, MI 48309',
-    heroImage: withBase('/assets/pine-woods/majestic-exterior-twilight.png'),
+    heroImage: withBase('/assets/pine-woods/majestic-twilight.jpg'),
     introEyebrow: 'Welcome to The Majestic',
     introHeadingPlain: 'A Floor Plan',
     introHeadingEmphasis: 'Built for Real',
