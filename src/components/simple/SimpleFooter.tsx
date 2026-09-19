@@ -98,9 +98,6 @@ export function SimpleFooter() {
               {link.label}
             </a>
           ))}
-          <a href={withBase('/')} className="nav-link-hover" style={{ color: 'var(--fg3)' }}>
-            The Full Experience
-          </a>
         </nav>
       </div>
     </footer>
