@@ -84,7 +84,7 @@ export const FALCON_ESTATES_HOMES: HomeListing[] = [
 
 export const PINE_WOODS_HOMES: HomeListing[] = [
   { name: 'The Majestic', status: 'immediate-occupancy', image: withBase('/assets/pine-woods/majestic-twilight-1.jpg'), community: 'Pine Woods', href: withBase('/majestic') },
-  { name: 'The Heritage', status: 'immediate-occupancy', image: withBase('/assets/pine-woods/heritage-twilight-3.jpg'), community: 'Pine Woods', href: withBase('/heritage') },
+  { name: 'The Heritage', status: 'immediate-occupancy', image: withBase('/assets/pine-woods/heritage-twilight-4.jpg'), community: 'Pine Woods', href: withBase('/heritage') },
 ];
 
 export interface HomeDetail {
@@ -176,7 +176,7 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     tagline: 'Colonial Architecture · Stone Elevation',
     badge: 'New Construction · Immediate Occupancy',
     addressLine: '3110 Raffler Dr · Lot 7 · Rochester Hills, MI 48309',
-    heroImage: withBase('/assets/pine-woods/heritage-twilight-3.jpg'),
+    heroImage: withBase('/assets/pine-woods/heritage-twilight-4.jpg'),
     introEyebrow: 'Welcome to The Heritage',
     introHeadingPlain: 'Effortless Living,',
     introHeadingEmphasis: 'Classic Style',
