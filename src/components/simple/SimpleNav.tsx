@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { NAV_LINKS, COMPANY } from '../../data/site';
 import { withBase } from '../../lib/url';
 
-const LINKS = NAV_LINKS.filter((l) => l.label !== 'Home');
+const LINKS = NAV_LINKS;
 
 /**
  * Conventional utility-bar + logo + nav + CTA header, styled after
