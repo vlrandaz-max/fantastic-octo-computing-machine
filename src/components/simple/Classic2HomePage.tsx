@@ -151,9 +151,9 @@ export function Classic2HomePage() {
             </Reveal>
             <Reveal type="fade-in" delay={360}>
               <p style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 16, lineHeight: 1.85, color: 'var(--fg2)', marginBottom: 16, maxWidth: 480 }}>
-                From the kitchen where the family gathers to the details that enrich everyday life, L&amp;R Homes
-                crafts distinctive residences with meticulous care and an unrelenting commitment to excellence —
-                fifty years of hands-on Rochester Hills craftsmanship, in every cabinet and countertop.
+                From the kitchen to the study to the flex space that adapts as life changes, L&amp;R Homes crafts
+                distinctive residences with meticulous care and an unrelenting commitment to excellence — fifty
+                years of hands-on Rochester Hills craftsmanship, and time-honored design.
               </p>
             </Reveal>
             <Reveal type="fade-in-up" delay={480}>
