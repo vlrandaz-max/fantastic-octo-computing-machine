@@ -147,11 +147,15 @@ const FALCON_STYLE = `
   .falcon-page .homes-inner { max-width: 1280px; margin: 0 auto; }
   .falcon-page .homes-h2 { font-family: var(--fe-font-display); font-size: clamp(2rem,3vw,2.5rem); font-weight: 300; color: #F2F0E6 !important; margin: 12px 0 40px; }
   .falcon-page .homes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .falcon-page .home-card { display: block; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+  .falcon-page .home-card { position: relative; display: block; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--fe-radius-sm); overflow: hidden; transition: box-shadow 220ms ease, transform 220ms ease; }
   .falcon-page .home-card:hover { box-shadow: var(--fe-shadow-2); transform: translateY(-3px); }
   .falcon-page .home-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 700ms cubic-bezier(0.25,0.1,0.25,1); }
   .falcon-page .home-card:hover img { transform: scale(1.08); }
+  .falcon-page .home-card-badge { position: absolute; top: 14px; left: 14px; z-index: 2; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; }
+  .falcon-page .home-card-badge.sold { background: #1C1A18; color: #F2F0E6; }
+  .falcon-page .home-card-badge.available { background: var(--fe-accent); color: #1C1A18; }
   .falcon-page .home-card-body { padding: 20px 22px 24px; }
   .falcon-page .home-card-name { font-family: var(--fe-font-display); font-style: italic; font-size: 1.5rem; font-weight: 400; color: #F2F0E6; margin-bottom: 10px; }
   .falcon-page .home-card-cta { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fe-accent-light);
@@ -263,6 +267,7 @@ const FALCON_BODY = `
     <h2 class="homes-h2">Homes in Falcon Estates</h2>
     <div class="homes-grid">
       <a class="home-card reveal fade-in" style="animation-delay: 0ms" href="${withBase('/grandeur')}">
+        <span class="home-card-badge available">Immediate Occupancy</span>
         <img decoding="async" src="${withBase('/assets/home/grandeur-exterior-twilight.jpg')}" alt="The Grandeur">
         <div class="home-card-body">
           <div class="home-card-name">The Grandeur</div>
@@ -270,6 +275,7 @@ const FALCON_BODY = `
         </div>
       </a>
       <a class="home-card reveal fade-in" style="animation-delay: 100ms" href="${withBase('/crestwood')}">
+        <span class="home-card-badge sold">Sold</span>
         <img decoding="async" src="${withBase('/assets/home/crestwood-twilight-2026.jpg')}" alt="The Crestwood">
         <div class="home-card-body">
           <div class="home-card-name">The Crestwood</div>
@@ -277,6 +283,7 @@ const FALCON_BODY = `
         </div>
       </a>
       <a class="home-card reveal fade-in" style="animation-delay: 200ms" href="${withBase('/cambridge')}">
+        <span class="home-card-badge sold">Sold</span>
         <img decoding="async" src="${withBase('/assets/home/cambridge-twilight.jpg')}" alt="The Cambridge">
         <div class="home-card-body">
           <div class="home-card-name">The Cambridge</div>
@@ -284,6 +291,7 @@ const FALCON_BODY = `
         </div>
       </a>
       <a class="home-card reveal fade-in" style="animation-delay: 300ms" href="${withBase('/madison')}">
+        <span class="home-card-badge sold">Sold</span>
         <img decoding="async" src="${withBase('/assets/home/madison-twilight-aerial.jpg')}" alt="The Madison">
         <div class="home-card-body">
           <div class="home-card-name">The Madison</div>
@@ -291,6 +299,7 @@ const FALCON_BODY = `
         </div>
       </a>
       <a class="home-card reveal fade-in" style="animation-delay: 400ms" href="${withBase('/stratford')}">
+        <span class="home-card-badge sold">Sold</span>
         <img decoding="async" src="${withBase('/assets/home/stratford-aerial-twilight.jpg')}" alt="The Stratford">
         <div class="home-card-body">
           <div class="home-card-name">The Stratford</div>
