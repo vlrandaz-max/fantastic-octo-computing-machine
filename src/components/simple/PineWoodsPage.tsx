@@ -27,11 +27,11 @@ const specColHeading: React.CSSProperties = {
 };
 
 const HERO_SLIDES = [
-  withBase('/assets/pine-woods/majestic-twilight-1.jpg'),
+  withBase('/assets/pine-woods/site-plan.jpg'),
+  withBase('/assets/pine-woods/majestic-twilight-1-wide.jpg'),
   withBase('/assets/pine-woods/majestic-great-room.png'),
   withBase('/assets/pine-woods/heritage-twilight-4.jpg'),
   withBase('/assets/pine-woods/heritage-family-room.jpg'),
-  withBase('/assets/pine-woods/site-plan.jpg'),
 ];
 
 /**
