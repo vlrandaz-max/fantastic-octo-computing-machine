@@ -254,7 +254,7 @@ export const PINE_WOODS = {
     eyebrow: 'Standard Features',
     heading: 'Built to the Town Properties Standard',
     intro:
-      'Every Pine Woods home built by Town Properties, LLC includes the same premium finish package throughout — from Lafata soft-close maple cabinetry to quartz countertops and a fully insulated, high-efficiency mechanical system.',
+      'Every Pine Woods home built by Town Properties, LLC includes the same premium finish package throughout — from Lafata soft-close maple cabinetry to quartz countertops and rich hardwood flooring on the first floor.',
     columns: [
       {
         title: 'Kitchen',
