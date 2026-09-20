@@ -28,7 +28,7 @@ const heading: React.CSSProperties = {
 
 const EXPLORE_CARDS = [
   { label: 'Falcon Estates', image: withBase('/assets/home/crestwood-twilight-2026.jpg'), href: withBase('/falcon-estates-rochester-hills') },
-  { label: 'Pine Woods', image: withBase('/assets/pine-woods/majestic-twilight-1.jpg'), href: withBase('/pine-woods'), fit: 'contain' as const },
+  { label: 'Pine Woods', image: withBase('/assets/pine-woods/majestic-twilight-2.jpg'), href: withBase('/pine-woods') },
   { label: 'Homes Available', image: withBase('/assets/home/coachwood-twilight-final.jpg'), href: withBase('/homes-available') },
   { label: 'Gallery', image: withBase('/assets/home/dining-room-staged-2.jpg'), href: withBase('/gallery') },
 ];
@@ -169,12 +169,12 @@ export function ClassicHomePage() {
             {EXPLORE_CARDS.map((card, i) => (
               <Reveal key={card.label} type="fade-in-up" delay={i * 100}>
                 <a href={card.href} className="classic-stem-card">
-                  <span className="classic-stem-photo" style={card.fit === 'contain' ? { background: 'var(--bg1)' } : undefined}>
+                  <span className="classic-stem-photo">
                     <img
                       src={card.image}
                       alt={card.label}
                       loading="lazy"
-                      style={{ width: '100%', height: 300, objectFit: card.fit ?? 'cover', display: 'block' }}
+                      style={{ width: '100%', height: 300, objectFit: 'cover', display: 'block' }}
                     />
                   </span>
                   <span className="classic-stem-line" />
