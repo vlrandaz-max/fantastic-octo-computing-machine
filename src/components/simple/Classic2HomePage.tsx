@@ -28,7 +28,7 @@ const heading: React.CSSProperties = {
 
 const EXPLORE_CARDS = [
   { label: 'Falcon Estates', image: withBase('/assets/home/crestwood-twilight-2026.jpg'), href: withBase('/falcon-estates-rochester-hills') },
-  { label: 'Pine Woods', image: withBase('/assets/pine-woods/majestic-twilight-1-wide.jpg'), href: withBase('/pine-woods') },
+  { label: 'Pine Woods', image: withBase('/assets/pine-woods/majestic-twilight-1.jpg'), href: withBase('/pine-woods') },
   { label: 'Homes Available', image: withBase('/assets/home/coachwood-twilight-final.jpg'), href: withBase('/homes-available') },
   { label: 'Gallery', image: withBase('/assets/home/dining-room-staged-2.jpg'), href: withBase('/gallery') },
 ];
