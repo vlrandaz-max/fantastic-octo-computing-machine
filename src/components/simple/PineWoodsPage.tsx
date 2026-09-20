@@ -26,6 +26,14 @@ const specColHeading: React.CSSProperties = {
   marginBottom: 16,
 };
 
+const HERO_SLIDES = [
+  withBase('/assets/pine-woods/majestic-twilight-1.jpg'),
+  withBase('/assets/pine-woods/majestic-great-room.png'),
+  withBase('/assets/pine-woods/heritage-twilight-4.jpg'),
+  withBase('/assets/pine-woods/heritage-family-room.jpg'),
+  withBase('/assets/pine-woods/site-plan.jpg'),
+];
+
 /**
  * Pine Woods — Rochester Hills. A second community, built by Town
  * Properties, LLC (an L&R Homes affiliate) — distinct builder, distinct
@@ -44,13 +52,11 @@ export function PineWoodsPage() {
           overflow: 'hidden',
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: `url('${withBase('/assets/pine-woods/pine-woods-hero.jpg')}') center / cover no-repeat`,
-          }}
-        />
+        <div style={{ position: 'absolute', inset: 0 }}>
+          {HERO_SLIDES.map((src) => (
+            <div key={src} className="classic-bg-slide" style={{ backgroundImage: `url('${src}')` }} />
+          ))}
+        </div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(12,10,8,0.5) 0%, rgba(12,10,8,0.2) 40%, rgba(12,10,8,0.8) 100%)' }} />
         <SimpleNav />
         <div style={{ position: 'relative', zIndex: 5, padding: '0 40px 64px', maxWidth: 900 }}>
