@@ -56,6 +56,18 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
           <p style={{ fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.5)' }}>
             Custom Home Builder · Est. Rochester Hills
           </p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8, marginTop: 10 }}>
+            <img
+              src={withBase('/assets/town-properties-logo.png')}
+              alt=""
+              style={{ width: 28, height: 28, objectFit: 'contain', flexShrink: 0 }}
+            />
+            <p style={{ fontSize: 9, letterSpacing: '0.06em', color: 'rgba(242,240,230,0.5)', lineHeight: 1.4 }}>
+              Built by Town Properties, LLC
+              <br />
+              Affiliate of L&amp;R Homes, Inc.
+            </p>
+          </div>
         </div>
         <div style={{ position: 'relative', zIndex: 5, width: '100%', padding: '0 40px 64px', textAlign: 'center' }}>
           <a
