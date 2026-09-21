@@ -1,0 +1,49 @@
+name: Deploy to Network Solutions (SFTP)
+
+# Manual only, on purpose — this uploads to real production hosting for
+# landrhomes.com. Unlike deploy-pages.yml, it never runs automatically on
+# push, so a routine commit can never accidentally overwrite the live
+# site. Trigger it from the Actions tab when you actually want to publish.
+on:
+  workflow_dispatch:
+    inputs:
+      remote-path:
+        description: 'Remote directory to upload into. The web root on this account is htdocs/ (Plesk-style, confirmed via File Manager). Defaults to a safe preview subfolder under it — only use ./htdocs/ once you are ready to fully replace the live site.'
+        required: true
+        default: './htdocs/preview/'
+      confirm:
+        description: 'Type "deploy" to proceed'
+        required: true
+
+concurrency:
+  group: sftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm intent
+        if: ${{ github.event.inputs.confirm != 'deploy' }}
+        run: |
+          echo "Confirmation input must be exactly 'deploy' — got '${{ github.event.inputs.confirm }}'. Aborting."
+          exit 1
+
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build:production
+
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          username: ${{ secrets.NETSOL_SFTP_USERNAME }}
+          server: ${{ secrets.NETSOL_SFTP_HOST }}
+          port: 22
+          password: ${{ secrets.NETSOL_SFTP_PASSWORD }}
+          local_path: './dist/*'
+          remote_path: ${{ github.event.inputs.remote-path }}
+          sftpArgs: '-o ConnectTimeout=15'
