@@ -13,17 +13,23 @@ import { withBase } from '../../lib/url';
  * content is first-party (the site owner's own copy), not third-party
  * input, so that's safe here.
  *
- * Photos: the gallery now runs 13 real local /assets/home photos across
- * its 12 captioned slots (First Floor Laundry was added as an extra
- * item alongside Second Upstairs Laundry Rm, both real, ordered ground
- * floor first) — cover/twilight exterior, Grand Foyer, family room (two
+ * Photos: the gallery runs 13 real local /assets/home photos across its
+ * 12 captioned slots (First Floor Laundry was added as an extra item
+ * alongside Second Upstairs Laundry Rm, both real, ordered ground floor
+ * first) — cover/twilight exterior, Grand Foyer, family room (two
  * angles), dining room, kitchen (two angles), both laundry rooms,
  * Flex Room, Butler's Pantry, and primary suite. Butler's Pantry and
  * the laundry rooms were originally captioned Breakfast Nook and
  * Private Study — relabeled to honestly describe what the uploaded
- * photos actually show. Only the second primary-suite/bath angle and
- * the Matterport QR code are still hotlinked from landrhomes.com,
- * pending matching uploads.
+ * photos actually show. The Matterport QR code is now a real generated
+ * code (encodes TOUR_URL) rather than hotlinked. Two gallery items —
+ * "Primary Suite · Adjoining Spa Bath" and "Primary Bath · Soaking Tub
+ * & Frameless Glass Shower" — used to hotlink to
+ * landrhomes.com/wp-content/uploads, which no longer exists now that
+ * WordPress has been retired. They now point at
+ * /assets/home/grandeur-primary-suite-2.jpg and
+ * /assets/home/grandeur-primary-bath.jpg, which don't exist yet —
+ * they'll render as soon as those two files are uploaded.
  */
 
 const GRANDEUR_STYLE = `
@@ -742,7 +748,6 @@ const GRANDEUR_STYLE = `
   .grandeur-page .cover-badge { animation: grandeurFadeUp 0.8s ease 1.1s both; }
 `;
 
-const CDN = 'https://landrhomes.com/wp-content/uploads';
 const TOUR_URL = 'https://my.matterport.com/show/?m=gSQLmSfS9kJ&';
 
 const GRANDEUR_BODY = `
@@ -978,7 +983,7 @@ const GRANDEUR_BODY = `
 
 <div class="tour-band">
   <div class="tour-inner">
-    <div class="tour-qr"><a href="${TOUR_URL}"><img src="${CDN}/grandeur-02.png" alt="Matterport virtual tour QR code"></a></div>
+    <div class="tour-qr"><a href="${TOUR_URL}"><img src="${withBase('/assets/home/grandeur-matterport-qr.png')}" alt="Matterport virtual tour QR code"></a></div>
     <div>
       <div class="section-label">Matterport 3D Experience</div>
       <h2 class="tour-title">Walk Through <em>The Grandeur</em><br>From Anywhere</h2>
@@ -1009,8 +1014,8 @@ const GRANDEUR_BODY = `
       <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-laundry-room.jpg')}" alt="Second Upstairs Laundry Rm"><div class="gal-cap">Second Upstairs Laundry Rm</div></div>
       <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/flex-room-staged.jpg')}" alt="Flex Room"><div class="gal-cap">Flex Room &middot; Built-In Desk &amp; Cabinetry</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-primary-suite.jpg')}" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
-      <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${CDN}/grandeur-13.jpg" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
-      <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${CDN}/grandeur-14.jpg" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-primary-suite-2.jpg')}" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${withBase('/assets/home/grandeur-primary-bath.jpg')}" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
     </div>
   </div>
 </div>

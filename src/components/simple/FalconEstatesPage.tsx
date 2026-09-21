@@ -27,6 +27,12 @@ import { withBase } from '../../lib/url';
  * previously had Crestwood/Stratford's addressed photos swapped. Grandeur
  * uses the twilight exterior (matching its use as a listing thumbnail
  * everywhere else in the app).
+ *
+ * The "View the Site Plan" button used to link to
+ * landrhomes.com/wp-content/uploads/Falcon-Estates-2024--scaled.jpg,
+ * which no longer exists now that WordPress has been retired. It now
+ * points at /assets/home/falcon-estates-site-plan.jpg, which doesn't
+ * exist yet — it'll work as soon as that file is uploaded.
  */
 
 const FALCON_STYLE = `
@@ -218,7 +224,7 @@ const FALCON_BODY = `
       <h2 class="overview-h2">A Legacy of Craftsmanship Since 1973</h2>
       <p class="overview-p">Falcon Estates is an upscale, European-inspired subdivision nestled within a serene 10-acre nature preserve &mdash; built by L&amp;R Homes, Inc., Rochester Hills&rsquo; premier custom home builder.</p>
       <p class="overview-p">Every home is served by municipal water &amp; sewer and located within the sought-after Rochester School District, combining the privacy of a wooded setting with the convenience of full city-grade infrastructure.</p>
-      <a class="btn btn-gold" href="https://landrhomes.com/wp-content/uploads/Falcon-Estates-2024--scaled.jpg" target="_blank" rel="noopener">View the Site Plan</a>
+      <a class="btn btn-gold" href="${withBase('/assets/home/falcon-estates-site-plan.jpg')}" target="_blank" rel="noopener">View the Site Plan</a>
     </div>
     <div class="overview-photo reveal fade-in-right">
       <img decoding="async" src="${withBase('/assets/home/coachwood-aerial-2.jpg')}" alt="Falcon Estates aerial view of the community">
