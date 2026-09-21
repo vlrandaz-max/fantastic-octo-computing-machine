@@ -52,21 +52,20 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,12,16,0.55) 0%, rgba(10,12,16,0.35) 40%, rgba(10,12,16,0.85) 100%)' }} />
         <SimpleNav />
         <div className="hero-credit-tag" style={{ position: 'absolute', right: 48, bottom: 44, zIndex: 5, textAlign: 'right' }}>
-          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 15, color: 'rgba(242,240,230,0.85)' }}>{COMPANY.name}</p>
-          <p style={{ fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.5)' }}>
-            Custom Home Builder · Est. Rochester Hills
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8, marginTop: 10 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 10 }}>
             <img
               src={withBase('/assets/town-properties-logo.png')}
               alt=""
-              style={{ width: 28, height: 28, objectFit: 'contain', flexShrink: 0 }}
+              style={{ width: 32, height: 32, objectFit: 'contain', flexShrink: 0 }}
             />
-            <p style={{ fontSize: 9, letterSpacing: '0.06em', color: 'rgba(242,240,230,0.5)', lineHeight: 1.4 }}>
-              Built by Town Properties, LLC
-              <br />
-              Affiliate of L&amp;R Homes, Inc.
-            </p>
+            <div>
+              <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 15, color: 'rgba(242,240,230,0.85)' }}>
+                Built by Town Properties, LLC
+              </p>
+              <p style={{ fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.5)' }}>
+                Affiliate of L&amp;R Homes, Inc.
+              </p>
+            </div>
           </div>
         </div>
         <div style={{ position: 'relative', zIndex: 5, width: '100%', padding: '0 40px 64px', textAlign: 'center' }}>
