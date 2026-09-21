@@ -16,6 +16,14 @@
   </FilesMatch>
 </IfModule>
 
+# Block public access to the archived pre-migration WordPress backup —
+# it's real files sitting inside the web root (this account has no
+# writable folder outside it), so without this rule they'd be directly
+# reachable by URL even though nothing links to them.
+<IfModule mod_rewrite.c>
+  RewriteRule ^_wp_backup_20260921/ - [F,L]
+</IfModule>
+
 # SPA fallback: any request that isn't a real file or directory (e.g.
 # /pine-woods, /majestic) gets index.html, and the app's own client-side
 # routing (App.tsx) decides what to render based on the URL. No
