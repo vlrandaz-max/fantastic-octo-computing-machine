@@ -30,6 +30,13 @@ jobs:
           exit 1
 
       - uses: actions/checkout@v4
+        with:
+          # Always build from the active development branch, regardless of
+          # which branch this workflow_dispatch run was launched from — the
+          # workflow file itself has to live on the default branch to be
+          # runnable at all, but the default branch is just the photo
+          # dropbox and doesn't have the actual site code.
+          ref: claude/great-carson-0sfpwq
       - uses: actions/setup-node@v4
         with:
           node-version: 22
