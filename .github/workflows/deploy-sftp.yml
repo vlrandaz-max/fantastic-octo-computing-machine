@@ -44,13 +44,18 @@ jobs:
       - run: npm ci
       - run: npm run build:production
 
+      - name: Install paramiko
+        run: pip install paramiko
+
       - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
-        with:
-          username: ${{ secrets.NETSOL_SFTP_USERNAME }}
-          server: ${{ secrets.NETSOL_SFTP_HOST }}
-          port: 22
-          password: ${{ secrets.NETSOL_SFTP_PASSWORD }}
-          local_path: './dist/*'
-          remote_path: ${{ github.event.inputs.remote-path }}
-          sftpArgs: '-o ConnectTimeout=15'
+        # A plain SSH/SFTP GitHub Action (wlixcc/SFTP-Deploy-Action) failed
+        # here with "exec request failed on channel 0" — this account is
+        # chrooted to SFTP-only and rejects the SSH exec command those
+        # actions use to pre-create remote directories. This script talks
+        # pure SFTP protocol only (paramiko), no exec/shell ever opened.
+        env:
+          SFTP_HOST: ${{ secrets.NETSOL_SFTP_HOST }}
+          SFTP_USERNAME: ${{ secrets.NETSOL_SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.NETSOL_SFTP_PASSWORD }}
+          REMOTE_PATH: ${{ github.event.inputs.remote-path }}
+        run: python3 scripts/sftp_deploy.py
