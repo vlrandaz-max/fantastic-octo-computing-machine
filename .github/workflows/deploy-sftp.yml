@@ -42,7 +42,28 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build:production
+
+      - name: Compute asset base path from remote-path
+        id: site-base
+        run: |
+          raw="${{ github.event.inputs.remote-path }}"
+          stripped="${raw#./}"
+          stripped="${stripped#htdocs}"
+          stripped="${stripped#/}"
+          if [ -z "$stripped" ]; then
+            site_base="/"
+          else
+            site_base="/${stripped%/}/"
+          fi
+          echo "Deploying to remote-path '$raw' -> site will be served from '$site_base'"
+          echo "value=$site_base" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        # The build's asset URLs (JS/CSS/images) must match wherever it
+        # actually gets served from — SITE_BASE is derived above from
+        # remote-path so this works whether deploying to the real web
+        # root (./htdocs/) or a preview subfolder (./htdocs/preview/).
+        run: SITE_BASE="${{ steps.site-base.outputs.value }}" npm run build:production
 
       - name: Install paramiko
         run: pip install paramiko
