@@ -18,10 +18,12 @@
 
 # SPA fallback: any request that isn't a real file or directory (e.g.
 # /pine-woods, /majestic) gets index.html, and the app's own client-side
-# routing (App.tsx) decides what to render based on the URL.
+# routing (App.tsx) decides what to render based on the URL. No
+# RewriteBase — omitting it lets Apache infer it from this file's own
+# directory, so the same rule works whether this is deployed at the
+# site root or in a subfolder like /preview/.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]
