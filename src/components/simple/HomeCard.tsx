@@ -19,7 +19,7 @@ export function HomeCard({ home, dark = false }: { home: HomeListing; dark?: boo
         border: dark ? '1px solid rgba(255,255,255,0.1)' : '1px solid var(--border)',
       }}
     >
-      <div className="photo-zoom" style={{ position: 'relative' }}>
+      <a href={home.href ?? withBase('/contact-us')} className="photo-zoom" style={{ position: 'relative', display: 'block' }}>
         <img
           src={home.image}
           alt={home.name}
@@ -42,7 +42,7 @@ export function HomeCard({ home, dark = false }: { home: HomeListing; dark?: boo
         >
           {STATUS_LABEL[home.status]}
         </span>
-      </div>
+      </a>
       <div style={{ padding: '22px 24px 26px', textAlign: 'center' }}>
         <p
           style={{
