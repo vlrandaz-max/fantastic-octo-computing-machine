@@ -81,23 +81,12 @@ export function SimpleFooter() {
           color: 'var(--fg3)',
         }}
       >
-        <span style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-          <svg
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.4"
-            role="img"
-            aria-label="Equal Housing Opportunity"
-            style={{ flexShrink: 0 }}
-          >
-            <rect x="1" y="1" width="22" height="22" rx="1" />
-            <path d="M4 12.5 L12 5.5 L20 12.5" strokeLinecap="round" strokeLinejoin="round" />
-            <line x1="9" y1="13.5" x2="15" y2="13.5" strokeLinecap="round" />
-            <line x1="9" y1="16.5" x2="15" y2="16.5" strokeLinecap="round" />
-          </svg>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+          <img
+            src={withBase('/assets/equal-housing-opportunity.png')}
+            alt="Equal Housing Opportunity"
+            style={{ height: 44, width: 'auto', flexShrink: 0 }}
+          />
           <span>
             {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | Copyright &copy; {year}
           </span>
