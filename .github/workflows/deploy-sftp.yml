@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       remote-path:
-        description: 'Remote directory to upload into, relative to the SFTP account''s own root (check via Network Solutions'' File Manager whether that root already IS your web root, or contains a public_html folder). Defaults to a safe preview subfolder — only point this at your real web root once you are ready to fully replace the live site.'
+        description: 'Remote directory to upload into. The web root on this account is htdocs/ (Plesk-style, confirmed via File Manager). Defaults to a safe preview subfolder under it — only use ./htdocs/ once you are ready to fully replace the live site.'
         required: true
-        default: './preview/'
+        default: './htdocs/preview/'
       confirm:
         description: 'Type "deploy" to proceed'
         required: true
