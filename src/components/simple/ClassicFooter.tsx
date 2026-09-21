@@ -43,10 +43,6 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
         <div>
           <p style={colHeading}>Contact</p>
           <p style={colText}>
-            <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--fg2)' }}>
-              {COMPANY.email}
-            </a>
-            <br />
             <a href={COMPANY.phoneHref} className="nav-link-hover" style={{ color: 'var(--fg2)' }}>
               {COMPANY.phone}
             </a>
@@ -92,11 +88,7 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
             <line x1="9" y1="16.5" x2="15" y2="16.5" strokeLinecap="round" />
           </svg>
           <span>
-            {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
-            <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--color-brand-gold-dark)' }}>
-              {COMPANY.email}
-            </a>{' '}
-            | Copyright &copy; {year}
+            {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | Copyright &copy; {year}
           </span>
         </span>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
