@@ -74,12 +74,30 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
           color: 'var(--fg3)',
         }}
       >
-        <span>
-          {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
-          <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--color-brand-gold-dark)' }}>
-            {COMPANY.email}
-          </a>{' '}
-          | Copyright &copy; {year}
+        <span style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            role="img"
+            aria-label="Equal Housing Opportunity"
+            style={{ flexShrink: 0 }}
+          >
+            <rect x="1" y="1" width="22" height="22" rx="1" />
+            <path d="M4 12.5 L12 5.5 L20 12.5" strokeLinecap="round" strokeLinejoin="round" />
+            <line x1="9" y1="13.5" x2="15" y2="13.5" strokeLinecap="round" />
+            <line x1="9" y1="16.5" x2="15" y2="16.5" strokeLinecap="round" />
+          </svg>
+          <span>
+            {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
+            <a href={`mailto:${COMPANY.email}`} className="nav-link-hover" style={{ color: 'var(--color-brand-gold-dark)' }}>
+              {COMPANY.email}
+            </a>{' '}
+            | Copyright &copy; {year}
+          </span>
         </span>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
           {footerLinks.map((link) => (
