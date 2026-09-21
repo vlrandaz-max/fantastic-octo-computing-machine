@@ -1,0 +1,8 @@
+/*
+Theme Name: L&R Homes SPA Shell
+Theme URI: https://landrhomes.com
+Author: L&R Homes, Inc.
+Description: Hosts the built React/Vite marketing site as WordPress's active theme. WordPress keeps running wp-admin, login, and the plugin ecosystem (Wordfence, Complianz, etc.) underneath — this theme's job is only to serve the app's own built HTML/CSS/JS for every front-end route, unchanged. All real styling lives in the built bundle under dist/, not in this file.
+Version: 1.0.0
+Requires PHP: 7.4
+*/
