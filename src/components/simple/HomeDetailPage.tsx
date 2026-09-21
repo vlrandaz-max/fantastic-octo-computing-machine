@@ -56,13 +56,13 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
             <img
               src={withBase('/assets/town-properties-logo.png')}
               alt=""
-              style={{ width: 32, height: 32, objectFit: 'contain', flexShrink: 0 }}
+              style={{ width: 40, height: 40, objectFit: 'contain', flexShrink: 0 }}
             />
             <div>
-              <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 15, color: 'rgba(242,240,230,0.85)' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 20, color: 'rgba(242,240,230,0.85)' }}>
                 Built by Town Properties, LLC
               </p>
-              <p style={{ fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.5)' }}>
+              <p style={{ fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.5)' }}>
                 Affiliate of L&amp;R Homes, Inc.
               </p>
             </div>
