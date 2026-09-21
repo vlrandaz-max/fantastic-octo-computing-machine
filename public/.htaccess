@@ -1,0 +1,28 @@
+# Apache config for the plain static production deploy (Network Solutions
+# or any other Apache/Unix host). Harmless where it doesn't apply (GitHub
+# Pages ignores .htaccess entirely; the WordPress shell theme serves its
+# dist/ folder's real files directly, so this only adds caching there).
+
+# Hashed assets (js/css/images) are safe to cache forever — their filename
+# changes whenever the content does. index.html must never be cached, or
+# a stale copy will keep pointing at a JS/CSS bundle that's since been
+# deleted by a later deploy, breaking the site until a hard refresh.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|jpg|jpeg|png|webp|gif|svg|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# SPA fallback: any request that isn't a real file or directory (e.g.
+# /pine-woods, /majestic) gets index.html, and the app's own client-side
+# routing (App.tsx) decides what to render based on the URL.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>

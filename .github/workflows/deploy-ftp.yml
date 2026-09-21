@@ -1,0 +1,48 @@
+name: Deploy to Network Solutions (FTP)
+
+# Manual only, on purpose — this uploads to real production hosting for
+# landrhomes.com. Unlike deploy-pages.yml, it never runs automatically on
+# push, so a routine commit can never accidentally overwrite the live
+# site. Trigger it from the Actions tab when you actually want to publish.
+on:
+  workflow_dispatch:
+    inputs:
+      server-dir:
+        description: 'Remote FTP directory to upload into. Defaults to a safe preview subfolder — only use ./public_html/ once you are ready to fully replace the live site there.'
+        required: true
+        default: './public_html/preview/'
+      confirm:
+        description: 'Type "deploy" to proceed'
+        required: true
+
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm intent
+        if: ${{ github.event.inputs.confirm != 'deploy' }}
+        run: |
+          echo "Confirmation input must be exactly 'deploy' — got '${{ github.event.inputs.confirm }}'. Aborting."
+          exit 1
+
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build:production
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.NETSOL_FTP_SERVER }}
+          username: ${{ secrets.NETSOL_FTP_USERNAME }}
+          password: ${{ secrets.NETSOL_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/
+          server-dir: ${{ github.event.inputs.server-dir }}
