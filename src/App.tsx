@@ -1,6 +1,3 @@
-import { useMotionPreference } from './hooks/useMotionPreference';
-import { CinematicExperience } from './components/CinematicExperience';
-import { TwoDExperience } from './components/TwoDExperience';
 import { SimpleHome } from './components/simple/SimpleHome';
 import { HomesAvailablePage } from './components/simple/HomesAvailablePage';
 import { PineWoodsPage } from './components/simple/PineWoodsPage';
@@ -18,18 +15,13 @@ import { GalleryPage } from './components/GalleryPage';
 import { HOME_DETAILS } from './data/site';
 
 function App() {
-  const mode = useMotionPreference();
-
   // Lightweight path-based routing — a full router is unwarranted for a
-  // handful of static routes. `/simple` is the conventional rh.house-style
-  // homepage, requested as an alternative alongside the cinematic
-  // experience rather than a replacement for it; `/gallery` is the full
-  // photo gallery every "View Full Gallery" link on the site points to;
-  // `/homes-available`, `/pine-woods`, and `/contact-us` mirror real pages
-  // on the live landrhomes.com site that didn't exist in this build yet;
-  // `/classic` is a third homepage variant styled after a bold-sans,
-  // video-hero homebuilder marketing template (requested to mimic
-  // lassalehomes.com's layout), built from L&R's own copy and photography.
+  // handful of static routes. `/classic2` is the homepage; `/simple` and
+  // `/classic` are earlier alternative homepage designs kept reachable at
+  // their own paths; `/gallery` is the full photo gallery every "View Full
+  // Gallery" link on the site points to; `/homes-available`, `/pine-woods`,
+  // and `/contact-us` mirror real pages on the live landrhomes.com site
+  // that didn't exist in this build yet.
   // Normalize against the deploy base ("/" in dev, a GitHub Pages project
   // subpath in prod) so route matching below works in both.
   const rawPath = typeof window !== 'undefined' ? window.location.pathname : '';
@@ -51,7 +43,7 @@ function App() {
   if (path.startsWith('/classic')) return <ClassicHomePage />;
   if (path.startsWith('/simple')) return <SimpleHome />;
 
-  return mode === 'cinematic' ? <CinematicExperience /> : <TwoDExperience />;
+  return <Classic2HomePage />;
 }
 
 export default App;
