@@ -74,6 +74,7 @@ export function SimpleFooter() {
           borderTop: '1px solid var(--border)',
           padding: '18px 40px',
           display: 'flex',
+          alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
           gap: 12,

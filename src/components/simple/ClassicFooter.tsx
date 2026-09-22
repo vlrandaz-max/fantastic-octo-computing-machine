@@ -63,6 +63,7 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
           margin: '0 auto',
           padding: '18px 32px',
           display: 'flex',
+          alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
           gap: 12,
