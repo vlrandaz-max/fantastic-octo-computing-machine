@@ -134,7 +134,7 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     name: 'The Majestic',
     tagline: 'Classic Brick & Stone Architecture',
     badge: 'Now Open · Immediate Occupancy',
-    addressLine: 'Rochester Hills, MI 48309',
+    addressLine: '3093 Raffler Dr · Rochester Hills, MI 48307',
     heroImage: withBase('/assets/pine-woods/majestic-twilight-1.jpg'),
     introEyebrow: 'Welcome to The Majestic',
     introHeadingPlain: 'A Floor Plan',
@@ -148,8 +148,10 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     stats: [
       { value: '2,662 sq ft', label: 'Total Habitable' },
       { value: '3', label: 'Bedrooms' },
+      { value: '3.1', label: 'Bathrooms' },
       { value: '3 Car', label: 'Garage' },
       { value: '2 Story', label: 'Plus Bonus Level' },
+      { value: 'Unfinished', label: 'Walkout Basement' },
       { value: 'Open', label: 'Concept Living' },
     ],
     floorPlanHeadingPlain: 'Thoughtfully',
@@ -168,7 +170,7 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
       { src: withBase('/assets/pine-woods/majestic-study.jpg'), alt: 'The Majestic — library and home office', caption: 'Library / Home Office' },
     ],
     ctaEyebrow: 'Ready to Make It Yours',
-    ctaAddressLine: 'Pine Woods · Rochester Hills, MI',
+    ctaAddressLine: '3093 Raffler Dr · Pine Woods · Rochester Hills, MI',
   },
   heritage: {
     slug: 'heritage',
