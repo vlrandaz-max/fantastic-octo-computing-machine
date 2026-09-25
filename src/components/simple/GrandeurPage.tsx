@@ -851,12 +851,12 @@ const GRANDEUR_BODY = `
         <div><ul class="room-list">
           <li><span class="room-name">Total Footprint</span><span class="room-size">2,125 sq ft</span></li>
           <li><span class="room-name">Egress Windows</span><span class="room-size">Provided</span></li>
-          <li><span class="room-name">Sump System</span><span class="room-size">City-Inspected</span></li>
+          <li><span class="room-name">Sump System</span><span class="room-size">Storm Sewer Connected</span></li>
         </ul></div>
         <div><ul class="room-list">
           <li><span class="room-name">Foundation</span><span class="room-size">8-10&Prime; Poured Concrete</span></li>
           <li><span class="room-name">Floor Base</span><span class="room-size">4&Prime; Concrete Slab</span></li>
-          <li><span class="room-name">Vapor Barrier</span><span class="room-size">6 mil Poly</span></li>
+          <li><span class="room-name">Plumbing Rough-In</span><span class="room-size">Future Bathroom</span></li>
         </ul></div>
         <div><ul class="room-list">
           <li><span class="room-name">Steel Beams</span><span class="room-size">W10&times;26</span></li>
