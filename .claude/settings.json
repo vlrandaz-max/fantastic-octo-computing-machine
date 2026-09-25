@@ -1,0 +1,5 @@
+{
+  "permissions": {
+    "allow": ["WebFetch(domain:landrhomes.com)"]
+  }
+}
