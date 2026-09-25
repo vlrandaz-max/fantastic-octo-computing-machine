@@ -837,7 +837,7 @@ const GRANDEUR_BODY = `
         <li><span class="room-name">Bedroom 2</span><span class="room-size">En-Suite</span></li>
         <li><span class="room-name">Bedroom 3</span><span class="room-size">En-Suite</span></li>
         <li><span class="room-name">Bedroom 4</span><span class="room-size">En-Suite</span></li>
-        <li><span class="room-name">Loft</span><span class="room-size">Open Overlook</span></li>
+        <li><span class="room-name">Sitting Room</span><span class="room-size">Foyer Overlook</span></li>
         <li><span class="room-name">Laundry</span><span class="room-size">Second Level</span></li>
         <li><span class="room-name">Hall / Landing</span><span class="room-size">Gallery</span></li>
       </ul>
