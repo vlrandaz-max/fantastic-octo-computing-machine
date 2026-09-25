@@ -894,7 +894,7 @@ const GRANDEUR_BODY = `
       <div>
         <div class="feature-col-title">Interior Features</div>
         <ul class="feature-list">
-          <li>Premium porcelain tile &amp; solid oak wood flooring throughout first floor</li>
+          <li>Premium porcelain tile &amp; wide-plank oak flooring throughout the first floor</li>
           <li>Premium stair carpeting upstairs &amp; in basement</li>
           <li>Two-story foyer &amp; family room with bridge overlook</li>
           <li>9&prime; ceilings on first floor</li>
