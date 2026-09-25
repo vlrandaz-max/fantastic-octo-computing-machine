@@ -77,31 +77,33 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
             ← Pine Woods – Rochester Hills
           </a>
           <p style={{ ...eyebrow, color: 'rgba(242,240,230,0.6)', marginTop: 28, marginBottom: 8 }}>Rochester Hills, Michigan</p>
-          <h1
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 300,
-              fontSize: 'clamp(2.75rem,6vw,4.5rem)',
-              color: '#F2F0E6',
-              lineHeight: 1.05,
-              marginBottom: 4,
-            }}
-          >
-            The
+          <h1 style={{ lineHeight: 1.05 }}>
+            <span
+              style={{
+                display: 'block',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 300,
+                fontSize: 'clamp(2.75rem,6vw,4.5rem)',
+                color: '#F2F0E6',
+                marginBottom: 4,
+              }}
+            >
+              The
+            </span>
+            <span
+              style={{
+                display: 'block',
+                fontFamily: 'var(--font-display)',
+                fontStyle: 'italic',
+                fontWeight: 400,
+                fontSize: 'clamp(3rem,7vw,5rem)',
+                color: 'var(--color-brand-gold-light)',
+                marginBottom: 18,
+              }}
+            >
+              {home.name.replace(/^The\s+/, '')}
+            </span>
           </h1>
-          <p
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontStyle: 'italic',
-              fontWeight: 400,
-              fontSize: 'clamp(3rem,7vw,5rem)',
-              color: 'var(--color-brand-gold-light)',
-              lineHeight: 1.05,
-              marginBottom: 18,
-            }}
-          >
-            {home.name.replace(/^The\s+/, '')}
-          </p>
           <p style={{ fontSize: 13, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.75)', marginBottom: 22 }}>
             {home.tagline}
           </p>

@@ -16,81 +16,116 @@ const distDir = process.argv[2] || 'dist';
 const indexPath = join(distDir, 'index.html');
 const template = readFileSync(indexPath, 'utf-8');
 
+const SITE_ORIGIN = 'https://landrhomes.com';
+const HOME_CRUMB = { name: 'Home', path: '/' };
+const FALCON_CRUMB = { name: 'Falcon Estates', path: '/falcon-estates-rochester-hills' };
+const PINE_WOODS_CRUMB = { name: 'Pine Woods', path: '/pine-woods' };
+
 // route -> overrides. `image`, when set, replaces og:image with a photo of
-// that specific home instead of the site-wide fallback.
+// that specific home instead of the site-wide fallback. `breadcrumb` is the
+// page's own trail (Home is prepended automatically) — this doubles as the
+// site's silo structure declared to search engines: each Falcon
+// Estates/Pine Woods home nests under its own community hub, not flat
+// under Home.
 const ROUTES = {
   '/homes-available': {
     title: 'Homes Available | L&R Homes, Inc. — Rochester Hills, MI',
     description:
       'Browse available new-construction homes across Falcon Estates and Pine Woods in Rochester Hills, Michigan — from move-in ready to immediate occupancy.',
+    breadcrumb: [{ name: 'Homes Available', path: '/homes-available' }],
   },
   '/falcon-estates-rochester-hills': {
     title: 'Falcon Estates | L&R Homes, Inc. — Rochester Hills, MI',
     description:
       'An upscale enclave of finely appointed, European-inspired homes on generous lots framed by mature woodland, minutes from downtown Rochester.',
+    breadcrumb: [FALCON_CRUMB],
   },
   '/pine-woods': {
     title: 'Pine Woods | Town Properties, LLC — Rochester Hills, MI',
     description:
       'A new development of spacious, beautifully crafted homes in Rochester Hills — ranch, split-level, and colonial floor plans by Town Properties, an L&R Homes affiliate.',
     image: '/assets/pine-woods/majestic-twilight-1-wide.jpg',
+    breadcrumb: [PINE_WOODS_CRUMB],
   },
   '/majestic': {
     title: 'The Majestic | Pine Woods, Rochester Hills',
     description:
       'Classic brick & stone architecture. 2,662 sq ft, 3 bedrooms, 3-car garage — now open with immediate occupancy in Pine Woods, Rochester Hills.',
     image: '/assets/pine-woods/majestic-twilight-1.jpg',
+    breadcrumb: [PINE_WOODS_CRUMB, { name: 'The Majestic', path: '/majestic' }],
   },
   '/heritage': {
     title: 'The Heritage | Pine Woods, Rochester Hills',
     description:
       'Colonial architecture with a stone elevation. 3,143 sq ft, 4 bedrooms — move-in ready now at Lot 7, 3110 Raffler Dr, Rochester Hills.',
     image: '/assets/pine-woods/heritage-twilight-4.jpg',
+    breadcrumb: [PINE_WOODS_CRUMB, { name: 'The Heritage', path: '/heritage' }],
   },
   '/grandeur': {
     title: 'The Grandeur | Falcon Estates, Rochester Hills',
     description:
       'A 4,170 sq ft European-inspired masterwork in Falcon Estates, bordered by a 10-acre nature preserve. Built by L&R Homes, Inc.',
     image: '/assets/home/grandeur-exterior-twilight.jpg',
+    breadcrumb: [FALCON_CRUMB, { name: 'The Grandeur', path: '/grandeur' }],
   },
   '/crestwood': {
     title: 'The Crestwood | Falcon Estates, Rochester Hills',
     description:
       'European-inspired architecture and hands-on craftsmanship on one of Falcon Estates’ finest homesites, built by L&R Homes, Inc.',
     image: '/assets/home/crestwood-twilight-2026.jpg',
+    breadcrumb: [FALCON_CRUMB, { name: 'The Crestwood', path: '/crestwood' }],
   },
   '/cambridge': {
     title: 'The Cambridge | Falcon Estates, Rochester Hills',
     description:
       'A soaring, light-filled foyer and a two-story great room anchor this sold Falcon Estates home built by L&R Homes, Inc.',
     image: '/assets/home/cambridge-twilight.jpg',
+    breadcrumb: [FALCON_CRUMB, { name: 'The Cambridge', path: '/cambridge' }],
   },
   '/stratford': {
     title: 'The Stratford | Falcon Estates, Rochester Hills',
     description:
       'Built for a full household — open kitchen, wet bar, media room, and multiple suites in this sold Falcon Estates home by L&R Homes, Inc.',
     image: '/assets/home/stratford-aerial-twilight.jpg',
+    breadcrumb: [FALCON_CRUMB, { name: 'The Stratford', path: '/stratford' }],
   },
   '/madison': {
     title: 'The Madison | Falcon Estates, Rochester Hills',
     description:
       'A commanding stone-and-brick elevation with a soaring arched entry — this sold Falcon Estates home was built by L&R Homes, Inc.',
     image: '/assets/home/madison-twilight-aerial.jpg',
+    breadcrumb: [FALCON_CRUMB, { name: 'The Madison', path: '/madison' }],
   },
   '/gallery': {
     title: 'Photo Gallery | L&R Homes, Inc.',
     description:
       'Browse photography from L&R Homes’ completed and available homes across Falcon Estates and Pine Woods in Rochester Hills, Michigan.',
+    breadcrumb: [{ name: 'Photo Gallery', path: '/gallery' }],
   },
   '/contact-us': {
     title: 'Contact Us | L&R Homes, Inc. — Rochester Hills, MI',
     description:
       'Get in touch with L&R Homes, Inc. to schedule a tour or ask about available homes in Rochester Hills, Michigan. Call (248) 656-8830.',
+    breadcrumb: [{ name: 'Contact Us', path: '/contact-us' }],
   },
 };
 
 function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function breadcrumbJsonLd(trail) {
+  const crumbs = [HOME_CRUMB, ...trail];
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: SITE_ORIGIN + c.path,
+    })),
+  });
 }
 
 function buildPage(overrides) {
@@ -102,6 +137,10 @@ function buildPage(overrides) {
   html = html.replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${description}$2`);
   if (overrides.image) {
     html = html.replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${overrides.image}$2`);
+  }
+  if (overrides.breadcrumb) {
+    const script = `<script type="application/ld+json">${breadcrumbJsonLd(overrides.breadcrumb)}</script>\n  </head>`;
+    html = html.replace(/<\/head>/, script);
   }
   return html;
 }

@@ -50,31 +50,33 @@ export function CrestwoodPage() {
             ← Falcon Estates – Rochester Hills
           </a>
           <p style={{ ...eyebrow, color: 'rgba(242,240,230,0.6)', marginTop: 28, marginBottom: 8 }}>Rochester Hills, Michigan</p>
-          <h1
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 300,
-              fontSize: 'clamp(2.75rem,6vw,4.5rem)',
-              color: '#F2F0E6',
-              lineHeight: 1.05,
-              marginBottom: 4,
-            }}
-          >
-            The
+          <h1 style={{ lineHeight: 1.05 }}>
+            <span
+              style={{
+                display: 'block',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 300,
+                fontSize: 'clamp(2.75rem,6vw,4.5rem)',
+                color: '#F2F0E6',
+                marginBottom: 4,
+              }}
+            >
+              The
+            </span>
+            <span
+              style={{
+                display: 'block',
+                fontFamily: 'var(--font-display)',
+                fontStyle: 'italic',
+                fontWeight: 400,
+                fontSize: 'clamp(3rem,7vw,5rem)',
+                color: 'var(--color-brand-gold-light)',
+                marginBottom: 18,
+              }}
+            >
+              Crestwood
+            </span>
           </h1>
-          <p
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontStyle: 'italic',
-              fontWeight: 400,
-              fontSize: 'clamp(3rem,7vw,5rem)',
-              color: 'var(--color-brand-gold-light)',
-              lineHeight: 1.05,
-              marginBottom: 18,
-            }}
-          >
-            Crestwood
-          </p>
           <p style={{ fontSize: 13, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.75)', marginBottom: 22 }}>
             European-Inspired Custom Home
           </p>
@@ -214,22 +216,40 @@ export function CrestwoodPage() {
             </div>
           </div>
 
-          <a
-            href={withBase('/homes-available')}
-            className="classic-btn-outline classic-hover-float"
-            style={{
-              display: 'inline-block',
-              border: '1px solid var(--color-brand-gold)',
-              color: '#F2F0E6',
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              padding: '15px 32px',
-            }}
-          >
-            View Homes Available
-          </a>
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <a
+              href={withBase('/homes-available')}
+              className="classic-btn-outline classic-hover-float"
+              style={{
+                display: 'inline-block',
+                border: '1px solid var(--color-brand-gold)',
+                color: '#F2F0E6',
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                padding: '15px 32px',
+              }}
+            >
+              View Homes Available
+            </a>
+            <a
+              href={withBase('/grandeur')}
+              className="classic-btn-outline classic-hover-float"
+              style={{
+                display: 'inline-block',
+                border: '1px solid var(--color-brand-gold)',
+                color: 'var(--color-brand-gold-light)',
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                padding: '15px 32px',
+              }}
+            >
+              See The Grandeur — Available Now
+            </a>
+          </div>
         </div>
       </section>
 

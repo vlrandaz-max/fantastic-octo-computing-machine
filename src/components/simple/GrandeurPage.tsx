@@ -761,9 +761,9 @@ const GRANDEUR_BODY = `
   <div class="corner br"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 38 L2 2 L38 2" stroke="#B8976A" stroke-width="1" opacity="0.6"/><path d="M2 20 L8 20" stroke="#B8976A" stroke-width="0.7" opacity="0.4"/><path d="M20 2 L20 8" stroke="#B8976A" stroke-width="0.7" opacity="0.4"/><rect x="2" y="2" width="3" height="3" fill="#B8976A" opacity="0.5"/></svg></div>
 
   <div class="cover-content">
-    <div class="cover-eyebrow">Falcon Estates &nbsp;&middot;&nbsp; Lot 42 &nbsp;&middot;&nbsp; Rochester Hills, Michigan</div>
+    <div class="cover-eyebrow"><a href="${withBase('/falcon-estates-rochester-hills')}" style="color:inherit; text-decoration:none;">Falcon Estates</a> &nbsp;&middot;&nbsp; Lot 42 &nbsp;&middot;&nbsp; Rochester Hills, Michigan</div>
     <div class="cover-rule"></div>
-    <div class="cover-title">The<br><em>Grandeur</em></div>
+    <h1 class="cover-title">The<br><em>Grandeur</em></h1>
     <div class="cover-subtitle">European Inspired Architecture</div>
     <div class="cover-divider"><span></span><div class="diamond"></div><span></span></div>
     <div class="cover-location">3836 Coachwood Lane &nbsp;&middot;&nbsp; Rochester Hills, MI 48309</div>
@@ -1082,6 +1082,10 @@ const GRANDEUR_BODY = `
       <div class="contact-item"><div class="c-label">Address</div><div class="c-value">2490 Walton Blvd, Ste 103<br>Rochester Hills, MI 48309</div></div>
       <div class="contact-item"><div class="c-label">Contact</div><div class="c-value">(248) 656-8830<br>info@landrhomes.com</div></div>
       <div class="contact-item"><div class="c-label">Virtual Tour</div><div class="c-value"><a href="${TOUR_URL}" style="color:var(--gr-gold-light); text-decoration:none;">Matterport 3D Walkthrough &rarr;</a></div></div>
+    </div>
+
+    <div style="margin-top: 40px;">
+      <a href="${withBase('/homes-available')}" style="display:inline-block; border:1px solid var(--gr-gold); color:var(--gr-cream); font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:14px 28px; text-decoration:none;">View Homes Available</a>
     </div>
 
     <div class="back-disclaimer">All floor plans, square footages, and specifications are based on approved building plans and are subject to change. Renderings and descriptions are for marketing purposes only. Estimated timeframes are not guaranteed and are subject to change; they should not be considered reliable commitments. Final pricing requires Director of Operations approval. This brochure does not constitute a contract or binding offer. L&amp;R Homes, Inc. is an equal opportunity builder and complies with all applicable Fair Housing laws.</div>
