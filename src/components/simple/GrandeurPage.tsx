@@ -860,7 +860,7 @@ const GRANDEUR_BODY = `
         </ul></div>
         <div><ul class="room-list">
           <li><span class="room-name">Steel Beams</span><span class="room-size">W10&times;26</span></li>
-          <li><span class="room-name">Drop Walls</span><span class="room-size">8&Prime;</span></li>
+          <li><span class="room-name">Wall</span><span class="room-size">8 ft &mdash; R-11 Insulation</span></li>
           <li><span class="room-name">Finish Potential</span><span class="room-size">Full</span></li>
         </ul></div>
       </div>
