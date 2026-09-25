@@ -50,7 +50,7 @@ export function ContactUsPage() {
                 margin: '14px 0 20px',
               }}
             >
-              Let&rsquo;s Build Something Lasting
+              Your Next Home Awaits
             </h1>
             {homeParam && (
               <p style={{ fontSize: 14, color: 'var(--fg3)', marginBottom: 16 }}>

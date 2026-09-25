@@ -39,7 +39,7 @@ export const COMPANY = {
   },
   ctaBand: {
     eyebrow: 'Get in Touch',
-    heading: 'Let’s Build Something Lasting',
+    heading: 'Your Next Home Awaits',
   },
 } as const;
 
