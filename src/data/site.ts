@@ -22,10 +22,6 @@ export const COMPANY = {
   phone: '(248) 656-8830',
   phoneHref: 'tel:2486568830',
   email: 'info@landrhomes.com',
-  /** Opens turn-by-turn directions to the office in Google Maps — a plain
-   *  outbound link (no embedded map/script), consistent with the site
-   *  carrying no third-party tracking. */
-  mapsHref: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('2490 Walton Boulevard, Suite 103, Rochester Hills, MI 48309'),
   stats: [
     { value: '50+', label: 'Years of Craftsmanship' },
     { value: '1973', label: 'Founded In' },
@@ -220,6 +216,9 @@ export const FALCON_ESTATES = {
   name: 'Falcon Estates',
   builder: 'L & R Homes, Inc.',
   body: 'An upscale enclave of finely appointed homes set on generous lots and framed by mature woodland, minutes from downtown Rochester.',
+  /** Directions to the Grandeur (3836 Coachwood Lane) — the community's
+   *  own move-in-ready home, standing in for the subdivision itself. */
+  mapsHref: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('3836 Coachwood Lane, Rochester Hills, MI 48309'),
 } as const;
 
 /** Town Properties, LLC is a distinct L&R Homes affiliate — the builder of record for Pine Woods. */
@@ -232,6 +231,9 @@ export const PINE_WOODS = {
   heroBadge: 'Now Open',
   intro:
     'Pine Woods Rochester Hills is a new development of spacious, beautifully crafted homes that offer the best of both worlds. Whether you’re looking for a cozy ranch, a split-level, or a luxurious colonial, there’s a home to fit your lifestyle.',
+  /** Directions to The Heritage, Lot 7 (3110 Raffler Dr) — the community's
+   *  own confirmed street address, standing in for the subdivision itself. */
+  mapsHref: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('3110 Raffler Dr, Rochester Hills, MI 48309'),
   community: [
     {
       label: 'Schools',

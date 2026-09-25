@@ -39,10 +39,7 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
       >
         <div>
           <p style={colHeading}>Address</p>
-          <p style={{ ...colText, marginBottom: 6 }}>{COMPANY.addressShort}</p>
-          <a href={COMPANY.mapsHref} target="_blank" rel="noopener" className="nav-link-hover" style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 13, fontWeight: 700, color: 'var(--color-brand-gold-dark)' }}>
-            Get Directions →
-          </a>
+          <p style={colText}>{COMPANY.addressShort}</p>
         </div>
         <div>
           <p style={colHeading}>Contact</p>

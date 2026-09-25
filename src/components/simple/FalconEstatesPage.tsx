@@ -2,6 +2,7 @@ import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { useRevealScope } from '../Reveal';
 import { withBase } from '../../lib/url';
+import { FALCON_ESTATES } from '../../data/site';
 
 /**
  * Falcon Estates — the community landing page. Like GrandeurPage, this is a
@@ -326,6 +327,7 @@ const FALCON_BODY = `
     </div>
     <div class="location-actions">
       <a class="btn btn-gold" href="tel:+12486568830">Call (248) 656-8830</a>
+      <a class="btn btn-onDark" href="${FALCON_ESTATES.mapsHref}" target="_blank" rel="noopener">Get Directions</a>
       <a class="btn btn-onDark" href="${withBase('/homes-available')}">View All Homes</a>
     </div>
   </div>

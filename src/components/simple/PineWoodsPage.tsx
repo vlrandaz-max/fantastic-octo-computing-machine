@@ -234,6 +234,15 @@ export function PineWoodsPage() {
               {COMPANY.email}
             </a>
           </p>
+          <a
+            href={PINE_WOODS.mapsHref}
+            target="_blank"
+            rel="noopener"
+            className="nav-link-hover"
+            style={{ display: 'inline-block', marginTop: 12, fontSize: 13, fontWeight: 700, color: 'var(--color-brand-gold-light)' }}
+          >
+            Get Directions to Pine Woods →
+          </a>
         </div>
       </section>
 
