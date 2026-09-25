@@ -45,7 +45,7 @@ export function NotFoundPage() {
 
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 14, marginBottom: 40 }}>
             <a
-              href={withBase('/classic2')}
+              href={withBase('/')}
               className="classic-hover-float"
               style={{
                 fontSize: 12,

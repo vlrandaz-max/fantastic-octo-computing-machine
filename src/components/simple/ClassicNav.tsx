@@ -18,7 +18,7 @@ const linkStyle: React.CSSProperties = {
  * NAV_LINKS as the rest of the site's conventional pages (e.g.
  * /pine-woods).
  */
-export function ClassicNav({ homeHref = withBase('/classic2') }: { homeHref?: string } = {}) {
+export function ClassicNav({ homeHref = withBase('/') }: { homeHref?: string } = {}) {
   const [open, setOpen] = useState(false);
   const LINKS = [{ label: 'Home', href: homeHref }, ...NAV_LINKS.filter((l) => l.label !== 'Home')];
 

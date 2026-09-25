@@ -108,6 +108,33 @@ const ROUTES = {
       'Get in touch with L&R Homes, Inc. to schedule a tour or ask about available homes in Rochester Hills, Michigan. Call (248) 656-8830.',
     breadcrumb: [{ name: 'Contact Us', path: '/contact-us' }],
   },
+  // /classic2 renders the exact same homepage component as / (nothing on
+  // the site links to it anymore — every internal "Home" link now points
+  // at / — but the URL itself still works for old bookmarks/links).
+  // Canonicalizing it to / avoids Google indexing two identical pages.
+  '/classic2': {
+    title: 'L&R Homes, Inc. — Custom Builders Since 1973 | Rochester Hills, Michigan',
+    description:
+      'L&R Homes builds custom, European-inspired homes in Rochester Hills, Michigan. Fifty years of hands-on craftsmanship, from groundbreaking to move-in.',
+    canonical: '/',
+  },
+  // /classic and /simple are earlier alternate homepage designs kept
+  // reachable at their own URLs (e.g. for internal comparison) but not
+  // meant to be indexed as separate pages — noindex rather than just
+  // omitting them from the sitemap, since sitemap omission alone doesn't
+  // stop Google from indexing a URL it finds some other way.
+  '/classic': {
+    title: 'L&R Homes, Inc. — Custom Builders Since 1973 | Rochester Hills, Michigan',
+    description:
+      'L&R Homes builds custom, European-inspired homes in Rochester Hills, Michigan. Fifty years of hands-on craftsmanship, from groundbreaking to move-in.',
+    noindex: true,
+  },
+  '/simple': {
+    title: 'L&R Homes, Inc. — Custom Builders Since 1973 | Rochester Hills, Michigan',
+    description:
+      'L&R Homes builds custom, European-inspired homes in Rochester Hills, Michigan. Fifty years of hands-on craftsmanship, from groundbreaking to move-in.',
+    noindex: true,
+  },
 };
 
 function escapeHtml(s) {
@@ -128,7 +155,7 @@ function breadcrumbJsonLd(trail) {
   });
 }
 
-function buildPage(overrides) {
+function buildPage(overrides, route) {
   const title = escapeHtml(overrides.title);
   const description = escapeHtml(overrides.description);
   let html = template.replace(/<title>.*?<\/title>/s, `<title>${title}</title>`);
@@ -138,9 +165,19 @@ function buildPage(overrides) {
   if (overrides.image) {
     html = html.replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${overrides.image}$2`);
   }
+  const extras = [];
   if (overrides.breadcrumb) {
-    const script = `<script type="application/ld+json">${breadcrumbJsonLd(overrides.breadcrumb)}</script>\n  </head>`;
-    html = html.replace(/<\/head>/, script);
+    extras.push(`<script type="application/ld+json">${breadcrumbJsonLd(overrides.breadcrumb)}</script>`);
+  }
+  if (route) {
+    const canonicalPath = overrides.canonical || route;
+    extras.push(`<link rel="canonical" href="${SITE_ORIGIN}${canonicalPath}" />`);
+  }
+  if (overrides.noindex) {
+    extras.push(`<meta name="robots" content="noindex, follow" />`);
+  }
+  if (extras.length) {
+    html = html.replace(/<\/head>/, `${extras.join('\n  ')}\n  </head>`);
   }
   return html;
 }
@@ -149,9 +186,21 @@ let count = 0;
 for (const [route, overrides] of Object.entries(ROUTES)) {
   const dir = join(distDir, route);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, 'index.html'), buildPage(overrides));
+  writeFileSync(join(dir, 'index.html'), buildPage(overrides, route));
   count++;
 }
+
+// The homepage (index.html itself) gets its own self-canonical tag too —
+// every other route above gets one automatically via buildPage, but /
+// is written directly by Vite, not by this script's per-route loop.
+writeFileSync(indexPath, buildPage(
+  {
+    title: 'L&R Homes, Inc. — Custom Builders Since 1973 | Rochester Hills, Michigan',
+    description:
+      'L&R Homes builds custom, European-inspired homes in Rochester Hills, Michigan. Fifty years of hands-on craftsmanship, from groundbreaking to move-in.',
+  },
+  '/',
+));
 
 // Apache's ErrorDocument 404 (see public/.htaccess) points at this file for
 // any path that isn't a known route — same app bundle (App.tsx renders
@@ -159,12 +208,14 @@ for (const [route, overrides] of Object.entries(ROUTES)) {
 // title/description instead of the homepage's, for the crawlers and link
 // unfurlers that only read the static HTML. Named to avoid colliding with
 // public/404.html, which is GitHub Pages' unrelated SPA-redirect trick and
-// also gets copied into dist/ verbatim.
+// also gets copied into dist/ verbatim. noindex since a 404 should never
+// be indexed regardless of which URL happened to trigger it.
 writeFileSync(
   join(distDir, '_404.html'),
   buildPage({
     title: 'Page Not Found | L&R Homes, Inc.',
     description: 'The page you were looking for doesn’t exist, may have moved, or the link may be out of date.',
+    noindex: true,
   }),
 );
 

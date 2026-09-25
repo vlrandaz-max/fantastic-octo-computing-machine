@@ -48,7 +48,7 @@ export function SimpleNav() {
           padding: '18px 40px',
         }}
       >
-        <a href={withBase('/classic2')} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+        <a href={withBase('/')} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <img src={withBase('/assets/lr-logo-badge.png')} alt="" style={{ width: 44, height: 44, objectFit: 'contain' }} />
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 26, color: '#F2F0E6' }}>L&amp;R Homes</span>
