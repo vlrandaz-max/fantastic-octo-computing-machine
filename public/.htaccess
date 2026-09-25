@@ -24,30 +24,27 @@
   RewriteRule ^_wp_backup_20260921/ - [F,L]
 </IfModule>
 
-# SPA fallback: a request for a real route (e.g. /pine-woods, /majestic)
-# that isn't a real file or directory gets index.html, and the app's own
-# client-side routing (App.tsx) decides what to render. Only known route
-# prefixes are rewritten here — anything else falls through to Apache's
-# own 404 below, rather than being silently served as if it were valid.
-# No RewriteBase — omitting it lets Apache infer it from this file's own
-# directory (RewriteRule's own pattern, unlike REQUEST_URI, is matched
-# relative to that directory), so the same rule works whether this is
-# deployed at the site root or in a subfolder like /preview/.
+# SPA fallback: any request that isn't a real file or directory (e.g.
+# /pine-woods, /majestic) gets index.html, and the app's own client-side
+# routing (App.tsx) decides what to render — including showing its own
+# NotFoundPage for anything that doesn't match a real route. No
+# RewriteBase — omitting it lets Apache infer it from this file's own
+# directory, so the same rule works whether this is deployed at the
+# site root or in a subfolder like /preview/.
+#
+# A tighter, whitelist-based version of this rule plus an ErrorDocument
+# 404 directive (so unknown paths get a real HTTP 404 status instead of
+# this 200) was tried and reverted — it broke the live homepage itself
+# on this host, even though it tested clean against a local Apache
+# instance, most likely an AllowOverride/ErrorDocument support
+# difference on Network Solutions' actual server config that local
+# testing couldn't catch. Revisit with more cautious, incremental
+# testing (e.g. against the /preview/ subfolder first) before trying
+# again — don't just restore the whitelist rule from git history
+# without re-verifying it against the real host.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(gallery|homes-available|grandeur|crestwood|cambridge|stratford|madison|falcon-estates(-rochester-hills)?|majestic|heritage|pine-woods|contact-us|classic2|classic|simple)($|/) index.html [L]
+  RewriteRule ^ index.html [L]
 </IfModule>
-
-# A path that isn't a real file/directory and isn't one of the routes
-# above (typo, an old WordPress permalink, a stale backlink, ...) now hits
-# Apache's own 404 instead of silently getting index.html with a 200 —
-# search engines correctly drop it instead of flagging a "soft 404". It
-# still shows the app's own NotFoundPage (App.tsx renders that for any
-# unmatched path) via _404.html — the same app bundle as index.html, just
-# with its own <title>/description rather than the homepage's, generated
-# by scripts/prerender-meta.mjs. Root-relative on purpose: this only needs
-# to be correct for the real production deploy (site root), not the
-# temporary /preview/ subfolder used for testing.
-ErrorDocument 404 /_404.html
