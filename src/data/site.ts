@@ -22,6 +22,10 @@ export const COMPANY = {
   phone: '(248) 656-8830',
   phoneHref: 'tel:2486568830',
   email: 'info@landrhomes.com',
+  /** Opens turn-by-turn directions to the office in Google Maps — a plain
+   *  outbound link (no embedded map/script), consistent with the site
+   *  carrying no third-party tracking. */
+  mapsHref: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('2490 Walton Boulevard, Suite 103, Rochester Hills, MI 48309'),
   stats: [
     { value: '50+', label: 'Years of Craftsmanship' },
     { value: '1973', label: 'Founded In' },

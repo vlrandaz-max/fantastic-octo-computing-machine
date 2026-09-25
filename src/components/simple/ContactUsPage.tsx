@@ -83,7 +83,16 @@ export function ContactUsPage() {
                 <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--fg3)', marginBottom: 4 }}>
                   Office
                 </p>
-                <p style={{ fontSize: 16, color: 'var(--fg2)', lineHeight: 1.6 }}>{COMPANY.address}</p>
+                <p style={{ fontSize: 16, color: 'var(--fg2)', lineHeight: 1.6, marginBottom: 6 }}>{COMPANY.address}</p>
+                <a
+                  href={COMPANY.mapsHref}
+                  target="_blank"
+                  rel="noopener"
+                  className="nav-link-hover"
+                  style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.04em', color: 'var(--color-brand-gold-dark)' }}
+                >
+                  Get Directions →
+                </a>
               </div>
             </div>
 

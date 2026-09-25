@@ -31,11 +31,14 @@ export function SimpleFooter() {
       >
         <div style={col}>
           <p style={heading}>Address</p>
-          <p style={line}>
+          <p style={{ ...line, marginBottom: 6 }}>
             2490 Walton Boulevard, Suite 103
             <br />
             Rochester Hills, MI 48309
           </p>
+          <a href={COMPANY.mapsHref} target="_blank" rel="noopener" className="nav-link-hover" style={{ fontSize: 13, fontWeight: 700, color: 'var(--color-brand-gold-dark)' }}>
+            Get Directions →
+          </a>
         </div>
         <div style={col}>
           <p style={heading}>Contact</p>
