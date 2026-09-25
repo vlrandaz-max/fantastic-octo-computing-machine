@@ -11,6 +11,7 @@ import { MadisonPage } from './components/simple/MadisonPage';
 import { FalconEstatesPage } from './components/simple/FalconEstatesPage';
 import { ClassicHomePage } from './components/simple/ClassicHomePage';
 import { Classic2HomePage } from './components/simple/Classic2HomePage';
+import { NotFoundPage } from './components/simple/NotFoundPage';
 import { GalleryPage } from './components/GalleryPage';
 import { HOME_DETAILS } from './data/site';
 
@@ -27,6 +28,7 @@ function App() {
   const rawPath = typeof window !== 'undefined' ? window.location.pathname : '';
   const base = import.meta.env.BASE_URL;
   const path = rawPath.startsWith(base) ? `/${rawPath.slice(base.length)}` : rawPath;
+  if (path === '/' || path === '') return <Classic2HomePage />;
   if (path.startsWith('/gallery')) return <GalleryPage />;
   if (path.startsWith('/homes-available')) return <HomesAvailablePage />;
   if (path.startsWith('/grandeur')) return <GrandeurPage />;
@@ -43,7 +45,7 @@ function App() {
   if (path.startsWith('/classic')) return <ClassicHomePage />;
   if (path.startsWith('/simple')) return <SimpleHome />;
 
-  return <Classic2HomePage />;
+  return <NotFoundPage />;
 }
 
 export default App;

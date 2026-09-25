@@ -114,4 +114,19 @@ for (const [route, overrides] of Object.entries(ROUTES)) {
   count++;
 }
 
-console.log(`prerender-meta: wrote ${count} route-specific index.html files under ${distDir}/`);
+// Apache's ErrorDocument 404 (see public/.htaccess) points at this file for
+// any path that isn't a known route — same app bundle (App.tsx renders
+// NotFoundPage for any unmatched path once it loads), but with its own
+// title/description instead of the homepage's, for the crawlers and link
+// unfurlers that only read the static HTML. Named to avoid colliding with
+// public/404.html, which is GitHub Pages' unrelated SPA-redirect trick and
+// also gets copied into dist/ verbatim.
+writeFileSync(
+  join(distDir, '_404.html'),
+  buildPage({
+    title: 'Page Not Found | L&R Homes, Inc.',
+    description: 'The page you were looking for doesn’t exist, may have moved, or the link may be out of date.',
+  }),
+);
+
+console.log(`prerender-meta: wrote ${count} route-specific index.html files plus _404.html under ${distDir}/`);
