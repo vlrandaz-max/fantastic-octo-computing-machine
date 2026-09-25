@@ -919,7 +919,7 @@ const GRANDEUR_BODY = `
           <li>Premium door hardware on doors and cabinets</li>
           <li>Gas fireplace with finished mantle &amp; custom stone hearth</li>
           <li>Coffered ceilings in the primary suite</li>
-          <li>Dual laundry rooms built into cabinetry with pull-out faucets</li>
+          <li>Separate first and second floor laundry rooms with ample cabinetry and pull-out faucets</li>
           <li>Separate service entrance off the garage</li>
         </ul>
       </div>
