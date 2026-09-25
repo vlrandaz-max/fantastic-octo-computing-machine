@@ -1,4 +1,5 @@
 import { COMPANY, NAV_LINKS } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 /** Plain, light multi-column footer matching rh.house's structure. */
 export function SimpleFooter() {
@@ -55,7 +56,7 @@ export function SimpleFooter() {
         <div style={col}>
           <p style={heading}>Schedule a Tour</p>
           <a
-            href="/contact-us?intent=tour"
+            href={withBase('/contact-us?intent=tour')}
             style={{
               display: 'inline-block',
               border: '1px solid var(--color-brand-gold)',
@@ -96,7 +97,7 @@ export function SimpleFooter() {
               {link.label}
             </a>
           ))}
-          <a href="/" style={{ color: 'var(--fg3)' }}>
+          <a href={withBase('/')} style={{ color: 'var(--fg3)' }}>
             The Full Experience
           </a>
         </nav>

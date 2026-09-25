@@ -1,6 +1,7 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { COMPANY, PINE_WOODS, type HomeDetail } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const eyebrow: React.CSSProperties = {
   fontFamily: 'var(--font-body)',
@@ -57,7 +58,7 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
         </div>
         <div style={{ position: 'relative', zIndex: 5, width: '100%', padding: '0 40px 64px', textAlign: 'center' }}>
           <a
-            href="/pine-woods"
+            href={withBase('/pine-woods')}
             style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.7)' }}
           >
             ← Pine Woods – Rochester Hills
@@ -378,7 +379,7 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
           </div>
 
           <a
-            href="/contact-us"
+            href={withBase('/contact-us')}
             style={{
               display: 'inline-block',
               border: '1px solid var(--color-brand-gold)',

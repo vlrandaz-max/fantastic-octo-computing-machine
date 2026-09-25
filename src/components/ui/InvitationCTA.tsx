@@ -1,3 +1,5 @@
+import { withBase } from '../../lib/url';
+
 /** Act VII — primary conversion. Motion stops here; so does urgency copy. */
 export function InvitationCTA() {
   return (
@@ -15,7 +17,7 @@ export function InvitationCTA() {
       </h2>
       <div style={{ display: 'flex', justifyContent: 'center', gap: 14, flexWrap: 'wrap' }}>
         <a
-          href="/contact-us?intent=tour"
+          href={withBase('/contact-us?intent=tour')}
           style={{
             fontSize: 12,
             fontWeight: 700,

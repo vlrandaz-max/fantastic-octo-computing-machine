@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { SimpleNav } from './simple/SimpleNav';
 import { SimpleFooter } from './simple/SimpleFooter';
 import { GALLERY_PHOTOS } from '../data/galleryPhotos';
+import { withBase } from '../lib/url';
 
 type Filter = 'all' | 'exterior' | 'interior';
 
@@ -48,7 +49,7 @@ export function GalleryPage() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/home/family-room-3-staged.jpg') center / cover no-repeat",
+            background: `url('${withBase('/assets/home/family-room-3-staged.jpg')}') center / cover no-repeat`,
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(12,10,8,0.6)' }} />
@@ -105,7 +106,8 @@ export function GalleryPage() {
               key={photo.src}
               type="button"
               onClick={() => setLightboxIndex(i)}
-              style={{ padding: 0, border: 'none', background: 'none', cursor: 'pointer', display: 'block' }}
+              className="gallery-thumb"
+              style={{ padding: 0, border: 'none', background: 'none', cursor: 'pointer', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)' }}
               aria-label={`View larger: ${photo.alt}`}
             >
               <img
@@ -116,12 +118,8 @@ export function GalleryPage() {
                   width: '100%',
                   height: 240,
                   objectFit: 'cover',
-                  borderRadius: 'var(--radius-sm)',
-                  boxShadow: 'var(--shadow-1)',
-                  transition: 'opacity 200ms',
+                  display: 'block',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
               />
             </button>
           ))}

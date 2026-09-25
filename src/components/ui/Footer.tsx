@@ -1,3 +1,5 @@
+import { withBase } from '../../lib/url';
+
 /**
  * Standard, fully semantic footer — deliberately outside the cinematic
  * layer (Part 2: "Deliberately not part of the cinematic layer"). Same
@@ -35,7 +37,7 @@ export function Footer() {
           </p>
         </div>
         <nav aria-label="Footer" style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-          <a href="/homes-available" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
+          <a href={withBase('/homes-available')} style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
             Homes Available
           </a>
           <a href="#land" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
@@ -47,7 +49,7 @@ export function Footer() {
           <a href="mailto:info@landrhomes.com" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
             info@landrhomes.com
           </a>
-          <a href="/sitemap.xml" style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
+          <a href={withBase('/sitemap.xml')} style={{ fontSize: 12, color: 'rgba(242,240,230,0.55)' }}>
             Sitemap
           </a>
         </nav>

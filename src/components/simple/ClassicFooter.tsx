@@ -1,0 +1,93 @@
+import { COMPANY, NAV_LINKS } from '../../data/site';
+
+const colHeading: React.CSSProperties = {
+  fontFamily: "'Jost', var(--font-body)",
+  fontWeight: 600,
+  fontSize: 13,
+  letterSpacing: '0.16em',
+  textTransform: 'uppercase',
+  color: 'var(--color-brand-dark)',
+  marginBottom: 14,
+};
+
+const colText: React.CSSProperties = {
+  fontFamily: "'Jost', var(--font-body)",
+  fontSize: 14,
+  lineHeight: 1.8,
+  color: 'var(--fg2)',
+};
+
+/** Centered, multi-column contact footer matching rh.house's footer structure. */
+export function ClassicFooter() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer style={{ background: '#FFFFFF' }}>
+      <div
+        className="classic-footer-grid"
+        style={{
+          maxWidth: 1280,
+          margin: '0 auto',
+          padding: '72px 32px 48px',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 40,
+          textAlign: 'center',
+        }}
+      >
+        <div>
+          <p style={colHeading}>Address</p>
+          <p style={colText}>{COMPANY.addressShort}</p>
+        </div>
+        <div>
+          <p style={colHeading}>Contact</p>
+          <p style={colText}>
+            <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--fg2)' }}>
+              {COMPANY.email}
+            </a>
+            <br />
+            <a href={COMPANY.phoneHref} style={{ color: 'var(--fg2)' }}>
+              {COMPANY.phone}
+            </a>
+          </p>
+        </div>
+        <div>
+          <p style={colHeading}>Schedule a Visit</p>
+          <a href={COMPANY.phoneHref} className="classic-btn-outline classic-hover-float" style={{ color: 'var(--color-brand-dark)' }}>
+            Find a Home
+          </a>
+        </div>
+      </div>
+      <div
+        style={{
+          borderTop: '1px solid var(--border)',
+          maxWidth: 1280,
+          margin: '0 auto',
+          padding: '18px 32px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: 12,
+          fontFamily: "'Jost', var(--font-body)",
+          fontSize: 12,
+          color: 'var(--fg3)',
+        }}
+      >
+        <span>
+          {COMPANY.name} | {COMPANY.addressShort} | Telephone {COMPANY.phone} | email:{' '}
+          <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--color-brand-gold-dark)' }}>
+            {COMPANY.email}
+          </a>{' '}
+          | Copyright &copy; {year}
+        </span>
+        <nav aria-label="Footer" style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+          {NAV_LINKS.map((link) => (
+            <a key={link.label} href={link.href} style={{ color: 'var(--fg3)' }}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </footer>
+  );
+}

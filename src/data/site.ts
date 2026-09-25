@@ -13,6 +13,8 @@
  * have their own confirmed Pine Woods photography.
  */
 
+import { withBase } from '../lib/url';
+
 export const COMPANY = {
   name: 'L & R Homes, Inc.',
   tagline: 'Time-honored craftsmanship and thoughtfully built homes in Metro Detroit’s most desirable communities.',
@@ -44,13 +46,13 @@ export const COMPANY = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: 'Home', href: '/simple' },
-  { label: 'Falcon Estates', href: '/falcon-estates-rochester-hills' },
-  { label: 'Homes Available', href: '/homes-available' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Pine Woods', href: '/pine-woods' },
-  { label: 'Contact Us', href: '/contact-us' },
-] as const;
+  { label: 'Home', href: withBase('/simple') },
+  { label: 'Falcon Estates', href: withBase('/falcon-estates-rochester-hills') },
+  { label: 'Homes Available', href: withBase('/homes-available') },
+  { label: 'Gallery', href: withBase('/gallery') },
+  { label: 'Pine Woods', href: withBase('/pine-woods') },
+  { label: 'Contact Us', href: withBase('/contact-us') },
+];
 
 export type HomeStatus = 'move-in-ready' | 'sold' | 'immediate-occupancy';
 
@@ -77,16 +79,16 @@ export interface HomeListing {
  * generic exterior there too — mirrored here.
  */
 export const FALCON_ESTATES_HOMES: HomeListing[] = [
-  { name: 'The Grandeur', status: 'move-in-ready', image: '/assets/home/grandeur-exterior-twilight.jpg', community: 'Falcon Estates', href: '/grandeur' },
-  { name: 'The Crestwood', status: 'sold', image: '/assets/home/falcon-estates-hero.jpg', community: 'Falcon Estates' },
-  { name: 'The Cambridge', status: 'sold', image: '/assets/home/835-crestwood-front.jpg', community: 'Falcon Estates' },
-  { name: 'The Madison', status: 'sold', image: '/assets/home/madison-exterior.jpg', community: 'Falcon Estates' },
-  { name: 'The Stratford', status: 'sold', image: '/assets/home/829-crestwood-front.jpg', community: 'Falcon Estates' },
+  { name: 'The Grandeur', status: 'move-in-ready', image: withBase('/assets/home/grandeur-exterior-twilight.jpg'), community: 'Falcon Estates', href: withBase('/grandeur') },
+  { name: 'The Crestwood', status: 'sold', image: withBase('/assets/home/falcon-estates-hero.jpg'), community: 'Falcon Estates' },
+  { name: 'The Cambridge', status: 'sold', image: withBase('/assets/home/835-crestwood-front.jpg'), community: 'Falcon Estates' },
+  { name: 'The Madison', status: 'sold', image: withBase('/assets/home/madison-exterior.jpg'), community: 'Falcon Estates' },
+  { name: 'The Stratford', status: 'sold', image: withBase('/assets/home/829-crestwood-front.jpg'), community: 'Falcon Estates' },
 ];
 
 export const PINE_WOODS_HOMES: HomeListing[] = [
-  { name: 'The Majestic', status: 'immediate-occupancy', image: '/assets/pine-woods/majestic-exterior.jpg', community: 'Pine Woods', href: '/majestic' },
-  { name: 'The Heritage', status: 'immediate-occupancy', image: '/assets/pine-woods/heritage-exterior.jpg', community: 'Pine Woods', href: '/heritage' },
+  { name: 'The Majestic', status: 'immediate-occupancy', image: withBase('/assets/pine-woods/majestic-exterior.jpg'), community: 'Pine Woods', href: withBase('/majestic') },
+  { name: 'The Heritage', status: 'immediate-occupancy', image: withBase('/assets/pine-woods/heritage-exterior.jpg'), community: 'Pine Woods', href: withBase('/heritage') },
 ];
 
 export interface HomeDetail {
@@ -137,7 +139,7 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     tagline: 'Classic Brick & Stone Architecture',
     badge: 'Now Open · Immediate Occupancy',
     addressLine: 'Rochester Hills, MI 48309',
-    heroImage: '/assets/pine-woods/majestic-exterior-twilight.png',
+    heroImage: withBase('/assets/pine-woods/majestic-exterior-twilight.png'),
     introEyebrow: 'Welcome to The Majestic',
     introHeadingPlain: 'A Floor Plan',
     introHeadingEmphasis: 'Built for Real',
@@ -160,14 +162,14 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     floorPlanDescription:
       '2,662 sq ft of total habitable space. First floor: Foyer, Great Room, Kitchen & Nook, Library, Primary Suite, Bedrooms 2 & 3, Laundry, and a 3-car garage. Second floor: Loft, Bonus Room, and full bath.',
     floorPlans: [
-      { src: '/assets/pine-woods/majestic-floorplan-1.jpg', caption: 'First Floor Plan' },
-      { src: '/assets/pine-woods/majestic-floorplan-2.jpg', caption: 'Second Floor Plan' },
+      { src: withBase('/assets/pine-woods/majestic-floorplan-1.jpg'), caption: 'First Floor Plan' },
+      { src: withBase('/assets/pine-woods/majestic-floorplan-2.jpg'), caption: 'Second Floor Plan' },
     ],
     galleryCaption: 'Photography shown is of the actual home, professionally staged and ready for immediate occupancy.',
     gallery: [
-      { src: '/assets/pine-woods/majestic-kitchen-nook.jpg', alt: 'The Majestic — kitchen and breakfast nook', caption: 'Kitchen · Breakfast Nook' },
-      { src: '/assets/pine-woods/majestic-owners-suite.jpg', alt: 'The Majestic — bedroom suite', caption: 'Bedroom Suite' },
-      { src: '/assets/pine-woods/majestic-study.jpg', alt: 'The Majestic — library and home office', caption: 'Library / Home Office' },
+      { src: withBase('/assets/pine-woods/majestic-kitchen-nook.jpg'), alt: 'The Majestic — kitchen and breakfast nook', caption: 'Kitchen · Breakfast Nook' },
+      { src: withBase('/assets/pine-woods/majestic-owners-suite.jpg'), alt: 'The Majestic — bedroom suite', caption: 'Bedroom Suite' },
+      { src: withBase('/assets/pine-woods/majestic-study.jpg'), alt: 'The Majestic — library and home office', caption: 'Library / Home Office' },
     ],
     ctaEyebrow: 'Ready to Make It Yours',
     ctaAddressLine: 'Pine Woods · Rochester Hills, MI',
@@ -178,7 +180,7 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     tagline: 'Colonial Architecture · Stone Elevation',
     badge: 'New Construction · Immediate Occupancy',
     addressLine: '3110 Raffler Dr · Lot 7 · Rochester Hills, MI 48309',
-    heroImage: '/assets/pine-woods/heritage-exterior-twilight-front.jpg',
+    heroImage: withBase('/assets/pine-woods/heritage-exterior-twilight-front.jpg'),
     introEyebrow: 'Welcome to The Heritage',
     introHeadingPlain: 'Effortless Living,',
     introHeadingEmphasis: 'Classic Style',
@@ -199,14 +201,14 @@ export const HOME_DETAILS: Record<'majestic' | 'heritage', HomeDetail> = {
     floorPlanDescription:
       '3,143 sq ft of total habitable space. First floor: Foyer, Family Room, Kitchen, Dinette, Command Center, Pantry, Library, Mud Room, Laundry, Bath, and a 3-car garage. Second floor: Primary Suite with Primary Bath & Closet, Bedrooms 2-4, and a shared Main Bath.',
     floorPlans: [
-      { src: '/assets/pine-woods/heritage-floorplan-1.jpg', caption: 'First Floor Plan' },
-      { src: '/assets/pine-woods/heritage-floorplan-2.jpg', caption: 'Second Floor Plan' },
+      { src: withBase('/assets/pine-woods/heritage-floorplan-1.jpg'), caption: 'First Floor Plan' },
+      { src: withBase('/assets/pine-woods/heritage-floorplan-2.jpg'), caption: 'Second Floor Plan' },
     ],
     galleryCaption: 'Photography shown is of the actual home at 3110 Raffler Dr, Lot 7, professionally staged and ready for immediate occupancy.',
     gallery: [
-      { src: '/assets/pine-woods/heritage-family-room.jpg', alt: 'The Heritage — family room', caption: 'Family Room' },
-      { src: '/assets/pine-woods/heritage-kitchen.jpg', alt: 'The Heritage — kitchen', caption: 'Kitchen' },
-      { src: '/assets/pine-woods/heritage-primary-bedroom.jpg', alt: 'The Heritage — primary bedroom', caption: 'Primary Bedroom' },
+      { src: withBase('/assets/pine-woods/heritage-family-room.jpg'), alt: 'The Heritage — family room', caption: 'Family Room' },
+      { src: withBase('/assets/pine-woods/heritage-kitchen.jpg'), alt: 'The Heritage — kitchen', caption: 'Kitchen' },
+      { src: withBase('/assets/pine-woods/heritage-primary-bedroom.jpg'), alt: 'The Heritage — primary bedroom', caption: 'Primary Bedroom' },
     ],
     ctaEyebrow: 'Ready Now · Lot 7',
     ctaAddressLine: '3110 Raffler Dr · Pine Woods · Rochester Hills, MI',

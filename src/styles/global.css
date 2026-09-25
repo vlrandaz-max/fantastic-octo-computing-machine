@@ -174,3 +174,384 @@ button:focus-visible {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+/* ClassicHomePage (bold-sans homebuilder template) */
+@media (max-width: 900px) {
+  .classic-nav-links {
+    display: none !important;
+  }
+  .classic-nav-burger {
+    display: block !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .classic-nav-drawer {
+    display: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .classic-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .classic-footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .classic-info-bar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .classic-footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .classic-collage {
+    height: 340px !important;
+  }
+  .classic-collage-offset {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .classic-explore-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .classic-explore-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.classic-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: classic-bg-fade 36s infinite;
+}
+
+.classic-bg-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.classic-bg-slide:nth-child(2) {
+  animation-delay: 6s;
+}
+
+.classic-bg-slide:nth-child(3) {
+  animation-delay: 12s;
+}
+
+.classic-bg-slide:nth-child(4) {
+  animation-delay: 18s;
+}
+
+.classic-bg-slide:nth-child(5) {
+  animation-delay: 24s;
+}
+
+.classic-bg-slide:nth-child(6) {
+  animation-delay: 30s;
+}
+
+@keyframes classic-bg-fade {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  4% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  21% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .classic-bg-slide {
+    animation: none;
+    opacity: 1;
+  }
+  .classic-bg-slide:not(:first-child) {
+    display: none;
+  }
+}
+
+/* rh.house-inspired type system for ClassicHomePage — thin uppercase
+   Cormorant Garamond display type paired with Jost for nav/body/kickers,
+   a bordered "badge" subtitle, underline-only buttons, and the
+   float-on-hover button micro-interaction. */
+.classic-title {
+  font-family: 'Cormorant Garamond', var(--font-display);
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.classic-kicker {
+  font-family: 'Jost', var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.classic-flanked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-family: 'Jost', var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.classic-flanked::before,
+.classic-flanked::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.classic-pattern-bg {
+  background-color: var(--bg1);
+  background-image: linear-gradient(45deg, rgba(196, 160, 90, 0.12) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(196, 160, 90, 0.12) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.classic-stem-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.classic-stem-line {
+  width: 1px;
+  height: 40px;
+  background: var(--color-brand-gold);
+}
+
+.classic-btn-outline {
+  display: inline-block;
+  font-family: 'Jost', var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-brand-gold);
+  padding: 15px 32px;
+  transition: transform var(--transition-base) var(--ease-out), background var(--transition-base) var(--ease-out), color var(--transition-base) var(--ease-out);
+}
+
+.classic-btn-underline {
+  display: inline-block;
+  font-family: 'Jost', var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-dark);
+  border-bottom: 1px solid var(--color-brand-gold);
+  padding-bottom: 4px;
+  transition: transform var(--transition-base) var(--ease-out), letter-spacing var(--transition-base) var(--ease-out);
+}
+
+.classic-hover-float:hover {
+  transform: translateY(-4px);
+}
+
+.classic-btn-outline:hover {
+  background: var(--color-brand-gold);
+  color: #161310;
+}
+
+.classic-btn-underline:hover {
+  letter-spacing: 0.2em;
+}
+
+.gallery-thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-thumb img {
+  transition: transform 500ms var(--ease-out, ease);
+}
+
+.gallery-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 9, 8, 0);
+  transition: background 400ms ease;
+  pointer-events: none;
+}
+
+.gallery-thumb:hover img,
+.gallery-thumb:focus-visible img {
+  transform: scale(1.08);
+}
+
+.gallery-thumb:hover::after,
+.gallery-thumb:focus-visible::after {
+  background: rgba(10, 9, 8, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-thumb img {
+    transition: none;
+  }
+  .gallery-thumb:hover img,
+  .gallery-thumb:focus-visible img {
+    transform: none;
+  }
+}
+
+/* /classic2 — scroll-triggered entrance animations, matching the
+   Elementor fadeInDown/fadeIn/fadeInUp/fadeInRight motion pattern used
+   throughout lassalehomes.com. Applied once via IntersectionObserver
+   (see Reveal in Classic2HomePage.tsx), not re-triggered on re-scroll. */
+.classic2-reveal {
+  opacity: 0;
+}
+
+.classic2-reveal.is-visible {
+  animation-duration: 800ms;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation-fill-mode: forwards;
+}
+
+.classic2-reveal.is-visible.fade-in-down { animation-name: classic2-fade-in-down; }
+.classic2-reveal.is-visible.fade-in { animation-name: classic2-fade-in; animation-duration: 900ms; }
+.classic2-reveal.is-visible.fade-in-up { animation-name: classic2-fade-in-up; }
+.classic2-reveal.is-visible.fade-in-right { animation-name: classic2-fade-in-right; }
+
+@keyframes classic2-fade-in-down {
+  from { opacity: 0; transform: translateY(-28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes classic2-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes classic2-fade-in-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes classic2-fade-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .classic2-reveal,
+  .classic2-reveal.is-visible {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
+
+/* /classic2 — horizontal hover-expand image accordion, matching the
+   ElementsKit "Image Accordion" widget's motion on lassalehomes.com. */
+.classic2-accordion {
+  display: flex;
+  gap: 6px;
+  height: 480px;
+  overflow: hidden;
+}
+
+.classic2-accordion-item {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: flex 650ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.classic2-accordion-item:hover,
+.classic2-accordion-item:focus-visible {
+  flex: 2.6;
+}
+
+.classic2-accordion-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 11, 11, 0) 45%, rgba(11, 11, 11, 0.72) 100%);
+}
+
+.classic2-accordion-caption {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  z-index: 2;
+  color: #F8F4EE;
+  font-family: 'Jost', var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 400ms ease, transform 400ms ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.classic2-accordion-item:hover .classic2-accordion-caption,
+.classic2-accordion-item:focus-visible .classic2-accordion-caption {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 860px) {
+  .classic2-accordion {
+    flex-direction: column;
+    height: auto;
+  }
+  .classic2-accordion-item {
+    flex: none !important;
+    height: 200px;
+  }
+  .classic2-accordion-caption {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .classic2-accordion-item {
+    transition: none;
+  }
+}

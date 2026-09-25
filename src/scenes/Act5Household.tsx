@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { experienceStore } from '../state/experience';
+import { withBase } from '../lib/url';
 
 /**
  * Act V (The Household) — real walkthrough footage (dining, kitchen, great
@@ -37,7 +38,7 @@ export function Act5Household() {
     el.style.pointerEvents = 'none';
     el.setAttribute('aria-hidden', 'true');
     document.body.appendChild(el);
-    el.src = '/assets/video/household-tour.mp4';
+    el.src = withBase('/assets/video/household-tour.mp4');
     el.play().catch(() => {
       // Autoplay can be blocked before any user gesture on some browsers —
       // the poster-less first frame just stays black until it can play.

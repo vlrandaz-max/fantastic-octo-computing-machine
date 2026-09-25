@@ -1,0 +1,82 @@
+name: Deploy to Network Solutions (SFTP)
+
+# Manual only, on purpose — this uploads to real production hosting for
+# landrhomes.com. Unlike deploy-pages.yml, it never runs automatically on
+# push, so a routine commit can never accidentally overwrite the live
+# site. Trigger it from the Actions tab when you actually want to publish.
+on:
+  workflow_dispatch:
+    inputs:
+      remote-path:
+        description: 'Remote directory to upload into. The web root on this account is htdocs/ (Plesk-style, confirmed via File Manager). Defaults to a safe preview subfolder under it — only use ./htdocs/ once you are ready to fully replace the live site.'
+        required: true
+        default: './htdocs/preview/'
+      confirm:
+        description: 'Type "deploy" to proceed'
+        required: true
+
+concurrency:
+  group: sftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm intent
+        if: ${{ github.event.inputs.confirm != 'deploy' }}
+        run: |
+          echo "Confirmation input must be exactly 'deploy' — got '${{ github.event.inputs.confirm }}'. Aborting."
+          exit 1
+
+      - uses: actions/checkout@v4
+        with:
+          # Always build from the active development branch, regardless of
+          # which branch this workflow_dispatch run was launched from — the
+          # workflow file itself has to live on the default branch to be
+          # runnable at all, but the default branch is just the photo
+          # dropbox and doesn't have the actual site code.
+          ref: claude/great-carson-0sfpwq
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Compute asset base path from remote-path
+        id: site-base
+        run: |
+          raw="${{ github.event.inputs.remote-path }}"
+          stripped="${raw#./}"
+          stripped="${stripped#htdocs}"
+          stripped="${stripped#/}"
+          if [ -z "$stripped" ]; then
+            site_base="/"
+          else
+            site_base="/${stripped%/}/"
+          fi
+          echo "Deploying to remote-path '$raw' -> site will be served from '$site_base'"
+          echo "value=$site_base" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        # The build's asset URLs (JS/CSS/images) must match wherever it
+        # actually gets served from — SITE_BASE is derived above from
+        # remote-path so this works whether deploying to the real web
+        # root (./htdocs/) or a preview subfolder (./htdocs/preview/).
+        run: SITE_BASE="${{ steps.site-base.outputs.value }}" npm run build:production
+
+      - name: Install paramiko
+        run: pip install paramiko
+
+      - name: SFTP Deploy
+        # A plain SSH/SFTP GitHub Action (wlixcc/SFTP-Deploy-Action) failed
+        # here with "exec request failed on channel 0" — this account is
+        # chrooted to SFTP-only and rejects the SSH exec command those
+        # actions use to pre-create remote directories. This script talks
+        # pure SFTP protocol only (paramiko), no exec/shell ever opened.
+        env:
+          SFTP_HOST: ${{ secrets.NETSOL_SFTP_HOST }}
+          SFTP_USERNAME: ${{ secrets.NETSOL_SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.NETSOL_SFTP_PASSWORD }}
+          REMOTE_PATH: ${{ github.event.inputs.remote-path }}
+        run: python3 scripts/sftp_deploy.py

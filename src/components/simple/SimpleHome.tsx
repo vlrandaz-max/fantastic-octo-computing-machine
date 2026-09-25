@@ -2,6 +2,7 @@ import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
 import { COMPANY, FALCON_ESTATES, FALCON_ESTATES_HOMES } from '../../data/site';
+import { withBase } from '../../lib/url';
 
 const eyebrow: React.CSSProperties = {
   fontFamily: 'var(--font-body)',
@@ -58,7 +59,7 @@ export function SimpleHome() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/home/coachwood-aerial-twilight-2.png') center 60% / cover no-repeat",
+            background: `url('${withBase('/assets/home/coachwood-aerial-twilight-2.png')}') center 60% / cover no-repeat`,
           }}
         />
         <div
@@ -145,13 +146,13 @@ export function SimpleHome() {
                 {p}
               </p>
             ))}
-            <a href="/homes-available" style={{ ...outlineButton, marginTop: 12 }}>
+            <a href={withBase('/homes-available')} style={{ ...outlineButton, marginTop: 12 }}>
               View Available Homes
             </a>
           </div>
           <div style={{ position: 'relative', height: 440 }}>
             <img
-              src="/assets/home/grandeur-exterior-twilight.jpg"
+              src={withBase('/assets/home/grandeur-exterior-twilight.jpg')}
               alt="The Grandeur — an L&amp;R Homes residence at twilight"
               loading="lazy"
               style={{ position: 'absolute', top: 0, left: 0, width: '78%', height: '65%', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
@@ -167,7 +168,7 @@ export function SimpleHome() {
                 boxShadow: 'var(--shadow-3)',
                 border: '6px solid #fff',
                 overflow: 'hidden',
-                background: "url('/assets/home/family-room-3-staged.jpg') center / cover no-repeat",
+                background: `url('${withBase('/assets/home/family-room-3-staged.jpg')}') center / cover no-repeat`,
               }}
             >
               <div
@@ -223,12 +224,12 @@ export function SimpleHome() {
             <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--fg2)', marginBottom: 28, maxWidth: 480 }}>
               {FALCON_ESTATES.body}
             </p>
-            <a href="/homes-available" style={outlineButton}>
+            <a href={withBase('/homes-available')} style={outlineButton}>
               View Homes
             </a>
           </div>
           <img
-            src="/assets/home/foyer-staged.jpg"
+            src={withBase('/assets/home/foyer-staged.jpg')}
             alt="A foyer in a home in Falcon Estates"
             loading="lazy"
             style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-2)' }}
@@ -246,9 +247,9 @@ export function SimpleHome() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 36 }}
           >
             {[
-              ['/assets/home/kitchen-staged-2.png', "Chef's kitchen"],
-              ['/assets/home/primary-suite-staged-4.png', 'Primary suite'],
-              ['/assets/home/butlers-pantry-staged.jpg', "Butler's pantry"],
+              [withBase('/assets/home/kitchen-staged-2.png'), "Chef's kitchen"],
+              [withBase('/assets/home/primary-suite-staged-4.png'), 'Primary suite'],
+              [withBase('/assets/home/butlers-pantry-staged.jpg'), "Butler's pantry"],
             ].map(([src, alt]) => (
               <img
                 key={src}
@@ -276,7 +277,7 @@ export function SimpleHome() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: "url('/assets/home/sitting-room-staged-3.jpg') center / cover no-repeat",
+            background: `url('${withBase('/assets/home/sitting-room-staged-3.jpg')}') center / cover no-repeat`,
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(12,10,8,0.72)' }} />
@@ -318,7 +319,7 @@ export function SimpleHome() {
               Call {COMPANY.phone}
             </a>
             <a
-              href="/homes-available"
+              href={withBase('/homes-available')}
               style={{
                 fontSize: 12,
                 fontWeight: 700,

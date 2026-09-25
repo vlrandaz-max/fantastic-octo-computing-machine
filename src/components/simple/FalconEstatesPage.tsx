@@ -1,5 +1,6 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
+import { withBase } from '../../lib/url';
 
 /**
  * Falcon Estates — the community landing page. Like GrandeurPage, this is a
@@ -90,7 +91,7 @@ const FALCON_STYLE = `
   /* HERO */
   .falcon-page .hero { position: relative; min-height: 560px; display: flex; flex-direction: column;
     justify-content: flex-end; overflow: hidden; }
-  .falcon-page .hero-photo { position: absolute; inset: 0; background-image: url('/assets/home/falcon-estates-hero.jpg');
+  .falcon-page .hero-photo { position: absolute; inset: 0; background-image: url('${withBase('/assets/home/falcon-estates-hero.jpg')}');
     background-size: cover; background-position: center 60%; }
   .falcon-page .hero-scrim { position: absolute; inset: 0;
     background:
@@ -216,7 +217,7 @@ const FALCON_BODY = `
       <a class="btn btn-gold" href="https://landrhomes.com/wp-content/uploads/Falcon-Estates-2024--scaled.jpg" target="_blank" rel="noopener">View the Site Plan</a>
     </div>
     <div class="overview-photo">
-      <img decoding="async" src="/assets/home/coachwood-aerial-2.jpg" alt="Falcon Estates aerial view of the community">
+      <img decoding="async" src="${withBase('/assets/home/coachwood-aerial-2.jpg')}" alt="Falcon Estates aerial view of the community">
       <div class="overview-photo-label">
         <div class="yr">1973</div>
         <div class="since">Building Since</div>
@@ -261,36 +262,36 @@ const FALCON_BODY = `
     <div class="eyebrow" style="color: rgba(200,180,140,0.75);">Now Available</div>
     <h2 class="homes-h2">Homes in Falcon Estates</h2>
     <div class="homes-grid">
-      <a class="home-card" href="/grandeur">
-        <img decoding="async" src="/assets/home/grandeur-exterior-twilight.jpg" alt="The Grandeur">
+      <a class="home-card" href="${withBase('/grandeur')}">
+        <img decoding="async" src="${withBase('/assets/home/grandeur-exterior-twilight.jpg')}" alt="The Grandeur">
         <div class="home-card-body">
           <div class="home-card-name">The Grandeur</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
         </div>
       </a>
       <a class="home-card" href="https://landrhomes.com/crestwood/" target="_blank" rel="noopener">
-        <img decoding="async" src="/assets/home/falcon-estates-hero.jpg" alt="The Crestwood">
+        <img decoding="async" src="${withBase('/assets/home/falcon-estates-hero.jpg')}" alt="The Crestwood">
         <div class="home-card-body">
           <div class="home-card-name">The Crestwood</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
         </div>
       </a>
       <a class="home-card" href="https://landrhomes.com/cambridge/" target="_blank" rel="noopener">
-        <img decoding="async" src="/assets/home/835-crestwood-front.jpg" alt="The Cambridge">
+        <img decoding="async" src="${withBase('/assets/home/835-crestwood-front.jpg')}" alt="The Cambridge">
         <div class="home-card-body">
           <div class="home-card-name">The Cambridge</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
         </div>
       </a>
       <a class="home-card" href="https://landrhomes.com/madison/" target="_blank" rel="noopener">
-        <img decoding="async" src="/assets/home/madison-exterior.jpg" alt="The Madison">
+        <img decoding="async" src="${withBase('/assets/home/madison-exterior.jpg')}" alt="The Madison">
         <div class="home-card-body">
           <div class="home-card-name">The Madison</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
         </div>
       </a>
       <a class="home-card" href="https://landrhomes.com/stratford/" target="_blank" rel="noopener">
-        <img decoding="async" src="/assets/home/829-crestwood-front.jpg" alt="The Stratford">
+        <img decoding="async" src="${withBase('/assets/home/829-crestwood-front.jpg')}" alt="The Stratford">
         <div class="home-card-body">
           <div class="home-card-name">The Stratford</div>
           <span class="home-card-cta">Click for Home Details &rarr;</span>
@@ -310,7 +311,7 @@ const FALCON_BODY = `
     </div>
     <div class="location-actions">
       <a class="btn btn-gold" href="tel:+12486568830">Call (248) 656-8830</a>
-      <a class="btn btn-onDark" href="/homes-available">View All Homes</a>
+      <a class="btn btn-onDark" href="${withBase('/homes-available')}">View All Homes</a>
     </div>
   </div>
 </div>
