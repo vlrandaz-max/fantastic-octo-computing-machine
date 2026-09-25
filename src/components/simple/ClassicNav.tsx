@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { COMPANY, NAV_LINKS } from '../../data/site';
 import { withBase } from '../../lib/url';
+import { StickyMobileCTA } from './StickyMobileCTA';
 
 const linkStyle: React.CSSProperties = {
   fontFamily: "'Jost', var(--font-body)",
@@ -22,6 +23,7 @@ export function ClassicNav({ homeHref = withBase('/classic2') }: { homeHref?: st
   const LINKS = [{ label: 'Home', href: homeHref }, ...NAV_LINKS.filter((l) => l.label !== 'Home')];
 
   return (
+    <>
     <header
       style={{
         position: 'sticky',
@@ -116,5 +118,7 @@ export function ClassicNav({ homeHref = withBase('/classic2') }: { homeHref?: st
         </div>
       )}
     </header>
+    <StickyMobileCTA />
+    </>
   );
 }

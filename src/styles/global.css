@@ -157,6 +157,52 @@ button:focus-visible {
   }
 }
 
+/* Persistent mobile "Call / Schedule a Tour" bar (StickyMobileCTA),
+   rendered once per page from SimpleNav/ClassicNav. Hidden on desktop —
+   the nav bar's own CTA already covers that case there. The body padding
+   keeps the bar from permanently covering the last ~64px of page content
+   (most noticeably the footer) once scrolled to the bottom. */
+.sticky-mobile-cta {
+  display: none;
+}
+@media (max-width: 900px) {
+  body {
+    padding-bottom: 64px;
+  }
+  .sticky-mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    height: 64px;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.25);
+  }
+  .sticky-mobile-cta-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 12px;
+  }
+  .sticky-mobile-cta-call {
+    background: #131210;
+    color: #f2f0e6;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .sticky-mobile-cta-tour {
+    background: var(--color-brand-gold);
+    color: #131210;
+  }
+}
+
 @media (max-width: 860px) {
   .simple-grid-2 {
     grid-template-columns: 1fr !important;

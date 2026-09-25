@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NAV_LINKS, COMPANY } from '../../data/site';
 import { withBase } from '../../lib/url';
+import { StickyMobileCTA } from './StickyMobileCTA';
 
 const LINKS = NAV_LINKS;
 
@@ -13,6 +14,7 @@ export function SimpleNav() {
   const [open, setOpen] = useState(false);
 
   return (
+    <>
     <header style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 20 }}>
       <div
         style={{
@@ -143,5 +145,7 @@ export function SimpleNav() {
         </div>
       )}
     </header>
+    <StickyMobileCTA />
+    </>
   );
 }
