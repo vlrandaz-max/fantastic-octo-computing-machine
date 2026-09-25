@@ -909,8 +909,8 @@ const GRANDEUR_BODY = `
       <div>
         <div class="feature-col-title">Interior Features</div>
         <ul class="feature-list">
-          <li>Premium porcelain tile &amp; wide-plank oak flooring throughout first floor</li>
-          <li>Premium stair carpeting upstairs &amp; in basement</li>
+          <li>Premium porcelain tile &amp; wide-plank oak flooring throughout first floor, second floor primary suite, sitting room and second floor hallway</li>
+          <li>Premium carpeting in upstairs bedrooms 2, 3, 4 &amp; on basement stairs</li>
           <li>Two-story foyer &amp; family room with bridge overlook</li>
           <li>9&prime; ceilings on first floor</li>
           <li>Solid-core Masonite doors &mdash; 8&prime; height first floor, 6&prime;-8&Prime; second floor</li>
