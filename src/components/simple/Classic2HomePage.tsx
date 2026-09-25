@@ -132,6 +132,32 @@ export function Classic2HomePage() {
         </div>
       </section>
 
+      {/* USP bar — key facts at a glance, right below the hero */}
+      <div
+        style={{
+          background: '#131210',
+          padding: '18px 24px',
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          gap: '10px 28px',
+          fontFamily: "'Jost', var(--font-body)",
+          fontSize: 13,
+          fontWeight: 500,
+          letterSpacing: '0.04em',
+          color: 'rgba(242,240,230,0.85)',
+          textAlign: 'center',
+        }}
+      >
+        <span>50+ Years Building</span>
+        <span style={{ color: 'var(--color-brand-gold)' }}>&bull;</span>
+        <span>Est. 1973</span>
+        <span style={{ color: 'var(--color-brand-gold)' }}>&bull;</span>
+        <span>Rochester Hills, MI</span>
+        <span style={{ color: 'var(--color-brand-gold)' }}>&bull;</span>
+        <span>Move-In Ready Homes</span>
+      </div>
+
       {/* NEW — scroll-animated About block built around a staged kitchen photo */}
       <section id="kitchen" style={{ padding: '100px 32px' }}>
         <div className="classic-grid-2" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
