@@ -192,14 +192,25 @@ button:focus-visible {
     text-align: center;
     padding: 0 12px;
   }
+  /* !important: some pages (e.g. FalconEstatesPage) carry their own
+     page-scoped `.{page}-page a { color: ... }` rule for their ported,
+     verbatim source stylesheet. This bar is rendered inside that page's
+     wrapper div (via SimpleNav/ClassicNav), so a plain `.falcon-page a`
+     selector — one class + one element, higher specificity than this
+     component's own single-class rules — silently recolors its text to
+     match that page's own accent color. On the gold pane that meant
+     gold text on a gold background: invisible, and easy to miss since
+     the dark pane's text stayed readable by coincidence of contrast.
+     This component must render the same regardless of which page
+     mounts it, so its own colors win outright. */
   .sticky-mobile-cta-call {
-    background: #131210;
-    color: #f2f0e6;
+    background: #131210 !important;
+    color: #f2f0e6 !important;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
   .sticky-mobile-cta-tour {
-    background: var(--color-brand-gold);
-    color: #131210;
+    background: var(--color-brand-gold) !important;
+    color: #131210 !important;
   }
 }
 
