@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "build:production": "tsc -b && SITE_BASE=${SITE_BASE:-/} vite build",
+    "build": "tsc -b && vite build && node scripts/prerender-meta.mjs dist",
+    "build:production": "tsc -b && SITE_BASE=${SITE_BASE:-/} vite build && node scripts/prerender-meta.mjs dist",
     "build:wordpress": "tsc -b && SITE_BASE=/wp-content/themes/landrhomes-spa/dist/ vite build --outDir wordpress-theme/landrhomes-spa/dist --emptyOutDir",
     "lint": "oxlint",
     "preview": "vite preview"
