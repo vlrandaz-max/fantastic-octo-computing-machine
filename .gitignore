@@ -13,6 +13,10 @@ dist-ssr
 *.local
 __pycache__
 
+# Claude Code local (personal, machine-specific) permission overrides —
+# not meant to be shared via the repo, unlike .claude/settings.json.
+.claude/settings.local.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
