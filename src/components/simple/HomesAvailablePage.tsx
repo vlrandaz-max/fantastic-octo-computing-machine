@@ -137,7 +137,7 @@ export function HomesAvailablePage() {
           <div>
             <p style={{ ...eyebrow, color: 'var(--color-brand-gold-light)', marginBottom: 12 }}>Get in Touch</p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 'clamp(1.75rem,3.5vw,2.5rem)', color: '#F2F0E6' }}>
-              Let&rsquo;s Build Something Lasting
+              Your Next Home Awaits
             </h2>
           </div>
           <a
