@@ -116,7 +116,7 @@ export function TwoDExperience() {
             {[
               [withBase('/assets/home/kitchen-full-run.jpg'), "Chef's kitchen"],
               [withBase('/assets/home/family-room-1-staged.jpg'), 'Great room'],
-              [withBase('/assets/home/primary-suite-1-staged.png'), 'Primary suite'],
+              [withBase('/assets/home/primary-suite-1-staged.jpg'), 'Primary suite'],
             ].map(([src, alt]) => (
               <img
                 key={src}

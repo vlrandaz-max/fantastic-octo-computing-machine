@@ -60,7 +60,7 @@ export function SimpleHome() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: `url('${withBase('/assets/home/coachwood-aerial-twilight-2.png')}') center 60% / cover no-repeat`,
+            background: `url('${withBase('/assets/home/coachwood-aerial-twilight-2.jpg')}') center 60% / cover no-repeat`,
           }}
         />
         <div
@@ -279,8 +279,8 @@ export function SimpleHome() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 36 }}
           >
             {[
-              [withBase('/assets/home/kitchen-staged-2.png'), "Chef's kitchen"],
-              [withBase('/assets/home/primary-suite-staged-4.png'), 'Primary suite'],
+              [withBase('/assets/home/kitchen-staged-2.jpg'), "Chef's kitchen"],
+              [withBase('/assets/home/primary-suite-staged-4.jpg'), 'Primary suite'],
               [withBase('/assets/home/butlers-pantry-staged.jpg'), "Butler's pantry"],
             ].map(([src, alt], i) => (
               <Reveal key={src} type="fade-in-up" delay={i * 100}>

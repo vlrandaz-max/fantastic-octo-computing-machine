@@ -32,7 +32,7 @@ const HERO_SLIDES = [
   withBase('/assets/pine-woods/heritage-twilight-4.jpg'),
   withBase('/assets/pine-woods/heritage-kitchen.jpg'),
   withBase('/assets/pine-woods/heritage-family-room.jpg'),
-  withBase('/assets/pine-woods/majestic-great-room.png'),
+  withBase('/assets/pine-woods/majestic-great-room.jpg'),
 ];
 
 /**
@@ -271,8 +271,8 @@ export function PineWoodsPage() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 48 }}
           >
             {[
-              [withBase('/assets/pine-woods/majestic-great-room.png'), 'The Majestic — great room'],
-              [withBase('/assets/pine-woods/majestic-kitchen.png'), 'The Majestic — kitchen'],
+              [withBase('/assets/pine-woods/majestic-great-room.jpg'), 'The Majestic — great room'],
+              [withBase('/assets/pine-woods/majestic-kitchen.jpg'), 'The Majestic — kitchen'],
               [withBase('/assets/pine-woods/majestic-owners-suite.jpg'), "The Majestic — owner's suite"],
             ].map(([src, alt], i) => (
               <Reveal key={src} type="fade-in-left" delay={i * 100}>

@@ -983,7 +983,7 @@ const GRANDEUR_BODY = `
 
 <div class="tour-band">
   <div class="tour-inner">
-    <div class="tour-qr"><a href="${TOUR_URL}"><img src="${withBase('/assets/home/grandeur-matterport-qr.png')}" alt="Matterport virtual tour QR code"></a></div>
+    <div class="tour-qr"><a href="${TOUR_URL}"><img src="${withBase('/assets/home/grandeur-matterport-qr.jpg')}" alt="Matterport virtual tour QR code"></a></div>
     <div>
       <div class="section-label">Matterport 3D Experience</div>
       <h2 class="tour-title">Walk Through <em>The Grandeur</em><br>From Anywhere</h2>
@@ -1008,9 +1008,9 @@ const GRANDEUR_BODY = `
       <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/family-room-1-staged.jpg')}" alt="Family Room · Stone Fireplace"><div class="gal-cap">Family Room &middot; Stone Fireplace</div></div>
       <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-dining-room.jpg')}" alt="Formal Dining Room"><div class="gal-cap">Formal Dining Room</div></div>
       <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-kitchen.jpg')}" alt="Gourmet Kitchen"><div class="gal-cap">Gourmet Kitchen &middot; Quartz &amp; Custom Cabinetry</div></div>
-      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-kitchen-prep.png')}" alt="Prep Kitchen · Farmhouse Sink"><div class="gal-cap">Prep Kitchen &middot; Farmhouse Sink</div></div>
-      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-butlers-pantry.png')}" alt="Butler's Pantry"><div class="gal-cap">Butler&rsquo;s Pantry</div></div>
-      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/laundry-staged-1.png')}" alt="First Floor Laundry"><div class="gal-cap">First Floor Laundry</div></div>
+      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-kitchen-prep.jpg')}" alt="Prep Kitchen · Farmhouse Sink"><div class="gal-cap">Prep Kitchen &middot; Farmhouse Sink</div></div>
+      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-butlers-pantry.jpg')}" alt="Butler's Pantry"><div class="gal-cap">Butler&rsquo;s Pantry</div></div>
+      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/laundry-staged-1.jpg')}" alt="First Floor Laundry"><div class="gal-cap">First Floor Laundry</div></div>
       <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-laundry-room.jpg')}" alt="Second Upstairs Laundry Rm"><div class="gal-cap">Second Upstairs Laundry Rm</div></div>
       <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/flex-room-staged.jpg')}" alt="Flex Room"><div class="gal-cap">Flex Room &middot; Built-In Desk &amp; Cabinetry</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-primary-suite.jpg')}" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
