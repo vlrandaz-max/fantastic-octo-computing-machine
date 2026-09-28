@@ -1103,7 +1103,7 @@ const GRANDEUR_BODY = `
           <img src="${withBase('/assets/home/grandeur-sitting-area-2.jpg')}" alt="Primary Sitting Area">
           <img src="${withBase('/assets/home/grandeur-sitting-area-3.jpg')}" alt="Primary Sitting Area">
         </div>
-        <div class="gal-cap">Many Utilizations for the Space</div>
+        <div class="gal-cap">Many Uses for the Space</div>
       </div>
 
       <div class="gal-item full gal-slide-wrap reveal fade-in-up" style="animation-delay: 0ms">
