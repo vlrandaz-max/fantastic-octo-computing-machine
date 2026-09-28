@@ -669,6 +669,12 @@ const GRANDEUR_STYLE = `
     font-size: 8px; letter-spacing: 4px; text-transform: uppercase;
     color: var(--gr-gold-dark); margin-top: 12px;
   }
+  .grandeur-page .gal-subhead {
+    grid-column: 1 / -1;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; font-weight: 400; color: var(--gr-gold-dark);
+    text-align: center; margin: 8px 0 -4px;
+  }
 
   .grandeur-page .tour-band { background: var(--gr-charcoal); padding: 64px 0; }
   .grandeur-page .tour-inner {
@@ -1017,7 +1023,9 @@ const GRANDEUR_BODY = `
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-primary-suite.jpg')}" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-primary-suite-2.jpg')}" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${withBase('/assets/home/grandeur-primary-bath.jpg')}" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
-      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-vanity-nook.jpg')}" alt="Primary Closet · Lighted Vanity Nook"><div class="gal-cap">Primary Closet &middot; Lighted Vanity Nook</div></div>
+      <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">A Flex Nook, Your Way</div>
+      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-vanity-nook.jpg')}" alt="Primary Closet Flex Nook · Vanity"><div class="gal-cap">Vanity</div></div>
+      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-coffee-nook.jpg')}" alt="Primary Closet Flex Nook · Coffee Station"><div class="gal-cap">Coffee Station</div></div>
     </div>
   </div>
 </div>
