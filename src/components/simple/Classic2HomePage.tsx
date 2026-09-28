@@ -114,7 +114,7 @@ export function Classic2HomePage() {
               fontWeight: 300,
               textTransform: 'uppercase',
               letterSpacing: '0.03em',
-              fontSize: 'clamp(1.8rem, 4.6vw, 3.6rem)',
+              fontSize: 'clamp(1.98rem, 5.06vw, 3.96rem)',
               color: '#F8F4EE',
               lineHeight: 1.15,
               marginBottom: 26,
