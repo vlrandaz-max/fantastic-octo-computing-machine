@@ -14,9 +14,8 @@ const eyebrow: React.CSSProperties = {
 };
 
 const EXTERIOR_GALLERY = [
-  { src: withBase('/assets/home/stratford-twilight.jpg'), alt: 'The Stratford — twilight exterior', caption: 'Twilight' },
-  { src: withBase('/assets/home/stratford-aerial-twilight.jpg'), alt: 'The Stratford — twilight exterior, aerial view', caption: 'Twilight · Aerial View' },
-  { src: withBase('/assets/home/stratford-aerial-twilight-2.jpg'), alt: 'The Stratford — twilight exterior, aerial view', caption: 'Twilight · Aerial View' },
+  { src: withBase('/assets/home/stratford-aerial-twilight.jpg'), alt: 'The Stratford — front elevation at twilight', caption: 'Front Elevation' },
+  { src: withBase('/assets/home/stratford-aerial-twilight-2.jpg'), alt: 'The Stratford — aerial view of the homesite at twilight', caption: 'Aerial View — The Homesite' },
 ];
 
 const INTERIOR_GALLERY = [
@@ -172,11 +171,11 @@ export function StratfordPage() {
           >
             The <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-dark)' }}>Stratford</em>, Every Angle
           </h2>
-          <div className="simple-gallery-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="simple-gallery-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
             {EXTERIOR_GALLERY.map((photo, i) => (
               <Reveal key={photo.src} type="fade-in-up" delay={i * 100}>
                 <span className="photo-zoom" style={{ borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', marginBottom: 12 }}>
-                  <img src={photo.src} alt={photo.alt} loading="lazy" style={{ width: '100%', height: 300, objectFit: 'cover' }} />
+                  <img src={photo.src} alt={photo.alt} loading="lazy" style={{ width: '100%', height: 400, objectFit: 'cover' }} />
                 </span>
                 <p style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg3)' }}>{photo.caption}</p>
               </Reveal>
