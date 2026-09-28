@@ -669,11 +669,9 @@ const GRANDEUR_STYLE = `
     font-size: 8px; letter-spacing: 4px; text-transform: uppercase;
     color: var(--gr-gold-dark); margin-top: 12px;
   }
-  /* Flexbox + gap, not sibling margin, for the space between a
-     slideshow and its caption — margin-based spacing here rendered
-     inconsistently between the two slideshow items, gap does not. */
   .grandeur-page .gal-slide-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .grandeur-page .gal-slide-wrap .gal-cap { text-align: center !important; margin-top: 0 !important; margin: 0 !important; }
+  .grandeur-page .gal-slide-wrap .gal-slideshow { margin: 0 !important; }
+  .grandeur-page .gal-slide-wrap .gal-cap { text-align: center !important; margin: 0 !important; }
   .grandeur-page .gal-cap.title {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     font-size: 26px; font-weight: 400; letter-spacing: normal; text-transform: none;
@@ -693,8 +691,8 @@ const GRANDEUR_STYLE = `
      to sit inside a gallery card. */
   .grandeur-page .gal-slideshow { position: relative; overflow: hidden; margin: 0 auto; }
   .grandeur-page .gal-slideshow img {
-    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-    border: 1px solid var(--gr-rule); opacity: 0;
+    position: absolute; inset: 0; width: 100%; height: 100% !important; max-height: none !important;
+    object-fit: cover; border: 1px solid var(--gr-rule); opacity: 0;
     transition: transform 700ms cubic-bezier(0.25,0.1,0.25,1);
   }
   .grandeur-page .gal-item:hover .gal-slideshow img { transform: scale(1.06); }
