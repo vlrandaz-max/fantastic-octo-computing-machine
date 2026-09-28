@@ -1081,7 +1081,7 @@ const GRANDEUR_BODY = `
 
     <div class="gal-grid">
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/foyer-staged.jpg')}" alt="Grand Foyer · Oak Staircase &amp; Wrought Iron"><div class="gal-cap">Grand Foyer &middot; Oak Staircase &amp; Wrought Iron</div></div>
-      <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-upper-landing.jpg')}" alt="Primary Sitting Area overlooking the foyer"><div class="gal-cap">Primary Sitting Area &middot; Overlooking the Foyer</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-upper-landing.jpg')}" alt="Primary Suite Sitting Area overlooking the foyer"><div class="gal-cap">Primary Suite Sitting Area &middot; Overlooking the Foyer</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-family-room.jpg')}" alt="Two-Story Family Room"><div class="gal-cap">Two-Story Family Room &middot; Floor-to-Ceiling Windows</div></div>
       <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/family-room-1-staged.jpg')}" alt="Family Room · Stone Fireplace"><div class="gal-cap">Family Room &middot; Stone Fireplace</div></div>
       <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-dining-room.jpg')}" alt="Formal Dining Room"><div class="gal-cap">Formal Dining Room</div></div>
