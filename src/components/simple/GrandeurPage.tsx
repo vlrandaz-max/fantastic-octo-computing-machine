@@ -669,6 +669,11 @@ const GRANDEUR_STYLE = `
     font-size: 8px; letter-spacing: 4px; text-transform: uppercase;
     color: var(--gr-gold-dark); margin-top: 12px;
   }
+  .grandeur-page .gal-cap.title {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 26px; font-weight: 400; letter-spacing: normal; text-transform: none;
+    text-align: center; margin-top: 18px;
+  }
   .grandeur-page .gal-subhead {
     grid-column: 1 / -1;
     font-family: 'Cormorant Garamond', serif; font-style: italic;
@@ -705,9 +710,30 @@ const GRANDEUR_STYLE = `
   .grandeur-page .gal-slideshow.slides-4 img:nth-child(3) { animation-delay: 12s; }
   .grandeur-page .gal-slideshow.slides-4 img:nth-child(4) { animation-delay: 18s; }
 
-  @keyframes gal-slide2-fade { 0% { opacity: 0; } 8% { opacity: 1; } 42% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 0; } }
-  @keyframes gal-slide3-fade { 0% { opacity: 0; } 6% { opacity: 1; } 28% { opacity: 1; } 33% { opacity: 0; } 100% { opacity: 0; } }
-  @keyframes gal-slide4-fade { 0% { opacity: 0; } 4% { opacity: 1; } 21% { opacity: 1; } 25% { opacity: 0; } 100% { opacity: 0; } }
+  /* Ken Burns crossfade — same slow zoom used by the Pine Woods/Falcon
+     Estates hero rotation (classic-bg-fade), so each slide drifts in
+     rather than sitting static while it's on screen. */
+  @keyframes gal-slide2-fade {
+    0% { opacity: 0; transform: scale(1); }
+    8% { opacity: 1; }
+    42% { opacity: 1; transform: scale(1.09); }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes gal-slide3-fade {
+    0% { opacity: 0; transform: scale(1); }
+    6% { opacity: 1; }
+    28% { opacity: 1; transform: scale(1.09); }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes gal-slide4-fade {
+    0% { opacity: 0; transform: scale(1); }
+    4% { opacity: 1; }
+    21% { opacity: 1; transform: scale(1.09); }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     .grandeur-page .gal-slideshow img { animation: none !important; opacity: 1; }
@@ -1061,13 +1087,12 @@ const GRANDEUR_BODY = `
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-primary-suite.jpg')}" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-primary-suite-2.jpg')}" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${withBase('/assets/home/grandeur-primary-bath.jpg')}" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
-      <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Suite &mdash; A Flex Space, Your Way</div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms">
         <div class="gal-slideshow portrait slides-2">
           <img src="${withBase('/assets/home/grandeur-vanity-nook.jpg')}" alt="Primary Closet Flex Nook · Vanity">
           <img src="${withBase('/assets/home/grandeur-coffee-nook.jpg')}" alt="Primary Closet Flex Nook · Coffee Station">
         </div>
-        <div class="gal-cap">Vanity &amp; Coffee Station</div>
+        <div class="gal-cap title">Primary Suite &mdash; Flex Spaces, Your Way</div>
       </div>
 
       <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Sitting Area</div>
