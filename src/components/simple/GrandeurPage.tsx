@@ -699,9 +699,11 @@ const GRANDEUR_STYLE = `
   .grandeur-page .gal-slideshow.portrait { width: 320px; height: 568px; max-width: 100%; }
   .grandeur-page .gal-slideshow.landscape { width: 100%; height: 460px; }
 
+  /* Offset from slides-3's phase (0s/6s/12s) so the two slideshows on
+     this page don't crossfade in lockstep with each other. */
   .grandeur-page .gal-slideshow.slides-2 img { animation: gal-slide2-fade 12s infinite; }
-  .grandeur-page .gal-slideshow.slides-2 img:nth-child(1) { animation-delay: 0s; }
-  .grandeur-page .gal-slideshow.slides-2 img:nth-child(2) { animation-delay: 6s; }
+  .grandeur-page .gal-slideshow.slides-2 img:nth-child(1) { animation-delay: 4s; }
+  .grandeur-page .gal-slideshow.slides-2 img:nth-child(2) { animation-delay: 10s; }
 
   .grandeur-page .gal-slideshow.slides-3 img { animation: gal-slide3-fade 18s infinite; }
   .grandeur-page .gal-slideshow.slides-3 img:nth-child(1) { animation-delay: 0s; }
