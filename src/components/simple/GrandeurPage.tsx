@@ -669,6 +669,7 @@ const GRANDEUR_STYLE = `
     font-size: 8px; letter-spacing: 4px; text-transform: uppercase;
     color: var(--gr-gold-dark); margin-top: 12px;
   }
+  .grandeur-page .gal-slideshow + .gal-cap { text-align: center; }
   .grandeur-page .gal-cap.title {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     font-size: 26px; font-weight: 400; letter-spacing: normal; text-transform: none;
