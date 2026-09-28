@@ -673,7 +673,7 @@ const GRANDEUR_STYLE = `
      slideshow and its caption — margin-based spacing here rendered
      inconsistently between the two slideshow items, gap does not. */
   .grandeur-page .gal-slide-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .grandeur-page .gal-slide-wrap .gal-cap { text-align: center; margin-top: 0; }
+  .grandeur-page .gal-slide-wrap .gal-cap { text-align: center !important; margin-top: 0 !important; margin: 0 !important; }
   .grandeur-page .gal-cap.title {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     font-size: 26px; font-weight: 400; letter-spacing: normal; text-transform: none;
