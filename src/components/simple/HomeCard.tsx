@@ -64,8 +64,8 @@ export function HomeCard({ home, dark = false }: { home: HomeListing; dark?: boo
             fontWeight: 700,
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
-            color: 'var(--color-brand-gold)',
-            borderBottom: '1px solid var(--color-brand-gold)',
+            color: dark ? 'var(--color-brand-gold)' : 'var(--color-brand-gold-dark)',
+            borderBottom: dark ? '1px solid var(--color-brand-gold)' : '1px solid var(--color-brand-gold-dark)',
             paddingBottom: 2,
           }}
         >

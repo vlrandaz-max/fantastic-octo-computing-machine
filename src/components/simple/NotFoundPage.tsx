@@ -9,7 +9,7 @@ const eyebrow: React.CSSProperties = {
   fontWeight: 700,
   letterSpacing: '0.2em',
   textTransform: 'uppercase',
-  color: 'var(--color-brand-gold)',
+  color: 'var(--color-brand-gold-dark)',
 };
 
 /** Shown for any path that doesn't match a real route — including on the

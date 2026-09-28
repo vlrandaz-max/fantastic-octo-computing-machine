@@ -10,7 +10,7 @@ const eyebrow: React.CSSProperties = {
   fontWeight: 700,
   letterSpacing: '0.2em',
   textTransform: 'uppercase',
-  color: 'var(--color-brand-gold)',
+  color: 'var(--color-brand-gold-dark)',
 };
 
 const GALLERY = [

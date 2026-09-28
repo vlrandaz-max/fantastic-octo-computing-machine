@@ -56,7 +56,7 @@ const FALCON_STYLE = `
   .falcon-page {
     --color-brand-gold:        #C4A05A;
     --color-brand-gold-light:  #D4B87A;
-    --color-brand-gold-dark:   #B89438;
+    --color-brand-gold-dark:   #83672F;
     --color-bg-alabaster:      #F2F0E6;
     --color-bg-warm:           #EAE4D6;
     --color-text-primary:      #1E1A16;
@@ -94,7 +94,7 @@ const FALCON_STYLE = `
   .falcon-page img { max-width: 100%; display: block; }
   .falcon-page a { color: var(--fe-accent); text-decoration: none; transition: color var(--fe-transition-fast); }
 
-  .falcon-page .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fe-accent); }
+  .falcon-page .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fe-accent-dark); }
   .falcon-page .rule { display: block; width: 64px; height: 1px; background: var(--fe-accent); margin: 12px 0 18px; }
   .falcon-page .rule-center { margin: 12px auto 18px; }
   .falcon-page .wrap { max-width: 1280px; margin: 0 auto; padding: 0 48px; }

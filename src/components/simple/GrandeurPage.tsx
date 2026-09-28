@@ -235,7 +235,7 @@ const GRANDEUR_STYLE = `
     font-weight: 600;
     letter-spacing: 5px;
     text-transform: uppercase;
-    color: var(--gr-gold);
+    color: var(--gr-gold-dark);
     margin-bottom: 24px;
   }
 
@@ -340,7 +340,7 @@ const GRANDEUR_STYLE = `
     font-size: 8px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--gr-gold);
+    color: var(--gr-gold-dark);
     margin-bottom: 16px;
   }
 
@@ -553,7 +553,7 @@ const GRANDEUR_STYLE = `
     font-size: 8px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--gr-gold);
+    color: var(--gr-gold-dark);
     margin-bottom: 12px;
   }
   .grandeur-page .community-item .ci-title {
