@@ -46,11 +46,14 @@ const specList = (items: readonly string[]) => (
 export function HomeDetailPage({ home }: { home: HomeDetail }) {
   return (
     <div style={{ background: '#FFFFFF' }}>
+      <div style={{ position: 'relative' }}>
+        <SimpleNav />
+      </div>
+      <main>
       {/* Hero */}
       <section style={{ position: 'relative', minHeight: '85vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: `url('${home.heroImage}') center 45% / cover no-repeat` }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,12,16,0.55) 0%, rgba(10,12,16,0.35) 40%, rgba(10,12,16,0.85) 100%)' }} />
-        <SimpleNav />
         <div className="hero-credit-tag" style={{ position: 'absolute', right: 48, bottom: 44, zIndex: 5, textAlign: 'right' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 10 }}>
             <img
@@ -421,6 +424,7 @@ export function HomeDetailPage({ home }: { home: HomeDetail }) {
           {PINE_WOODS.legalDisclaimer}
         </p>
       </section>
+      </main>
 
       <SimpleFooter />
     </div>

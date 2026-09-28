@@ -45,11 +45,14 @@ const INTERIOR_GALLERY = [
 export function StratfordPage() {
   return (
     <div style={{ background: '#FFFFFF' }}>
+      <div style={{ position: 'relative' }}>
+        <SimpleNav />
+      </div>
+      <main>
       {/* Hero */}
       <section style={{ position: 'relative', minHeight: '85vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: `url('${withBase('/assets/home/stratford-twilight.jpg')}') center 45% / cover no-repeat` }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,12,16,0.55) 0%, rgba(10,12,16,0.35) 40%, rgba(10,12,16,0.85) 100%)' }} />
-        <SimpleNav />
         <div className="hero-credit-tag" style={{ position: 'absolute', right: 48, bottom: 44, zIndex: 5, textAlign: 'right' }}>
           <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 15, color: 'rgba(242,240,230,0.85)' }}>{COMPANY.name}</p>
           <p style={{ fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(242,240,230,0.5)' }}>
@@ -295,6 +298,7 @@ export function StratfordPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <SimpleFooter />
     </div>

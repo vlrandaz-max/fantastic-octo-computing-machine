@@ -364,8 +364,8 @@ export function FalconEstatesPage() {
       <style>{FALCON_STYLE}</style>
       <div style={{ position: 'relative' }}>
         <SimpleNav />
-        <div ref={revealScope} dangerouslySetInnerHTML={{ __html: FALCON_BODY }} />
       </div>
+      <main ref={revealScope} dangerouslySetInnerHTML={{ __html: FALCON_BODY }} />
       <SimpleFooter />
     </div>
   );

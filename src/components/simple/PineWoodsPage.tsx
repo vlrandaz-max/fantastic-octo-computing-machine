@@ -43,6 +43,10 @@ const HERO_SLIDES = [
 export function PineWoodsPage() {
   return (
     <div style={{ background: '#FFFFFF' }}>
+      <div style={{ position: 'relative' }}>
+        <SimpleNav />
+      </div>
+      <main>
       {/* Hero */}
       <section
         style={{
@@ -59,7 +63,6 @@ export function PineWoodsPage() {
           ))}
         </div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(12,10,8,0.5) 0%, rgba(12,10,8,0.2) 40%, rgba(12,10,8,0.8) 100%)' }} />
-        <SimpleNav />
         <div style={{ position: 'relative', zIndex: 5, padding: '0 40px 64px', maxWidth: 900 }}>
           <span
             style={{
@@ -362,6 +365,7 @@ export function PineWoodsPage() {
           {PINE_WOODS.legalDisclaimer}
         </p>
       </section>
+      </main>
 
       <SimpleFooter />
     </div>

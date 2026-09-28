@@ -36,6 +36,7 @@ export function ContactUsPage() {
         <div style={{ height: 220 }} />
       </div>
 
+      <main>
       <section style={{ padding: '72px 40px 96px' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }} className="simple-grid-2">
           <div>
@@ -133,6 +134,7 @@ export function ContactUsPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <SimpleFooter />
     </div>

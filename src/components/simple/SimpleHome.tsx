@@ -45,6 +45,10 @@ const outlineButton: React.CSSProperties = {
 export function SimpleHome() {
   return (
     <div style={{ background: '#FFFFFF' }}>
+      <div style={{ position: 'relative' }}>
+        <SimpleNav />
+      </div>
+      <main>
       {/* Hero */}
       <section
         style={{
@@ -70,7 +74,6 @@ export function SimpleHome() {
             background: 'linear-gradient(180deg, rgba(12,10,8,0.55) 0%, rgba(12,10,8,0.25) 45%, rgba(12,10,8,0.75) 100%)',
           }}
         />
-        <SimpleNav />
         <div style={{ position: 'relative', zIndex: 5, textAlign: 'center', padding: '0 24px 56px', maxWidth: 900, margin: '0 auto' }}>
           <p style={{ ...eyebrow, color: 'var(--color-brand-gold-light)', marginBottom: 20 }}>
             {COMPANY.foundedBadge}
@@ -372,6 +375,7 @@ export function SimpleHome() {
           </div>
         </div>
       </section>
+      </main>
 
       <SimpleFooter />
     </div>

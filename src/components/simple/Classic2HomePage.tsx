@@ -94,6 +94,7 @@ export function Classic2HomePage() {
     <div style={{ background: '#FFFFFF' }}>
       <ClassicNav homeHref={withBase('/')} />
 
+      <main>
       {/* Hero — identical to /classic */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <video
@@ -278,6 +279,7 @@ export function Classic2HomePage() {
           </a>
         </div>
       </section>
+      </main>
 
       <ClassicFooter homeHref={withBase('/')} />
     </div>

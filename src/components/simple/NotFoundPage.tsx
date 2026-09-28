@@ -24,6 +24,7 @@ export function NotFoundPage() {
         <div style={{ height: 220 }} />
       </div>
 
+      <main>
       <section style={{ padding: '72px 40px 96px', textAlign: 'center' }}>
         <div style={{ maxWidth: 640, margin: '0 auto' }}>
           <p style={eyebrow}>Error 404</p>
@@ -79,6 +80,7 @@ export function NotFoundPage() {
           </p>
         </div>
       </section>
+      </main>
 
       <SimpleFooter />
     </div>

@@ -26,6 +26,7 @@ export function HomesAvailablePage() {
         <div style={{ height: 220 }} />
       </div>
 
+      <main>
       <section style={{ padding: '72px 40px 40px', textAlign: 'center' }}>
         <p style={eyebrow}>{HOMES_AVAILABLE_INTRO.eyebrow}</p>
         <h1
@@ -157,6 +158,7 @@ export function HomesAvailablePage() {
           </a>
         </div>
       </section>
+      </main>
 
       <SimpleFooter />
     </div>

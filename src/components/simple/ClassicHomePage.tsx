@@ -68,6 +68,7 @@ export function ClassicHomePage() {
     <div style={{ background: '#FFFFFF' }}>
       <ClassicNav />
 
+      <main>
       {/* Hero */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <video
@@ -212,6 +213,7 @@ export function ClassicHomePage() {
           </a>
         </div>
       </section>
+      </main>
 
       <ClassicFooter />
     </div>

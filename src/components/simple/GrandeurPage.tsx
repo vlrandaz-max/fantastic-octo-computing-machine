@@ -1199,8 +1199,8 @@ export function GrandeurPage() {
       <style>{GRANDEUR_STYLE}</style>
       <div style={{ position: 'relative' }}>
         <SimpleNav />
-        <div ref={revealScope} dangerouslySetInnerHTML={{ __html: GRANDEUR_BODY }} />
       </div>
+      <main ref={revealScope} dangerouslySetInnerHTML={{ __html: GRANDEUR_BODY }} />
       <SimpleFooter />
     </div>
   );
