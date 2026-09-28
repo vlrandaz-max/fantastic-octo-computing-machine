@@ -1004,6 +1004,7 @@ const GRANDEUR_BODY = `
 
     <div class="gal-grid">
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/foyer-staged.jpg')}" alt="Grand Foyer · Oak Staircase &amp; Wrought Iron"><div class="gal-cap">Grand Foyer &middot; Oak Staircase &amp; Wrought Iron</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-upper-landing.jpg')}" alt="Upper Landing Overlook"><div class="gal-cap">Upper Landing &middot; Overlooking the Foyer</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-family-room.jpg')}" alt="Two-Story Family Room"><div class="gal-cap">Two-Story Family Room &middot; Floor-to-Ceiling Windows</div></div>
       <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/family-room-1-staged.jpg')}" alt="Family Room · Stone Fireplace"><div class="gal-cap">Family Room &middot; Stone Fireplace</div></div>
       <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-dining-room.jpg')}" alt="Formal Dining Room"><div class="gal-cap">Formal Dining Room</div></div>
@@ -1016,6 +1017,7 @@ const GRANDEUR_BODY = `
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-primary-suite.jpg')}" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-primary-suite-2.jpg')}" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${withBase('/assets/home/grandeur-primary-bath.jpg')}" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
+      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-vanity-nook.jpg')}" alt="Primary Closet · Lighted Vanity Nook"><div class="gal-cap">Primary Closet &middot; Lighted Vanity Nook</div></div>
     </div>
   </div>
 </div>
