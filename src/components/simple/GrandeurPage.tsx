@@ -676,6 +676,44 @@ const GRANDEUR_STYLE = `
     text-align: center; margin: 8px 0 -4px;
   }
 
+  /* Crossfading mini-slideshow, for a gallery item showing the same
+     space staged multiple ways rather than one static photo. Same
+     idea as the Pine Woods/Falcon Estates hero rotation, scaled down
+     to sit inside a gallery card. */
+  .grandeur-page .gal-slideshow { position: relative; overflow: hidden; margin: 0 auto; }
+  .grandeur-page .gal-slideshow img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    border: 1px solid var(--gr-rule); opacity: 0;
+    transition: transform 700ms cubic-bezier(0.25,0.1,0.25,1);
+  }
+  .grandeur-page .gal-item:hover .gal-slideshow img { transform: scale(1.06); }
+  .grandeur-page .gal-slideshow.portrait { width: 320px; height: 568px; max-width: 100%; }
+  .grandeur-page .gal-slideshow.landscape { width: 100%; height: 460px; }
+
+  .grandeur-page .gal-slideshow.slides-2 img { animation: gal-slide2-fade 12s infinite; }
+  .grandeur-page .gal-slideshow.slides-2 img:nth-child(1) { animation-delay: 0s; }
+  .grandeur-page .gal-slideshow.slides-2 img:nth-child(2) { animation-delay: 6s; }
+
+  .grandeur-page .gal-slideshow.slides-3 img { animation: gal-slide3-fade 18s infinite; }
+  .grandeur-page .gal-slideshow.slides-3 img:nth-child(1) { animation-delay: 0s; }
+  .grandeur-page .gal-slideshow.slides-3 img:nth-child(2) { animation-delay: 6s; }
+  .grandeur-page .gal-slideshow.slides-3 img:nth-child(3) { animation-delay: 12s; }
+
+  .grandeur-page .gal-slideshow.slides-4 img { animation: gal-slide4-fade 24s infinite; }
+  .grandeur-page .gal-slideshow.slides-4 img:nth-child(1) { animation-delay: 0s; }
+  .grandeur-page .gal-slideshow.slides-4 img:nth-child(2) { animation-delay: 6s; }
+  .grandeur-page .gal-slideshow.slides-4 img:nth-child(3) { animation-delay: 12s; }
+  .grandeur-page .gal-slideshow.slides-4 img:nth-child(4) { animation-delay: 18s; }
+
+  @keyframes gal-slide2-fade { 0% { opacity: 0; } 8% { opacity: 1; } 42% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes gal-slide3-fade { 0% { opacity: 0; } 6% { opacity: 1; } 28% { opacity: 1; } 33% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes gal-slide4-fade { 0% { opacity: 0; } 4% { opacity: 1; } 21% { opacity: 1; } 25% { opacity: 0; } 100% { opacity: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grandeur-page .gal-slideshow img { animation: none !important; opacity: 1; }
+    .grandeur-page .gal-slideshow img:not(:first-child) { display: none; }
+  }
+
   .grandeur-page .tour-band { background: var(--gr-charcoal); padding: 64px 0; }
   .grandeur-page .tour-inner {
     max-width: 900px; margin: 0 auto; padding: 0 48px;
@@ -1024,8 +1062,23 @@ const GRANDEUR_BODY = `
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-primary-suite-2.jpg')}" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${withBase('/assets/home/grandeur-primary-bath.jpg')}" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
       <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Suite &mdash; A Flex Space, Your Way</div>
-      <div class="gal-item reveal fade-in-left" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-vanity-nook.jpg')}" alt="Primary Closet Flex Nook · Vanity"><div class="gal-cap">Vanity</div></div>
-      <div class="gal-item reveal fade-in-right" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-coffee-nook.jpg')}" alt="Primary Closet Flex Nook · Coffee Station"><div class="gal-cap">Coffee Station</div></div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms">
+        <div class="gal-slideshow portrait slides-2">
+          <img src="${withBase('/assets/home/grandeur-vanity-nook.jpg')}" alt="Primary Closet Flex Nook · Vanity">
+          <img src="${withBase('/assets/home/grandeur-coffee-nook.jpg')}" alt="Primary Closet Flex Nook · Coffee Station">
+        </div>
+        <div class="gal-cap">Vanity &amp; Coffee Station</div>
+      </div>
+
+      <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Sitting Area</div>
+      <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms">
+        <div class="gal-slideshow landscape slides-3">
+          <img src="${withBase('/assets/home/grandeur-sitting-area-1.jpg')}" alt="Primary Sitting Area">
+          <img src="${withBase('/assets/home/grandeur-sitting-area-2.jpg')}" alt="Primary Sitting Area">
+          <img src="${withBase('/assets/home/grandeur-sitting-area-3.jpg')}" alt="Primary Sitting Area">
+        </div>
+        <div class="gal-cap">Three Ways to Style the Space</div>
+      </div>
     </div>
   </div>
 </div>
