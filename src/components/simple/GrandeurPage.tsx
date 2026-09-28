@@ -680,6 +680,7 @@ const GRANDEUR_STYLE = `
     font-size: 22px; font-weight: 400; color: var(--gr-gold-dark);
     text-align: center; margin: 8px 0 -4px;
   }
+  .grandeur-page .gal-subhead.big { font-size: 33px; margin: 8px 0 4px; }
 
   /* Crossfading mini-slideshow, for a gallery item showing the same
      space staged multiple ways rather than one static photo. Same
@@ -1087,7 +1088,7 @@ const GRANDEUR_BODY = `
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms"><img src="${withBase('/assets/home/grandeur-primary-suite.jpg')}" alt="Primary Suite · Coffered Ceiling"><div class="gal-cap">Primary Suite &middot; Coffered Ceiling</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 100ms"><img src="${withBase('/assets/home/grandeur-primary-suite-2.jpg')}" alt="Primary Suite · Adjoining Spa Bath"><div class="gal-cap">Primary Suite &middot; Adjoining Spa Bath</div></div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${withBase('/assets/home/grandeur-primary-bath.jpg')}" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
-      <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Suite &mdash; Flex Spaces, Your Way</div>
+      <div class="gal-subhead big reveal fade-in-up" style="animation-delay: 0ms">Primary Suite &mdash; Flex Spaces, Your Way</div>
 
       <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Sitting Area</div>
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms">
@@ -1104,7 +1105,7 @@ const GRANDEUR_BODY = `
           <img src="${withBase('/assets/home/grandeur-vanity-nook.jpg')}" alt="Primary Closet Flex Nook · Vanity">
           <img src="${withBase('/assets/home/grandeur-coffee-nook.jpg')}" alt="Primary Closet Flex Nook · Coffee Station">
         </div>
-        <div class="gal-cap">Vanity &amp; Coffee Station</div>
+        <div class="gal-cap">Many Possibilities&hellip; Vanity or Beverage Station</div>
       </div>
     </div>
   </div>
