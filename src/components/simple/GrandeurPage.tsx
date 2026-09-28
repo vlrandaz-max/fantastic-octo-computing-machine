@@ -669,7 +669,11 @@ const GRANDEUR_STYLE = `
     font-size: 8px; letter-spacing: 4px; text-transform: uppercase;
     color: var(--gr-gold-dark); margin-top: 12px;
   }
-  .grandeur-page .gal-slideshow + .gal-cap { text-align: center; margin-top: 2px; }
+  /* Flexbox + gap, not sibling margin, for the space between a
+     slideshow and its caption — margin-based spacing here rendered
+     inconsistently between the two slideshow items, gap does not. */
+  .grandeur-page .gal-slide-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .grandeur-page .gal-slide-wrap .gal-cap { text-align: center; margin-top: 0; }
   .grandeur-page .gal-cap.title {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     font-size: 26px; font-weight: 400; letter-spacing: normal; text-transform: none;
@@ -1092,7 +1096,7 @@ const GRANDEUR_BODY = `
       <div class="gal-subhead big reveal fade-in-up" style="animation-delay: 0ms">Primary Suite &mdash; Flex Spaces, Your Way</div>
 
       <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Sitting Area</div>
-      <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms">
+      <div class="gal-item full gal-slide-wrap reveal fade-in-up" style="animation-delay: 0ms">
         <div class="gal-slideshow landscape slides-3">
           <img src="${withBase('/assets/home/grandeur-sitting-area-1.jpg')}" alt="Primary Sitting Area">
           <img src="${withBase('/assets/home/grandeur-sitting-area-2.jpg')}" alt="Primary Sitting Area">
@@ -1101,7 +1105,7 @@ const GRANDEUR_BODY = `
         <div class="gal-cap">Three Ways to Style the Space</div>
       </div>
 
-      <div class="gal-item full reveal fade-in-up" style="animation-delay: 0ms">
+      <div class="gal-item full gal-slide-wrap reveal fade-in-up" style="animation-delay: 0ms">
         <div class="gal-slideshow portrait slides-2">
           <img src="${withBase('/assets/home/grandeur-vanity-nook.jpg')}" alt="Primary Closet Flex Nook · Vanity">
           <img src="${withBase('/assets/home/grandeur-coffee-nook.jpg')}" alt="Primary Closet Flex Nook · Coffee Station">
