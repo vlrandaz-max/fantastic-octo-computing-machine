@@ -34,7 +34,23 @@ import { FALCON_ESTATES } from '../../data/site';
  * which no longer exists now that WordPress has been retired. It now
  * points at /assets/home/falcon-estates-site-plan.jpg, which doesn't
  * exist yet — it'll work as soon as that file is uploaded.
+ *
+ * Hero: a crossfading photo rotation (same `.classic-bg-slide` mechanism
+ * Pine Woods' hero uses — a 36s cycle across 6 stacked slides, defined
+ * once in global.css) instead of the single static background photo,
+ * leading with the Crestwood's own twilight exterior and mixing in the
+ * best exterior/interior shots of the Crestwood, Cambridge, and
+ * Stratford — the three sold homes profiled below.
  */
+
+const HERO_SLIDES = [
+  withBase('/assets/home/crestwood-twilight-2026.jpg'),
+  withBase('/assets/home/cambridge-family-room-2.jpg'),
+  withBase('/assets/home/stratford-aerial-twilight.jpg'),
+  withBase('/assets/home/crestwood-owners-suite.jpg'),
+  withBase('/assets/home/cambridge-twilight.jpg'),
+  withBase('/assets/home/stratford-family-kitchen.jpg'),
+];
 
 const FALCON_STYLE = `
   .falcon-page {
@@ -96,8 +112,6 @@ const FALCON_STYLE = `
   /* HERO */
   .falcon-page .hero { position: relative; min-height: 560px; display: flex; flex-direction: column;
     justify-content: flex-end; overflow: hidden; }
-  .falcon-page .hero-photo { position: absolute; inset: 0; background-image: url('${withBase('/assets/home/falcon-estates-hero.jpg')}');
-    background-size: cover; background-position: center 60%; }
   .falcon-page .hero-scrim { position: absolute; inset: 0;
     background:
       linear-gradient(95deg, rgba(16,20,30,0.90) 0%, rgba(16,20,30,0.55) 42%, rgba(16,20,30,0.15) 75%),
@@ -202,7 +216,7 @@ const FALCON_STYLE = `
 const FALCON_BODY = `
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-photo"></div>
+  ${HERO_SLIDES.map((src) => `<div class="classic-bg-slide" style="background-image: url('${src}')"></div>`).join('\n  ')}
   <div class="hero-scrim"></div>
   <div class="hero-content">
     <div class="hero-pill"><span class="dot"></span><span class="label">Now Selling &middot; Rochester Hills</span></div>
