@@ -685,6 +685,26 @@ const GRANDEUR_STYLE = `
   }
   .grandeur-page .gal-subhead.big { font-size: 33px; margin: 8px 0 4px; }
 
+  .grandeur-page .gal-divider {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; gap: 14px; justify-content: center;
+    margin: 18px 0;
+  }
+  .grandeur-page .gal-divider span { width: 32px; height: 1px; background: var(--gr-gold); opacity: 0.5; }
+  .grandeur-page .gal-divider .diamond {
+    width: 5px; height: 5px;
+    background: var(--gr-gold);
+    transform: rotate(45deg);
+    opacity: 0.7;
+  }
+  .grandeur-page .gal-eyebrow {
+    grid-column: 1 / -1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gr-gold-dark);
+    text-align: center; margin: -8px 0 8px;
+  }
+
   /* Crossfading mini-slideshow, for a gallery item showing the same
      space staged multiple ways rather than one static photo. Same
      idea as the Pine Woods/Falcon Estates hero rotation, scaled down
@@ -1096,7 +1116,8 @@ const GRANDEUR_BODY = `
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${withBase('/assets/home/grandeur-primary-bath.jpg')}" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
       <div class="gal-subhead big reveal fade-in-up" style="animation-delay: 0ms">Primary Suite &mdash; Flex Spaces, Your Way</div>
 
-      <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">ENDLESS LIFESTYLE POSSIBILITIES</div>
+      <div class="gal-divider reveal fade-in-up" style="animation-delay: 0ms"><span></span><div class="diamond"></div><span></span></div>
+      <div class="gal-eyebrow reveal fade-in-up" style="animation-delay: 0ms">Endless Lifestyle Possibilities</div>
 
       <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Sitting Area</div>
       <div class="gal-item full gal-slide-wrap reveal fade-in-up" style="animation-delay: 0ms">
