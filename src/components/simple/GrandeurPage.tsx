@@ -1096,6 +1096,8 @@ const GRANDEUR_BODY = `
       <div class="gal-item full reveal fade-in-up" style="animation-delay: 200ms"><img src="${withBase('/assets/home/grandeur-primary-bath.jpg')}" alt="Primary Bath"><div class="gal-cap">Primary Bath &middot; Soaking Tub &amp; Frameless Glass Shower</div></div>
       <div class="gal-subhead big reveal fade-in-up" style="animation-delay: 0ms">Primary Suite &mdash; Flex Spaces, Your Way</div>
 
+      <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">ENDLESS LIFESTYLE POSSIBILITIES</div>
+
       <div class="gal-subhead reveal fade-in-up" style="animation-delay: 0ms">Primary Sitting Area</div>
       <div class="gal-item full gal-slide-wrap reveal fade-in-up" style="animation-delay: 0ms">
         <div class="gal-slideshow landscape slides-3">
@@ -1103,7 +1105,7 @@ const GRANDEUR_BODY = `
           <img src="${withBase('/assets/home/grandeur-sitting-area-2.jpg')}" alt="Primary Sitting Area">
           <img src="${withBase('/assets/home/grandeur-sitting-area-3.jpg')}" alt="Primary Sitting Area">
         </div>
-        <div class="gal-cap">Many Uses for the Space</div>
+        <div class="gal-cap">Personal Retreat | Reading | Sitting Area</div>
       </div>
 
       <div class="gal-item full gal-slide-wrap reveal fade-in-up" style="animation-delay: 0ms">
@@ -1112,7 +1114,7 @@ const GRANDEUR_BODY = `
           <img src="${withBase('/assets/home/grandeur-coffee-nook.jpg')}" alt="Primary Closet Flex Nook · Coffee Station">
           <img src="${withBase('/assets/home/grandeur-computing-nook.jpg')}" alt="Primary Closet Flex Nook · Computing Station">
         </div>
-        <div class="gal-cap">Endless Lifestyle Possibilities&hellip; Vanity | Beverage | Computing Station</div>
+        <div class="gal-cap">Vanity | Beverage | Computing Station</div>
       </div>
     </div>
   </div>
