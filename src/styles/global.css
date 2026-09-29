@@ -350,31 +350,6 @@ button:focus-visible {
   }
 }
 
-/* Slow Ken Burns push-in for the ClassicHomePage/Classic2HomePage video
-   hero — the real estate footage itself is mostly static tripod shots, so
-   this fakes a bit of camera movement over it rather than leaving it
-   completely still. Breathes in and back out rather than snapping at a
-   loop point, since the underlying video's own loop point doesn't line up
-   with this animation's cycle. */
-.classic-hero-video-zoom {
-  animation: classic-hero-zoom 24s ease-in-out infinite alternate;
-}
-
-@keyframes classic-hero-zoom {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .classic-hero-video-zoom {
-    animation: none;
-  }
-}
-
 /* rh.house-inspired type system for ClassicHomePage — thin uppercase
    Cormorant Garamond display type paired with Jost for nav/body/kickers,
    a bordered "badge" subtitle, underline-only buttons, and the
