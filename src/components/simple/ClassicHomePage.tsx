@@ -59,7 +59,13 @@ export function ClassicHomePage() {
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      heroVideoRef.current?.play().catch(() => {});
+      const video = heroVideoRef.current;
+      if (!video) return;
+      // The source footage is mostly static tripod shots held for several
+      // seconds each — a faster playback rate makes those holds pass by
+      // sooner, closer to the brisker pacing of a proper gimbal walkthrough.
+      video.playbackRate = 1.2;
+      video.play().catch(() => {});
     }, HERO_POSTER_HOLD_MS);
     return () => window.clearTimeout(timer);
   }, []);
@@ -73,6 +79,7 @@ export function ClassicHomePage() {
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <video
           ref={heroVideoRef}
+          className="classic-hero-video-zoom"
           muted
           loop
           playsInline
@@ -81,7 +88,13 @@ export function ClassicHomePage() {
         >
           <source src={withBase('/assets/video/household-tour.mp4')} type="video/mp4" />
         </video>
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(11,11,11,0.48)' }} />
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, rgba(10,12,16,0.55) 0%, rgba(10,12,16,0.35) 40%, rgba(10,12,16,0.85) 100%)',
+          }}
+        />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: 1150, margin: '0 auto', textAlign: 'center', padding: '0 24px' }}>
           <h1
             style={{
