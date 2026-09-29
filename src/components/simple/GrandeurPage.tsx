@@ -700,8 +700,8 @@ const GRANDEUR_STYLE = `
   .grandeur-page .gal-eyebrow {
     grid-column: 1 / -1;
     font-family: 'Montserrat', sans-serif;
-    font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--gr-gold-dark);
+    font-size: 12px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gr-charcoal);
     text-align: center; margin: -8px 0 8px;
   }
 
