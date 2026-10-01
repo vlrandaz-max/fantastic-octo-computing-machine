@@ -5,19 +5,17 @@ Rebuild of **centralerealty.com**. Started 2026-10-01.
 ## Decisions
 - **Stack:** plain static files (HTML/CSS/vanilla JS, no build step) + an IDX widget.
 - **Listings source:** REALCOMP (MLS) via an IDX vendor widget.
-- **Business scope:** Centrale Realty markets **its own homes only**. The site is not a general property search and does not actively market other brokers' listings.
-
-## What that means for the site
-- The IDX widget is **locked to Centrale's own listings** (filter by Centrale's office/broker ID in the vendor's settings). No open-ended map search, no "search all homes", no neighbourhood/city search pages that pull in other brokers' inventory.
-- Dropped from the earlier skeleton because they imply a full-service brokerage: Agents directory, Rent, Regions/Communities, Careers, Sign in / Sign up, "Sell with us" for third parties.
-- Pages: Home · Homes Available (own inventory, IDX widget) · Home detail (vendor-hosted or widget) · About · Contact · Legal (Terms, Privacy, Accessibility, Equal Housing).
-- Footer must carry the MLS/IDX attribution and disclaimer REALCOMP and the IDX vendor require. Confirm the exact text, logo and refresh-time wording with REALCOMP before launch; I have not verified their current rules.
-- Sold/closed and off-market homes: don't show others' data; for Centrale's own sales, check what REALCOMP allows before publishing sold prices.
+- **Business scope (updated 2026-10-01):** all aspects of the business: residential and commercial sales, vacant land / build to suit, leasing, commercial space and construction services. This replaces the earlier "own homes only" rescope.
+- **Contact email:** info@centralerealty.com.
+- **URLs:** same paths as the live WordPress site (`/for-sale/`, `/for-sale/vacant-land-for-sale/`, `/for-lease/`, `/commercial-space/`, `/construction-services/`, `/contact-us/`, `/terms-of-use/`, `/legal/`), so few redirects are needed. Old `/feed/`, `/wp-json/` etc. can simply 404.
+- **Listings source:** REALCOMP (MLS) via an IDX vendor widget on the For Sale, Land, For Lease and Commercial pages.
+- Footer must carry the MLS/IDX attribution and disclaimer REALCOMP and the IDX vendor require. Confirm the exact text with REALCOMP before launch; I have not verified their rules.
+- Site must be served over HTTPS (the current site has no valid certificate).
 
 ## Status
 - [x] Project created, reference analysed (`reference/notes.md`)
-- [x] Static skeleton in `site/`, rescoped to own-homes-only
-- [ ] Pick IDX vendor and paste widget embed into `site/homes.html` (see `site/idx-config.md`)
+- [x] Static multi-page site in `site/` covering all services, with placeholder copy (TODO markers)
+- [ ] Pick IDX vendor and paste widget embed into the marked blocks in `site/` (see `site/idx-config.md`)
 - [ ] Centrale assets: logo, colours, fonts, photography
 - [ ] Content: about copy, contact details, broker licence numbers, legal text
 - [ ] Own analytics property (no tracking IDs copied from the reference site)
