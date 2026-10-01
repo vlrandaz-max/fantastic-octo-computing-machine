@@ -1,22 +1,27 @@
 # Centrale Realty Website Rebuild 2026
 
-Project to rebuild **centralerealty.com**. Started 2026-10-01.
+Rebuild of **centralerealty.com**. Started 2026-10-01.
+
+## Decisions
+- **Stack:** plain static files (HTML/CSS/vanilla JS, no build step) + an IDX widget.
+- **Listings source:** REALCOMP (MLS) via an IDX vendor widget.
+- **Business scope:** Centrale Realty markets **its own homes only**. The site is not a general property search and does not actively market other brokers' listings.
+
+## What that means for the site
+- The IDX widget is **locked to Centrale's own listings** (filter by Centrale's office/broker ID in the vendor's settings). No open-ended map search, no "search all homes", no neighbourhood/city search pages that pull in other brokers' inventory.
+- Dropped from the earlier skeleton because they imply a full-service brokerage: Agents directory, Rent, Regions/Communities, Careers, Sign in / Sign up, "Sell with us" for third parties.
+- Pages: Home · Homes Available (own inventory, IDX widget) · Home detail (vendor-hosted or widget) · About · Contact · Legal (Terms, Privacy, Accessibility, Equal Housing).
+- Footer must carry the MLS/IDX attribution and disclaimer REALCOMP and the IDX vendor require. Confirm the exact text, logo and refresh-time wording with REALCOMP before launch; I have not verified their current rules.
+- Sold/closed and off-market homes: don't show others' data; for Centrale's own sales, check what REALCOMP allows before publishing sold prices.
 
 ## Status
-- [x] Project created
-- [x] Reference site analysed (`reference/notes.md`)
-- [x] Starter static skeleton (`site/`) with original markup/CSS
-- [ ] Gather Centrale assets: logo, brand colours, fonts, photography
-- [ ] Gather content: offices, agents, services, licence numbers, legal/fair-housing text
-- [ ] Decide listings source (MLS/IDX feed vendor) and platform (static + IDX widget vs. CMS)
-- [ ] Build out pages, SEO/schema, analytics, forms
+- [x] Project created, reference analysed (`reference/notes.md`)
+- [x] Static skeleton in `site/`, rescoped to own-homes-only
+- [ ] Pick IDX vendor and paste widget embed into `site/homes.html` (see `site/idx-config.md`)
+- [ ] Centrale assets: logo, colours, fonts, photography
+- [ ] Content: about copy, contact details, broker licence numbers, legal text
+- [ ] Own analytics property (no tracking IDs copied from the reference site)
 - [ ] Launch + 301 redirects from the current site
 
-## Proposed sitemap
-Home · Buy · Sell · Rent · Agents (+ agent detail) · Regions/Communities (+ detail) · Services · Offices · Careers · Blog/Journal · About · Contact · Legal (Terms, Privacy, Accessibility, Fair Housing, DMCA)
-
-## Layout patterns taken from the reference (structure only)
-Sticky header with primary nav + sign-in; full-width hero slider with H1; "jump to section" sub-nav on region pages; featured listings grid; leadership/agent cards (photo, title, phone, licence, Email Me); offices block; journal/blog teaser row; dark/brand CTA band; four-column footer (company, resources, get in touch + social, newsletter); legal footer.
-
-## Not carried over (deliberately)
-The pasted page is another brokerage's live site. We reuse the *ideas*, not their code, brand, copy, images, trademarks, or third-party tracking/vendor IDs (analytics ID, audience pixel, platform client IDs, CDN bundles). Centrale gets its own analytics property, its own content and its own photography.
+## Reference site
+Layout ideas only (hero, card grid, footer structure, JSON-LD). No code, copy, images, trademarks or tracking IDs reused.
