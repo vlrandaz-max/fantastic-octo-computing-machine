@@ -17,7 +17,9 @@ Rebuild of **centralerealty.com**. Started 2026-10-01.
 - [x] Static multi-page site in `site/` covering all services, with placeholder copy (TODO markers)
 - [ ] Pick IDX vendor and paste widget embed into the marked blocks in `site/` (see `site/idx-config.md`)
 - [ ] Centrale assets: logo, colours, fonts, photography
-- [ ] Content: about copy, contact details, broker licence numbers, legal text
+- [x] Service page copy, Terms of Use, Legal (broker license no. 6505204949, Equal Housing logo, no-data-collection privacy statement)
+- [ ] Attorney review of Terms/Legal; exact REALCOMP/IDX attribution (hidden TODO comment in each footer); confirm IDX widget data/cookie practices
+- [ ] Replace placeholder Equal Housing SVG with the official artwork
 - [ ] Own analytics property (no tracking IDs copied from the reference site)
 - [ ] Launch + 301 redirects from the current site
 
