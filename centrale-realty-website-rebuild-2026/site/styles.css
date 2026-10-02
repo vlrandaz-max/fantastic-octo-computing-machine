@@ -127,7 +127,7 @@ p{margin:0 0 1.1rem}
 .prose h2{font-size:clamp(1.5rem,2.6vw,2rem);margin-top:2.2rem;color:var(--ink)}
 .prose a{color:var(--gold-deep)}.prose a:hover{color:var(--burgundy)}
 .prose ul{padding-left:1.2rem}.prose li{margin-bottom:.4rem}
-.plan{margin:1.8rem 0}.plan video{display:block;width:100%;height:auto;background:#000}.plan img{border:1px solid var(--line)}.plan figcaption{font-size:.85rem;color:var(--muted);margin-top:6px;letter-spacing:.04em}
+.plan{margin:1.8rem 0}.plan img{border:1px solid var(--line)}.plan figcaption{font-size:.85rem;color:var(--muted);margin-top:6px;letter-spacing:.04em}
 address{font-style:normal}
 .contact-card{text-align:center}
 
