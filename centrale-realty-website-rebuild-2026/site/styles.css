@@ -35,6 +35,4 @@ a{color:inherit}
   .menu-toggle:checked~nav{display:flex}
   .site-header .btn-outline{display:none}
 }
-.idx-placeholder{border:2px dashed #999;padding:80px 24px;text-align:center;color:#666;margin-top:24px}
-.mls-notice{font-size:12px}
 .site-footer address{font-style:normal}
