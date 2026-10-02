@@ -56,12 +56,12 @@
           <span class="sub">Our Services</span>
           <h2>Real Estate<br>Services</h2>
         </div>
-        <div class="svc">
-          <div class="svc-item"><a class="img" href="for-sale/"><img src="assets/images/svc-sale.jpg" alt="Stone and brick custom home at twilight" width="480" height="720" loading="lazy"></a><a class="btn" href="for-sale/">For Sale</a></div>
-          <div class="svc-item"><a class="img" href="for-sale/vacant-land-for-sale/"><img src="assets/images/svc-land.jpg" alt="Brick and stone home in Falcon Estates" width="480" height="720" loading="lazy"></a><a class="btn" href="for-sale/vacant-land-for-sale/">Land</a></div>
-          <div class="svc-item"><a class="img" href="for-lease/"><img src="assets/images/svc-lease.jpg" alt="Brick duplex with attached two-car garages" width="480" height="720" loading="lazy"></a><a class="btn" href="for-lease/">For Lease</a></div>
-          <div class="svc-item"><a class="img" href="commercial-space/"><img src="assets/images/svc-commercial.jpg" alt="Two-storey brick and stone office building" width="480" height="720" loading="lazy"></a><a class="btn" href="commercial-space/">Commercial</a></div>
-          <div class="svc-item"><a class="img" href="construction-services/"><img src="assets/images/svc-construction.jpg" alt="Aerial view of a new stone home at dusk" width="480" height="720" loading="lazy"></a><a class="btn" href="construction-services/">Construction</a></div>
+        <div class="acc" id="acc">
+          <a class="acc-item is-active" href="for-sale/"><img src="assets/images/acc-sale.jpg" alt="Stone and brick custom home at twilight" width="900" height="1000" loading="lazy"><span class="acc-text"><span class="acc-label">For Sale</span><span class="acc-desc">Residential and commercial properties.</span><span class="acc-view">View &rarr;</span></span></a>
+          <a class="acc-item" href="for-sale/vacant-land-for-sale/"><img src="assets/images/acc-land.jpg" alt="Brick and stone home in Falcon Estates" width="900" height="1000" loading="lazy"><span class="acc-text"><span class="acc-label">Land</span><span class="acc-desc">Property, build to suit and vacant land.</span><span class="acc-view">View &rarr;</span></span></a>
+          <a class="acc-item" href="for-lease/"><img src="assets/images/acc-lease.jpg" alt="Brick duplex with attached two-car garages" width="900" height="1000" loading="lazy"><span class="acc-text"><span class="acc-label">For Lease</span><span class="acc-desc">Metro Detroit rentals, from duplexes to corporate housing.</span><span class="acc-view">View &rarr;</span></span></a>
+          <a class="acc-item" href="commercial-space/"><img src="assets/images/acc-commercial.jpg" alt="Two-storey brick and stone office building" width="900" height="1000" loading="lazy"><span class="acc-text"><span class="acc-label">Commercial</span><span class="acc-desc">Office space in Rochester Hills and Auburn Hills.</span><span class="acc-view">View &rarr;</span></span></a>
+          <a class="acc-item" href="construction-services/"><img src="assets/images/acc-construction.jpg" alt="Aerial view of a new stone home at dusk" width="900" height="1000" loading="lazy"><span class="acc-text"><span class="acc-label">Construction</span><span class="acc-desc">New construction, your site or ours.</span><span class="acc-view">View &rarr;</span></span></a>
         </div>
       </div>
     </section>
@@ -95,6 +95,7 @@
       </div>
     </section>
   </main>
+  <script>(function(){var items=document.querySelectorAll("#acc .acc-item");function on(i){items.forEach(function(x){x.classList.toggle("is-active",x===i)})}items.forEach(function(i){i.addEventListener("mouseenter",function(){on(i)});i.addEventListener("focus",function(){on(i)});i.addEventListener("click",function(e){if(matchMedia("(hover: none)").matches&&!i.classList.contains("is-active")){e.preventDefault();on(i)}})})})();</script>
   <script>if(matchMedia("(prefers-reduced-motion: reduce)").matches){var v=document.querySelector(".hero video");if(v){v.removeAttribute("autoplay");v.pause()}}</script>
   <footer class="site-footer">
     <div class="wrap">

@@ -83,14 +83,23 @@ p{margin:0 0 1.1rem}
 .welcome img{width:100%;aspect-ratio:2/3;object-fit:cover}
 .welcome .tall-2{margin-top:clamp(0px,6vw,90px)}
 
-/* Services portrait cards */
+/* Services: expanding image accordion (hover, focus or tap opens a panel) */
 .services-head{text-align:center;margin-bottom:clamp(28px,4vw,56px)}
-.svc{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,2vw,28px)}
-.svc-item{text-align:center}
-.svc-item a.img{display:block;overflow:hidden}
-.svc-item img{width:100%;aspect-ratio:2/3;object-fit:cover;transition:transform .6s}
-.svc-item a.img:hover img{transform:scale(1.04)}
-.svc-item .btn{margin-top:1.1rem;padding:.95rem 1.2rem;width:100%;max-width:220px}
+.acc{display:flex;gap:6px;height:clamp(420px,46vw,560px)}
+.acc-item{position:relative;flex:1;min-width:0;overflow:hidden;color:#fff;text-decoration:none;background:#000;transition:flex .65s cubic-bezier(.4,0,.2,1)}
+.acc-item.is-active{flex:3.2}
+.acc-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.acc-item.is-active img{transform:scale(1.04)}
+.acc-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,0) 38%,rgba(11,11,11,.78) 100%);transition:background .5s}
+.acc-item:not(.is-active)::after{background:linear-gradient(180deg,rgba(11,11,11,.12) 20%,rgba(11,11,11,.7) 100%)}
+.acc-text{position:absolute;left:clamp(14px,2vw,26px);right:clamp(14px,2vw,26px);bottom:clamp(16px,2vw,26px);z-index:2;display:flex;flex-direction:column;gap:.5rem}
+.acc-label{font:500 .74rem/1.3 var(--sans);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.acc-item.is-active .acc-label{font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,2.4vw,2.2rem);letter-spacing:.12em}
+.acc-desc,.acc-view{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .45s ease .12s}
+.acc-desc{font:300 1rem/1.5 var(--sans);color:var(--on-dark)}
+.acc-view{font:500 .72rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);padding-top:.2rem}
+.acc-item.is-active .acc-desc{max-height:90px;opacity:1}
+.acc-item.is-active .acc-view{max-height:30px;opacity:1}
 
 /* Split sections */
 .split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
@@ -130,6 +139,11 @@ address{font-style:normal}
 .foot-grid img{margin-inline:auto}
 .foot-bottom{margin-top:clamp(32px,4vw,56px);padding-top:22px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;letter-spacing:.06em}
 
+@media(max-width:860px){
+  .acc{flex-direction:column;height:600px}
+  .acc-item.is-active{flex:3.4}
+  .acc-text{bottom:14px}
+}
 @media(max-width:1000px){
   .site-header .bar{grid-template-columns:auto auto;min-height:80px}
   .burger{display:block;justify-self:end;cursor:pointer;font:500 .75rem/1 var(--sans);letter-spacing:.25em;text-transform:uppercase;padding:12px 16px;border:1px solid rgba(255,255,255,.35);color:#fff}
@@ -138,7 +152,6 @@ address{font-style:normal}
   .primary a{padding:12px 0}
   .menu-toggle:checked~.primary{display:flex}
   .nav-contact{display:block}
-  .svc{grid-template-columns:repeat(3,1fr)}
   .welcome{grid-template-columns:1fr 1fr}.welcome>div:first-child{grid-column:1/-1}
   .split{grid-template-columns:1fr}.split.flip .split-media{order:0}
   .foot-grid{grid-template-columns:repeat(2,1fr)}
@@ -147,9 +160,8 @@ address{font-style:normal}
 @media(max-width:600px){
   .logo-mark{width:50px;height:50px}.logo{gap:10px}.logo-text{padding-left:10px;min-height:42px}.logo b{font-size:1.45rem}.logo-text span{letter-spacing:.55em}
   .topbar .wrap{gap:6px 18px}.topbar .addr{display:none}
-  .svc{grid-template-columns:repeat(2,1fr)}
   .welcome{grid-template-columns:1fr}.welcome .tall-2{margin-top:0}
   .foot-grid{grid-template-columns:1fr}
   .foot-bottom{justify-content:center;text-align:center}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.svc-item img,.btn{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.acc-item,.acc-item img,.acc-desc,.acc-view,.btn{transition:none}}
