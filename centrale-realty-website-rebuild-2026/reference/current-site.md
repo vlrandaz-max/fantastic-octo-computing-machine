@@ -11,7 +11,7 @@
 - Confirm which email address is correct (centralerealty.com vs landrhomes.com).
 
 ## Discrepancies noticed on the live site
-- Fax: the footer says 844.273.8409, the Contact Us page says 248.299.1075.
+- Fax: confirmed by owner as 248.694.9344 (live footer and Contact page each showed a different number).
 - Construction page links to www.landrhomes.com (new homes) and www.lrgeneralcontracting.com (general contracting); both left as external links.
 - Service copy in `site/` is adapted from the live pages (lightly edited). Specific properties named there (Falcon Estates / Sherwood Forest Estates, Cambridge Hills) and the "luxury corporate housing / duplex / townhome" rentals should be confirmed as still current.
-- Legal and Terms text on the live site is long (legal disclaimers dated 2014); not copied yet, pending your review.
+- Legal and Terms were rewritten (2026-10-02) as modern general-purpose real estate website terms covering sales, leasing and commercial, fair housing, MLS/IDX, privacy. This is a draft, not legal advice: have a Michigan attorney and REALCOMP review it, and fill the TODOs (broker licence number, IDX attribution, EHO logo).
