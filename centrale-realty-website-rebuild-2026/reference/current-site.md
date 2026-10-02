@@ -9,3 +9,9 @@
 - The live site markets sales, leases, commercial space, vacant land and construction. The rebuild charter says "own homes only". Confirm which services the new site should carry.
 - The new site must be served over HTTPS (get a certificate at hosting).
 - Confirm which email address is correct (centralerealty.com vs landrhomes.com).
+
+## Discrepancies noticed on the live site
+- Fax: the footer says 844.273.8409, the Contact Us page says 248.299.1075.
+- Construction page links to www.landrhomes.com (new homes) and www.lrgeneralcontracting.com (general contracting); both left as external links.
+- Service copy in `site/` is adapted from the live pages (lightly edited). Specific properties named there (Falcon Estates / Sherwood Forest Estates, Cambridge Hills) and the "luxury corporate housing / duplex / townhome" rentals should be confirmed as still current.
+- Legal and Terms text on the live site is long (legal disclaimers dated 2014); not copied yet, pending your review.
