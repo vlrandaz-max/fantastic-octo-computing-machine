@@ -72,7 +72,7 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
   <footer class="site-footer">
     <div class="wrap">
       <div class="foot-grid">
-        <div><h3>Address</h3><address>{ORG}<br>2490 Walton Boulevard, Ste 103<br>Rochester Hills, MI 48309</address></div>
+        <div><h3>Address</h3><img class="foot-logo" src="{r}assets/logo-cr.png" alt="Centrale Realty C/R logo" width="58" height="64" loading="lazy"><address>{ORG}<br>2490 Walton Boulevard, Ste 103<br>Rochester Hills, MI 48309</address></div>
         <div><h3>Contact</h3><a href="mailto:info@centralerealty.com">info@centralerealty.com</a><br>Office <a href="tel:+12486568830">(248) 656-8830</a><br>Fax (248) 694-9344</div>
         <div><h3>Services</h3><ul>{foot_links}</ul></div>
         <div><h3>Legal</h3><ul><li><a href="{r}terms-of-use/">Terms of Use</a></li><li><a href="{r}legal/">Legal</a></li><li><a href="{r}contact-us/">Contact Us</a></li><li><a href="{r}sitemap/">Sitemap</a></li></ul></div>

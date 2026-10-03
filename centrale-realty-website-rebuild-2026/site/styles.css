@@ -201,3 +201,4 @@ address{font-style:normal}
   body{padding-bottom:calc(54px + env(safe-area-inset-bottom))}
 }
 @media(max-width:760px){.foot-grid a,.foot-grid li{display:block}.foot-grid a{padding:9px 0}.foot-grid li{margin-bottom:0}.topbar a{display:inline-block;padding:6px 0}}
+.foot-logo{display:block;margin:0 auto 1rem;height:64px;width:auto}
