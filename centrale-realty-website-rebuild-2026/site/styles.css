@@ -129,6 +129,10 @@ p{margin:0 0 1.1rem}
 .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:slidefade 15s infinite}
 .slides img:nth-child(2){animation-delay:5s}.slides img:nth-child(3){animation-delay:10s}
 @keyframes slidefade{0%{opacity:0}7%{opacity:1}33%{opacity:1}40%{opacity:0}100%{opacity:0}}
+/* 5-slide show (Properties): each slide gets its own 5s slot in a 25s cycle */
+.slides[data-n="5"] img{animation-name:slidefade5;animation-duration:25s}
+.slides[data-n="5"] img:nth-child(4){animation-delay:15s}.slides[data-n="5"] img:nth-child(5){animation-delay:20s}
+@keyframes slidefade5{0%{opacity:0}4%{opacity:1}20%{opacity:1}24%{opacity:0}100%{opacity:0}}
 .banner img,.banner video{display:block;width:100%;aspect-ratio:1600/686;object-fit:cover;background:#000}
 .prose{max-width:800px;margin-inline:auto}
 .prose h2{font-size:clamp(1.5rem,2.6vw,2rem);margin-top:2.2rem;color:var(--ink)}

@@ -96,7 +96,7 @@ def page(path,title,desc,h1,body,home=False,banner=None):
     if banner and banner[0]=='slides':
         lz=' loading="lazy"'; fp=' fetchpriority="high"'
         imgs=''.join(f'<img src="{r}assets/images/{f}" alt="{a}" width="1600" height="686"{fp if k==0 else lz}>' for k,(f,a) in enumerate(banner[1]))
-        media=f'<div class="slides">{imgs}</div>'
+        media=f'<div class="slides" data-n="{len(banner[1])}">{imgs}</div>'
     elif banner:
         media=f'<img src="{r}assets/images/{banner[0]}" alt="{banner[1]}" width="1600" height="686" fetchpriority="high">'
     else:
