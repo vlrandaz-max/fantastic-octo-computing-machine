@@ -81,7 +81,7 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
       <div class="foot-bottom"><span>&copy; 2026 {ORG} All Rights Reserved</span><span>Serving Metro Detroit since 1984</span></div>
     </div>
   </footer>
-  <div class="mobile-cta" role="region" aria-label="Call or schedule a consultation"><a class="mc-call" href="tel:+12486568830">Call (248) 656-8830</a><a class="mc-sched" href="mailto:info@centralerealty.com?subject=Schedule%20a%20consultation">Schedule Consultation</a></div>
+  <div class="mobile-cta" role="region" aria-label="Call or schedule a consultation"><a class="mc-call" href="tel:+12486568830">Call (248) 656-8830</a><a class="mc-sched" href="{r}contact-us/">Schedule Consultation</a></div>
   {SHARED_JS}
 </body>
 </html>
