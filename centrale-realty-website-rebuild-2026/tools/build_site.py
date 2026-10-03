@@ -54,8 +54,8 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
   <meta property="og:type" content="website">{head_extra}
   {lcp}<link rel="preload" as="font" type="font/woff2" crossorigin href="{r}assets/fonts/cormorant-garamond-normal.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="{r}assets/fonts/jost-normal.woff2">
-  <link rel="icon" href="{r}assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="{r}assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{r}assets/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="{r}assets/favicon-192.png">
   <link rel="apple-touch-icon" href="{r}assets/apple-touch-icon.png">
   <link rel="stylesheet" href="{r}styles.css?v={CSSV}">{JSONLD if home else ""}{crumbs}{EXTRA_HEAD.get(path,"")}
@@ -261,7 +261,7 @@ sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.o
 open(os.path.join(SITE,"sitemap.xml"),"w").write(sm)
 open(os.path.join(SITE,"robots.txt"),"w").write("User-agent: *\nAllow: /\n\nSitemap: https://centralerealty.com/sitemap.xml\n")
 import json
-open(os.path.join(SITE,"site.webmanifest"),"w").write(json.dumps({"name":"Centrale Realty, Inc.","short_name":"Centrale","start_url":"/","display":"browser","background_color":"#0b0b0b","theme_color":"#0b0b0b","icons":[{"src":"/assets/favicon-192.png","sizes":"192x192","type":"image/png"}]},indent=2)+"\n")
+open(os.path.join(SITE,"site.webmanifest"),"w").write(json.dumps({"name":"Centrale Realty, Inc.","short_name":"Centrale","start_url":"/","display":"browser","background_color":"#0b0b0b","theme_color":"#0b0b0b","icons":[{"src":"/assets/favicon-192.png","sizes":"192x192","type":"image/png"},{"src":"/assets/favicon-512.png","sizes":"512x512","type":"image/png"}]},indent=2)+"\n")
 os.makedirs(os.path.join(SITE,".well-known"),exist_ok=True)
 open(os.path.join(SITE,".well-known","security.txt"),"w").write("Contact: mailto:info@centralerealty.com\nExpires: 2027-10-01T00:00:00.000Z\nPreferred-Languages: en\nCanonical: https://centralerealty.com/.well-known/security.txt\n")
 
