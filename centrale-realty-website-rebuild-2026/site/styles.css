@@ -49,7 +49,7 @@ p{margin:0 0 1.1rem}
 .logo-mark{flex:none;height:64px;width:auto}
 .logo-text{display:flex;flex-direction:column;align-items:center;line-height:1;padding-left:18px;border-left:1px solid rgba(186,163,131,.55);min-height:54px;justify-content:center}
 .logo b{font-family:var(--serif);font-weight:400;font-size:1.9rem;letter-spacing:.14em;padding-left:.14em}
-.logo-text span{font:300 .68rem/1 var(--sans);letter-spacing:.5em;margin-top:8px;padding-left:.5em;color:var(--gold)}
+.logo-text span{font:300 .884rem/1 var(--sans);letter-spacing:.5em;margin-top:6px;padding-left:.5em;color:var(--gold)}
 .primary{display:flex;justify-content:center;gap:clamp(14px,2.2vw,34px);font:400 .78rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
 .primary a{text-decoration:none;color:var(--on-dark);padding:8px 0;border-bottom:1px solid transparent}
 .primary a:hover,.primary a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
