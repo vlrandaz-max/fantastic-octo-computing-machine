@@ -6,7 +6,7 @@ Rebuild of **centralerealty.com**. Started 2026-10-01.
 - **Stack:** plain static files (HTML/CSS/vanilla JS, no build step). No IDX/MLS widget (decided 2026-10-02: listings will not be embedded on the site).
 - **Business scope (updated 2026-10-01):** all aspects of the business: residential and commercial sales, vacant land, spec homes, leasing, commercial space and construction services. This replaces the earlier "own homes only" rescope.
 - **Contact email:** info@centralerealty.com.
-- **URLs:** same paths as the live WordPress site (`/for-sale/`, `/for-sale/vacant-land-for-sale/`, `/for-lease/`, `/commercial-space/`, `/construction-services/`, `/contact-us/`, `/terms-of-use/`, `/legal/`), so few redirects are needed. Old `/feed/`, `/wp-json/` etc. can simply 404.
+- **URLs:** same paths as the live WordPress site (`/for-sale/`, `/vacant-land/` (old `/for-sale/vacant-land-for-sale/` 301-redirects via .htaccess), `/for-lease/`, `/commercial-space/`, `/construction-services/`, `/contact-us/`, `/terms-of-use/`, `/legal/`), so few redirects are needed. Old `/feed/`, `/wp-json/` etc. can simply 404.
 - Site must be served over HTTPS (the current site has no valid certificate).
 
 ## Status
