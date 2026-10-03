@@ -264,3 +264,6 @@ import json
 open(os.path.join(SITE,"site.webmanifest"),"w").write(json.dumps({"name":"Centrale Realty, Inc.","short_name":"Centrale","start_url":"/","display":"browser","background_color":"#0b0b0b","theme_color":"#0b0b0b","icons":[{"src":"/assets/favicon-192.png","sizes":"192x192","type":"image/png"}]},indent=2)+"\n")
 os.makedirs(os.path.join(SITE,".well-known"),exist_ok=True)
 open(os.path.join(SITE,".well-known","security.txt"),"w").write("Contact: mailto:info@centralerealty.com\nExpires: 2027-10-01T00:00:00.000Z\nPreferred-Languages: en\nCanonical: https://centralerealty.com/.well-known/security.txt\n")
+
+# Google Search Console ownership file (keep it: Google re-checks it)
+open(os.path.join(SITE,"google82522a2cd00e9dc3.html"),"w").write("google-site-verification: google82522a2cd00e9dc3.html")

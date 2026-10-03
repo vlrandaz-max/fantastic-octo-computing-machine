@@ -103,6 +103,8 @@ for dp, dn, fn in os.walk(ROOT):
     for n in fn:
         if n.endswith(".html"):
             rel = os.path.relpath(os.path.join(dp, n), ROOT)
+            if re.fullmatch(r'google[0-9a-f]+\.html', rel):
+                continue  # Search Console verification file, not a page
             pages[rel] = None
 for rel in pages:
     p = P()
