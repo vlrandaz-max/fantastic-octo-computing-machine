@@ -137,8 +137,8 @@ home_main=f'''  <main id="main">
         <div>
           <span class="sub">Residential &amp; Commercial Real Estate</span>
           <h2>Welcome<br>to Centrale<br>Realty</h2>
-          <p>Centrale Realty, Inc. is a full service real estate company located in Rochester Hills serving the Metro Detroit area since 1984. We specialize in residential and commercial buyer, seller and tenant representation.</p>
-          <p>If you are looking to sell, purchase or lease a property, let Centrale put its knowledge to work for you. Call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:info@centralerealty.com">info@centralerealty.com</a>.</p>
+          <p>Centrale Realty, Inc. is a full-service real estate company based in Rochester Hills, proudly serving the Metro Detroit area since 1984. We specialize in residential and commercial representation for buyers, sellers and tenants.</p>
+          <p>Whether you are looking to sell, buy or lease a property, let Centrale put its knowledge to work for you. Call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:info@centralerealty.com">info@centralerealty.com</a>.</p>
           <a class="btn-link" href="contact-us/">Contact Us</a>
         </div>
         <img src="assets/images/welcome-1.jpg" alt="Staged home office with built-in bookshelves and a wooden desk" width="550" height="825" loading="lazy">
@@ -193,7 +193,7 @@ home_main=f'''  <main id="main">
   </main>
   <script>(function(){{var items=document.querySelectorAll("#acc .acc-item");function on(i){{items.forEach(function(x){{x.classList.toggle("is-active",x===i)}})}}items.forEach(function(i){{i.addEventListener("mouseenter",function(){{on(i)}});i.addEventListener("focus",function(){{on(i)}});i.addEventListener("click",function(e){{if(matchMedia("(hover: none)").matches&&!i.classList.contains("is-active")){{e.preventDefault();on(i)}}}})}})}})();</script>
   <script>if(matchMedia("(prefers-reduced-motion: reduce)").matches){{document.querySelectorAll(".hero video,.banner video").forEach(function(v){{v.removeAttribute("autoplay");v.pause()}})}}</script>'''
-shell("","Centrale Realty, Inc | Serving Metro Detroit Since 1984","Full service real estate company in Rochester Hills serving Metro Detroit since 1984. Residential and commercial buyer, seller and tenant representation.",home_main,home=True)
+shell("","Centrale Realty, Inc | Serving Metro Detroit Since 1984","Full-service real estate company based in Rochester Hills, serving Metro Detroit since 1984. Residential and commercial representation for buyers, sellers and tenants.",home_main,home=True)
 CTA='<p>For more information on any of our services, call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:info@centralerealty.com">info@centralerealty.com</a>.</p>'
 page("for-sale/","Homes For Sale in Metro Detroit | Centrale Realty","Looking for a home in Metro Detroit? Centrale Realty agents offer personalized searches in Rochester Hills, Troy, Birmingham, Royal Oak and more.","Homes <em>For Sale</em>",f'''<p>Looking for a home in the Metro Detroit area? Contact one of our agents. We will be glad to meet with you and do a personalized search based on your desires and needs.</p>
     <p>Whether you are relocating to the area or just looking for a new home, let one of our agents put their knowledge of the area to work for you. From luxury homes in Rochester Hills to homes in Macomb Twp, Troy, Birmingham, Royal Oak and Sterling Heights, just to name a few areas, we will help you find the home of your dreams.</p>
