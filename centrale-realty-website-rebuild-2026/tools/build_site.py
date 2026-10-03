@@ -11,8 +11,7 @@ NAV=[("for-sale/","For Sale"),("properties/","Properties"),("for-lease/","For Le
 IDX=""
 JSONLD='''
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://centralerealty.com/#organization","name":"Centrale Realty, Inc.","url":"https://centralerealty.com/","telephone":"+1-248-656-8830","faxNumber":"+1-248-694-9344","email":"info@centralerealty.com","foundingDate":"1984","image":"https://centralerealty.com/assets/images/og-image.jpg","logo":"https://centralerealty.com/assets/logo-cr.png","address":{"@type":"PostalAddress","streetAddress":"2490 Walton Boulevard, Ste 103","addressLocality":"Rochester Hills","addressRegion":"MI","postalCode":"48309","addressCountry":"US"},"areaServed":["Metro Detroit, MI","Oakland County, MI","Macomb County, MI"]},{"@type":"WebSite","@id":"https://centralerealty.com/#website","url":"https://centralerealty.com/","name":"Centrale Realty, Inc.","publisher":{"@id":"https://centralerealty.com/#organization"}}]}</script>'''
-PAUSE_BTN='<button class="hero-pause" type="button" aria-pressed="false" aria-label="Pause background motion"><span aria-hidden="true"></span></button>'
-SHARED_JS="""<script>(function(){var t=document.getElementById("menu-toggle");function sync(){if(t)t.setAttribute("aria-expanded",t.checked?"true":"false")}function close(){if(t&&t.checked){t.checked=false}sync()}if(t){t.addEventListener("change",sync);document.querySelectorAll(".primary a").forEach(function(a){a.addEventListener("click",close)});addEventListener("pageshow",close);addEventListener("keydown",function(e){if(e.key==="Escape")close()});matchMedia("(min-width:1101px)").addEventListener("change",close);document.addEventListener("click",function(e){if(t.checked&&!e.target.closest(".site-header"))close()});sync()}var b=document.querySelector(".hero-pause");if(!b)return;b.addEventListener("click",function(){var p=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",p);b.setAttribute("aria-label",p?"Play background motion":"Pause background motion");document.querySelectorAll(".hero video").forEach(function(v){if(p){v.pause()}else{v.play()}});document.querySelectorAll(".slides").forEach(function(s){s.classList.toggle("paused",p)})})})()</script>"""
+SHARED_JS="""<script>(function(){var t=document.getElementById("menu-toggle");function sync(){if(t)t.setAttribute("aria-expanded",t.checked?"true":"false")}function close(){if(t&&t.checked){t.checked=false}sync()}if(t){t.addEventListener("change",sync);document.querySelectorAll(".primary a").forEach(function(a){a.addEventListener("click",close)});addEventListener("pageshow",close);addEventListener("keydown",function(e){if(e.key==="Escape")close()});matchMedia("(min-width:1101px)").addEventListener("change",close);document.addEventListener("click",function(e){if(t.checked&&!e.target.closest(".site-header"))close()});sync()}})()</script>"""
 def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=False):
     depth=path.count("/"); r="/" if abs_root else "../"*depth
     url="https://centralerealty.com/"+path
@@ -103,7 +102,7 @@ def page(path,title,desc,h1,body,home=False,banner=None):
     else:
         media=''
     if banner:
-        pb=PAUSE_BTN if banner[0]=='slides' else ''
+        pb=''
         head=f'<section class="hero page-hero" aria-labelledby="page-title">{media}{pb}<div class="hero-copy"><h1 id="page-title">{h1}</h1></div></section>'
     else:
         head=f'<section class="page-title"><h1>{h1}</h1></section>'
@@ -127,7 +126,6 @@ def acc(href,img,alt,label,desc,active=False):
 home_main=f'''  <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <video autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg" aria-hidden="true"><source src="assets/video/hero.mp4" type="video/mp4"></video>
-      {PAUSE_BTN}
       <div class="hero-copy">
         <h1 id="hero-title">Serving Metro Detroit<br><em>since 1984</em></h1>
         <span class="sub bordered">Centrale Realty</span>

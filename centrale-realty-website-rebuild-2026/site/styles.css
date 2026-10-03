@@ -184,14 +184,7 @@ address{font-style:normal}
 
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* Pause control for moving backgrounds (WCAG 2.2.2) */
-.hero-pause{position:absolute;right:var(--gutter);bottom:22px;z-index:5;width:44px;height:44px;border:1px solid rgba(255,255,255,.55);background:rgba(0,0,0,.35);cursor:pointer;display:grid;place-items:center;padding:0}
-.hero-pause span{display:block;width:12px;height:14px;border-left:3px solid #fff;border-right:3px solid #fff;box-sizing:border-box}
-.hero-pause[aria-pressed="true"] span{width:0;height:0;border:7px solid transparent;border-left:12px solid #fff;border-right:0;margin-left:3px}
-.hero-pause:hover{background:rgba(0,0,0,.6)}
-.hero-pause:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.slides.paused img{animation-play-state:paused}
-@media(prefers-reduced-motion:reduce){.hero-pause{display:none}}
+
 .sitemap-list{list-style:none;padding:0;margin:0 0 2rem}.sitemap-list li{padding:.7rem 0;border-bottom:1px solid var(--line)}.sitemap-list a{font-weight:500}
 
 /* Fixed call / consultation bar on phones */
