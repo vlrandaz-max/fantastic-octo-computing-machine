@@ -158,11 +158,11 @@ home_main=f'''  <main id="main">
           <h2>Real Estate<br>Services</h2>
         </div>
         <div class="acc" id="acc">
-          {acc("for-sale/","acc-sale.jpg","Stone and brick custom home at twilight","For Sale","Residential and commercial properties.",True)}
+          {acc("for-sale/","acc-sale.jpg","Stone and brick home at twilight","For Sale","Residential and commercial properties.",True)}
           {acc("properties/","acc-land.jpg","Aerial view of land next to a neighborhood","Properties","Pine Woods, Falcon Estates and more.")}
           {acc("for-lease/","acc-lease.jpg","Brick duplex with attached two-car garages","For Lease","Metro Detroit rentals, from duplexes to corporate housing.")}
           {acc("commercial-space/","acc-commercial.jpg","Two-storey brick and stone office building","Commercial","Office space in Rochester Hills and Auburn Hills.")}
-          {acc("construction-services/","acc-construction.jpg","Telehandler lifting masonry to scaffolding at a home under construction","Construction","New construction, your site or ours.")}
+          {acc("construction-services/","acc-construction.jpg","Telehandler lifting masonry to scaffolding at a home under construction","Construction","New and luxury construction across Metro Detroit.")}
         </div>
       </div>
     </section>
@@ -181,8 +181,8 @@ home_main=f'''  <main id="main">
       <div class="split-media"><img src="assets/images/split-foundation.jpg" alt="Aerial view of a new home foundation with poured walls before framing" width="1000" height="860" loading="lazy"></div>
       <div class="split-text">
         <span class="sub">Construction Services</span>
-        <h2>New Construction,<br><em>Your Site or Ours</em></h2>
-        <p>Specializing in new and luxury construction across the Metro Detroit area, from custom homes to spec homes.</p>
+        <h2>New &amp; Luxury<br><em>Construction</em></h2>
+        <p>Specializing in new and luxury construction across the Metro Detroit area, including spec homes.</p>
         <a class="btn-link" href="construction-services/">Explore Construction</a>
       </div>
     </section>
@@ -221,9 +221,8 @@ page("for-lease/","Rentals in Metro Detroit | Centrale Realty","Metro Detroit re
 page("commercial-space/","Commercial Space in Rochester Hills & Auburn Hills | Centrale Realty","Commercial properties in Metro Detroit, including office space near Automation Alley with close access to I-75 and M-59.","Commercial <em>Space</em>",f'''<p>We offer commercial properties throughout Metro Detroit. If you are looking for office space near Automation Alley with close proximity to I-75, M-59, Stellantis Headquarters, Henry Ford Rochester Hospital, the Village of Rochester Hills, Downtown Rochester and most major job hubs, take a look at what we have to offer in Rochester Hills and Auburn Hills.</p>
     <p>For other properties and areas, contact one of our agents and we will search to meet your needs.</p>
     {CTA}''',banner=('office-banner.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard, Rochester Hills'))
-page("construction-services/","Construction Services | Centrale Realty","New home construction and general contracting services in Metro Detroit.","Construction <em>Services</em>",f'''<p>Specializing in new and luxury construction across the Metro Detroit area, on your site or ours.</p>
+page("construction-services/","Construction Services | Centrale Realty","New home construction and general contracting services in Metro Detroit.","Construction <em>Services</em>",f'''<p>Specializing in new and luxury construction across the Metro Detroit area.</p>
     <ul>
-      <li>Custom homes</li>
       <li>Project management and site coordination</li>
       <li>Custom trim</li>
       <li>Kitchen rehabs</li>
@@ -231,7 +230,7 @@ page("construction-services/","Construction Services | Centrale Realty","New hom
     </ul>
     <p>New home construction: <a href="https://www.landrhomes.com">www.landrhomes.com</a><br>General contracting services: <a href="http://www.lrgeneralcontracting.com">www.lrgeneralcontracting.com</a></p>
     <figure class="plan"><img src="../assets/images/new-construction-banner.jpg" alt="Aerial view of a newly built stone home at dusk" width="1600" height="686" loading="lazy"><figcaption>From foundation to finished home.</figcaption></figure>
-    {CTA}''',banner=('slides',[('slide-con-foundation.jpg','Aerial view of a new home foundation with poured walls before framing'),('slide-con-telehandler.jpg','Telehandler lifting masonry to scaffolding at a home under construction'),('slide-con-new.jpg','Aerial view of a finished custom home')]))
+    {CTA}''',banner=('slides',[('slide-con-foundation.jpg','Aerial view of a new home foundation with poured walls before framing'),('slide-con-telehandler.jpg','Telehandler lifting masonry to scaffolding at a home under construction'),('slide-con-new.jpg','Aerial view of a finished home')]))
 page("contact-us/","Contact Us | Centrale Realty","Contact Centrale Realty, Inc. in Rochester Hills, Michigan.","Contact <em>Us</em>",
  f'<address>{ORG}<br>{ADDR}<br>Office: <a href="tel:+12486568830">248.656.8830</a><br>Fax: 248.694.9344<br>Email: <a href="mailto:info@centralerealty.com">info@centralerealty.com</a></address>\n    <p><a class="btn" href="mailto:info@centralerealty.com">Email us</a> <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=2490+Walton+Blvd+Ste+103+Rochester+Hills+MI+48309" target="_blank" rel="noopener">Get Directions</a></p>\n    <h2>Frequently Asked <em>Questions</em></h2><div class="faq"><details><summary>Where is Centrale Realty located?</summary><p>Our office is at 2490 Walton Boulevard, Suite 103, Rochester Hills, Michigan 48309.</p></details><details><summary>What areas do you serve?</summary><p>We have served the Metro Detroit area since 1984, with properties in Rochester Hills, Auburn Hills, Shelby Township, Chesterfield Township, Macomb Township, Troy, Birmingham, Royal Oak and Sterling Heights.</p></details><details><summary>What services do you offer?</summary><p>Residential and commercial sales, leasing, vacant land and construction services, with representation for buyers, sellers and tenants.</p></details><details><summary>How do I schedule a consultation?</summary><p>Call (248) 656-8830 or email info@centralerealty.com and one of our agents will be in touch.</p></details><details><summary>Do you build homes?</summary><p>We build spec homes and list them for sale once they are complete. Our homes are built by our affiliates, L&amp;R Homes Inc and Town Properties LLC.</p></details><details><summary>Do you handle rentals?</summary><p>Yes. We specialize in rentals across Metro Detroit, from corporate housing in Rochester Hills to duplexes and townhomes in Shelby Township and Chesterfield Township.</p></details></div>',banner=('office-banner.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard, Rochester Hills'))
 page("terms-of-use/","Terms of Use | Centrale Realty","Terms of use for centralerealty.com, the website of Centrale Realty, Inc. in Rochester Hills, Michigan.","Terms <em>of Use</em>",TERMS,banner=('slide-crestwood-aerial.jpg','Twilight aerial view of The Crestwood'))
