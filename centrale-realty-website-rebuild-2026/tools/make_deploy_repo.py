@@ -67,6 +67,7 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_REMOTE_DIR: ${{ vars.FTP_REMOTE_DIR }}
+          FTP_INSECURE_TLS: ${{ vars.FTP_INSECURE_TLS }}
           FORCE: ${{ github.event.inputs.force }}
         run: python3 scripts/ftps_deploy.py
 """)
