@@ -302,6 +302,21 @@ ht2 = open(os.path.join(ROOT, ".htaccess")).read()
 if "RewriteCond %{HTTPS} off" not in ht2:
     E(".htaccess does not force HTTPS")
 
+
+# unused assets (dead weight slows upload)
+used = set()
+for rel, html in raw.items():
+    used |= set(re.findall(r'[\w\-./]+\.(?:jpg|png|mp4|woff2|svg|ico)', html))
+used |= set(re.findall(r'[\w\-./]+\.(?:jpg|png|mp4|woff2|svg|ico)', open(os.path.join(ROOT, "styles.css")).read()))
+used |= set(re.findall(r'[\w\-./]+\.(?:jpg|png|mp4|woff2|svg|ico)', open(os.path.join(ROOT, "site.webmanifest")).read()))
+names = {os.path.basename(u) for u in used}
+for dp, dn, fn in os.walk(os.path.join(ROOT, "assets")):
+    for n in fn:
+        if n not in names:
+            W(f"unused asset {os.path.relpath(os.path.join(dp, n), ROOT)}")
+total = sum(os.path.getsize(os.path.join(dp, n)) for dp, dn, fn in os.walk(ROOT) for n in fn) / 1048576
+print(f"Total site size: {total:.1f} MB")
+
 print(f"Pages audited: {len(pages)}  (+404)")
 for w in warns:
     print("WARN ", w)
