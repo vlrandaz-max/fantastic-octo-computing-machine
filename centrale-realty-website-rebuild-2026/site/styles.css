@@ -56,8 +56,8 @@ p{margin:0 0 1.1rem}
 .nav-contact{display:none}
 .menu-toggle,.burger{display:none}
 .site-header .btn{padding:.9rem 1.6rem;color:#fff}
-.home .site-header{position:absolute;inset:auto 0 auto 0;background:linear-gradient(180deg,rgba(0,0,0,.72),rgba(0,0,0,0));border-bottom:0}
-.home .topbar{position:relative;z-index:31;background:rgba(0,0,0,.55)}
+.home .site-header,.overlay .site-header{position:absolute;inset:auto 0 auto 0;background:linear-gradient(180deg,rgba(0,0,0,.72),rgba(0,0,0,0));border-bottom:0}
+.home .topbar,.overlay .topbar{position:relative;z-index:31;background:rgba(0,0,0,.55)}
 
 /* Home hero with video */
 .hero{position:relative;min-height:clamp(560px,100vh,900px);display:grid;place-items:center;text-align:center;color:#fff;background:#000;overflow:hidden;isolation:isolate}
@@ -122,7 +122,11 @@ p{margin:0 0 1.1rem}
 .page-body{padding-block:clamp(40px,6vw,88px);background:var(--cream)}
 .banner{margin:0 auto clamp(28px,4vw,56px)}
 .slides{position:relative;aspect-ratio:1600/686;overflow:hidden;background:#000}
-.slides img{position:absolute;inset:0;height:100%;opacity:0;animation:slidefade 15s infinite}
+.page-hero{min-height:clamp(440px,64vh,640px)}
+.page-hero .hero-copy{padding:170px var(--gutter) 80px}
+.page-hero h1{font-size:clamp(2.2rem,5vw,4rem)}
+.page-hero .slides{position:absolute;inset:0;aspect-ratio:auto;z-index:-2}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:slidefade 15s infinite}
 .slides img:nth-child(2){animation-delay:5s}.slides img:nth-child(3){animation-delay:10s}
 @keyframes slidefade{0%{opacity:0}7%{opacity:1}33%{opacity:1}40%{opacity:0}100%{opacity:0}}
 .banner img,.banner video{display:block;width:100%;aspect-ratio:1600/686;object-fit:cover;background:#000}
