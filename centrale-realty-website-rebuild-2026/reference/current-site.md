@@ -2,7 +2,7 @@
 - Served over plain HTTP only (no valid TLS cert); www -> non-www 301. WordPress on Apache/PHP 7.4.33 (end-of-life PHP).
 - Title: "Centrale Realty, Inc | Serving Oakland and Macomb County". No meta description or OG tags.
 - Home copy: full-service real estate company, Rochester Hills, serving Metro Detroit since 1984; residential and commercial buyer, seller and tenant representation.
-- Nav / URLs to 301 at launch: /, /for-sale/, /for-sale/vacant-land-for-sale/ (now /vacant-land/), /for-lease/, /commercial-space/, /construction-services/, /terms-of-use/, /legal/, /contact-us/ (also "Build to Suit").
+- Nav / URLs to 301 at launch: /, /for-sale/, /for-sale/vacant-land-for-sale/ (now /properties/), /for-lease/, /commercial-space/, /construction-services/, /terms-of-use/, /legal/, /contact-us/ (also "Build to Suit").
 - Contact (public, from footer): 2490 Walton Boulevard, Ste 103, Rochester Hills, MI 48309; office 248.656.8830; fax 844.273.8409; info@centralerealty.com. A mailto to info@landrhomes.com also appears in the page.
 
 ## Open questions for the owner

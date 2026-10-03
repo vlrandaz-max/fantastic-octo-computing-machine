@@ -11,8 +11,9 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://centralerealty.com%{REQUEST_URI} [R=301,L]
 
-# 2. The Land page moved from /for-sale/vacant-land-for-sale/ to /vacant-land/ (permanent redirect).
-RewriteRule ^for-sale/vacant-land-for-sale/?$ https://centralerealty.com/vacant-land/ [R=301,L]
+# 2. The Land page is now /properties/. Old addresses redirect permanently (one hop each).
+RewriteRule ^for-sale/vacant-land-for-sale/?$ https://centralerealty.com/properties/ [R=301,L]
+RewriteRule ^vacant-land/?$ https://centralerealty.com/properties/ [R=301,L]
 
 # 3. Old WordPress endpoints no longer exist: answer "410 Gone".
 RewriteRule ^(wp-admin|wp-login\.php|wp-json|wp-content|wp-includes|xmlrpc\.php|feed|comments) - [G,L]
