@@ -46,14 +46,10 @@ p{margin:0 0 1.1rem}
 .site-header{background:var(--black);color:var(--on-dark);position:relative;z-index:30;border-bottom:1px solid rgba(255,255,255,.08)}
 .site-header .bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(16px,3vw,48px);min-height:96px}
 .logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff}
-.logo-mono{flex:none;display:flex;flex-direction:column;align-items:center;font:400 2.3rem/1 var(--serif);color:#fff}
-.logo-mono i{display:block;width:3rem;height:1px;background:#fff;margin:.3rem 0}
-.logo-mono .lm{display:block;line-height:1}
-.rc{display:inline-block;line-height:1;clip-path:polygon(-1em -1em,3em -1em,3em 3em,-1em 3em,-1em .47em,.23em .47em,.23em .235em,-1em .235em)}
-.rc.rj{clip-path:polygon(-1em -1em,3em -1em,3em 3em,-1em 3em,-1em .52em,.165em .52em,.165em .22em,-1em .22em)}
+.logo-mark{flex:none;height:64px;width:auto}
 .logo-text{display:flex;flex-direction:column;align-items:center;line-height:1;padding-left:18px;border-left:1px solid rgba(186,163,131,.55);min-height:54px;justify-content:center}
 .logo b{font-family:var(--serif);font-weight:400;font-size:1.9rem;letter-spacing:.14em;padding-left:.14em}
-.logo-text .rt{font:300 .68rem/1 var(--sans);letter-spacing:.5em;margin-top:8px;padding-left:.5em;color:var(--gold)}
+.logo-text span{font:300 .68rem/1 var(--sans);letter-spacing:.5em;margin-top:8px;padding-left:.5em;color:var(--gold)}
 .primary{display:flex;justify-content:center;gap:clamp(14px,2.2vw,34px);font:400 .78rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
 .primary a{text-decoration:none;color:var(--on-dark);padding:8px 0;border-bottom:1px solid transparent}
 .primary a:hover,.primary a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
@@ -162,7 +158,7 @@ address{font-style:normal}
   .cta{background-attachment:scroll}
 }
 @media(max-width:600px){
-  .logo-mono{font-size:1.75rem}.logo-mono i{width:2.3rem}.logo{gap:10px}.logo-text{padding-left:10px;min-height:42px}.logo b{font-size:1.45rem}.logo-text .rt{letter-spacing:.4em}
+  .logo-mark{height:48px}.logo{gap:10px}.logo-text{padding-left:10px;min-height:42px}.logo b{font-size:1.45rem}.logo-text span{letter-spacing:.4em}
   .topbar .wrap{gap:6px 18px}.topbar .addr{display:none}
   .welcome{grid-template-columns:1fr}.welcome .tall-2{margin-top:0}
   .foot-grid{grid-template-columns:1fr}
