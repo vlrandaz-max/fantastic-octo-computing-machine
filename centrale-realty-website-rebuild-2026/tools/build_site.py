@@ -167,7 +167,7 @@ home_main=f'''  <main id="main">
       <div class="split-text">
         <span class="sub">Commercial Space</span>
         <h2>Office Space<br>Near <em>Automation Alley</em></h2>
-        <p>Close to I-75, M-59, Stellantis Headquarters, Henry Ford Rochester Hospital and most major job hubs, with properties in Rochester Hills and Auburn Hills.</p>
+        <p>Close to I-75, M-59, Stellantis Headquarters, Henry Ford Rochester Hospital, the Village of Rochester Hills, Downtown Rochester and most major job hubs, with properties in Rochester Hills and Auburn Hills.</p>
         <a class="btn-link" href="commercial-space/">See Commercial Space</a>
       </div>
     </section>
@@ -202,7 +202,7 @@ page("properties/","Properties | Pine Woods &amp; Falcon Estates | Centrale Real
     <p>Pine Woods is an exclusive enclave of 28 homesites in Rochester Hills, with municipal city water and sewer, underground utilities and Avondale Schools. Its close proximity to major thoroughfares, downtown Rochester and shopping and entertainment centers keeps you connected to everything you need. Call today to schedule a tour.</p>
     <figure class="plan"><img src="../assets/images/pine-woods-site-plan.jpg" alt="Pine Woods site plan, Rochester Hills" width="1600" height="434" loading="lazy"><figcaption>Pine Woods site plan.</figcaption></figure>
     <h2>Falcon Estates, Rochester Hills</h2>
-    <p>Looking for a peaceful setting with city conveniences? Falcon Estates Subdivision, also known as Sherwood Forest Estates, in beautiful Rochester Hills may be just what you are looking for. This luxury development is meant for busy individuals and families who want quiet surroundings close to I-75, M-59, Stellantis Headquarters, Henry Ford Rochester Hospital, Oakland University, Meadowbrook Theatre, Village of Rochester Hills shopping and major job hubs.</p>
+    <p>Looking for a peaceful setting with city conveniences? Falcon Estates Subdivision, also known as Sherwood Forest Estates, in beautiful Rochester Hills may be just what you are looking for. This luxury development is meant for busy individuals and families who want quiet surroundings close to I-75, M-59, Stellantis Headquarters, Henry Ford Rochester Hospital, Oakland University, Meadowbrook Theatre, Village of Rochester Hills shopping, Downtown Rochester and major job hubs.</p>
     <figure class="plan"><img src="../assets/images/falcon-estates-site-plan.jpg" alt="Falcon Estates site plan showing completed construction and available lots" width="1400" height="1082" loading="lazy"><figcaption>Falcon Estates site plan.</figcaption></figure>
     <h2>Cambridge Hills, Bruce Township</h2>
     <p>Looking for a little more property or acreage? Cambridge Hills in Bruce Twp may be the property you have been searching for. Contact us today for more details.</p>
@@ -213,7 +213,7 @@ page("for-lease/","Rentals in Metro Detroit | Centrale Realty","Metro Detroit re
     <p>From our luxury corporate housing in Rochester Hills to our duplexes and townhomes in Shelby Twp and Chesterfield Twp, all offer premium features such as 3 to 4 bedrooms, full basements, 1 to 3 car garages and much more.</p>
     <p>For additional properties and areas, contact one of our agents for a customized search.</p>
     {CTA}''',banner=('slides',[('duplex-banner.jpg','Brick duplex with attached two-car garages'),('slide-lease-kitchen.jpg','Bright kitchen with gold hardware'),('slide-lease-suite.jpg','Primary suite with coffered ceiling')]))
-page("commercial-space/","Commercial Space in Rochester Hills & Auburn Hills | Centrale Realty","Commercial properties in Metro Detroit, including office space near Automation Alley with close access to I-75 and M-59.","Commercial <em>Space</em>",f'''<p>We offer Metro Detroit area commercial properties. If you are looking for office space near Automation Alley, with close proximity to I-75, M-59, Stellantis Headquarters, Henry Ford Rochester Hospital and most major job hubs, take a look at what we have to offer in Rochester Hills and Auburn Hills.</p>
+page("commercial-space/","Commercial Space in Rochester Hills & Auburn Hills | Centrale Realty","Commercial properties in Metro Detroit, including office space near Automation Alley with close access to I-75 and M-59.","Commercial <em>Space</em>",f'''<p>We offer Metro Detroit area commercial properties. If you are looking for office space near Automation Alley, with close proximity to I-75, M-59, Stellantis Headquarters, Henry Ford Rochester Hospital, the Village of Rochester Hills, Downtown Rochester and most major job hubs, take a look at what we have to offer in Rochester Hills and Auburn Hills.</p>
     <p>For other properties and areas, contact one of our agents to conduct a search to meet your needs.</p>
     {CTA}''',banner=('office-banner.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard, Rochester Hills'))
 page("construction-services/","Construction Services | Centrale Realty","New home construction and general contracting services in Metro Detroit.","Construction <em>Services</em>",f'''<p>Specializing in new construction and luxury construction across the Metro Detroit area, on your site or ours.</p>
