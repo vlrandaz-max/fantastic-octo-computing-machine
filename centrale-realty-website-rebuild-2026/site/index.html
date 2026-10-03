@@ -99,7 +99,7 @@
     </section>
   </main>
   <script>(function(){var items=document.querySelectorAll("#acc .acc-item");function on(i){items.forEach(function(x){x.classList.toggle("is-active",x===i)})}items.forEach(function(i){i.addEventListener("mouseenter",function(){on(i)});i.addEventListener("focus",function(){on(i)});i.addEventListener("click",function(e){if(matchMedia("(hover: none)").matches&&!i.classList.contains("is-active")){e.preventDefault();on(i)}})})})();</script>
-  <script>if(matchMedia("(prefers-reduced-motion: reduce)").matches){var v=document.querySelector(".hero video");if(v){v.removeAttribute("autoplay");v.pause()}}</script>
+  <script>if(matchMedia("(prefers-reduced-motion: reduce)").matches){document.querySelectorAll(".hero video,.banner video").forEach(function(v){v.removeAttribute("autoplay");v.pause()})}</script>
   <footer class="site-footer">
     <div class="wrap">
       <div class="foot-grid">

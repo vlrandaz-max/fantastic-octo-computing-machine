@@ -121,7 +121,7 @@ p{margin:0 0 1.1rem}
 .page-title h1{font-size:clamp(2.2rem,5vw,4rem);margin:0}
 .page-body{padding-block:clamp(40px,6vw,88px);background:var(--cream)}
 .banner{margin:0 auto clamp(28px,4vw,56px)}
-.banner img{width:100%;aspect-ratio:1600/686;object-fit:cover}
+.banner img,.banner video{display:block;width:100%;aspect-ratio:1600/686;object-fit:cover;background:#000}
 .prose{max-width:800px;margin-inline:auto}
 .prose h2{font-size:clamp(1.5rem,2.6vw,2rem);margin-top:2.2rem;color:var(--ink)}
 .prose a{color:var(--gold-deep)}.prose a:hover{color:var(--burgundy)}
