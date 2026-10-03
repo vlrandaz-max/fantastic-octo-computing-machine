@@ -268,3 +268,7 @@ open(os.path.join(SITE,".well-known","security.txt"),"w").write("Contact: mailto
 
 # Google Search Console ownership file (keep it: Google re-checks it)
 open(os.path.join(SITE,"google82522a2cd00e9dc3.html"),"w").write("google-site-verification: google82522a2cd00e9dc3.html")
+
+# browsers and crawlers request /favicon.ico from the site root first
+import shutil
+shutil.copyfile(os.path.join(SITE,"assets","favicon.ico"),os.path.join(SITE,"favicon.ico"))

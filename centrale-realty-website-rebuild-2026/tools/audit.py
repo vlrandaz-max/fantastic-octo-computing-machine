@@ -320,6 +320,8 @@ for dp, dn, fn in os.walk(os.path.join(ROOT, "assets")):
 total = sum(os.path.getsize(os.path.join(dp, n)) for dp, dn, fn in os.walk(ROOT) for n in fn) / 1048576
 print(f"Total site size: {total:.1f} MB")
 
+if not os.path.exists(os.path.join(ROOT, "favicon.ico")):
+    E("root favicon.ico missing (browsers and Google request /favicon.ico first)")
 print(f"Pages audited: {len(pages)}  (+404)")
 for w in warns:
     print("WARN ", w)
