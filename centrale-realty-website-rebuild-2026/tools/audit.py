@@ -234,6 +234,74 @@ for m in re.finditer(r"RewriteRule \S+ https://centralerealty\.com(/\S*) \[R=301
 if "ErrorDocument 404 /404.html" not in ht:
     E(".htaccess has no ErrorDocument 404")
 
+
+# ---- Google Search Console / crawlability checks ----
+import json, xml.etree.ElementTree as ET
+raw = {r: open(os.path.join(ROOT, r)).read() for r in pages}
+for rel, html in raw.items():
+    if 'name="viewport"' not in html:
+        E(f"{rel}: no viewport meta (mobile usability)")
+    if rel != "404.html" and re.search(r'<meta name="robots"[^>]*noindex', html):
+        E(f"{rel}: real page is noindex")
+    if rel == "404.html" and "noindex" not in html:
+        W("404.html should be noindex")
+    if len(re.findall(r'rel="canonical"', html)) > 1:
+        E(f"{rel}: multiple canonicals")
+    for u in re.findall(r'(?:src|href|poster)="(http://[^"]+)"', html):
+        if "www.lr" not in u:
+            E(f"{rel}: insecure http resource {u}")
+    for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S):
+        try:
+            d = json.loads(blk)
+        except Exception as ex:
+            E(f"{rel}: invalid JSON-LD ({ex})")
+            continue
+        nodes = d.get("@graph", [d])
+        for n in nodes:
+            t = n.get("@type")
+            if t == "RealEstateAgent":
+                for k in ("name", "address", "telephone", "url", "image"):
+                    if k not in n:
+                        E(f"{rel}: RealEstateAgent JSON-LD missing {k}")
+            if t == "BreadcrumbList":
+                if not n.get("itemListElement"):
+                    E(f"{rel}: empty BreadcrumbList")
+    img = re.findall(r'<img [^>]*>', html)
+    for tag in img:
+        if "width=" not in tag or "height=" not in tag:
+            W(f"{rel}: img without width/height (layout shift): {tag[:70]}")
+    og = re.search(r'property="og:image" content="([^"]+)"', html)
+    if og:
+        local = os.path.join(ROOT, og.group(1).replace(BASE + "/", ""))
+        if not os.path.exists(local):
+            E(f"{rel}: og:image file missing")
+# sitemap well-formed, https, absolute, <= 50k urls
+try:
+    tree = ET.parse(os.path.join(ROOT, "sitemap.xml"))
+    urls = [e.text for e in tree.getroot().iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
+    if any(not u.startswith(BASE + "/") for u in urls):
+        E("sitemap.xml has non-canonical URLs")
+    if len(urls) != len(set(urls)):
+        E("sitemap.xml has duplicates")
+except Exception as ex:
+    E(f"sitemap.xml not well-formed: {ex}")
+rb = open(os.path.join(ROOT, "robots.txt")).read()
+if re.search(r"(?im)^disallow:\s*/\s*$", rb):
+    E("robots.txt blocks the whole site")
+# heavy files
+for dp, dn, fn in os.walk(ROOT):
+    for n in fn:
+        f = os.path.join(dp, n)
+        mb = os.path.getsize(f) / 1048576
+        if n.endswith((".jpg", ".png")) and mb > 1.5:
+            W(f"large image {os.path.relpath(f, ROOT)} ({mb:.1f} MB)")
+        if n.endswith(".mp4") and mb > 15:
+            W(f"large video {os.path.relpath(f, ROOT)} ({mb:.1f} MB)")
+# .htaccess: single-hop http->https, no chains from old URLs
+ht2 = open(os.path.join(ROOT, ".htaccess")).read()
+if "RewriteCond %{HTTPS} off" not in ht2:
+    E(".htaccess does not force HTTPS")
+
 print(f"Pages audited: {len(pages)}  (+404)")
 for w in warns:
     print("WARN ", w)

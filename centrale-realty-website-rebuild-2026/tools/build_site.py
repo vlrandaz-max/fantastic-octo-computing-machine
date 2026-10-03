@@ -10,7 +10,7 @@ ADDR="2490 Walton Boulevard, Ste 103, Rochester Hills, MI 48309"
 NAV=[("for-sale/","For Sale"),("properties/","Properties"),("for-lease/","For Lease"),("commercial-space/","Commercial"),("construction-services/","Construction"),("contact-us/","Contact")]
 IDX=""
 JSONLD='''
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Centrale Realty, Inc.","telephone":"+1-248-656-8830","email":"info@centralerealty.com","foundingDate":"1984","address":{"@type":"PostalAddress","streetAddress":"2490 Walton Boulevard, Ste 103","addressLocality":"Rochester Hills","addressRegion":"MI","postalCode":"48309","addressCountry":"US"},"areaServed":["Metro Detroit, MI","Oakland County, MI","Macomb County, MI"]}</script>'''
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://centralerealty.com/#organization","name":"Centrale Realty, Inc.","url":"https://centralerealty.com/","telephone":"+1-248-656-8830","faxNumber":"+1-248-694-9344","email":"info@centralerealty.com","foundingDate":"1984","image":"https://centralerealty.com/assets/images/og-image.jpg","logo":"https://centralerealty.com/assets/logo-cr.png","address":{"@type":"PostalAddress","streetAddress":"2490 Walton Boulevard, Ste 103","addressLocality":"Rochester Hills","addressRegion":"MI","postalCode":"48309","addressCountry":"US"},"areaServed":["Metro Detroit, MI","Oakland County, MI","Macomb County, MI"]},{"@type":"WebSite","@id":"https://centralerealty.com/#website","url":"https://centralerealty.com/","name":"Centrale Realty, Inc.","publisher":{"@id":"https://centralerealty.com/#organization"}}]}</script>'''
 PAUSE_BTN='<button class="hero-pause" type="button" aria-pressed="false" aria-label="Pause background motion"><span aria-hidden="true"></span></button>'
 SHARED_JS="""<script>(function(){var b=document.querySelector(".hero-pause");if(!b)return;b.addEventListener("click",function(){var p=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",p);b.setAttribute("aria-label",p?"Play background motion":"Pause background motion");document.querySelectorAll(".hero video").forEach(function(v){if(p){v.pause()}else{v.play()}});document.querySelectorAll(".slides").forEach(function(s){s.classList.toggle("paused",p)})})})()</script>"""
 def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=False):
@@ -28,6 +28,7 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
     if not home and not noindex:
         name=title.split(" | ")[0].replace("&amp;","&").replace('"','')
         crumbs='\n  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://centralerealty.com/"},{"@type":"ListItem","position":2,"name":"'+name+'","item":"'+url+'"}]}</script>'
+    lcp='<link rel="preload" as="image" href="'+r+'assets/images/hero-poster.jpg" fetchpriority="high">\n  ' if home else ''
     canon="" if noindex else f'<link rel="canonical" href="{url}">'
 
     items=[]
@@ -48,7 +49,7 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:type" content="website">{head_extra}
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="{r}assets/fonts/cormorant-garamond-normal.woff2">
+  {lcp}<link rel="preload" as="font" type="font/woff2" crossorigin href="{r}assets/fonts/cormorant-garamond-normal.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="{r}assets/fonts/jost-normal.woff2">
   <link rel="icon" href="{r}assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="{r}assets/favicon.ico" sizes="any">
@@ -94,11 +95,11 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
 def page(path,title,desc,h1,body,home=False,banner=None):
     depth=path.count("/"); r="../"*depth
     if banner and banner[0]=='slides':
-        lz=' loading="lazy"'
-        imgs=''.join(f'<img src="{r}assets/images/{f}" alt="{a}" width="1600" height="686"{"" if k==0 else lz}>' for k,(f,a) in enumerate(banner[1]))
+        lz=' loading="lazy"'; fp=' fetchpriority="high"'
+        imgs=''.join(f'<img src="{r}assets/images/{f}" alt="{a}" width="1600" height="686"{fp if k==0 else lz}>' for k,(f,a) in enumerate(banner[1]))
         media=f'<div class="slides">{imgs}</div>'
     elif banner:
-        media=f'<img src="{r}assets/images/{banner[0]}" alt="{banner[1]}" width="1600" height="686">'
+        media=f'<img src="{r}assets/images/{banner[0]}" alt="{banner[1]}" width="1600" height="686" fetchpriority="high">'
     else:
         media=''
     if banner:
