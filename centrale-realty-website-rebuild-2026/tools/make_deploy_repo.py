@@ -68,6 +68,7 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_REMOTE_DIR: ${{ vars.FTP_REMOTE_DIR }}
           FTP_INSECURE_TLS: ${{ vars.FTP_INSECURE_TLS }}
+          FTP_TLS_SERVERNAME: ${{ vars.FTP_TLS_SERVERNAME || 'prod.phx3.secureserver.net' }}
           FORCE: ${{ github.event.inputs.force }}
         run: python3 scripts/ftps_deploy.py
       - name: Diagnose FTPS certificate (only when the upload failed)
@@ -79,7 +80,7 @@ jobs:
           echo | openssl s_client -starttls ftp -connect "$FTP_HOST:21" 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName || true
 """)
 open(os.path.join(OUT, "scripts", "ftps_deploy.py"), "w").write('''"""Upload the site to the web root over explicit FTPS (ftplib only, no extra packages).
-Env: FTP_HOST, FTP_USERNAME, FTP_PASSWORD, optional FTP_REMOTE_DIR (default "/"), FORCE=true to re-upload everything.
+Env: FTP_HOST, FTP_USERNAME, FTP_PASSWORD, optional FTP_REMOTE_DIR (default "/"), FTP_TLS_SERVERNAME (name on the server certificate), FORCE=true to re-upload everything.
 Never deletes remote files. Skips .git, .github, scripts, .cpanel.yml and README.md."""
 import os, ssl, sys, ftplib
 HOST = os.environ.get("FTP_HOST", "").strip()
@@ -108,6 +109,9 @@ if os.environ.get("FTP_INSECURE_TLS", "").lower() == "true":
     ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE
 ftp = ftplib.FTP_TLS(context=ctx, timeout=60)
 ftp.connect(HOST, PORT)
+TLS_NAME = (os.environ.get("FTP_TLS_SERVERNAME") or "").strip()
+if TLS_NAME:
+    ftp.host = TLS_NAME  # verify the certificate against its real name (chain is still fully verified)
 ftp.login(USER, PASSWORD)
 ftp.prot_p()
 ftp.cwd(REMOTE)
