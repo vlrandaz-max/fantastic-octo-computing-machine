@@ -202,3 +202,31 @@ address{font-style:normal}
 }
 @media(max-width:760px){.foot-grid a,.foot-grid li{display:block}.foot-grid a{padding:9px 0}.foot-grid li{margin-bottom:0}.topbar a{display:inline-block;padding:6px 0}}
 .foot-logo{display:block;margin:0 auto 1rem;height:64px;width:auto}
+
+/* ---- Dynamic effects (modeled on the L&R Homes site) ---- */
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.1)}}
+.kb{overflow:hidden}
+.kb img,.split-media img,.acc-item img,.page-hero>img{animation:kenburns 18s ease-in-out infinite alternate;transform-origin:center}
+.split-media{overflow:hidden}
+.split.flip .split-media img,.welcome .tall-2 img{animation-direction:alternate-reverse;animation-duration:22s}
+.acc-item:nth-child(2) img{animation-duration:20s}.acc-item:nth-child(3) img{animation-duration:16s}.acc-item:nth-child(4) img{animation-duration:22s}.acc-item:nth-child(5) img{animation-duration:19s}
+.acc-item.is-active img{transform:none}
+.welcome .kb{aspect-ratio:2/3}.welcome .kb img{height:100%;aspect-ratio:auto}
+/* slideshow slides drift (Ken Burns) while they are showing */
+@keyframes slidefade{0%{opacity:0;transform:scale(1)}7%{opacity:1}33%{opacity:1;transform:scale(1.08)}40%{opacity:0;transform:scale(1.08)}100%{opacity:0;transform:scale(1)}}
+@keyframes slidefade5{0%{opacity:0;transform:scale(1)}4%{opacity:1}20%{opacity:1;transform:scale(1.08)}24%{opacity:0;transform:scale(1.08)}100%{opacity:0;transform:scale(1)}}
+/* scroll reveals (classes added by script; content stays visible without JS) */
+.js .rv{opacity:0}
+.js .rv.is-visible{animation:rv-up .8s cubic-bezier(.25,.1,.25,1) forwards;animation-delay:var(--d,0ms)}
+.js .rv-down.is-visible{animation-name:rv-down}.js .rv-fade.is-visible{animation-name:rv-fade;animation-duration:.9s}.js .rv-right.is-visible{animation-name:rv-right}
+@keyframes rv-up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes rv-down{from{opacity:0;transform:translateY(-28px)}to{opacity:1;transform:none}}
+@keyframes rv-fade{from{opacity:0}to{opacity:1}}
+@keyframes rv-right{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+/* hover micro-interactions */
+.btn{transition:background .3s,color .3s,transform .3s}
+.btn:hover{transform:translateY(-3px)}
+.btn-link{transition:letter-spacing .3s,color .3s}.btn-link:hover{letter-spacing:.3em}
+@media(prefers-reduced-motion:reduce){.kb img,.split-media img,.acc-item img,.page-hero>img{animation:none}.js .rv{opacity:1}.js .rv.is-visible{animation:none}.btn:hover{transform:none}}
+.acc-label{letter-spacing:.13em;font-size:.68rem}
+.acc-item.is-active .acc-label{letter-spacing:.12em;font-size:clamp(1.5rem,2.4vw,2.2rem)}
