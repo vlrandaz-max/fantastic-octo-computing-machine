@@ -143,6 +143,7 @@ for rel, p in pages.items():
                 E(f"{rel}: placeholder '#' link")
             continue
         target, frag = urldefrag(href)
+        target = target.split('?')[0]
         base = here if here.endswith("/") or here == "/" else "/"
         abs_path = target if target.startswith("/") else os.path.normpath(os.path.join(base, target)).replace("\\", "/")
         if target.endswith("/") and not abs_path.endswith("/"):

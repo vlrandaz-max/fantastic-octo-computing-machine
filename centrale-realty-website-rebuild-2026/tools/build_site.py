@@ -8,6 +8,8 @@ SITE=os.path.join(os.path.dirname(HERE),"site")
 ORG="Centrale Realty, Inc."
 ADDR="2490 Walton Boulevard, Ste 103, Rochester Hills, MI 48309"
 NAV=[("for-sale/","For Sale"),("properties/","Properties"),("for-lease/","For Lease"),("commercial-space/","Commercial"),("construction-services/","Construction"),("contact-us/","Contact")]
+import hashlib
+CSSV=hashlib.md5(open(os.path.join(SITE,"styles.css"),"rb").read()).hexdigest()[:8]
 IDX=""
 JSONLD='''
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://centralerealty.com/#organization","name":"Centrale Realty, Inc.","url":"https://centralerealty.com/","telephone":"+1-248-656-8830","faxNumber":"+1-248-694-9344","email":"info@centralerealty.com","foundingDate":"1984","hasMap":"https://www.google.com/maps/search/?api=1&query=2490+Walton+Blvd+Ste+103+Rochester+Hills+MI+48309","image":"https://centralerealty.com/assets/images/og-image.jpg","logo":"https://centralerealty.com/assets/logo-cr.png","address":{"@type":"PostalAddress","streetAddress":"2490 Walton Boulevard, Ste 103","addressLocality":"Rochester Hills","addressRegion":"MI","postalCode":"48309","addressCountry":"US"},"areaServed":["Metro Detroit, MI","Oakland County, MI","Macomb County, MI"]},{"@type":"WebSite","@id":"https://centralerealty.com/#website","url":"https://centralerealty.com/","name":"Centrale Realty, Inc.","publisher":{"@id":"https://centralerealty.com/#organization"}}]}</script>'''
@@ -56,7 +58,7 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
   <link rel="icon" href="{r}assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="192x192" href="{r}assets/favicon-192.png">
   <link rel="apple-touch-icon" href="{r}assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="{r}styles.css">{JSONLD if home else ""}{crumbs}{EXTRA_HEAD.get(path,"")}
+  <link rel="stylesheet" href="{r}styles.css?v={CSSV}">{JSONLD if home else ""}{crumbs}{EXTRA_HEAD.get(path,"")}
 </head>
 <body class="{'home' if home else ('inner overlay' if overlay else 'inner')}">
   <a class="skip" href="#main">Skip to content</a>
