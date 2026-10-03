@@ -50,8 +50,8 @@ p{margin:0 0 1.1rem}
 .logo-text{display:flex;flex-direction:column;align-items:center;line-height:1;padding-left:18px;border-left:1px solid rgba(186,163,131,.55);min-height:54px;justify-content:center}
 .logo b{font-family:var(--serif);font-weight:400;font-size:1.9rem;letter-spacing:.14em;padding-left:.14em}
 .logo-text span{font:300 .884rem/1 var(--sans);letter-spacing:.5em;margin-top:6px;padding-left:.5em;color:var(--gold)}
-.primary{display:flex;justify-content:center;gap:clamp(14px,2.2vw,34px);font:400 .78rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
-.primary a{text-decoration:none;color:var(--on-dark);padding:8px 0;border-bottom:1px solid transparent}
+.primary{display:flex;justify-content:center;gap:clamp(12px,1.8vw,30px);font:400 .76rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.primary a{white-space:nowrap;text-decoration:none;color:var(--on-dark);padding:8px 0;border-bottom:1px solid transparent}
 .primary a:hover,.primary a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
 .nav-contact{display:none}
 .menu-toggle,.burger{display:none}
@@ -152,7 +152,7 @@ address{font-style:normal}
   .acc-item.is-active{flex:3.4}
   .acc-text{bottom:14px}
 }
-@media(max-width:1000px){
+@media(max-width:1100px){
   .site-header .bar{grid-template-columns:auto auto;min-height:80px}
   .menu-toggle{display:block;position:absolute;right:var(--gutter);top:50%;width:44px;height:44px;margin:-22px 0 0;opacity:0;cursor:pointer;z-index:2}
   .burger{display:flex;flex-direction:column;justify-content:center;gap:6px;justify-self:end;width:44px;height:44px;padding:0 8px;cursor:pointer;color:#fff}
