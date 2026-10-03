@@ -135,7 +135,7 @@ home_main=f'''  <main id="main">
         <div class="hero-cta"><a class="btn" href="tel:+12486568830">Call (248) 656-8830</a></div>
       </div>
     </section>
-    <section class="usp" aria-label="Why Centrale Realty"><ul class="wrap"><li>Serving Metro Detroit since 1984</li><li>Residential &amp; Commercial</li><li>Sales &middot; Leasing &middot; Construction</li><li>Broker License No.: 6505204949</li></ul></section>
+    <section class="usp" aria-label="Why Centrale Realty"><ul class="wrap"><li><b>Serving</b><i>Metro Detroit since 1984</i></li><li><b>Specializing in</b><i>Residential &amp; Commercial</i></li><li><b>Services</b><i>Sales &middot; Leasing &middot; Construction</i></li><li><b>Broker License No.</b><i>6505204949</i></li></ul></section>
 
     <section class="band light">
       <div class="wrap welcome">
