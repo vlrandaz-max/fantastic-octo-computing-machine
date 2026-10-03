@@ -1,0 +1,48 @@
+TERMS='''<p><em>Last updated: October 2, 2026</em></p>
+    <p>Please read these Terms of Use (the &ldquo;Terms&rdquo;) carefully. By accessing or using centralerealty.com, including its mobile version and any related tools or services (the &ldquo;Site&rdquo;), you agree to these Terms. If you do not agree, please do not use the Site.</p>
+    <h2>1. Who we are</h2>
+    <p>The Site is operated by Centrale Realty, Inc. (&ldquo;Centrale,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;), a real estate brokerage at 2490 Walton Boulevard, Ste 103, Rochester Hills, MI 48309. Centrale provides residential and commercial sales, leasing and related services in Metro Detroit.</p>
+    <h2>2. Information only; no offer or agency</h2>
+    <p>The Site provides general information about properties and services. Nothing on the Site is an offer to sell or lease, a solicitation, a commitment to make a transaction, or professional, legal, tax, financial or investment advice. Using the Site, or contacting us through it, does not create a brokerage, agency, fiduciary or attorney-client relationship. A relationship with Centrale exists only under a written agreement signed by Centrale and you.</p>
+    <h2>3. Listing and property information</h2>
+    <ul>
+      <li>Listings, prices, rents, availability, square footage, lot sizes, taxes, fees, zoning, permitted uses and other details may change or be withdrawn at any time without notice, and may be sold or leased before they are removed from the Site.</li>
+      <li>Information comes from owners, public records and other sources we believe reliable, but it is not guaranteed. Buyers, tenants and investors should verify everything that matters to them, including measurements, zoning and permitted use (especially for commercial property), condition, lease terms, operating expenses, flood zone and environmental matters, with their own advisors and independent inspections.</li>
+      <li>Photographs, floor plans, site plans, renderings and virtual tours are illustrative. They may show furnishings, landscaping, options or upgrades that are not included, and may not reflect current conditions.</li>
+    </ul>
+    <h2>4. Fair housing</h2>
+    <p>Centrale supports the Fair Housing Act and all federal, state and local fair housing and equal opportunity laws. We do not discriminate on the basis of race, color, religion, sex, national origin, familial status or disability, or on any other basis protected by law, including Michigan law. Nothing on the Site is intended to express a preference or limitation on those bases. If you believe you have experienced discrimination, you may contact us or the U.S. Department of Housing and Urban Development at hud.gov or 1-800-669-9777.</p>
+    <h2>5. Intellectual property</h2>
+    <p>The Site&rsquo;s content, including text, photographs, floor plans, graphics, logos and design, is owned by or licensed to Centrale or third parties and is protected by copyright, trademark and other laws. You may view the Site and print or save individual pages for your own personal, non-commercial use in considering a property or our services. Any other use, including copying, republishing, scraping, data mining, framing, or building a database or competing service from Site content, requires our prior written permission.</p>
+    <h2>6. Acceptable use</h2>
+    <p>You agree not to: use the Site unlawfully or to submit false or misleading information; interfere with or disrupt the Site or its security; use bots, scrapers or other automated tools to extract content except as a search engine may; attempt to gain unauthorized access; or use the Site to send unsolicited advertising or to harass anyone.</p>
+    <h2>7. Communications</h2>
+    <p>If you contact us by phone or email, you agree we may reply to you about your inquiry. Email is not secure; do not send passwords, bank or card numbers, or other sensitive financial information.</p>
+    <h2>8. Third-party sites and services</h2>
+    <p>The Site may link to or embed third-party websites and services, including affiliated construction and contracting companies. We do not control them and are not responsible for their content, accuracy, availability or privacy practices. Their own terms apply.</p>
+    <h2>9. Disclaimers</h2>
+    <p>The Site and its content are provided &ldquo;as is&rdquo; and &ldquo;as available,&rdquo; without warranties of any kind, express or implied, including accuracy, completeness, availability, merchantability, fitness for a particular purpose and non-infringement, to the fullest extent permitted by law.</p>
+    <h2>10. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Centrale and its owners, officers, agents, employees and affiliates will not be liable for any indirect, incidental, special, consequential or punitive damages, or for lost profits or opportunities, arising from your use of or inability to use the Site or reliance on its content. Nothing in these Terms limits liability that cannot be limited by law.</p>
+    <h2>11. Governing law</h2>
+    <p>These Terms are governed by the laws of the State of Michigan, without regard to conflict-of-law rules. Any dispute arising from your use of the Site will be brought in the state or federal courts located in Oakland County, Michigan, and you consent to their jurisdiction.</p>
+    <h2>12. Changes</h2>
+    <p>We may update these Terms or the Site at any time by posting the revised version, which takes effect when posted. Continued use after a change means you accept it. We may suspend or discontinue the Site or any part of it at any time.</p>
+    <h2>13. Contact</h2>
+    <p>Questions about these Terms: <a href="mailto:info@centralerealty.com">info@centralerealty.com</a> or <a href="tel:+12486568830">248.656.8830</a>.</p>'''
+LEGAL='''<p><em>Last updated: October 2, 2026</em></p>
+    <h2>Brokerage <em>information</em></h2>
+    <p>Centrale Realty, Inc., 2490 Walton Boulevard, Ste 103, Rochester Hills, MI 48309. Office 248.656.8830. Michigan real estate broker license no. 6505204949.</p>
+    <h2>Equal Housing <em>Opportunity</em></h2>
+    <p>Centrale Realty, Inc. is committed to the letter and spirit of federal, state and local fair housing laws. We provide equal professional service to all, without regard to race, color, religion, sex, national origin, familial status, disability or any other characteristic protected by law.</p>
+    <p><img src="../assets/equal-housing.png" alt="Equal Housing Opportunity logo" width="96" height="96"></p>
+    <h2>Accuracy and <em>no offer</em></h2>
+    <p>Information on this Site, including prices, rents, availability, specifications, photographs, plans and renderings, is subject to change or withdrawal without notice, and is not a warranty, offer or solicitation. Please verify all details, including zoning and permitted use for commercial property, lease terms and square footage, independently. See our <a href="../terms-of-use/">Terms of Use</a>.</p>
+    <h2>Copyright</h2>
+    <p>&copy; 2026 Centrale Realty, Inc. All rights reserved. Content on this Site, including photographs, floor plans, site plans, drawings and text, may not be copied or reused without written permission, except for personal, non-commercial use by individuals considering a property or our services.</p>
+    <h2>Privacy</h2>
+    <p>This Site does not collect personal information. It has no accounts, sign-up forms or tracking tools of its own. If you choose to email or call us, we use what you send only to respond to you. We do not sell personal information.</p>
+    <h2>Accessibility</h2>
+    <p>We want everyone to be able to use this Site. If you have difficulty accessing any content, contact us at <a href="mailto:info@centralerealty.com">info@centralerealty.com</a> or 248.656.8830 and we will help.</p>
+    <h2>Copyright <em>complaints</em></h2>
+    <p>If you believe content on this Site infringes your copyright, email <a href="mailto:info@centralerealty.com">info@centralerealty.com</a> with a description of the work and where it appears.</p>'''

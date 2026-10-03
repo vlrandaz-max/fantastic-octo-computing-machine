@@ -27,6 +27,10 @@ Header always set X-Frame-Options "SAMEORIGIN"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
+# Friendly 404 page (also used when a request is blocked).
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+
 # Serve index.html for folder URLs (/for-sale/ etc.) and don't list directories.
 DirectoryIndex index.html
 Options -Indexes

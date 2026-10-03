@@ -20,3 +20,9 @@ Rebuild of **centralerealty.com**. Started 2026-10-01.
 
 ## Reference site
 Layout ideas only (hero, card grid, footer structure, JSON-LD). No code, copy, images, trademarks or tracking IDs reused.
+
+## Maintenance (added 2026-10-03)
+
+- `python3 tools/build_site.py` regenerates every page plus `sitemap.xml`, `robots.txt`, `404.html`, `site.webmanifest` and `.well-known/security.txt` into `site/`.
+- `python3 tools/audit.py` checks for broken/dead-end links, orphan pages, one H1 per page, unique titles/descriptions, canonicals, Open Graph tags, alt text, mailto/tel links, sitemap coverage and `.htaccess` redirect targets. It exits non-zero on any error. Run it after every change.
+- Known open item: `http://www.lrgeneralcontracting.com` (Construction page) could not be reached from the build environment; confirm the address before launch.
