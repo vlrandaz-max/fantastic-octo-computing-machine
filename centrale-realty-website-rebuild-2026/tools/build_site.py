@@ -254,7 +254,12 @@ lis="".join(f'<li><a href="../{u}">{t}</a> &mdash; {d}</li>' if u else f'<li><a 
 page("sitemap/","Sitemap | Centrale Realty","Every page on the Centrale Realty, Inc. website.","<em>Sitemap</em>",f'''<ul class="sitemap-list">{lis}</ul>
     <p>Can't find what you need? Call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:info@centralerealty.com">info@centralerealty.com</a>.</p>''',banner=('slide-grandeur-aerial.jpg','Twilight aerial view of The Grandeur'))
 # 404 (served from any URL, so root-absolute links; not indexed)
-nf='<section class="page-title"><h1>Page <em>Not Found</em></h1></section><section class="page-body"><div class="wrap"><div class="prose"><p>Sorry, we could not find that page. It may have moved. Try one of these:</p><ul class="sitemap-list">'+"".join(f'<li><a href="/{u}">{t}</a> &mdash; {d}</li>' for u,t,d in PAGES)+'</ul><p>Or call <a href="tel:+12486568830">(248) 656-8830</a>.</p></div></div></section>'
+nf=('<section class="nf"><p class="nf-code" aria-hidden="true">404</p><h1>This page <em>can&rsquo;t be found</em></h1>'
+ '<p>The page you were looking for may have moved or no longer exists. Head back to our homepage, or choose one of the pages below.</p>'
+ '<div class="nf-actions"><a class="btn btn-solid" href="/">Back to Home</a><button type="button" class="btn nf-back" id="nf-back">Go Back</button><a class="btn" href="tel:+12486568830">Call (248) 656-8830</a></div></section>'
+ '<section class="nf-links"><h2>Where would you <em>like to go?</em></h2><ul class="nf-grid">'
+ +"".join(f'<li><a href="/{u}"><b>{t}</b><span>{d}</span></a></li>' for u,t,d in PAGES[1:7])+
+ '</ul></section><script>if(document.referrer&&history.length>1){var b=document.getElementById("nf-back");b.style.display="inline-block";b.onclick=function(){history.back()}}</script>')
 shell("404.html","Page Not Found | Centrale Realty","The page you were looking for could not be found.","  <main id=\"main\">\n    "+nf+"\n  </main>",abs_root=True,noindex=True)
 import datetime
 today=datetime.date.today().isoformat()
