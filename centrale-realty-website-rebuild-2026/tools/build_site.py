@@ -254,6 +254,7 @@ lis="".join(f'<li><a href="../{u}">{t}</a> &mdash; {d}</li>' if u else f'<li><a 
 page("sitemap/","Sitemap | Centrale Realty","Every page on the Centrale Realty, Inc. website.","<em>Sitemap</em>",f'''<ul class="sitemap-list">{lis}</ul>
     <p>Can't find what you need? Call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:info@centralerealty.com">info@centralerealty.com</a>.</p>''',banner=('slide-grandeur-aerial.jpg','Twilight aerial view of The Grandeur'))
 # 404 (served from any URL, so root-absolute links; not indexed)
+nf410=lambda s:s.replace('>404<','>410<').replace('This page <em>can&rsquo;t be found</em>','This page is <em>no longer available</em>').replace('may have moved or no longer exists.','has been permanently removed from our website.')
 nf=('<section class="nf"><p class="nf-code" aria-hidden="true">404</p><h1>This page <em>can&rsquo;t be found</em></h1>'
  '<p>The page you were looking for may have moved or no longer exists. Head back to our homepage, or choose one of the pages below.</p>'
  '<div class="nf-actions"><a class="btn btn-solid" href="/">Back to Home</a><button type="button" class="btn nf-back" id="nf-back">Go Back</button><a class="btn" href="tel:+12486568830">Call (248) 656-8830</a></div></section>'
@@ -261,6 +262,7 @@ nf=('<section class="nf"><p class="nf-code" aria-hidden="true">404</p><h1>This p
  +"".join(f'<li><a href="/{u}"><b>{t}</b><span>{d}</span></a></li>' for u,t,d in PAGES[1:7])+
  '</ul></section><script>if(document.referrer&&history.length>1){var b=document.getElementById("nf-back");b.style.display="inline-block";b.onclick=function(){history.back()}}</script>')
 shell("404.html","Page Not Found | Centrale Realty","The page you were looking for could not be found.","  <main id=\"main\">\n    "+nf+"\n  </main>",abs_root=True,noindex=True)
+shell("410.html","Page Removed | Centrale Realty","This page has been permanently removed from the Centrale Realty, Inc. website. Use the links to find what you need.","  <main id=\"main\">\n    "+nf410(nf)+"\n  </main>",abs_root=True,noindex=True)
 import datetime
 today=datetime.date.today().isoformat()
 sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f'  <url><loc>https://centralerealty.com/{u}</loc><lastmod>{today}</lastmod></url>\n' for u,t,d in PAGES)+'</urlset>\n'

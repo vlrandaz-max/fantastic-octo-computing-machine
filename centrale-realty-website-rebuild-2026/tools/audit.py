@@ -111,11 +111,11 @@ for rel in pages:
     p.feed(open(os.path.join(ROOT, rel)).read())
     pages[rel] = p
 
-real = {r: p for r, p in pages.items() if r != "404.html"}
+real = {r: p for r, p in pages.items() if r not in ("404.html","410.html")}
 link_graph = {}
 
 for rel, p in pages.items():
-    here = "/" + rel if rel == "404.html" else page_url(rel)
+    here = "/" + rel if rel in ("404.html","410.html") else page_url(rel)
     out = set()
     for href in p.links + p.assets:
         if href is None or href.strip() == "":
@@ -172,7 +172,7 @@ for rel, p in pages.items():
         W(f"{rel}: description is {len(p.meta['description'])} chars (over 170)")
     if p.imgs_noalt:
         E(f"{rel}: {p.imgs_noalt} image(s) without alt attribute")
-    if rel != "404.html":
+    if rel not in ("404.html","410.html"):
         want = BASE + page_url(rel)
         if p.canonical != want:
             E(f"{rel}: canonical {p.canonical} != {want}")
@@ -236,6 +236,8 @@ for m in re.finditer(r"RewriteRule \S+ https://centralerealty\.com(/\S*) \[R=301
         E(f".htaccess redirect target missing: {m.group(1)}")
 if "ErrorDocument 404 /404.html" not in ht:
     E(".htaccess has no ErrorDocument 404")
+if "ErrorDocument 410 /410.html" not in ht:
+    E(".htaccess has no ErrorDocument 410")
 
 
 # ---- Google Search Console / crawlability checks ----
@@ -244,9 +246,9 @@ raw = {r: open(os.path.join(ROOT, r)).read() for r in pages}
 for rel, html in raw.items():
     if 'name="viewport"' not in html:
         E(f"{rel}: no viewport meta (mobile usability)")
-    if rel != "404.html" and re.search(r'<meta name="robots"[^>]*noindex', html):
+    if rel not in ("404.html","410.html") and re.search(r'<meta name="robots"[^>]*noindex', html):
         E(f"{rel}: real page is noindex")
-    if rel == "404.html" and "noindex" not in html:
+    if rel in ("404.html","410.html") and "noindex" not in html:
         W("404.html should be noindex")
     if len(re.findall(r'rel="canonical"', html)) > 1:
         E(f"{rel}: multiple canonicals")
