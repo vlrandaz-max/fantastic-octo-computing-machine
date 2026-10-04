@@ -311,7 +311,7 @@ if "RewriteCond %{HTTPS} off" not in ht2:
 # unused assets (dead weight slows upload)
 used = set()
 for rel, html in raw.items():
-    used |= set(re.findall(r'[\w\-./]+\.(?:jpg|png|mp4|woff2|svg|ico)', html))
+    used |= set(re.findall(r'[\w\-./]+\.(?:jpg|png|mp4|pdf|woff2|svg|ico)', html))
 used |= set(re.findall(r'[\w\-./]+\.(?:jpg|png|mp4|woff2|svg|ico)', open(os.path.join(ROOT, "styles.css")).read()))
 used |= set(re.findall(r'[\w\-./]+\.(?:jpg|png|mp4|woff2|svg|ico)', open(os.path.join(ROOT, "site.webmanifest")).read()))
 names = {os.path.basename(u) for u in used}
