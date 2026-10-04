@@ -77,14 +77,23 @@ tr:last-child td{border-bottom:0}
 .qrbox small{font:500 7px/1.5 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);max-width:60px}
 .disc{padding:7px 44px 9px;border-top:1px solid rgba(186,163,131,.3);font:300 6.6px/1.45 Jost,sans-serif;color:rgba(255,255,255,.56);display:flex;gap:12px;align-items:center}
 .disc img{width:20px;height:20px;flex:none}
-/* page 2 */
-.p2 .top{padding-bottom:0}
-.p2 h2{font:300 28px/1.1 CG,serif;letter-spacing:.08em;text-transform:uppercase;padding:14px 0 6px}
-.p2 h2 em{font:italic 400 29px/1 CGI,serif;text-transform:none;color:var(--gold);letter-spacing:.01em}
-.p2 .top .sub{padding-bottom:20px}
-.exhibit{padding:26px 44px 0}
-.exhibit img{width:100%;display:block;border:1px solid var(--line);background:#fff}
-.exhibit p{font-size:10px;line-height:1.6;color:#34312c;margin:14px 0 0}
+/* page 2: landscape survey sheet */
+@page survey{size:11in 8.5in;margin:0}
+.sheet.p2{page:survey;width:11in;height:8.5in}
+.p2 .hd{background:var(--black);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-bottom:2px solid var(--gold)}
+.p2 .hd .brand img{width:34px;height:37px}
+.p2 .hd .brand b{font-size:17px}.p2 .hd .brand span{font-size:8px;margin-top:5px}
+.p2 .hd h2{font:300 22px/1.1 CG,serif;letter-spacing:.08em;text-transform:uppercase;text-align:right}
+.p2 .hd h2 em{font:italic 400 23px/1 CGI,serif;text-transform:none;color:var(--gold);letter-spacing:.01em}
+.p2 .hd small{display:block;font:300 8px/1 Jost,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-top:6px}
+.p2 .exhibit{padding:14px 40px 0}
+.p2 .exhibit img{width:100%;height:5.95in;object-fit:contain;display:block;border:1px solid var(--line);background:#fff}
+.p2 .exhibit p{font-size:8.6px;line-height:1.5;color:#34312c;margin:7px 0 0}
+.p2 .foot .row{padding:9px 40px 7px;grid-template-columns:1.1fr 1.4fr auto}
+.p2 .agent b{font-size:17px}
+.p2 .contact{font-size:9px;line-height:1.5;display:grid;grid-template-columns:auto auto;column-gap:22px}
+.p2 .qrbox img.qr{width:44px;height:44px}
+.p2 .disc{padding:5px 40px 6px}
 </style>
 </head>
 <body>
@@ -168,24 +177,23 @@ tr:last-child td{border-bottom:0}
   </div>
 </div>
 
-<!-- PAGE 2: survey exhibit -->
+<!-- PAGE 2: survey exhibit (landscape) -->
 <div class="sheet p2">
-  <div class="top">
+  <div class="hd">
     <div class="brand"><img src="../site/assets/logo-cr-gold.png" alt=""><div class="rule"></div><div><b>Centrale</b><span>REALTY</span></div></div>
-    <h2>Survey &amp; <em>Legal Description</em></h2>
-    <p class="sub">S. Saginaw Street (M-54) &nbsp;&middot;&nbsp; Grand Blanc Township &nbsp;&middot;&nbsp; Parcel ID 1226100017</p>
+    <h2>Topographic Survey &amp; <em>Legal Description</em><small>S. Saginaw Street (M-54) &nbsp;&middot;&nbsp; Grand Blanc Township &nbsp;&middot;&nbsp; Parcel ID 1226100017</small></h2>
   </div>
   <div class="exhibit">
-    <img src="../site/assets/images/gb-survey.jpg" alt="Property survey with legal description">
-    <p>Survey provided for reference. The legal description and boundaries shown are the seller&rsquo;s survey on file; buyers should verify all details independently before relying on them.</p>
+    <img src="../site/assets/images/gb-survey.jpg" alt="Topographic survey of the property with legal description">
+    <p>Topographic survey by CHMP Inc., drawn 4-9-99, provided for reference. It shows boundaries, topography and the wetland boundary as of that date. The legal description on the survey states 7.72 acres more or less. Buyers should verify all details, including acreage, wetlands and current conditions, independently.</p>
   </div>
   <div class="foot">
     <div class="row">
-      <div class="agent"><b>Vito L. Randazzo</b><span>Associate Broker</span><i>Centrale Realty, Inc. &middot; Serving Metro Detroit since 1984</i></div>
+      <div class="agent"><b>Vito L. Randazzo</b><span>Associate Broker</span></div>
       <div class="contact">
         <div><span>Office</span>(248) 656-8830</div>
-        <div><span>Direct</span>(248) 388-3473</div>
         <div><span>Email</span>vlrandaz@centralerealty.com</div>
+        <div><span>Direct</span>(248) 388-3473</div>
         <div><span>Web</span>centralerealty.com</div>
       </div>
       <div class="qrbox"><img class="qr" src="qr-grand-blanc.png" alt="QR code to the online listing"><small>Scan for the online listing</small></div>
