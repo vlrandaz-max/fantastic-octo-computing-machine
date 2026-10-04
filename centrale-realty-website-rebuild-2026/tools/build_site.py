@@ -204,7 +204,7 @@ page("for-sale/","Homes For Sale in Metro Detroit | Centrale Realty","Looking fo
     <p>Whether you are relocating to the area or simply ready for a new home, let our agents put their knowledge of the market to work for you. From luxury homes in Rochester Hills to properties in Macomb Township, Troy, Birmingham, Royal Oak, Sterling Heights and beyond, we will help you find the home of your dreams.</p>
     <h2>Newly Built <em>Homes</em></h2>
     <p>Looking for a newly built home? Our affiliate, L&amp;R Homes Inc, builds spec homes that Centrale Realty lists for sale. See the homes currently available on the <a href="https://landrhomes.com/homes-available" target="_blank" rel="noopener">L&amp;R Homes website</a>, or call us at <a href="tel:+12486568830">(248) 656-8830</a> to arrange a showing.</p>
-    {CTA}''',banner=('slides',[('slide-grandeur-aerial.jpg','Twilight aerial view of The Grandeur'),('slide-majestic.jpg','The Majestic at twilight'),('slide-crestwood-aerial.jpg','Twilight aerial view of The Crestwood')]))
+    {CTA}''',banner=('slides',[('slide-stratford.jpg','The Stratford at twilight'),('slide-majestic.jpg','The Majestic at twilight'),('slide-crestwood-aerial.jpg','Twilight aerial view of The Crestwood')]))
 page("properties/","Properties | Pine Woods &amp; Falcon Estates | Centrale Realty","Properties in Rochester Hills and Bruce Township, including Pine Woods and Falcon Estates, from Centrale Realty.","Our <em>Properties</em>",f'''<h2>Pine Woods, Rochester Hills</h2>
     <p>Pine Woods is an exclusive enclave of 28 homesites in Rochester Hills, with municipal water and sewer, underground utilities and Avondale Schools. Its close proximity to major thoroughfares, Downtown Rochester and area shopping and entertainment keeps everything you need within easy reach. Call today to schedule a tour.</p>
     <figure class="plan"><img src="../assets/images/pine-woods-site-plan.jpg" alt="Pine Woods site plan, Rochester Hills" width="1600" height="434" loading="lazy"><figcaption>Pine Woods site plan.</figcaption></figure>
@@ -252,7 +252,7 @@ PAGES=[("","Home","Centrale Realty, Inc. serving Metro Detroit since 1984."),
 ("sitemap/","Sitemap","Every page on this site.")]
 lis="".join(f'<li><a href="../{u}">{t}</a> &mdash; {d}</li>' if u else f'<li><a href="../">{t}</a> &mdash; {d}</li>' for u,t,d in PAGES[:-1])
 page("sitemap/","Sitemap | Centrale Realty","Every page on the Centrale Realty, Inc. website.","<em>Sitemap</em>",f'''<ul class="sitemap-list">{lis}</ul>
-    <p>Can't find what you need? Call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:info@centralerealty.com">info@centralerealty.com</a>.</p>''',banner=('slide-grandeur-aerial.jpg','Twilight aerial view of The Grandeur'))
+    <p>Can't find what you need? Call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:info@centralerealty.com">info@centralerealty.com</a>.</p>''',banner=('slide-madison-aerial.jpg','Twilight aerial view of The Madison'))
 # 404 (served from any URL, so root-absolute links; not indexed)
 nf410=lambda s:s.replace('>404<','>410<').replace('This page <em>can&rsquo;t be found</em>','This page is <em>no longer available</em>').replace('may have moved or no longer exists.','has been permanently removed from our website.')
 nf=('<section class="nf"><p class="nf-code" aria-hidden="true">404</p><h1>This page <em>can&rsquo;t be found</em></h1>'
