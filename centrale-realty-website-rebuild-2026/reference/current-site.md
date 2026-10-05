@@ -13,5 +13,5 @@
 ## Discrepancies noticed on the live site
 - Fax: confirmed by owner as 248.694.9344 (live footer and Contact page each showed a different number).
 - Construction page links to www.landrhomes.com (new homes) and www.lrgeneralcontracting.com (general contracting); both left as external links.
-- Service copy in `site/` is adapted from the live pages (lightly edited). Specific properties named there (Falcon Estates / Sherwood Forest Estates, Cambridge Hills) and the "luxury corporate housing / duplex / townhome" rentals should be confirmed as still current.
+- Service copy in `site/` is adapted from the live pages (lightly edited). Specific properties named there (Falcon Estates / Sherwood Forest Estates) and the "luxury corporate housing / duplex / townhome" rentals should be confirmed as still current.
 - Legal and Terms were rewritten (2026-10-02) as modern general-purpose real estate website terms covering sales, leasing and commercial, fair housing, privacy; IDX/MLS text removed when the IDX widget was dropped. This is a draft, not legal advice: have a Michigan attorney and REALCOMP review it, and fill the TODOs (broker licence number, IDX attribution, EHO logo).

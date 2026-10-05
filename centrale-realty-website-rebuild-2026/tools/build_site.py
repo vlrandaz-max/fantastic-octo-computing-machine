@@ -216,8 +216,6 @@ page("properties/","Properties | Pine Woods &amp; Falcon Estates | Centrale Real
     <h2>Featured Listing: Grand Blanc Land</h2>
     <p>7.79 acres of residential development land on S. Saginaw Street (M-54) in Grand Blanc Township, with 333 feet of frontage and water and sewer at the street. <a href="grand-blanc-land/">View the listing and download the brochure</a>.</p>
     <figure class="plan"><a href="grand-blanc-land/"><img src="../assets/images/gb-aerial-wide.jpg" alt="Aerial view of the Grand Blanc land with the 7.79 acre parcel outlined in red on S. Saginaw Street; select to view the listing" width="1088" height="590" loading="lazy"></a><figcaption>Subject property outlined in red. <a href="grand-blanc-land/">View the Grand Blanc listing</a>.</figcaption></figure>
-    <h2>Cambridge Hills, Bruce Township</h2>
-    <p>Looking for more land or acreage? Cambridge Hills in Bruce Township may be the property you have been searching for. Contact us today for details.</p>
     {CTA}''',banner=('slides',[('slide-land-aerial.jpg','Aerial view of land beside a neighborhood'),('slide-falcon-site-plan.jpg','Falcon Estates site plan'),('slide-pine-woods-site-plan.jpg','Pine Woods site plan, Rochester Hills'),('slide-pine-woods.jpg','Heritage home at twilight in Pine Woods'),('slide-falcon-estates.jpg','Brick and stone home with landscaped front steps')]))
 page("for-lease/","Rentals in Metro Detroit | Centrale Realty","Metro Detroit rentals: luxury corporate housing in Rochester Hills and duplexes and townhomes in Shelby Twp and Chesterfield Twp.","Properties <em>For Lease</em>",f'''<p>We specialize in rental properties throughout Metro Detroit. Whether you are relocating to the area or simply looking for a new place to call home, one of our agents will be glad to help.</p>
     <p>From luxury corporate housing in Rochester Hills to duplexes and townhomes in Shelby Township and Chesterfield Township, every home offers premium features such as 3 to 4 bedrooms, full basements, 1 to 3 car garages and more.</p>
@@ -245,7 +243,7 @@ page("legal/","Legal | Centrale Realty","Legal notices, fair housing and privacy
 # ---- sitemap page, 404, and crawler/support files ----
 PAGES=[("","Home","Centrale Realty, Inc. serving Metro Detroit since 1984."),
 ("for-sale/","For Sale","Homes for sale in Metro Detroit."),
-("properties/","Properties","Pine Woods, Falcon Estates and Cambridge Hills, plus spec homes."),
+("properties/","Properties","Pine Woods and Falcon Estates, plus spec homes."),
 ("for-lease/","For Lease","Rentals, corporate housing, duplexes and townhomes."),
 ("commercial-space/","Commercial","Commercial and office space in Rochester Hills and Auburn Hills."),
 ("construction-services/","Construction","New home construction and general contracting."),
