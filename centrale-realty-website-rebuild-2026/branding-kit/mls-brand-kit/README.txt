@@ -17,3 +17,10 @@ CENTRALE REALTY - MLS BRAND KIT
 
 3) Review the Brand Kit, then save.
    If the logo looks lost on the preview, switch to the other logo version.
+
+4) MLS email photo (square C/R mark), in the email-photo folder
+   cr-gold-on-warm-gradient-*.png   gold mark on the dark warm gradient (matches the sample you showed)
+   cr-gold-on-black-*.png           gold mark on solid black
+   cr-gold-transparent-*.png        gold mark, transparent background
+   cr-black-on-white-*.png          black mark on white
+   Sizes: 1200, 600 and 300 px square. Upload the 600 first; use 300 if the MLS wants a small file.
