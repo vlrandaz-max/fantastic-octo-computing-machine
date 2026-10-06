@@ -13,7 +13,7 @@ W, H = 46.5 * 72, 17.5 * 72
 BG, INK = HexColor("#baa383"), HexColor("#0b0b0b")  # Centrale brand inverted: gold background, black text
 pdfmetrics.registerFont(TTFont("Black", "C:/Windows/Fonts/ariblk.ttf"))
 
-OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-2490lease-46.5x17.5in.pdf")
+OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-2490-46.5x17.5in.pdf")
 c = canvas.Canvas(OUT, pagesize=(W, H))
 c.setTitle("For Lease sign 46.5 x 17.5 in")
 c.setFillColor(BG); c.rect(0, 0, W, H, fill=1, stroke=0)
@@ -21,7 +21,7 @@ c.setStrokeColor(INK); c.setLineWidth(5); c.rect(0.4*72, 0.4*72, W-0.8*72, H-0.8
 
 MARGIN_X, MARGIN_Y = 1.3*72, 1.3*72
 lw = W - 2*MARGIN_X
-LINES = ["FOR LEASE", "248-656-8830", "OFFICE / MEDICAL SPACE", "CENTRALEREALTY.COM/2490LEASE"]
+LINES = ["FOR LEASE", "248-656-8830", "OFFICE / MEDICAL SPACE", "CENTRALEREALTY.COM/2490"]
 cap = pdfmetrics.getFont("Black").face.capHeight / 1000.0     # cap height per 1pt of font size
 sizes = [lw / pdfmetrics.stringWidth(t, "Black", 1) for t in LINES]   # each line spans the full width
 RULE = 0.18*72
