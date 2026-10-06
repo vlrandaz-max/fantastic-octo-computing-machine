@@ -159,9 +159,9 @@ home_main=f'''  <main id="main">
         </div>
         <div class="acc" id="acc">
           {acc("for-sale/","acc-sale.jpg","Stone and brick home at twilight","For Sale","Residential and commercial properties.",True)}
+          {acc("commercial-space/","acc-commercial.jpg","Two-storey brick and stone office building","Commercial","Office space in Rochester Hills and Auburn Hills.")}
           {acc("properties/","acc-land.jpg","Aerial view of land next to a neighborhood","Properties","Pine Woods, Falcon Estates and more.")}
           {acc("for-lease/","acc-lease.jpg","Brick duplex with attached two-car garages","For Lease","Metro Detroit rentals, from duplexes to corporate housing.")}
-          {acc("commercial-space/","acc-commercial.jpg","Two-storey brick and stone office building","Commercial","Office space in Rochester Hills and Auburn Hills.")}
           {acc("construction-services/","acc-construction.jpg","Telehandler lifting masonry to scaffolding at a home under construction","Construction","New and luxury construction across Metro Detroit.")}
         </div>
       </div>
