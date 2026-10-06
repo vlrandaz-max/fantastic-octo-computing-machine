@@ -7,7 +7,7 @@ from legal_text import TERMS,LEGAL
 SITE=os.path.join(os.path.dirname(HERE),"site")
 ORG="Centrale Realty, Inc."
 ADDR="2490 Walton Boulevard, Ste 103, Rochester Hills, MI 48309"
-NAV=[("for-sale/","For Sale"),("properties/","Properties"),("for-lease/","For Lease"),("commercial-space/","Commercial"),("construction-services/","Construction"),("contact-us/","Contact")]
+NAV=[("for-sale/","For Sale"),("commercial-space/","Commercial"),("properties/","Properties"),("for-lease/","For Lease"),("construction-services/","Construction"),("contact-us/","Contact")]
 import hashlib
 CSSV=hashlib.md5(open(os.path.join(SITE,"styles.css"),"rb").read()).hexdigest()[:8]
 IDX=""
