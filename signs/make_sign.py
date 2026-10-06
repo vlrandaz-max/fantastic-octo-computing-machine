@@ -21,19 +21,19 @@ c.setStrokeColor(INK); c.setLineWidth(5); c.rect(0.4*72, 0.4*72, W-0.8*72, H-0.8
 
 MARGIN_X, MARGIN_Y = 1.3*72, 1.3*72
 lw = W - 2*MARGIN_X
-LINES = ["FOR LEASE", "248-656-8830", "OFFICE / MEDICAL SPACE"]
+LINES = ["FOR LEASE", "248-656-8830", "OFFICE / MEDICAL SPACE", "CENTRALEREALTY.COM/OFFICE-SPACE-FOR-LEASE"]
 cap = pdfmetrics.getFont("Black").face.capHeight / 1000.0     # cap height per 1pt of font size
 sizes = [lw / pdfmetrics.stringWidth(t, "Black", 1) for t in LINES]   # each line spans the full width
 RULE = 0.18*72
 avail = H - 2*MARGIN_Y
 caps = [cap * s for s in sizes]
-# two gaps hold the lines apart; the rule sits in the first gap
+# gaps hold the lines apart (one fewer than lines); the rule sits in the first gap
 min_gap = 1.0*72
-need = sum(caps) + 2*min_gap + RULE
+need = sum(caps) + (len(LINES)-1)*min_gap + RULE
 if need > avail:                                              # shrink uniformly if it can't fit
     k = avail / need
     sizes = [s*k for s in sizes]; caps = [cap*s for s in sizes]
-gap = (avail - sum(caps) - RULE) / 2
+gap = (avail - sum(caps) - RULE) / (len(LINES)-1)
 
 c.setFillColor(INK)
 y_top = H - MARGIN_Y
@@ -48,6 +48,9 @@ c.setFont("Black", sizes[1]); c.drawCentredString(W/2, y2, LINES[1])
 # line 3
 y3 = y2 - gap - caps[2]
 c.setFont("Black", sizes[2]); c.drawCentredString(W/2, y3, LINES[2])
+# line 4 (web address)
+y4 = y3 - gap - caps[3]
+c.setFont("Black", sizes[3]); c.drawCentredString(W/2, y4, LINES[3])
 
 c.showPage(); c.save()
 print("sizes pt:", [round(s) for s in sizes], "cap heights in:", [round(x/72, 2) for x in caps], "gap in:", round(gap/72, 2))
