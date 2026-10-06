@@ -3,6 +3,7 @@ Text only (no QR code), sized to fill the sign for readability from the road.
 Usage: python signs/make_sign.py        (needs: pip install reportlab)
 Env:   SIGN_OUT=<path>  write somewhere else (e.g. when the PDF is open in a viewer)
        SIGN_FONT=Black|Impact  typeface for all three lines (default Black)
+       SIGN_BLEED=<inches>     bleed on every side (default 0.125; 0 = trim-size file, no bleed)
 """
 import os
 from reportlab.pdfgen import canvas
@@ -16,10 +17,15 @@ FONT_FILES = {"Black": "C:/Windows/Fonts/ariblk.ttf", "Impact": "C:/Windows/Font
 FONT = os.environ.get("SIGN_FONT", "Black")
 pdfmetrics.registerFont(TTFont(FONT, FONT_FILES[FONT]))
 
-OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-final-46.5x17.5in.pdf")
-c = canvas.Canvas(OUT, pagesize=(W, H))
-c.setTitle("For Lease sign 46.5 x 17.5 in")
-c.setFillColor(BG); c.rect(0, 0, W, H, fill=1, stroke=0)
+BLEED = float(os.environ.get("SIGN_BLEED", "0.125")) * 72
+OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-46.5x17.5in-with-bleed.pdf" if BLEED else "signs/for-lease-sign-final-46.5x17.5in.pdf")
+c = canvas.Canvas(OUT, pagesize=(W + 2*BLEED, H + 2*BLEED))
+c.setTitle("For Lease sign 46.5 x 17.5 in" + (" (0.125 in bleed)" if BLEED else ""))
+if BLEED:                                         # PDF boxes: trim = the 46.5 x 17.5 cut line, bleed = full page
+    c.setTrimBox((BLEED, BLEED, BLEED + W, BLEED + H))
+    c.setBleedBox((0, 0, W + 2*BLEED, H + 2*BLEED))
+c.setFillColor(BG); c.rect(0, 0, W + 2*BLEED, H + 2*BLEED, fill=1, stroke=0)   # background runs out to the bleed edge
+c.translate(BLEED, BLEED)                         # everything below is positioned relative to the trim edge
 c.setStrokeColor(INK); c.setLineWidth(5); c.rect(0.4*72, 0.4*72, W-0.8*72, H-0.8*72, fill=0)  # inset border (safe from trim)
 
 MARGIN_X, MARGIN_Y = 1.0*72, 1.0*72
