@@ -16,7 +16,7 @@ FONT_FILES = {"Black": "C:/Windows/Fonts/ariblk.ttf", "Impact": "C:/Windows/Font
 FONT = os.environ.get("SIGN_FONT", "Black")
 pdfmetrics.registerFont(TTFont(FONT, FONT_FILES[FONT]))
 
-OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-2490-46.5x17.5in.pdf")
+OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-final-46.5x17.5in.pdf")
 c = canvas.Canvas(OUT, pagesize=(W, H))
 c.setTitle("For Lease sign 46.5 x 17.5 in")
 c.setFillColor(BG); c.rect(0, 0, W, H, fill=1, stroke=0)
