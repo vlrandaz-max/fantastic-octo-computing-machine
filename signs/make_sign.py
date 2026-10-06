@@ -7,7 +7,7 @@ from reportlab.lib.colors import HexColor, white
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-URL = sys.argv[1] if len(sys.argv) > 1 else "https://vlrandaz-max.github.io/fantastic-octo-computing-machine/suite-101"
+URL = sys.argv[1] if len(sys.argv) > 1 else "https://centralerealty.com/suite-101/"
 W, H = 46.5 * 72, 17.5 * 72
 NAVY, SILVER = HexColor("#0b0b0b"), HexColor("#baa383")  # Centrale brand: black + gold
 pdfmetrics.registerFont(TTFont("Black", "C:/Windows/Fonts/ariblk.ttf"))
