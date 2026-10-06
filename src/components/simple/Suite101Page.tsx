@@ -17,7 +17,7 @@ const img = (name: string) => withBase(`/assets/suite-101/${name}.jpg`);
 const logo = withBase('/assets/suite-101/logo-cr-gold.png');
 
 const FACTS = [
-  { label: 'Rent', value: '$1,675', sub: 'per month' },
+  { label: 'Rent', value: 'Call', sub: 'for current pricing' },
   { label: 'Size', value: '956', sub: 'square feet' },
   { label: 'Use', value: 'Office / Medical', sub: 'professional & administrative' },
   { label: 'Minimum Term', value: '2 Years', sub: 'modified gross lease' },
@@ -31,12 +31,6 @@ const HIGHLIGHTS = [
   'Ample free on-site parking',
   'Near Henry Ford (Crittenton) Hospital',
   'Suitable for medical, engineering, professional, or administrative use',
-];
-
-const MOVE_IN = [
-  { label: 'First month’s rent', amount: '$1,675.00' },
-  { label: 'Security deposit', amount: '$2,512.50' },
-  { label: 'Non-refundable cleaning fee', amount: '$350.00' },
 ];
 
 const GALLERY = [
@@ -287,19 +281,13 @@ export function Suite101Page() {
             <Reveal type="fade-in-left">
               <div className="s101-card">
                 <h2>
-                  Move-In <em>Costs</em>
+                  <em>Pricing</em>
                 </h2>
                 <div className="s101-rule" />
-                {MOVE_IN.map((m) => (
-                  <div className="s101-row" key={m.label}>
-                    <span>{m.label}</span>
-                    <span>{m.amount}</span>
-                  </div>
-                ))}
-                <div className="s101-row total">
-                  <span>Total move-in</span>
-                  <span>$4,537.50</span>
-                </div>
+                <p>
+                  Rates and move-in costs are available on request. Call <a href={LEASING.officeHref}>{LEASING.office}</a> or email{' '}
+                  <a href={`mailto:${LEASING.email}`}>{LEASING.email}</a>.
+                </p>
               </div>
             </Reveal>
           </div>

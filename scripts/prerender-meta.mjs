@@ -105,7 +105,7 @@ const ROUTES = {
   '/suite-101': {
     title: 'Suite 101 Office Space For Lease | 2490 Walton Blvd, Rochester Hills, MI',
     description:
-      '956 sq ft office/medical space for lease at 2490 Walton Blvd, Rochester Hills, MI — $1,675/month. Photos, floor plan and move-in costs. Call (248) 656-8830.',
+      '956 sq ft office/medical space for lease at 2490 Walton Blvd, Rochester Hills, MI — Photos and floor plan. Call (248) 656-8830.',
     breadcrumb: [{ name: 'Suite 101 For Lease', path: '/suite-101' }],
   },
   '/contact-us': {
