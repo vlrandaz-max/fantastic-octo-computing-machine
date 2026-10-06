@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Reveal } from '../Reveal';
 import { withBase } from '../../lib/url';
 
@@ -120,14 +119,6 @@ const CSS = `
  * the audience arrives by scanning from a phone.
  */
 export function Suite101Page() {
-  useEffect(() => {
-    const previous = document.title;
-    document.title = 'Suite 101 Office Space For Lease — 2490 Walton Blvd, Rochester Hills';
-    return () => {
-      document.title = previous;
-    };
-  }, []);
-
   return (
     <div className="s101">
       <style>{CSS}</style>

@@ -21,6 +21,7 @@ const ROUTE_TITLES: Array<{ prefix: string; title: string }> = [
   { prefix: '/heritage', title: 'The Heritage | Pine Woods, Rochester Hills' },
   { prefix: '/pine-woods', title: 'Pine Woods | Town Properties, LLC — Rochester Hills, MI' },
   { prefix: '/contact-us', title: 'Contact Us | L&R Homes, Inc. — Rochester Hills, MI' },
+  { prefix: '/suite-101', title: 'Suite 101 Office Space For Lease | 2490 Walton Blvd, Rochester Hills, MI' },
   { prefix: '/gallery', title: 'Photo Gallery | L&R Homes, Inc.' },
   { prefix: '/classic2', title: 'L&R Homes, Inc. — Custom Builders Since 1973 | Rochester Hills, Michigan' },
   { prefix: '/classic', title: 'L&R Homes, Inc. — Custom Builders Since 1973 | Rochester Hills, Michigan' },
