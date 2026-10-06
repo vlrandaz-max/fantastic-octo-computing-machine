@@ -41,20 +41,12 @@ cx = 1.2*72 + lw/2
 def fit(text, font, width):
     return width / pdfmetrics.stringWidth(text, font, 1)
 c.setFillColor(INK)
-sz = fit("FOR LEASE", "Black", lw); c.setFont("Black", sz); c.drawCentredString(cx, 9.0*72, "FOR LEASE")
-c.setFillColor(INK); c.rect(1.2*72, 8.35*72, lw, 0.12*72, fill=1, stroke=0)
+sz = fit("FOR LEASE", "Black", lw); c.setFont("Black", sz); c.drawCentredString(cx, 10.2*72, "FOR LEASE")
+c.setFillColor(INK); c.rect(1.2*72, 9.7*72, lw, 0.12*72, fill=1, stroke=0)
 c.setFillColor(INK)
-sz2 = fit("248-656-8830", "Black", lw); c.setFont("Black", sz2); c.drawCentredString(cx, 4.35*72, "248-656-8830")
-c.setFillColor(INK); sz3 = min(94, fit("OFFICE / MEDICAL SPACE", "Bold", lw)); c.setFont("Bold", sz3)
-c.drawCentredString(cx, 1.6*72, "OFFICE / MEDICAL SPACE")
+sz2 = fit("248-656-8830", "Black", lw); c.setFont("Black", sz2); c.drawCentredString(cx, 6.4*72, "248-656-8830")
+c.setFillColor(INK); sz3 = fit("OFFICE / MEDICAL SPACE", "Black", lw); c.setFont("Black", sz3)
+c.drawCentredString(cx, 4.1*72, "OFFICE / MEDICAL SPACE")
 
-# Brand lockup (top-left): gold C/R mark + CENTRALE REALTY wordmark
-LOGO = "public/assets/suite-101/logo-cr-black.png"
-lh = 3.4*72; lwid = lh*539/600; ly = 13.15*72
-c.drawImage(LOGO, 1.2*72, ly, width=lwid, height=lh, mask="auto")
-wx = 1.2*72 + lwid + 0.7*72
-c.setStrokeColor(INK); c.setLineWidth(3); c.line(wx-0.35*72, ly+0.2*72, wx-0.35*72, ly+lh-0.2*72)
-c.setFillColor(INK); c.setFont("Serif", 120); c.drawString(wx, ly+1.75*72, "CENTRALE")
-c.setFillColor(INK); c.setFont("Bold", 60); c.drawString(wx+4, ly+0.7*72, "R E A L T Y")
 c.showPage(); c.save()
 print("qr modules:", n, "cell in:", round(cell/72,3), "FOR LEASE pt:", round(sz), "phone pt:", round(sz2), "sub pt:", round(sz3))
