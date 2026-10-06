@@ -13,7 +13,7 @@ W, H = 46.5 * 72, 17.5 * 72
 BG, INK = HexColor("#baa383"), HexColor("#0b0b0b")  # Centrale brand inverted: gold background, black text
 pdfmetrics.registerFont(TTFont("Black", "C:/Windows/Fonts/ariblk.ttf"))
 
-OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-46.5x17.5in.pdf")
+OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-2490lease-46.5x17.5in.pdf")
 c = canvas.Canvas(OUT, pagesize=(W, H))
 c.setTitle("For Lease sign 46.5 x 17.5 in")
 c.setFillColor(BG); c.rect(0, 0, W, H, fill=1, stroke=0)
