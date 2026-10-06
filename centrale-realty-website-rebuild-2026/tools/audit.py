@@ -105,6 +105,8 @@ for dp, dn, fn in os.walk(ROOT):
             rel = os.path.relpath(os.path.join(dp, n), ROOT)
             if re.fullmatch(r'google[0-9a-f]+\.html', rel):
                 continue  # Search Console verification file, not a page
+            if 'http-equiv="refresh"' in open(os.path.join(dp, n), encoding='utf-8').read():
+                continue  # tiny redirect page (e.g. the old hub URL), not a real page
             pages[rel] = None
 for rel in pages:
     p = P()

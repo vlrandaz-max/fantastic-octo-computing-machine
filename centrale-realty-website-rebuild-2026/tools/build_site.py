@@ -222,7 +222,7 @@ page("for-lease/","Rentals in Metro Detroit | Centrale Realty","Metro Detroit re
     <p>Looking for additional properties or areas? Contact one of our agents for a customized search.</p>
     {CTA}''',banner=('slides',[('duplex-banner.jpg','Brick duplex with attached two-car garages'),('townhomes-banner.jpg','Brick and stone townhomes with attached garages'),('slide-lease-living.jpg','Staged living room with vaulted ceiling and dining area'),('slide-lease-open-plan.jpg','Open-plan kitchen, dining and living area')]))
 page("commercial-space/","Commercial Space in Rochester Hills & Auburn Hills | Centrale Realty","Commercial properties in Metro Detroit, including office space near Automation Alley with close access to I-75 and M-59.","Commercial <em>Space</em>",f'''<p>We offer commercial properties throughout Metro Detroit. If you are looking for office space near Automation Alley with close proximity to I-75, M-59, Stellantis Headquarters, Henry Ford Rochester Hospital, the Village of Rochester Hills, Downtown Rochester and most major job hubs, take a look at what we have to offer in Rochester Hills and Auburn Hills.</p>
-    <p><b>Now leasing:</b> see all <a href="../office-space-for-lease/">available office space at 2490 Walton Boulevard</a>.</p>
+    <p><b>Now leasing:</b> see all <a href="../2490lease/">available office space at 2490 Walton Boulevard</a>.</p>
     <p>For other properties and areas, contact one of our agents and we will search to meet your needs.</p>
     {CTA}''',banner=('office-banner.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard, Rochester Hills'))
 page("construction-services/","Construction Services | Centrale Realty","New home construction and general contracting services in Metro Detroit.","Construction <em>Services</em>",f'''<p>Specializing in new and luxury construction across the Metro Detroit area.</p>
@@ -252,7 +252,7 @@ PAGES=[("","Home","Centrale Realty, Inc. serving Metro Detroit since 1984."),
 ("terms-of-use/","Terms of Use","Terms for using centralerealty.com."),
 ("legal/","Legal","Legal notices, fair housing and privacy."),
 ("properties/grand-blanc-land/","Grand Blanc Land","7.79 acres for sale on S. Saginaw Street, Grand Blanc Township."),
-("office-space-for-lease/","Office Space For Lease","Available office and medical suites at 2490 Walton Blvd, Rochester Hills."),
+("2490lease/","Office Space For Lease","Available office and medical suites at 2490 Walton Blvd, Rochester Hills."),
 ("suite-100/","Suite 100 For Lease","528 sq ft lower-level office/medical suite at 2490 Walton Blvd."),
 ("suite-101/","Suite 101 For Lease","956 sq ft lower-level office/medical space at 2490 Walton Blvd."),
 ("sitemap/","Sitemap","Every page on this site.")]
@@ -305,7 +305,7 @@ def s101_fig(f,alt,cap): return f'<figure><img src="../assets/images/suite-101-{
 def s101_vid(v,poster,cap): return f'<figure><video controls preload="metadata" playsinline poster="../assets/images/suite-101-{poster}.jpg"><source src="../assets/video/suite-101-{v}.mp4" type="video/mp4">Your browser does not support video.</video><figcaption>{cap}</figcaption></figure>'
 s101_body=('<div class="lst-top"><div><span class="lst-tag">For Lease &middot; Office / Medical</span><p class="lst-price">Call for Pricing</p><p class="lst-sub">Suite 101 &middot; 956 sq ft &middot; Lower level &middot; 2490 Walton Boulevard, Rochester Hills</p></div>'
  '<div class="lst-actions"><a class="btn btn-solid" href="tel:+12486568830">Call (248) 656-8830</a><a class="btn" href="mailto:vlrandaz@centralerealty.com?subject=Suite%20101%20-%202490%20Walton%20Blvd">Email About Suite 101</a></div></div>'
- '<p><a href="../office-space-for-lease/">&larr; All available office space</a></p>'
+ '<p><a href="../2490lease/">&larr; All available office space</a></p>'
  '<p>Prime lower-level office space now leasing in a two-storey brick and stone building on the northeast corner of Walton Boulevard and Brewster Road. Suite 101 offers an office, a conference room and an open workspace area, with ample free parking and quick access to I-75 and M-59.</p>'
  '<ul class="lst-facts"><li><b>956</b><span>Square Feet</span></li><li><b>Call</b><span>For Pricing</span></li><li><b>2 Years</b><span>Minimum Term</span></li><li><b>Office</b><span>Or Medical Use</span></li><li><b>Free</b><span>On-Site Parking</span></li><li><b>I-75 &amp; M-59</b><span>Easy Access</span></li></ul>'
  '<h2>Property <em>Highlights</em></h2><ul class="lst-hi">'+"".join(f'<li>{x}</li>' for x in S101_HI)+'</ul>'
@@ -327,7 +327,7 @@ S100_ROWS=[("Suite","100 (lower level)"),("Size","528 sq ft"),("Use","Office / M
 def s100_fig(f,alt,cap): return f'<figure><img src="../assets/images/suite-100-{f}.jpg" alt="{alt}" width="960" height="540" loading="lazy"><figcaption>{cap}</figcaption></figure>'
 s100_body=('<div class="lst-top"><div><span class="lst-tag">For Lease &middot; Office / Medical</span><p class="lst-price">Call for Pricing</p><p class="lst-sub">Suite 100 &middot; 528 sq ft &middot; Lower level &middot; 2490 Walton Boulevard, Rochester Hills</p></div>'
  '<div class="lst-actions"><a class="btn btn-solid" href="tel:+12486568830">Call (248) 656-8830</a><a class="btn" href="mailto:vlrandaz@centralerealty.com?subject=Suite%20100%20-%202490%20Walton%20Blvd">Email About Suite 100</a></div></div>'
- '<p><a href="../office-space-for-lease/">&larr; All available office space</a></p>'
+ '<p><a href="../2490lease/">&larr; All available office space</a></p>'
  '<p>A 528 sq ft lower-level office suite with an open, bright layout, vinyl plank flooring, a built-in counter and windows, in the two-storey brick and stone building on the northeast corner of Walton Boulevard and Brewster Road. Ample free parking and quick access to I-75 and M-59.</p>'
  '<ul class="lst-facts"><li><b>528</b><span>Square Feet</span></li><li><b>Call</b><span>For Pricing</span></li><li><b>2 Years</b><span>Minimum Term</span></li><li><b>Office</b><span>Or Medical Use</span></li><li><b>Free</b><span>On-Site Parking</span></li><li><b>I-75 &amp; M-59</b><span>Easy Access</span></li></ul>'
  '<h2>Property <em>Highlights</em></h2><ul class="lst-hi">'+"".join(f'<li>{x}</li>' for x in S101_HI)+'</ul>'
@@ -350,7 +350,7 @@ SPACES=[
  dict(href="suite-101/",name="Suite 101",meta="956 sq ft &middot; Lower level &middot; Office / Medical",rent="Call for pricing",img="suite-101-photo-1.jpg",alt="Suite 101 open workspace",
       blurb="An office, a conference room and an open workspace area with recessed lighting and a wood feature wall. Modified gross lease, two-year minimum."),
 ]
-EXTRA_HEAD['office-space-for-lease/']='\n  <style>.prose{max-width:1100px}.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px;margin:2rem 0}.sp-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:2px solid var(--gold);text-decoration:none;color:inherit;transition:box-shadow .25s}.sp-card:hover{box-shadow:0 10px 30px rgba(0,0,0,.12)}.sp-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}.sp-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.35rem;flex:1}.sp-body h2{margin:0;font-size:1.7rem}.sp-meta{font:500 .72rem/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}.sp-rent{font:400 1.9rem/1.1 var(--serif);color:var(--gold-deep);margin:.3rem 0}.sp-body p{margin:0 0 .8rem;font-size:.97rem;line-height:1.6}.sp-more{margin-top:auto;font:500 .78rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:.45rem}</style>'
+EXTRA_HEAD['2490lease/']='\n  <style>.prose{max-width:1100px}.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px;margin:2rem 0}.sp-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:2px solid var(--gold);text-decoration:none;color:inherit;transition:box-shadow .25s}.sp-card:hover{box-shadow:0 10px 30px rgba(0,0,0,.12)}.sp-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}.sp-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.35rem;flex:1}.sp-body h2{margin:0;font-size:1.7rem}.sp-meta{font:500 .72rem/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}.sp-rent{font:400 1.9rem/1.1 var(--serif);color:var(--gold-deep);margin:.3rem 0}.sp-body p{margin:0 0 .8rem;font-size:.97rem;line-height:1.6}.sp-more{margin-top:auto;font:500 .78rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:.45rem}</style>'
 sp_cards="".join(f'<a class="sp-card" href="../{x["href"]}"><img src="../assets/images/{x["img"]}" alt="{x["alt"]}" width="960" height="540" loading="lazy"><div class="sp-body"><span class="sp-meta">{x["meta"]}</span><h2>{x["name"]}</h2><p class="sp-rent">{x["rent"]}</p><p>{x["blurb"]}</p><span class="sp-more">View details</span></div></a>' for x in SPACES)
 hub_body=('<p>Prime office and medical space at <b>2490 Walton Boulevard</b> in Rochester Hills, at the northeast corner of Walton Boulevard and Brewster Road. Easy access to I-75 and M-59, minutes from the Village of Rochester Hills, Downtown Rochester and Oakland University, with ample free on-site parking and Henry Ford (Crittenton) Hospital nearby.</p>'
  '<h2>Available <em>Now</em></h2>'
@@ -358,7 +358,17 @@ hub_body=('<p>Prime office and medical space at <b>2490 Walton Boulevard</b> in 
  '<p>Not sure which space fits? Call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:vlrandaz@centralerealty.com">vlrandaz@centralerealty.com</a> and we will help you find the right size, or arrange a private viewing.</p>'
  '<p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=2490+Walton+Blvd+Rochester+Hills+MI+48309" target="_blank" rel="noopener">Get directions to 2490 Walton Boulevard<span class="sr"> (opens in a new tab)</span></a></p>'
  '<p class="lst-disc">Information deemed reliable but not guaranteed and subject to change without notice. Equal Housing Opportunity.</p>')
-page("office-space-for-lease/","Office Space For Lease | Rochester Hills | Centrale Realty","Office and medical space for lease at 2490 Walton Boulevard, Rochester Hills. See every available suite with photos and floor plans.","Office Space <em>For Lease</em>",hub_body,banner=('slides',[('suite-101-building-wide.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard'),('suite-100-interior-1.jpg','Suite 100 open office space'),('suite-101-photo-1.jpg','Suite 101 open workspace')]))
+page("2490lease/","Office Space For Lease | Rochester Hills | Centrale Realty","Office and medical space for lease at 2490 Walton Boulevard, Rochester Hills. See every available suite with photos and floor plans.","Office Space <em>For Lease</em>",hub_body,banner=('slides',[('suite-101-building-wide.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard'),('suite-100-interior-1.jpg','Suite 100 open office space'),('suite-101-photo-1.jpg','Suite 101 open workspace')]))
+
+# The hub first lived at /office-space-for-lease/. Keep a tiny redirect there so any link already shared still works.
+os.makedirs(os.path.join(SITE, "office-space-for-lease"), exist_ok=True)
+open(os.path.join(SITE, "office-space-for-lease", "index.html"), "w", encoding="utf-8").write(
+    '<!doctype html>\n<html lang="en">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n'
+    '  <title>Redirecting to 2490 Walton Blvd Office Space For Lease | Centrale Realty</title>\n'
+    '  <meta name="robots" content="noindex">\n'
+    '  <link rel="canonical" href="https://centralerealty.com/2490lease/">\n'
+    '  <meta http-equiv="refresh" content="0; url=/2490lease/">\n</head>\n'
+    '<body><p>This page has moved to <a href="/2490lease/">centralerealty.com/2490lease</a>.</p></body>\n</html>\n')
 # Google Search Console ownership file (keep it: Google re-checks it)
 open(os.path.join(SITE,"google82522a2cd00e9dc3.html"),"w").write("google-site-verification: google82522a2cd00e9dc3.html")
 
