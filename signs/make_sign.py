@@ -9,9 +9,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 URL = sys.argv[1] if len(sys.argv) > 1 else "https://vlrandaz-max.github.io/fantastic-octo-computing-machine/suite-101"
 W, H = 46.5 * 72, 17.5 * 72
-NAVY, DEEP, SILVER = HexColor("#1a1f6e"), HexColor("#0e1148"), HexColor("#d3d7e6")
+NAVY, SILVER = HexColor("#0b0b0b"), HexColor("#baa383")  # Centrale brand: black + gold
 pdfmetrics.registerFont(TTFont("Black", "C:/Windows/Fonts/ariblk.ttf"))
 pdfmetrics.registerFont(TTFont("Bold", "C:/Windows/Fonts/arialbd.ttf"))
+pdfmetrics.registerFont(TTFont("Serif", "C:/Windows/Fonts/georgia.ttf"))
 
 c = canvas.Canvas("signs/suite-101-for-lease-sign-46.5x17.5in.pdf", pagesize=(W, H))
 c.setTitle("Suite 101 For Lease sign 46.5 x 17.5 in")
@@ -44,5 +45,14 @@ c.setFillColor(HexColor("#ffffff"))
 sz2 = fit("248-656-8830", "Black", lw); c.setFont("Black", sz2); c.drawCentredString(cx, 4.35*72, "248-656-8830")
 c.setFillColor(SILVER); sz3 = fit("SUITE 101  •  956 SQ FT  •  OFFICE / MEDICAL", "Bold", lw); c.setFont("Bold", sz3)
 c.drawCentredString(cx, 1.6*72, "SUITE 101  •  956 SQ FT  •  OFFICE / MEDICAL")
+
+# Brand lockup (top-left): gold C/R mark + CENTRALE REALTY wordmark
+LOGO = "public/assets/suite-101/logo-cr-gold.png"
+lh = 3.4*72; lwid = lh*539/600; ly = 13.15*72
+c.drawImage(LOGO, 1.2*72, ly, width=lwid, height=lh, mask="auto")
+wx = 1.2*72 + lwid + 0.7*72
+c.setStrokeColor(SILVER); c.setLineWidth(3); c.line(wx-0.35*72, ly+0.2*72, wx-0.35*72, ly+lh-0.2*72)
+c.setFillColor(white); c.setFont("Serif", 120); c.drawString(wx, ly+1.75*72, "CENTRALE")
+c.setFillColor(SILVER); c.setFont("Bold", 60); c.drawString(wx+4, ly+0.7*72, "R E A L T Y")
 c.showPage(); c.save()
 print("qr modules:", n, "cell in:", round(cell/72,3), "FOR LEASE pt:", round(sz), "phone pt:", round(sz2), "sub pt:", round(sz3))
