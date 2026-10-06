@@ -14,8 +14,10 @@ pdfmetrics.registerFont(TTFont("Black", "C:/Windows/Fonts/ariblk.ttf"))
 pdfmetrics.registerFont(TTFont("Bold", "C:/Windows/Fonts/arialbd.ttf"))
 pdfmetrics.registerFont(TTFont("Serif", "C:/Windows/Fonts/georgia.ttf"))
 
-c = canvas.Canvas("signs/suite-101-for-lease-sign-46.5x17.5in.pdf", pagesize=(W, H))
-c.setTitle("Suite 101 For Lease sign 46.5 x 17.5 in")
+import os
+OUT = os.environ.get("SIGN_OUT", "signs/for-lease-sign-46.5x17.5in.pdf")
+c = canvas.Canvas(OUT, pagesize=(W, H))
+c.setTitle("For Lease sign 46.5 x 17.5 in")
 c.setFillColor(NAVY); c.rect(0, 0, W, H, fill=1, stroke=0)
 c.setStrokeColor(SILVER); c.setLineWidth(5); c.rect(0.4*72, 0.4*72, W-0.8*72, H-0.8*72, fill=0)  # inset border (safe from trim)
 
@@ -43,8 +45,8 @@ sz = fit("FOR LEASE", "Black", lw); c.setFont("Black", sz); c.drawCentredString(
 c.setFillColor(SILVER); c.rect(1.2*72, 8.35*72, lw, 0.12*72, fill=1, stroke=0)
 c.setFillColor(HexColor("#ffffff"))
 sz2 = fit("248-656-8830", "Black", lw); c.setFont("Black", sz2); c.drawCentredString(cx, 4.35*72, "248-656-8830")
-c.setFillColor(SILVER); sz3 = fit("SUITE 101  •  956 SQ FT  •  OFFICE / MEDICAL", "Bold", lw); c.setFont("Bold", sz3)
-c.drawCentredString(cx, 1.6*72, "SUITE 101  •  956 SQ FT  •  OFFICE / MEDICAL")
+c.setFillColor(SILVER); sz3 = min(94, fit("OFFICE / MEDICAL SPACE", "Bold", lw)); c.setFont("Bold", sz3)
+c.drawCentredString(cx, 1.6*72, "OFFICE / MEDICAL SPACE")
 
 # Brand lockup (top-left): gold C/R mark + CENTRALE REALTY wordmark
 LOGO = "public/assets/suite-101/logo-cr-gold.png"
