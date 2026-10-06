@@ -21,7 +21,7 @@ c.setStrokeColor(INK); c.setLineWidth(5); c.rect(0.4*72, 0.4*72, W-0.8*72, H-0.8
 
 MARGIN_X, MARGIN_Y = 1.3*72, 1.3*72
 lw = W - 2*MARGIN_X
-LINES = ["FOR LEASE", "248-656-8830", "OFFICE / MEDICAL SPACE", "CENTRALEREALTY.COM/OFFICE-SPACE-FOR-LEASE"]
+LINES = ["FOR LEASE", "248-656-8830", "OFFICE / MEDICAL SPACE", "CENTRALEREALTY.COM/2490LEASE"]
 cap = pdfmetrics.getFont("Black").face.capHeight / 1000.0     # cap height per 1pt of font size
 sizes = [lw / pdfmetrics.stringWidth(t, "Black", 1) for t in LINES]   # each line spans the full width
 RULE = 0.18*72
