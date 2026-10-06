@@ -15,7 +15,6 @@ import { FalconEstatesPage } from './components/simple/FalconEstatesPage';
 import { ClassicHomePage } from './components/simple/ClassicHomePage';
 import { Classic2HomePage } from './components/simple/Classic2HomePage';
 import { NotFoundPage } from './components/simple/NotFoundPage';
-import { Suite101Page } from './components/simple/Suite101Page';
 import { GalleryPage } from './components/GalleryPage';
 import { HOME_DETAILS } from './data/site';
 
@@ -58,7 +57,6 @@ function App() {
   if (path.startsWith('/heritage')) return <HomeDetailPage home={HOME_DETAILS.heritage} />;
   if (path.startsWith('/pine-woods')) return <PineWoodsPage />;
   if (path.startsWith('/contact-us')) return <ContactUsPage />;
-  if (path.startsWith('/suite-101')) return <Suite101Page />;
   if (path.startsWith('/classic2')) return <Classic2HomePage />;
   if (path.startsWith('/classic')) return <ClassicHomePage />;
   if (path.startsWith('/simple')) return <SimpleHome />;
