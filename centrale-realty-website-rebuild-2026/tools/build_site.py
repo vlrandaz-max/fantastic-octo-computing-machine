@@ -333,7 +333,7 @@ s100_body=('<div class="lst-top lst-center"><div><span class="lst-tag">For Lease
  '<ul class="lst-facts"><li><b>725</b><span>Square Feet</span></li><li><b>Call</b><span>For Pricing</span></li><li><b>2 Years</b><span>Minimum Term</span></li><li><b>Office</b><span>Or Medical Use</span></li><li><b>Free</b><span>On-Site Parking</span></li><li><b>I-75 &amp; M-59</b><span>Easy Access</span></li></ul>'
  '<h2>Property <em>Highlights</em></h2><ul class="lst-hi">'+"".join(f'<li>{x}</li>' for x in S101_HI)+'</ul>'
  '<h2>Take a Look <em>Inside</em></h2><div class="lst-figs lst-uniform">'
- +s101_fig("building","Two-storey brick and stone office building at 2490 Walton Boulevard","The building at 2490 Walton Boulevard.")+s100_fig("interior-1","Suite 100 open office space with vinyl plank flooring and windows","Open office space.")
+ +s101_fig("building","Two-storey brick and stone office building at 2490 Walton Boulevard","The building at 2490 Walton Boulevard.")+s100_fig("interior-5","Suite 100 open office space with vinyl plank flooring, built-in counter, closet and windows","Open office space with windows.")
  +s100_fig("interior-4","Suite 100 open office with vinyl plank flooring, built-in counter and a row of windows","Open layout with built-in counter.")+s100_fig("interior-3","Suite 100 open area with counter and window wall","Window wall.")+'</div>'
  '<h2>Lease <em>Details</em></h2><table class="lst-dt">'+"".join(f'<tr><th scope="row">{a}</th><td>{b}</td></tr>' for a,b in S100_ROWS)+'</table>'
  '<h2><em>Pricing</em></h2><p>Rates and move-in costs are available on request. Call <a href="tel:+12486568830">(248) 656-8830</a> or email <a href="mailto:vlrandaz@centralerealty.com">vlrandaz@centralerealty.com</a>.</p>'
