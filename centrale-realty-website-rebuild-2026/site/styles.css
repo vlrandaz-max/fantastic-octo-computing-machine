@@ -305,3 +305,6 @@ address{font-style:normal}
 .now-leasing p{color:rgba(255,255,255,.85);margin:0 auto 1.4rem;max-width:34rem}
 .now-leasing .btn{color:var(--black)}
 @media(max-width:520px){.now-leasing .btn{width:100%;box-sizing:border-box}}
+
+.plan-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin:1.2rem 0 2rem}.plan-pair .plan{margin:0}.plan-pair .plan img{width:100%;height:auto;display:block}.plan-pair .plan h3{font:500 .78rem/1.2 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 .7rem}
+@media(max-width:760px){.plan-pair{grid-template-columns:1fr}}
