@@ -70,3 +70,8 @@ That session had no access to the chat, so it wrote from git history. Its notes 
 - `tools/audit.py` was changed only to skip redirect pages (`http-equiv="refresh"`); it does not otherwise know about these pages beyond the `PAGES` list.
 - **One publish routine for all sessions:** pull the latest, build, audit, regenerate the deploy repo from the latest `centrale-realty-site` `main`, push, verify live. **Do not let two sessions push to `centrale-realty-site` at the same time.**
 - The FTPS upload skips files whose size is unchanged. A change that only reorders text can look deployed but not appear; re-run the "Deploy to GoDaddy (FTPS)" Action with `force=true` in that case.
+
+## Update 2026-10-07: white/red sign variant
+- `reference/sign/for-lease-sign-white-red-final-46.5x17.5in.pdf` (trim size) and `...-with-bleed.pdf` (0.125 in bleed): same layout and Arial Black as the gold version,
+  white background, "FOR LEASE" and "CENTRALEREALTY.COM/2490" in red `#C8102E`, phone number and rules black. Made by editing the colour operators in the
+  existing PDFs (Arial Black is a Windows font and not available in the cloud sandbox), so `make_sign.py` still only produces the gold version.
