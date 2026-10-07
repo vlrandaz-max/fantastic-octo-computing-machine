@@ -75,3 +75,6 @@ That session had no access to the chat, so it wrote from git history. Its notes 
 - `reference/sign/for-lease-sign-white-red-final-46.5x17.5in.pdf` (trim size) and `...-with-bleed.pdf` (0.125 in bleed): same layout and Arial Black as the gold version,
   white background, "FOR LEASE" and "CENTRALEREALTY.COM/2490" in red `#C8102E`, phone number and rules black. Made by editing the colour operators in the
   existing PDFs (Arial Black is a Windows font and not available in the cloud sandbox), so `make_sign.py` still only produces the gold version.
+- Navy variant for the illuminated pylon: `reference/sign/for-lease-sign-navy-final-46.5x17.5in.pdf` and `...-with-bleed.pdf`. Navy background `#143682`
+  (matched by eye to the neighbouring Farmers and Centrale panels in the photo), white text, rules and border. Same layout and Arial Black.
+  Confirm the navy against a printed swatch from the sign shop: colours shift when backlit.
