@@ -253,7 +253,7 @@ PAGES=[("","Home","Centrale Realty, Inc. serving Metro Detroit since 1984."),
 ("legal/","Legal","Legal notices, fair housing and privacy."),
 ("properties/grand-blanc-land/","Grand Blanc Land","7.79 acres for sale on S. Saginaw Street, Grand Blanc Township."),
 ("2490/","Office Space For Lease","Available office and medical suites at 2490 Walton Blvd, Rochester Hills."),
-("suite-100/","Suite 100 For Lease","687 sq ft lower-level office/medical suite at 2490 Walton Blvd."),
+("suite-100/","Suite 100 For Lease","725 sq ft lower-level office/medical suite at 2490 Walton Blvd."),
 ("suite-101/","Suite 101 For Lease","956 sq ft lower-level office/medical space at 2490 Walton Blvd."),
 ("sitemap/","Sitemap","Every page on this site.")]
 lis="".join(f'<li><a href="../{u}">{t}</a> &mdash; {d}</li>' if u else f'<li><a href="../">{t}</a> &mdash; {d}</li>' for u,t,d in PAGES[:-1])
@@ -322,14 +322,14 @@ s101_body=('<div class="lst-top"><div><span class="lst-tag">For Lease &middot; O
 page("suite-101/","Suite 101 Office Space For Lease | Rochester Hills | Centrale Realty","956 sq ft lower-level office/medical space for lease at 2490 Walton Boulevard, Rochester Hills. Modified gross lease. Photos and floor plan.","Suite 101 <em>For Lease</em>",s101_body,banner=('slides',[('suite-101-building-wide.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard'),('suite-101-photo-1.jpg','Suite 101 open workspace'),('suite-101-photo-3.jpg','Suite 101 main room')]))
 
 # ---- Suite 100 office lease listing ----
-EXTRA_HEAD['suite-100/']='\n  <style>.prose{max-width:1100px}</style>\n  <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateListing","name":"Suite 100 Office Space For Lease, 2490 Walton Boulevard, Rochester Hills","url":"https://centralerealty.com/suite-100/","description":"687 sq ft lower-level office/medical suite for lease at 2490 Walton Boulevard, Rochester Hills, Michigan. Modified gross lease.","image":"https://centralerealty.com/assets/images/suite-101-building-wide.jpg"}</script>'
-S100_ROWS=[("Suite","100 (lower level)"),("Size","687 sq ft"),("Use","Office / Medical"),("Lease Type","Modified gross lease"),("Minimum Term","2 years"),("Tenant Pays","Pro-rated gas &amp; electric, internet/cable, quarterly maintenance fee (CAM)"),("Remodeled","2002&ndash;2026"),("Parking","Ample free on-site parking")]
+EXTRA_HEAD['suite-100/']='\n  <style>.prose{max-width:1100px}</style>\n  <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateListing","name":"Suite 100 Office Space For Lease, 2490 Walton Boulevard, Rochester Hills","url":"https://centralerealty.com/suite-100/","description":"725 sq ft lower-level office/medical suite for lease at 2490 Walton Boulevard, Rochester Hills, Michigan. Modified gross lease.","image":"https://centralerealty.com/assets/images/suite-101-building-wide.jpg"}</script>'
+S100_ROWS=[("Suite","100 (lower level)"),("Size","725 sq ft"),("Use","Office / Medical"),("Lease Type","Modified gross lease"),("Minimum Term","2 years"),("Tenant Pays","Pro-rated gas &amp; electric, internet/cable, quarterly maintenance fee (CAM)"),("Remodeled","2002&ndash;2026"),("Parking","Ample free on-site parking")]
 def s100_fig(f,alt,cap): return f'<figure><img src="../assets/images/suite-100-{f}.jpg" alt="{alt}" width="960" height="540" loading="lazy"><figcaption>{cap}</figcaption></figure>'
-s100_body=('<div class="lst-top"><div><span class="lst-tag">For Lease &middot; Office / Medical</span><p class="lst-price">Call for Pricing</p><p class="lst-sub">Suite 100 &middot; 687 sq ft &middot; Lower level &middot; 2490 Walton Boulevard, Rochester Hills</p></div>'
+s100_body=('<div class="lst-top"><div><span class="lst-tag">For Lease &middot; Office / Medical</span><p class="lst-price">Call for Pricing</p><p class="lst-sub">Suite 100 &middot; 725 sq ft &middot; Lower level &middot; 2490 Walton Boulevard, Rochester Hills</p></div>'
  '<div class="lst-actions"><a class="btn btn-solid" href="tel:+12486568830">Call (248) 656-8830</a><a class="btn" href="mailto:vlrandaz@centralerealty.com?subject=Suite%20100%20-%202490%20Walton%20Blvd">Email About Suite 100</a></div></div>'
  '<p><a href="../2490/">&larr; All available office space</a></p>'
- '<p>A 687 sq ft lower-level office suite with an open, bright layout, vinyl plank flooring, a built-in counter and windows, in the two-storey brick and stone building on the northeast corner of Walton Boulevard and Brewster Road. Ample free parking and quick access to I-75 and M-59.</p>'
- '<ul class="lst-facts"><li><b>687</b><span>Square Feet</span></li><li><b>Call</b><span>For Pricing</span></li><li><b>2 Years</b><span>Minimum Term</span></li><li><b>Office</b><span>Or Medical Use</span></li><li><b>Free</b><span>On-Site Parking</span></li><li><b>I-75 &amp; M-59</b><span>Easy Access</span></li></ul>'
+ '<p>A 725 sq ft lower-level office suite with an open, bright layout, vinyl plank flooring, a built-in counter and windows, in the two-storey brick and stone building on the northeast corner of Walton Boulevard and Brewster Road. Ample free parking and quick access to I-75 and M-59.</p>'
+ '<ul class="lst-facts"><li><b>725</b><span>Square Feet</span></li><li><b>Call</b><span>For Pricing</span></li><li><b>2 Years</b><span>Minimum Term</span></li><li><b>Office</b><span>Or Medical Use</span></li><li><b>Free</b><span>On-Site Parking</span></li><li><b>I-75 &amp; M-59</b><span>Easy Access</span></li></ul>'
  '<h2>Property <em>Highlights</em></h2><ul class="lst-hi">'+"".join(f'<li>{x}</li>' for x in S101_HI)+'</ul>'
  '<h2>Take a Look <em>Inside</em></h2><div class="lst-figs">'
  +s100_fig("interior-1","Suite 100 open office space with vinyl plank flooring and windows","Open office space.")+s100_fig("interior-2","Suite 100 with built-in counter and windows","Built-in counter.")
@@ -340,13 +340,13 @@ s100_body=('<div class="lst-top"><div><span class="lst-tag">For Lease &middot; O
  '<h2>Directions</h2><p>2490 Walton Boulevard, Rochester Hills, MI 48309, at the northeast corner of Walton Boulevard and Brewster Road. <a href="https://www.google.com/maps/dir/?api=1&amp;destination=2490+Walton+Blvd+Rochester+Hills+MI+48309" target="_blank" rel="noopener">Get directions<span class="sr"> (opens in a new tab)</span></a></p>'
  '<h2>Arrange a <em>Private Viewing</em></h2><p>Contact Vito L. Randazzo, Associate Broker: office <a href="tel:+12486568830">(248) 656-8830</a>, direct <a href="tel:+12483883473">(248) 388-3473</a>, or <a href="mailto:vlrandaz@centralerealty.com">vlrandaz@centralerealty.com</a>.</p>'
  '<p class="lst-disc">Information deemed reliable but not guaranteed and subject to change without notice. Equal Housing Opportunity.</p>')
-page("suite-100/","Suite 100 Office Space For Lease | Rochester Hills | Centrale Realty","687 sq ft lower-level office/medical space for lease at 2490 Walton Boulevard, Rochester Hills. Modified gross lease. Photos and floor plan.","Suite 100 <em>For Lease</em>",s100_body,banner=('slides',[('suite-101-building-wide.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard'),('suite-100-interior-1.jpg','Suite 100 open office space'),('suite-100-interior-3.jpg','Suite 100 window wall')]))
+page("suite-100/","Suite 100 Office Space For Lease | Rochester Hills | Centrale Realty","725 sq ft lower-level office/medical space for lease at 2490 Walton Boulevard, Rochester Hills. Modified gross lease. Photos and floor plan.","Suite 100 <em>For Lease</em>",s100_body,banner=('slides',[('suite-101-building-wide.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard'),('suite-100-interior-1.jpg','Suite 100 open office space'),('suite-100-interior-3.jpg','Suite 100 window wall')]))
 
 # ---- Office space for lease hub (the road sign QR code points here) ----
 # To list a new space or remove a leased one, edit SPACES and rebuild: every card links to that space's own page.
 SPACES=[
- dict(href="suite-100/",name="Suite 100",meta="687 sq ft &middot; Lower level &middot; Office / Medical",rent="Call for pricing",img="suite-100-interior-1.jpg",alt="Suite 100 open office space",
-      blurb="687 sq ft of open, bright lower-level space with vinyl plank flooring, a built-in counter and windows. Modified gross lease, two-year minimum."),
+ dict(href="suite-100/",name="Suite 100",meta="725 sq ft &middot; Lower level &middot; Office / Medical",rent="Call for pricing",img="suite-100-interior-1.jpg",alt="Suite 100 open office space",
+      blurb="725 sq ft of open, bright lower-level space with vinyl plank flooring, a built-in counter and windows. Modified gross lease, two-year minimum."),
  dict(href="suite-101/",name="Suite 101",meta="956 sq ft &middot; Lower level &middot; Office / Medical",rent="Call for pricing",img="suite-101-photo-1.jpg",alt="Suite 101 open workspace",
       blurb="An office, a conference room and an open workspace area with recessed lighting and a wood feature wall. Modified gross lease, two-year minimum."),
 ]

@@ -8,7 +8,7 @@ videos and the printed road sign. Nothing in this commit is deployed.
 | URL | What it is |
 | --- | --- |
 | `/2490/` | Hub page for the road sign. One card per available suite (photo, size, "Call for pricing", short write-up) linking to its page. |
-| `/suite-100/` | Suite 100: 687 sq ft, lower level, office/medical. |
+| `/suite-100/` | Suite 100: 725 sq ft, lower level, office/medical. |
 | `/suite-101/` | Suite 101: 956 sq ft, lower level, office/medical. 8 photos, floor plan, 2 walkthrough videos. |
 | `/2490lease/`, `/office-space-for-lease/` | Tiny `noindex` redirect pages to `/2490/` (earlier addresses of the hub). |
 
@@ -25,7 +25,7 @@ The Commercial page has a "Now leasing" line linking to `/2490/`. `sitemap.xml` 
 ## Decisions (and who made them)
 
 - **No dollar amounts anywhere.** Rent, deposits, cleaning fee and move-in totals were removed from the hub, Suite 100 and Suite 101 (pages, search descriptions, JSON-LD, sitemap text). Owner request: current tenants should not be able to look up rates, and rates change with the market. Pages say "Call for Pricing" / "Rates and move-in costs are available on request." The tenant-responsibility lines (gas/electric, internet/cable, quarterly maintenance fee/CAM, 2-year minimum, modified gross lease) were **kept on purpose** — owner explicitly said not to remove those.
-- **Sizes:** Suite 100 = 687 sq ft (owner corrected from 528 on 2026-10-07; it is not in the brochures). Suite 101 = 956 sq ft (brochure floor plan).
+- **Sizes:** Suite 100 = 725 sq ft (owner corrected from 528 via 687 on 2026-10-07; it is not in the brochures). Suite 101 = 956 sq ft (brochure floor plan).
 - **"Lower level"** shown for both suites (hero line, lease-details row, hub card, descriptions). Suite 100's came from the folder/file names (`Lower Level\Suite100`); owner asked to add it to Suite 101 "like Suite 100".
 - **Hub URL = `/2490/`.** Owner wanted something short and unambiguous because Centrale also leases residential properties (so not "/office-space-for-lease"), and easy to write down while driving. Went /office-space-for-lease -> /2490lease -> /2490. Old two addresses kept as redirects.
 - **Branding:** Centrale Realty brand from `branding-kit` / the site (black `#0b0b0b`, gold `#baa383` / `#7d6849`, cream, Cormorant Garamond + Jost, C/R mark). The pages are generated with the site's own `page()` shell and the Grand Blanc `lst-*` listing classes, so they inherit header/footer/nav.
