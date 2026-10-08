@@ -30,7 +30,7 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
     if not home and not noindex:
         name=title.split(" | ")[0].replace("&amp;","&").replace('"','')
         crumbs='\n  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://centralerealty.com/"},{"@type":"ListItem","position":2,"name":"'+name+'","item":"'+url+'"}]}</script>'
-    lcp='<link rel="preload" as="image" href="'+r+'assets/images/office-banner.jpg" fetchpriority="high">\n  ' if home else ''
+    lcp='<link rel="preload" as="image" href="'+r+'assets/images/hero-poster.jpg" fetchpriority="high">\n  ' if home else ''
     canon="" if noindex else f'<link rel="canonical" href="{url}">'
 
     items=[]
@@ -131,7 +131,7 @@ def acc(href,img,alt,label,desc,active=False):
     return f'<a class="{cls}" href="{href}"><img src="assets/images/{img}" alt="{alt}" width="900" height="1000" loading="lazy"><span class="acc-text"><span class="acc-label">{label}</span><span class="acc-desc">{desc}</span><span class="acc-view">View &rarr;</span></span></a>'
 home_main=f'''  <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="slides" data-n="9"><img src="assets/images/office-banner.jpg" alt="Two-storey brick and stone office building at 2490 Walton Boulevard, Rochester Hills" width="1600" height="686" fetchpriority="high"><img src="assets/images/suite-100-staged-workspace.jpg" alt="Suite 100 open workspace, virtually staged with desks and a coffee station; furniture not included" width="1600" height="686" loading="lazy"><img src="assets/images/suite-101-staged-boucle.jpg" alt="Suite 101 open workspace, virtually staged as a meeting area; furniture not included" width="1600" height="686" loading="lazy"><img src="assets/images/suite-100-staged-longtable.jpg" alt="Suite 100 open workspace, virtually staged with a work table and desks; furniture not included" width="1600" height="686" loading="lazy"><img src="assets/images/suite-101-staged-conference.jpg" alt="Suite 101 conference room, virtually staged with a table and chairs; furniture not included" width="1600" height="686" loading="lazy"><img src="assets/images/suite-100-staged-counter.jpg" alt="Suite 100 open workspace seen over the built-in counter, virtually staged; furniture not included" width="1600" height="686" loading="lazy"><img src="assets/images/suite-101-staged-office.jpg" alt="Suite 101 private office, virtually staged with a desk and chairs; furniture not included" width="1600" height="686" loading="lazy"><img src="assets/images/suite-100-staged-roundtable.jpg" alt="Suite 100 open workspace, virtually staged with a round table and counter stools; furniture not included" width="1600" height="686" loading="lazy"><img src="assets/images/suite-101-staged-leather.jpg" alt="Suite 101 open workspace, virtually staged with a conference table; furniture not included" width="1600" height="686" loading="lazy"></div>
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg" aria-hidden="true"><source src="assets/video/hero.mp4" type="video/mp4"></video>
       <div class="hero-copy">
         <h1 id="hero-title">Serving Metro Detroit<br><em>since 1984</em></h1>
         <div class="hero-cta"><a class="btn" href="tel:+12486568830">Call (248) 656-8830</a></div>
@@ -161,7 +161,7 @@ home_main=f'''  <main id="main">
         </div>
         <div class="acc" id="acc">
           {acc("for-sale/","acc-sale.jpg","Stone and brick home at twilight","For Sale","Residential and commercial properties.",True)}
-          {acc("commercial-space/","acc-commercial.jpg","Two-storey brick and stone office building","Commercial","Office space in Rochester Hills and Auburn Hills.")}
+          {acc("commercial-space/","suite-100-staged-workspace.jpg","Staged open office workspace at 2490 Walton Boulevard","Commercial","Office space in Rochester Hills and Auburn Hills.")}
           {acc("properties/","acc-land.jpg","Aerial view of land next to a neighborhood","Properties","Pine Woods, Falcon Estates and more.")}
           {acc("for-lease/","acc-lease.jpg","Brick duplex with attached two-car garages","For Lease","Metro Detroit rentals, from duplexes to corporate housing.")}
           {acc("construction-services/","acc-construction.jpg","Telehandler lifting masonry to scaffolding at a home under construction","Construction","New and luxury construction across Metro Detroit.")}
