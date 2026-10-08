@@ -131,7 +131,7 @@ def acc(href,img,alt,label,desc,active=False):
     return f'<a class="{cls}" href="{href}"><img src="assets/images/{img}" alt="{alt}" width="900" height="1000" loading="lazy"><span class="acc-text"><span class="acc-label">{label}</span><span class="acc-desc">{desc}</span><span class="acc-view">View &rarr;</span></span></a>'
 home_main=f'''  <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg" aria-hidden="true"><source src="assets/video/hero.mp4" type="video/mp4"></video>
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg" aria-hidden="true"><source src="assets/video/hero.mp4?v=20261008" type="video/mp4"></video>
       <div class="hero-copy">
         <h1 id="hero-title">Serving Metro Detroit<br><em>since 1984</em></h1>
         <div class="hero-cta"><a class="btn" href="tel:+12486568830">Call (248) 656-8830</a></div>
