@@ -97,16 +97,18 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
 
 def page(path,title,desc,h1,body,home=False,banner=None):
     depth=path.count("/"); r="../"*depth
+    tags=''
     if banner and banner[0]=='slides':
         lz=' loading="lazy"'; fp=' fetchpriority="high"'
         imgs=''.join(f'<img src="{r}assets/images/{f}" alt="{a}" width="1600" height="686"{fp if k==0 else lz}>' for k,(f,a) in enumerate(banner[1]))
+        tags=''.join(f'<span class="stg-tag" style="animation-delay:{k*5}s">Virtually staged &middot; furniture not included</span>' for k,(f,a) in enumerate(banner[1]) if 'virtually staged' in a)
         media=f'<div class="slides" data-n="{len(banner[1])}">{imgs}</div>'
     elif banner:
         media=f'<img src="{r}assets/images/{banner[0]}" alt="{banner[1]}" width="1600" height="686" fetchpriority="high">'
     else:
         media=''
     if banner:
-        pb=''
+        pb=tags if banner[0]=='slides' else ''
         head=f'<section class="hero page-hero" aria-labelledby="page-title">{media}{pb}<div class="hero-copy"><h1 id="page-title">{h1}</h1></div></section>'
     else:
         head=f'<section class="page-title"><h1>{h1}</h1></section>'
@@ -319,7 +321,7 @@ s101_body=('<div class="lst-top lst-center"><div><span class="lst-tag">For Lease
  '<h2>Directions</h2><p>2490 Walton Boulevard, Rochester Hills, MI 48309, at the northeast corner of Walton Boulevard and Brewster Road. <a href="https://www.google.com/maps/dir/?api=1&amp;destination=2490+Walton+Blvd+Rochester+Hills+MI+48309" target="_blank" rel="noopener">Get directions<span class="sr"> (opens in a new tab)</span></a></p>'
  '<h2>Arrange a <em>Private Viewing</em></h2><p>Contact Vito L. Randazzo, Associate Broker: office <a href="tel:+12486568830">(248) 656-8830</a>, direct <a href="tel:+12483883473">(248) 388-3473</a>, or <a href="mailto:vlrandaz@centralerealty.com">vlrandaz@centralerealty.com</a>.</p>'
  '<p class="lst-disc">Information deemed reliable but not guaranteed and subject to change without notice. Equal Housing Opportunity.</p>')
-page("suite-101/","Suite 101 Office Space For Lease | Rochester Hills | Centrale Realty","956 sq ft lower-level office/medical space for lease at 2490 Walton Boulevard, Rochester Hills. Modified gross lease. Photos and floor plan.","Suite 101 <em>For Lease</em>",s101_body,banner=('slides',[('suite-101-building-wide.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard'),('suite-101-photo-1.jpg','Suite 101 open workspace'),('suite-101-photo-3.jpg','Suite 101 main room')]))
+page("suite-101/","Suite 101 Office Space For Lease | Rochester Hills | Centrale Realty","956 sq ft lower-level office/medical space for lease at 2490 Walton Boulevard, Rochester Hills. Modified gross lease. Photos and floor plan.","Suite 101 <em>For Lease</em>",s101_body,banner=('slides',[('suite-101-building-wide.jpg','Two-storey brick and stone office building at 2490 Walton Boulevard'),('suite-101-staged-rh-desks.jpg','Suite 101 open workspace, virtually staged with oak desks and a lounge area; furniture not included'),('suite-101-photo-1.jpg','Suite 101 open workspace'),('suite-101-staged-boucle.jpg','Suite 101 open workspace, virtually staged as a meeting area; furniture not included'),('suite-101-photo-3.jpg','Suite 101 main room'),('suite-101-staged-leather.jpg','Suite 101 open workspace, virtually staged with a conference table; furniture not included'),('suite-101-photo-4.jpg','Suite 101 back wall with built-in shelving and an exterior door'),('suite-101-staged-shell.jpg','Suite 101 open workspace, virtually staged with a round table; furniture not included')]))
 
 # ---- Suite 100 office lease listing ----
 EXTRA_HEAD['suite-100/']='\n  <style>.prose{max-width:1100px}</style>\n  <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateListing","name":"Suite 100 Office Space For Lease, 2490 Walton Boulevard, Rochester Hills","url":"https://centralerealty.com/suite-100/","description":"725 sq ft lower-level office/medical suite for lease at 2490 Walton Boulevard, Rochester Hills, Michigan. Modified gross lease.","image":"https://centralerealty.com/assets/images/suite-101-building-wide.jpg"}</script>'
@@ -347,11 +349,12 @@ page("suite-100/","Suite 100 Office Space For Lease | Rochester Hills | Centrale
 SPACES=[
  dict(href="suite-100/",name="Suite 100",meta="725 sq ft &middot; Lower level &middot; Office / Medical",rent="Call for pricing",img="suite-100-interior-1.jpg",alt="Suite 100 open office space",
       blurb="725 sq ft of open, bright lower-level space with vinyl plank flooring, a built-in counter and windows. Modified gross lease, two-year minimum."),
- dict(href="suite-101/",name="Suite 101",meta="956 sq ft &middot; Lower level &middot; Office / Medical",rent="Call for pricing",img="suite-101-photo-1.jpg",alt="Suite 101 open workspace",
+ dict(href="suite-101/",name="Suite 101",meta="956 sq ft &middot; Lower level &middot; Office / Medical",rent="Call for pricing",img="suite-101-staged-boucle.jpg",alt="Suite 101 open workspace, virtually staged; furniture not included",staged=True,
       blurb="An office, a conference room and an open workspace area with recessed lighting and a wood feature wall. Modified gross lease, two-year minimum."),
 ]
 EXTRA_HEAD['2490/']='\n  <style>.prose{max-width:1100px}.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px;margin:2rem 0}.sp-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:2px solid var(--gold);text-decoration:none;color:inherit;transition:box-shadow .25s}.sp-card:hover{box-shadow:0 10px 30px rgba(0,0,0,.12)}.sp-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}.sp-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.35rem;flex:1}.sp-body h2{margin:0;font-size:1.7rem}.sp-meta{font:500 .72rem/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}.sp-rent{font:400 1.9rem/1.1 var(--serif);color:var(--gold-deep);margin:.3rem 0}.sp-body p{margin:0 0 .8rem;font-size:.97rem;line-height:1.6}.sp-more{margin-top:auto;font:500 .78rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:.45rem}</style>'
-sp_cards="".join(f'<a class="sp-card" href="../{x["href"]}"><img src="../assets/images/{x["img"]}" alt="{x["alt"]}" width="960" height="540" loading="lazy"><div class="sp-body"><span class="sp-meta">{x["meta"]}</span><h2>{x["name"]}</h2><p class="sp-rent">{x["rent"]}</p><p>{x["blurb"]}</p><span class="sp-more">View details</span></div></a>' for x in SPACES)
+def sp_flag(x): return '<span class="sp-flag">Virtually staged</span>' if x.get("staged") else ''
+sp_cards="".join(f'<a class="sp-card" href="../{x["href"]}"><span class="sp-img"><img src="../assets/images/{x["img"]}" alt="{x["alt"]}" width="960" height="540" loading="lazy">{sp_flag(x)}</span><div class="sp-body"><span class="sp-meta">{x["meta"]}</span><h2>{x["name"]}</h2><p class="sp-rent">{x["rent"]}</p><p>{x["blurb"]}</p><span class="sp-more">View details</span></div></a>' for x in SPACES)
 hub_body=('<p>Prime office and medical space at <b>2490 Walton Boulevard</b> in Rochester Hills, at the northeast corner of Walton Boulevard and Brewster Road. Easy access to I-75 and M-59, minutes from the Village of Rochester Hills, Downtown Rochester and Oakland University, with ample free on-site parking and Henry Ford (Crittenton) Hospital nearby.</p>'
  '<h2>Available <em>Now</em></h2>'
  f'<div class="sp-grid">{sp_cards}</div>'
