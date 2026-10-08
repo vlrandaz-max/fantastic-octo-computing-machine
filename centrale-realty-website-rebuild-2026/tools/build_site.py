@@ -101,7 +101,7 @@ def page(path,title,desc,h1,body,home=False,banner=None):
     if banner and banner[0]=='slides':
         lz=' loading="lazy"'; fp=' fetchpriority="high"'
         imgs=''.join(f'<img src="{r}assets/images/{f}" alt="{a}" width="1600" height="686"{fp if k==0 else lz}>' for k,(f,a) in enumerate(banner[1]))
-        tags=''.join(f'<span class="stg-tag" style="animation-delay:{k*5}s">Virtually staged &middot; furniture not included</span>' for k,(f,a) in enumerate(banner[1]) if 'virtually staged' in a)
+        tags=''.join(f'<span class="stg-tag" style="animation-delay:{k*5}s">Staged &ndash; Furniture not included</span>' for k,(f,a) in enumerate(banner[1]) if 'virtually staged' in a)
         media=f'<div class="slides" data-n="{len(banner[1])}">{imgs}</div>'
     elif banner:
         media=f'<img src="{r}assets/images/{banner[0]}" alt="{banner[1]}" width="1600" height="686" fetchpriority="high">'
@@ -353,7 +353,7 @@ SPACES=[
       blurb="An office, a conference room and an open workspace area with recessed lighting and a wood feature wall. Modified gross lease, two-year minimum."),
 ]
 EXTRA_HEAD['2490/']='\n  <style>.prose{max-width:1100px}.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px;margin:2rem 0}.sp-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:2px solid var(--gold);text-decoration:none;color:inherit;transition:box-shadow .25s}.sp-card:hover{box-shadow:0 10px 30px rgba(0,0,0,.12)}.sp-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}.sp-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.35rem;flex:1}.sp-body h2{margin:0;font-size:1.7rem}.sp-meta{font:500 .72rem/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}.sp-rent{font:400 1.9rem/1.1 var(--serif);color:var(--gold-deep);margin:.3rem 0}.sp-body p{margin:0 0 .8rem;font-size:.97rem;line-height:1.6}.sp-more{margin-top:auto;font:500 .78rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:.45rem}</style>'
-def sp_flag(x): return '<span class="sp-flag">Virtually staged</span>' if x.get("staged") else ''
+def sp_flag(x): return '<span class="sp-flag">Staged &ndash; Furniture not included</span>' if x.get("staged") else ''
 sp_cards="".join(f'<a class="sp-card" href="../{x["href"]}"><span class="sp-img"><img src="../assets/images/{x["img"]}" alt="{x["alt"]}" width="960" height="540" loading="lazy">{sp_flag(x)}</span><div class="sp-body"><span class="sp-meta">{x["meta"]}</span><h2>{x["name"]}</h2><p class="sp-rent">{x["rent"]}</p><p>{x["blurb"]}</p><span class="sp-more">View details</span></div></a>' for x in SPACES)
 hub_body=('<p>Prime office and medical space at <b>2490 Walton Boulevard</b> in Rochester Hills, at the northeast corner of Walton Boulevard and Brewster Road. Easy access to I-75 and M-59, minutes from the Village of Rochester Hills, Downtown Rochester and Oakland University, with ample free on-site parking and Henry Ford (Crittenton) Hospital nearby.</p>'
  '<h2>Available <em>Now</em></h2>'
