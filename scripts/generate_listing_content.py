@@ -33,6 +33,11 @@ PROMPT_FILE = REPO_ROOT / "prompts/luxury-listing-prompt.txt"
 MODEL = "claude-opus-5-5"
 MAX_IMAGES_PER_CALL = 5
 
+# claude-opus-5-5 pricing, per million tokens (https://claude.com/pricing) — update
+# here if pricing changes; used only for the cost estimate this script logs.
+INPUT_PRICE_PER_MTOK = 4.00
+OUTPUT_PRICE_PER_MTOK = 20.00
+
 SYSTEM_PROMPT = (
     "You are my luxury real estate copywriter for L&R Homes in Rochester Hills, "
     "Michigan. You specialize in Oakland County luxury new construction like "
@@ -164,11 +169,11 @@ def build_content(listing_folder: Path) -> list[dict]:
     return content
 
 
-def generate_for_listing(client: anthropic.Anthropic, listing_folder: Path) -> None:
+def generate_for_listing(client: anthropic.Anthropic, listing_folder: Path) -> tuple[int, int, float]:
     content = build_content(listing_folder)
     if not any(block["type"] == "image" for block in content):
         print(f"Skipping {listing_folder.name}: no photos found")
-        return
+        return 0, 0, 0.0
 
     print(f"Generating content for {listing_folder.name}...")
     response = client.messages.create(
@@ -190,6 +195,17 @@ def generate_for_listing(client: anthropic.Anthropic, listing_folder: Path) -> N
     out_path.write_text(json.dumps(parsed, indent=2) + "\n")
     print(f"Saved {out_path.relative_to(REPO_ROOT)}")
 
+    input_tokens = response.usage.input_tokens
+    output_tokens = response.usage.output_tokens
+    cost = (
+        input_tokens * INPUT_PRICE_PER_MTOK + output_tokens * OUTPUT_PRICE_PER_MTOK
+    ) / 1_000_000
+    print(
+        f"[usage] {listing_folder.name}: input={input_tokens} tokens, "
+        f"output={output_tokens} tokens, est. cost=${cost:.4f}"
+    )
+    return input_tokens, output_tokens, cost
+
 
 def main() -> None:
     if not LISTINGS_DIR.is_dir():
@@ -199,12 +215,26 @@ def main() -> None:
     targets = changed_listing_names()
     client = anthropic.Anthropic()
 
+    total_input = total_output = 0
+    total_cost = 0.0
+    processed = 0
+
     for listing_folder in sorted(LISTINGS_DIR.iterdir()):
         if not listing_folder.is_dir() or listing_folder.name.startswith("_"):
             continue
         if targets is not None and listing_folder.name not in targets:
             continue
-        generate_for_listing(client, listing_folder)
+        input_tokens, output_tokens, cost = generate_for_listing(client, listing_folder)
+        total_input += input_tokens
+        total_output += output_tokens
+        total_cost += cost
+        processed += 1
+
+    if processed:
+        print(
+            f"[usage] run total: {processed} listing(s), input={total_input} tokens, "
+            f"output={total_output} tokens, est. cost=${total_cost:.4f}"
+        )
 
 
 if __name__ == "__main__":
