@@ -1,0 +1,3 @@
+Analyze these listing photos for {{listing_name}} (an L&R Homes community — either Pine Woods, The Grandeur, Falcon Estates, or another current listing). Notes from the team: {{notes}}
+
+Look at every photo carefully — the architecture, finishes, staging, lighting, time of day — and generate the captions, hashtags, alt text, reel script, and DM automation copy for this listing.

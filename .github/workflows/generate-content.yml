@@ -1,0 +1,62 @@
+name: Generate Social Content
+
+# Replaces the old Make.com scenario. Push new photos (plus an optional
+# notes.txt) into listings/<listing-name>/, and this calls Claude to write
+# captions, hashtags, alt text, a reel script, and DM-automation copy into
+# content-calendar/<listing-name>.json.
+#
+# Separate from deploy-sftp.yml / deploy-pages.yml on purpose — this never
+# touches the live site build or deploy.
+
+on:
+  push:
+    paths:
+      - 'listings/**'
+  workflow_dispatch:
+    inputs:
+      process_all:
+        description: 'Regenerate content for every listing folder, not just ones changed in the latest push'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-content-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install anthropic
+
+      - name: Generate captions
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PROCESS_ALL: ${{ github.event.inputs.process_all }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: python scripts/generate_listing_content.py
+
+      - name: Commit generated content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content-calendar/
+          if git diff --cached --quiet; then
+            echo "No content changes to commit."
+          else
+            git commit -m "Auto-generate social content for updated listings"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
