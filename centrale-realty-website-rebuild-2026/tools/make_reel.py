@@ -25,7 +25,7 @@ SCENES = [
 ]
 if os.environ.get("REEL") == "101":   # Suite 101 only
     SCENES = [
- ("img", P("site/assets/images/office-banner.jpg"), 3.0, "Suite <em>101</em><br>Rochester Hills", "956 SQ FT · LOWER LEVEL · 2490 WALTON BLVD", False, 1),
+ ("img", P("site/assets/images/office-banner.jpg"), 3.0, "Suite <em>101</em><br>Rochester Hills", "956 SQ FT · 2490 WALTON BLVD", False, 1),
  ("img", f"{S101}/suite-101-staged-boucle-original.jpg", 2.6, "Open, bright<br><em>workspace</em>", "SUITE 101", True, 1),
  ("img", f"{S101}/suite-101-staged-conference-original.jpg", 2.6, "Space for<br><em>client meetings</em>", "SUITE 101 · CONFERENCE ROOM", True, -1),
  ("img", f"{S101}/suite-101-staged-leather-original.jpg", 2.3, "A private<br><em>executive office</em>", "SUITE 101", True, 1),
