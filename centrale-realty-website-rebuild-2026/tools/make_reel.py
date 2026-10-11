@@ -35,6 +35,17 @@ if os.environ.get("REEL") == "101":   # Suite 101 only
  ("img", f"{S101}/suite-101-staged-tulip-original.jpg", 2.3, "Free parking.<br>Near<br><em><span style=\"white-space:nowrap\">I-75 &amp; M-59</span></em>", "NEAR HENRY FORD ROCHESTER HOSPITAL", True, -1),
  ("end", None, 3.6, "", "", False, 0),
 ]
+if os.environ.get("REEL") == "100":   # Suite 100 only
+    SCENES = [
+ ("img", P("site/assets/images/office-banner.jpg"), 3.0, "Suite <em>100</em><br>Rochester Hills", "725 SQ FT · 2490 WALTON BLVD", False, 1),
+ ("img", f"{S100}/suite-100-staged-workspace-original.jpg", 2.6, "Open, bright<br><em>workspace</em>", "SUITE 100", True, 1),
+ ("img", f"{S100}/suite-100-staged-longtable-original.jpg", 2.4, "Room for the<br><em>whole team</em>", "SUITE 100 · OPEN LAYOUT", True, -1),
+ ("img", f"{S100}/suite-100-staged-gray-original.jpg", 2.4, "Flexible<br><em>layout options</em>", "SUITE 100", True, 1),
+ ("img", f"{S100}/suite-100-staged-walnut-original.jpg", 2.4, "Space for<br><em>client meetings</em>", "SUITE 100", True, -1),
+ ("img", f"{S100}/suite-100-staged-longtable2-original.jpg", 2.4, "Natural<br><em>light</em>", "SUITE 100", True, 1),
+ ("img", f"{S100}/suite-100-staged-roundtable-original.jpg", 2.6, "Free parking.<br>Near<br><em><span style=\"white-space:nowrap\">I-75 &amp; M-59</span></em>", "NEAR HENRY FORD ROCHESTER HOSPITAL", True, -1),
+ ("end", None, 3.6, "", "", False, 0),
+]
 FONTS = f"""@font-face{{font-family:CG;font-weight:300 700;src:url(file://{P('site/assets/fonts/cormorant-garamond-normal.woff2')})}}
 @font-face{{font-family:CGI;font-style:italic;font-weight:300 700;src:url(file://{P('site/assets/fonts/cormorant-garamond-italic.woff2')})}}
 @font-face{{font-family:Jost;font-weight:100 900;src:url(file://{P('site/assets/fonts/jost-normal.woff2')})}}"""
@@ -54,7 +65,7 @@ def overlay(i, big, small, staged):
 <img class="logo" src="file://{P('site/assets/logo-cr-gold.png')}">
 <div class="t blk"><div class="big">{big}</div><div class="sm">{small}</div></div>{'<div class="t stg">'+STG+'</div>' if staged else ''}"""
     return hh
-DETAIL = "Suite 101 · 956 sq ft · Free parking · I-75 &amp; M-59" if os.environ.get("REEL") == "101" else "Free parking · I-75 &amp; M-59 · 1,681 sq ft combined"
+DETAIL = "Suite 101 · 956 sq ft · Free parking · I-75 &amp; M-59" if os.environ.get("REEL") == "101" else "Suite 100 · 725 sq ft · Free parking · I-75 &amp; M-59" if os.environ.get("REEL") == "100" else "Free parking · I-75 &amp; M-59 · 1,681 sq ft combined"
 def end_html():
     return f"""<style>{BASE}
 body{{background:#0b0b0b}}
