@@ -12,16 +12,15 @@ S100 = P("brochures", "suite-100-staged"); S101 = P("brochures", "suite-101-stag
 STG = "Virtually staged · furniture not included"
 # (kind, source, seconds, big text, small text, staged note, pan direction)
 SCENES = [
- ("img", P("site/assets/images/office-banner.jpg"), 3.0, "Need office space<br>in <em>Rochester Hills?</em>", "2490 WALTON BLVD", False, 1),
+ ("img", P("site/assets/images/office-banner.jpg"), 3.0, "Rochester Hills<br><em>office space</em>", "725 OR 956 SQ FT · 2490 WALTON BLVD", False, 1),
  ("img", f"{S100}/suite-100-staged-workspace-original.jpg", 2.6, "Suite <em>100</em>", "725 SQ FT · LOWER LEVEL", True, 1),
- ("img", f"{S100}/suite-100-staged-walnut-original.jpg", 2.3, "Room for the<br><em>whole team</em>", "OPEN, BRIGHT LAYOUT", True, -1),
- ("img", f"{S100}/suite-100-staged-counter-original.jpg", 2.3, "Built-in counter<br>&amp; <em>coffee bar</em>", "SUITE 100", True, 1),
+ ("img", f"{S100}/suite-100-staged-walnut-original.jpg", 2.3, "Room for the<br><em>whole team</em>", "SUITE 100 · OPEN LAYOUT", True, -1),
  ("img", f"{S101}/suite-101-staged-boucle-original.jpg", 2.6, "Suite <em>101</em>", "956 SQ FT · LOWER LEVEL", True, -1),
- ("img", f"{S101}/suite-101-staged-conference-original.jpg", 2.3, "Your own<br><em>conference room</em>", "SUITE 101", True, 1),
+ ("img", f"{S101}/suite-101-staged-conference-original.jpg", 2.3, "Space for<br><em>client meetings</em>", "SUITE 101 · CONFERENCE ROOM", True, 1),
  ("img", f"{S101}/suite-101-staged-office-cropped.jpg", 2.3, "Private <em>office</em><br>space", "SUITE 101", True, -1),
  ("vid", P("site/assets/video/suite-101-walkthrough-2-stable.mp4"), 3.2, "Take a <em>walk</em> inside", "SUITE 101 · REAL FOOTAGE", False, 0),
  ("img", f"{S101}/suite-101-staged-whitetable-original.jpg", 2.3, "Natural light.<br><em>Stone accent wall.</em>", "SUITE 101", True, 1),
- ("img", f"{S100}/suite-100-staged-roundtable-original.jpg", 2.3, "Free parking.<br>Minutes to<br><em><span style=\"white-space:nowrap\">I-75 &amp; M-59</span></em>", "HENRY FORD ROCHESTER HOSPITAL NEARBY", True, -1),
+ ("img", f"{S100}/suite-100-staged-roundtable-original.jpg", 2.3, "Free parking.<br>Near<br><em><span style=\"white-space:nowrap\">I-75 &amp; M-59</span></em>", "NEAR HENRY FORD ROCHESTER HOSPITAL", True, -1),
  ("end", None, 3.6, "", "", False, 0),
 ]
 FONTS = f"""@font-face{{font-family:CG;font-weight:300 700;src:url(file://{P('site/assets/fonts/cormorant-garamond-normal.woff2')})}}
@@ -37,8 +36,8 @@ def overlay(i, big, small, staged):
 .blk{{top:500px}}
 .big{{font:400 118px/1.04 CG,serif;letter-spacing:.03em;text-transform:uppercase;text-shadow:0 2px 6px rgba(0,0,0,.55),0 4px 40px rgba(0,0,0,.7);padding:0 50px}}
 .big em{{font:italic 500 132px/1 CGI,serif;text-transform:none;color:#e6cf9f;text-shadow:0 2px 6px rgba(0,0,0,.7),0 4px 36px rgba(0,0,0,.8)}}
-.sm{{margin-top:44px;font:500 31px/1.3 Jost,sans-serif;letter-spacing:.3em;padding:0 40px;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.75),0 2px 22px rgba(0,0,0,.8)}}
-.stg{{top:1496px;font:500 24px/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.88);text-shadow:0 2px 10px rgba(0,0,0,.7)}}
+.sm{{display:inline-block;background:rgba(0,0,0,.55);border-radius:6px;padding:16px 28px!important;margin-top:36px;font:500 31px/1.3 Jost,sans-serif;letter-spacing:.3em;padding:0 40px;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.75),0 2px 22px rgba(0,0,0,.8)}}
+.stg{{top:1496px;background:rgba(0,0,0,.55);left:50%;right:auto;transform:translateX(-50%);width:max-content;padding:12px 24px;border-radius:6px;font:500 24px/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.88);text-shadow:0 2px 10px rgba(0,0,0,.7)}}
 </style><div class="g1"></div><div class="g2"></div>
 <img class="logo" src="file://{P('site/assets/logo-cr-gold.png')}">
 <div class="t blk"><div class="big">{big}</div><div class="sm">{small}</div></div>{'<div class="t stg">'+STG+'</div>' if staged else ''}"""
@@ -59,8 +58,8 @@ body{{background:#0b0b0b}}
 <div class="t nm">Centrale</div><div class="t rl">REALTY</div>
 <div class="tag">Now Leasing</div>
 <div class="t h">Office space at<br><em>2490 Walton Blvd</em></div>
-<div class="t d">Suite 100 · Suite 101 · 1,681 sq ft combined</div>
-<div class="t u">centralerealty.com/2490</div><div class="t c">(248) 656-8830 · LINK IN BIO</div>"""
+<div class="t d">Free parking · I-75 &amp; M-59 · 1,681 sq ft combined</div>
+<div class="t u">DM &ldquo;TOUR&rdquo;</div><div class="t c">centralerealty.com/2490 · (248) 656-8830</div>"""
 def render_png(i, htm, transparent=True):
     hp = os.path.join(WORK, f"ov{i}.html"); op = os.path.join(WORK, f"ov{i}.png")
     open(hp, "w").write("<!doctype html><meta charset=utf-8>" + htm)
