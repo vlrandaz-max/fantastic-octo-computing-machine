@@ -23,6 +23,18 @@ SCENES = [
  ("img", f"{S100}/suite-100-staged-roundtable-original.jpg", 2.3, "Free parking.<br>Near<br><em><span style=\"white-space:nowrap\">I-75 &amp; M-59</span></em>", "NEAR HENRY FORD ROCHESTER HOSPITAL", True, -1),
  ("end", None, 3.6, "", "", False, 0),
 ]
+if os.environ.get("REEL") == "101":   # Suite 101 only
+    SCENES = [
+ ("img", P("site/assets/images/office-banner.jpg"), 3.0, "Suite <em>101</em><br>Rochester Hills", "956 SQ FT · LOWER LEVEL · 2490 WALTON BLVD", False, 1),
+ ("img", f"{S101}/suite-101-staged-boucle-original.jpg", 2.6, "Open, bright<br><em>workspace</em>", "SUITE 101", True, 1),
+ ("img", f"{S101}/suite-101-staged-conference-original.jpg", 2.6, "Space for<br><em>client meetings</em>", "SUITE 101 · CONFERENCE ROOM", True, -1),
+ ("img", f"{S101}/suite-101-staged-leather-original.jpg", 2.3, "A private<br><em>executive office</em>", "SUITE 101", True, 1),
+ ("vid", P("site/assets/video/suite-101-walkthrough-2-stable.mp4"), 3.4, "Take a <em>walk</em> inside", "SUITE 101 · REAL FOOTAGE", False, 0),
+ ("img", f"{S101}/suite-101-staged-office-cropped.jpg", 2.3, "Private <em>office</em><br>space", "SUITE 101", True, -1),
+ ("img", f"{S101}/suite-101-staged-whitetable-original.jpg", 2.3, "Natural light.<br><em>Stone accent wall.</em>", "SUITE 101", True, 1),
+ ("img", f"{S101}/suite-101-staged-tulip-original.jpg", 2.3, "Free parking.<br>Near<br><em><span style=\"white-space:nowrap\">I-75 &amp; M-59</span></em>", "NEAR HENRY FORD ROCHESTER HOSPITAL", True, -1),
+ ("end", None, 3.6, "", "", False, 0),
+]
 FONTS = f"""@font-face{{font-family:CG;font-weight:300 700;src:url(file://{P('site/assets/fonts/cormorant-garamond-normal.woff2')})}}
 @font-face{{font-family:CGI;font-style:italic;font-weight:300 700;src:url(file://{P('site/assets/fonts/cormorant-garamond-italic.woff2')})}}
 @font-face{{font-family:Jost;font-weight:100 900;src:url(file://{P('site/assets/fonts/jost-normal.woff2')})}}"""
@@ -42,6 +54,7 @@ def overlay(i, big, small, staged):
 <img class="logo" src="file://{P('site/assets/logo-cr-gold.png')}">
 <div class="t blk"><div class="big">{big}</div><div class="sm">{small}</div></div>{'<div class="t stg">'+STG+'</div>' if staged else ''}"""
     return hh
+DETAIL = "Suite 101 · 956 sq ft · Free parking · I-75 &amp; M-59" if os.environ.get("REEL") == "101" else "Free parking · I-75 &amp; M-59 · 1,681 sq ft combined"
 def end_html():
     return f"""<style>{BASE}
 body{{background:#0b0b0b}}
@@ -58,7 +71,7 @@ body{{background:#0b0b0b}}
 <div class="t nm">Centrale</div><div class="t rl">REALTY</div>
 <div class="tag">Now Leasing</div>
 <div class="t h">Office space at<br><em>2490 Walton Blvd</em></div>
-<div class="t d">Free parking · I-75 &amp; M-59 · 1,681 sq ft combined</div>
+<div class="t d">{DETAIL}</div>
 <div class="t u">DM &ldquo;TOUR&rdquo;</div><div class="t c">centralerealty.com/2490 · (248) 656-8830</div>"""
 def render_png(i, htm, transparent=True):
     hp = os.path.join(WORK, f"ov{i}.html"); op = os.path.join(WORK, f"ov{i}.png")
