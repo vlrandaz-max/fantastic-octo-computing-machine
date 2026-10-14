@@ -98,17 +98,20 @@ for i, (k, src, sec, big, small, st, d) in enumerate(SCENES):
     overlays.append(render_png(i, end_html() if k == "end" else overlay(i, big, small, st)))
 imgs = {i: cv2.imread(s[1]) for i, s in enumerate(SCENES) if s[0] == "img"}
 vids = {i: cv2.VideoCapture(s[1]) for i, s in enumerate(SCENES) if s[0] == "vid"}
+SLOW = os.environ.get("SLOW") == "1"      # gentler pan: shorter sweep, longer holds
+if SLOW: SCENES = [(k, a, (sec * 1.3 if k == "img" else sec), *r) for (k, a, sec, *r) in SCENES]
 starts = []; t = 0.0
 for s in SCENES: starts.append(t); t += s[2] - XF
 TOTAL = starts[-1] + SCENES[-1][2]
 def ease(x): x = min(max(x, 0), 1); return x * x * (3 - 2 * x)
 def img_frame(i, p):
     im = imgs[i]; h, w = im.shape[:2]; d = SCENES[i][6]
-    z = 1.0 + 0.10 * p
+    z = 1.0 + (0.05 if SLOW else 0.10) * p
     base = H / h                      # scale so image height fills the frame
     sh = base * z; sw = w * sh
     travel = max(sw - W, 0)
-    frac = 0.15 + 0.70 * p if d >= 0 else 0.85 - 0.70 * p
+    rng = 0.22 if SLOW else 0.70; lo = 0.5 - rng / 2
+    frac = lo + rng * p if d >= 0 else lo + rng - rng * p
     x0 = travel * frac; y0 = (h * sh - H) / 2
     M = np.float32([[sh, 0, -x0], [0, sh, -y0]])
     return cv2.warpAffine(im, M, (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
