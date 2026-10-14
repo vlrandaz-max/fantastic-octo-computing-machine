@@ -93,15 +93,15 @@ def render_png(i, htm, transparent=True):
     im = cv2.imread(op, cv2.IMREAD_UNCHANGED)
     if im.shape[2] == 3: im = np.dstack([im, np.full(im.shape[:2], 255, np.uint8)])
     return im
+DROP = [d for d in os.environ.get("DROP", "").split(",") if d]   # e.g. DROP=walnut,whitetable
+SCENES = [sc for sc in SCENES if not any(d in str(sc[1]) for d in DROP)]
+SLOW = os.environ.get("SLOW") == "1"      # gentler pan: shorter sweep, longer holds
+if SLOW: SCENES = [(k, a, (sec * 1.3 if k == "img" else sec), *r) for (k, a, sec, *r) in SCENES]
 overlays = []
 for i, (k, src, sec, big, small, st, d) in enumerate(SCENES):
     overlays.append(render_png(i, end_html() if k == "end" else overlay(i, big, small, st)))
 imgs = {i: cv2.imread(s[1]) for i, s in enumerate(SCENES) if s[0] == "img"}
 vids = {i: cv2.VideoCapture(s[1]) for i, s in enumerate(SCENES) if s[0] == "vid"}
-DROP = [d for d in os.environ.get("DROP", "").split(",") if d]   # e.g. DROP=walnut,whitetable
-SCENES = [sc for sc in SCENES if not any(d in str(sc[1]) for d in DROP)]
-SLOW = os.environ.get("SLOW") == "1"      # gentler pan: shorter sweep, longer holds
-if SLOW: SCENES = [(k, a, (sec * 1.3 if k == "img" else sec), *r) for (k, a, sec, *r) in SCENES]
 starts = []; t = 0.0
 for s in SCENES: starts.append(t); t += s[2] - XF
 TOTAL = starts[-1] + SCENES[-1][2]
