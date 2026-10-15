@@ -120,17 +120,15 @@ IG hashtag sets are trimmed to 5. FB sets are the full list (FB doesn't need the
 - [ ] Posted to FB
 
 **Caption**
-> A tufted headboard, a gold mirror, a tray ceiling that earns the ceiling fan underneath it. The Heritage's primary bedroom — the room that makes the rest of the day easier to leave. Lot 7, Pine Woods.
+> A tufted headboard, a gold mirror, a stepped ceiling that earns the ceiling fan underneath it. The Heritage's primary bedroom — the room that makes the rest of the day easier to leave. Lot 7, Pine Woods.
 
 **IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #PrimaryBedroomGoals #NewConstructionHomes #MoveInReadyHome`
 
-**FB hashtags:** `#PrimaryBedroomGoals #BedroomDesign #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #TrayCeilingDesign #TuftedHeadboard #MasterSuiteInspo #MoveInReadyHome #BedroomInteriors #InteriorDesignInspo #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #GalleryWallInspo #RestfulRetreat #OaklandCountyRealEstate #NewHomeConstruction #HomeownerGoals`
+**FB hashtags:** `#PrimaryBedroomGoals #BedroomDesign #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #SteppedCeilingDesign #TuftedHeadboard #MasterSuiteInspo #MoveInReadyHome #BedroomInteriors #InteriorDesignInspo #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #GalleryWallInspo #RestfulRetreat #OaklandCountyRealEstate #NewHomeConstruction #HomeownerGoals`
 
 **Pin as first comment:** Gold mirror or black frame — which finish do you reach for?
 
 **DM automation:** trigger — "Thanks for the interest in The Heritage! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Heritage's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
-
-> Note: this caption still says "tray ceiling" (not corrected to "stepped ceiling" like the Majestic owner's suite) — that correction was only confirmed for that specific room. Check the real photo before posting if you want this one corrected too.
 
 ---
 
