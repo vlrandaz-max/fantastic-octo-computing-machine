@@ -104,7 +104,7 @@ IG hashtag sets are trimmed to 5. FB sets are the full list (FB doesn't need the
 Same room as reel 2 (`majestic-primary-bedroom.jpg` vs. `majestic-owners-suite.jpg`) — the Majestic's primary suite, a different staging pass. Not a separate bedroom.
 
 **Caption**
-> Golden hour through the curtains, a tufted headboard, an accent chair in the corner — The Majestic's primary suite, staged a different way. Pine Woods, immediate occupancy.
+> Golden hour through the curtains, a tufted headboard, an accent chair in the corner — The Majestic's primary suite, trying on a different look. Pine Woods, immediate occupancy.
 
 **IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #BedroomDesign #NewConstructionHomes #PrimarySuiteGoals`
 
