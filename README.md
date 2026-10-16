@@ -96,17 +96,19 @@ IG hashtag sets are trimmed to 5. FB sets are the full list (FB doesn't need the
 
 ---
 
-## 6. `majestic_bedroom2.mp4` — The Majestic, bedroom 2
+## 6. `majestic_bedroom2.mp4` — The Majestic, primary suite (staged differently than reel 2)
 
 - [ ] Posted to IG
 - [ ] Posted to FB
 
+Same room as reel 2 (`majestic-primary-bedroom.jpg` vs. `majestic-owners-suite.jpg`) — the Majestic's primary suite, a different staging pass. Not a separate bedroom.
+
 **Caption**
-> Golden hour through the curtains, a tufted headboard, a chair in the corner nobody will ever actually sit in but everybody will love. One of three bedrooms in The Majestic. Pine Woods, immediate occupancy.
+> Golden hour through the curtains, a tufted headboard, an accent chair in the corner — The Majestic's primary suite, staged a different way. Pine Woods, immediate occupancy.
 
-**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #BedroomDesign #NewConstructionHomes #GuestRoomGoals`
+**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #BedroomDesign #NewConstructionHomes #PrimarySuiteGoals`
 
-**FB hashtags:** `#BedroomDesign #GuestRoomGoals #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #TuftedHeadboard #GoldenHourLight #BedroomInteriors #ImmediateOccupancy #CozyBedroomVibes #InteriorDesignInspo #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #AccentChairStyle #WarmInteriors #OaklandCountyRealEstate #NewHomeConstruction #HomeownerGoals`
+**FB hashtags:** `#BedroomDesign #PrimarySuiteGoals #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #TuftedHeadboard #GoldenHourLight #BedroomInteriors #ImmediateOccupancy #CozyBedroomVibes #InteriorDesignInspo #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #AccentChairStyle #WarmInteriors #OaklandCountyRealEstate #NewHomeConstruction #HomeownerGoals`
 
 **Pin as first comment:** Accent chair in the bedroom — yes, or is that what the living room's for?
 
