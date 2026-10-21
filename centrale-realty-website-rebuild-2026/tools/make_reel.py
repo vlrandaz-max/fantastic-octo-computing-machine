@@ -46,6 +46,17 @@ if os.environ.get("REEL") == "100":   # Suite 100 only
  ("img", f"{S100}/suite-100-staged-roundtable-original.jpg", 2.6, "Free parking.<br>Near<br><em><span style=\"white-space:nowrap\">I-75 &amp; M-59</span></em>", "NEAR HENRY FORD ROCHESTER HOSPITAL", True, -1),
  ("end", None, 3.6, "", "", False, 0),
 ]
+if os.environ.get("REEL") == "new":   # both suites, fresh cut with the new walkthrough footage (REEL_VID = clean clip without logo)
+    SCENES = [
+ ("img", P("site/assets/images/office-banner.jpg"), 3.0, "Two suites.<br><em>One address.</em>", "725 &amp; 956 SQ FT · ROCHESTER HILLS", False, 1),
+ ("img", f"{S100}/suite-100-staged-workspace-original.jpg", 2.6, "Suite <em>100</em>", "725 SQ FT · LOWER LEVEL", True, 1),
+ ("img", f"{S100}/suite-100-staged-longtable-original.jpg", 2.4, "Room for the<br><em>whole team</em>", "SUITE 100 · OPEN LAYOUT", True, -1),
+ ("img", f"{S101}/suite-101-staged-boucle-original.jpg", 2.6, "Suite <em>101</em>", "956 SQ FT · LOWER LEVEL", True, -1),
+ ("vid", os.environ.get("REEL_VID", P("site/assets/video/suite-101-walkthrough-part1.mp4")), 3.2, "Take a <em>walk</em> inside", "SUITE 101 · REAL FOOTAGE", False, 0),
+ ("img", f"{S101}/suite-101-staged-conference-original.jpg", 2.4, "Space for<br><em>client meetings</em>", "SUITE 101 · CONFERENCE ROOM", True, 1),
+ ("img", f"{S100}/suite-100-staged-roundtable-original.jpg", 2.6, "Free parking.<br>Near<br><em><span style=\"white-space:nowrap\">I-75 &amp; M-59</span></em>", "NEAR HENRY FORD ROCHESTER HOSPITAL", True, -1),
+ ("end", None, 3.6, "", "", False, 0),
+]
 FONTS = f"""@font-face{{font-family:CG;font-weight:300 700;src:url(file://{P('site/assets/fonts/cormorant-garamond-normal.woff2')})}}
 @font-face{{font-family:CGI;font-style:italic;font-weight:300 700;src:url(file://{P('site/assets/fonts/cormorant-garamond-italic.woff2')})}}
 @font-face{{font-family:Jost;font-weight:100 900;src:url(file://{P('site/assets/fonts/jost-normal.woff2')})}}"""
