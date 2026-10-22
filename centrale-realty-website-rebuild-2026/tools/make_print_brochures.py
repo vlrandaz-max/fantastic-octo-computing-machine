@@ -39,6 +39,6 @@ for n,cam,util in [('100','about $950 per quarter (est., billed as actual pro-ra
     s=s.replace('</style>',CSS+'</style>',1)
     s=s.replace('logo-cr-gold.png','../branding-kit/logos/logo-cr-black.png' if False else 'logo-cr-gold.png')
     s=s.replace('../site/assets/logo-cr-gold.png','../branding-kit/logos/logo-cr-black.png')
-    s,k=re.subn(r'<tr><td>Tenant Pays</td><td>.*?</td></tr>',f'<tr><td>Utilities / CAM</td><td>{util}</td></tr>\n        <tr><td>Est. Maintenance</td><td>{cam}</td></tr>',s)
+    s,k=re.subn(r'<tr><td>Tenant Pays</td><td>.*?</td></tr>',f'<tr><td>Utilities / CAM</td><td>{util}</td></tr>',s)
     assert k==1
     open(f'brochures/suite-{n}-brochure-print.html','w').write(s)
