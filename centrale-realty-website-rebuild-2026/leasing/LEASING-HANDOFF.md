@@ -8,7 +8,7 @@ Website maintenance (centralerealty.com rebuild, SEO, deploys) is a different ch
 - **Suite 100:** 725 rentable sq ft, lower level. Open, bright layout. Rent $1,200/mo.
 - **Suite 101:** 956 rentable sq ft, lower level. Conference room, private office, open workspace, stone accent wall. Rent $1,675/mo.
 - **Combined:** 1,681 rentable sq ft. (Rentable sq ft includes the common areas/common bathrooms; both suites measured the same way.)
-- **Lease:** modified gross, 2-year minimum. Tenant pays gas and electric, cable/internet, quarterly maintenance fee (CAM). Free on-site parking. Office or medical use. Remodeled 2002-2026.
+- **Lease:** modified gross, 2-year minimum. Quarterly maintenance fee (CAM) and cable/internet paid by tenant. **Gas and electric: INCLUDED in Suite 100 rent; Suite 101 tenant pays its own gas and electric** (corrected by Vito). Free on-site parking. Office or medical use. Remodeled 2002-2026.
 - **Location:** near I-75 and M-59, near Henry Ford Rochester Hospital.
 - **Move-in costs (MLS brochures):** Suite 100: first month $1,200, deposit $1,800 (1.5x), cleaning fee $350 non-refundable. Suite 101: first month $1,675, deposit $2,512.50, cleaning $350. THESE DEPOSIT/CLEANING NUMBERS WERE ASSUMED, NOT CONFIRMED. Confirm with Vito before quoting.
 - **Open item:** a $18.50/sq ft rate was mentioned earlier; it does not match $1,200 for 725 sq ft (that would be ~$1,118). $1,200/mo is what is used.

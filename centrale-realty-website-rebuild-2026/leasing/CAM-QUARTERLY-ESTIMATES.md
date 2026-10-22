@@ -66,3 +66,6 @@ Method: trailing 4 quarters of actuals ($4,767 for Suite 101), plus about 3 to 5
 - **Quote Suite 101: about $1,250 per quarter (about $5,000 a year, about $5.25/sq ft).**
 - **Quote Suite 100: about $950 per quarter (about $3,800 a year).** Combined about $2,200 per quarter.
 - Always say "estimate based on recent actual costs; billed as pro-rata actuals; winter quarters run higher."
+
+
+**Utilities correction (Vito):** Suite 100 rent INCLUDES gas and electric; Suite 101 tenant pays its own. So the all-in $/sq ft figures (Suite 100 about $25.10, Suite 101 about $26.25 before utilities) are not like-for-like; Suite 101 will cost more once its utilities are added. Replace any earlier wording saying "you pay your own gas, electric and internet" with the correct one per suite.
