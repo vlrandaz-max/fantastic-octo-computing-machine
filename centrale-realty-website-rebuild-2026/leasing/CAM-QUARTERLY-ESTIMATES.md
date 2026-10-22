@@ -35,3 +35,27 @@ Combined 101 + 100 (1,681 sq ft): about $7,937 for 2025 (avg about $1,984/qtr).
 - These are estimates from past actuals. Costs change with winter severity, vendor prices and one-off repairs. Say "estimate", not "fixed".
 - Confirm with Vito that the lease will use the same pro-rata method and which items are passed through.
 - Do not include other tenants' extras (one tenant's bill included a furnace repair and late interest; those are not CAM).
+
+## UPDATE: 2026 statements added (Q1 actual, Q2 derived)
+- **Q1 2026 (billed Apr 20 2026), Suite 101: $2,061.41** (snow/salt $1,559.08, janitorial $190.58, lawn $31.40, trash $58.64, electric $68.26, water $48.61, Terminex $32.83, supplies $27.47, fire extinguisher service $24.02, asphalt repair $20.52). A "March credit for lease ending 2/2026" of $680.29 brought that bill to $1,381.12; the $2,061.41 is the full-quarter cost. Suite 101 has been vacant since that lease ended.
+- **Q2 2026 (billed Jul 15 2026): no Suite 101 bill exists** (the sheet still shows the old 2025 Q2). I derived it from the other tenants' Q2 2026 bills, which scale exactly with sq ft: **about $835.66** for 956 sq ft (lawn $183, mulch $176, sprinkler $24, janitorial $190.58, etc.; no snow).
+- Q3 2026 statement is not in the file yet.
+
+| Suite 101 (956 sq ft) | Billed | Per sq ft |
+|---|---|---|
+| Q3 2025 | $621.94 | $0.65 |
+| Q4 2025 | $1,247.74 | $1.31 |
+| Q1 2026 | $2,061.41 (snow-heavy winter) | $2.16 |
+| Q2 2026 (derived) | about $835.66 | $0.87 |
+| **Latest 4 quarters** | **about $4,767** | **about $4.99/yr; avg about $1,192/qtr, about $397/mo** |
+
+Calendar 2025 stays $4,513.97. Winter quarters are the swing: $1,248 (Q4 2025) and $2,061 (Q1 2026) versus $622 to $836 in non-snow quarters.
+
+**Suite 100 (725 sq ft) latest 4 quarters:** about $3,615 (avg about $904/qtr): Q3 $472 · Q4 $946 · Q1 2026 $1,563 · Q2 2026 $634.
+
+**Open question for Vito:** the Q4 2025 bill (Jan 14) included a $1,010.47 "Jan/Feb 2026 estimate", and the Q1 2026 bill then charged the actual snow cost ($1,559.08) with no credit shown for that estimate. Confirm the estimate was not double-billed before telling prospects what winter costs; if it was a prepayment, true Q4+Q1 snow is lower.
+
+### Updated ready replies (use these instead of the 2025-only ones)
+**Short:** "CAM is billed quarterly as your pro-rata share of common-area costs. For Suite 101, the last four quarters came to about $4,770, roughly $1,190 a quarter on average. Summers run about $620 to $840 a quarter; winters with heavy snow can reach $1,250 to $2,060 because of snow removal. It's an estimate from actual bills, not a guarantee."
+**Budget guidance:** plan about $1,200 a quarter on average, with the winter quarter higher.
+**Suite 100:** same wording with about $3,600 for the last four quarters, about $900 a quarter, summers $470 to $635, winters $945 to $1,565.
