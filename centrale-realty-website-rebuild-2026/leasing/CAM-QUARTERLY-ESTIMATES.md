@@ -59,3 +59,10 @@ Calendar 2025 stays $4,513.97. Winter quarters are the swing: $1,248 (Q4 2025) a
 **Short:** "CAM is billed quarterly as your pro-rata share of common-area costs. For Suite 101, the last four quarters came to about $4,770, roughly $1,190 a quarter on average. Summers run about $620 to $840 a quarter; winters with heavy snow can reach $1,250 to $2,060 because of snow removal. It's an estimate from actual bills, not a guarantee."
 **Budget guidance:** plan about $1,200 a quarter on average, with the winter quarter higher.
 **Suite 100:** same wording with about $3,600 for the last four quarters, about $900 a quarter, summers $470 to $635, winters $945 to $1,565.
+
+## RECOMMENDED QUOTE (use this one)
+Method: trailing 4 quarters of actuals ($4,767 for Suite 101), plus about 3 to 5% for cost growth (CPI is about 3%; janitorial, insurance-linked vendors, snow contracts and utilities usually rise faster than CPI). Landlords generally quote last-12-months actuals plus a modest escalator and reconcile to actuals; they do not quote a single bad winter.
+- +3%: $4,910/yr ($1,228/qtr) · +5%: $5,005/yr ($1,251/qtr).
+- **Quote Suite 101: about $1,250 per quarter (about $5,000 a year, about $5.25/sq ft).**
+- **Quote Suite 100: about $950 per quarter (about $3,800 a year).** Combined about $2,200 per quarter.
+- Always say "estimate based on recent actual costs; billed as pro-rata actuals; winter quarters run higher."
