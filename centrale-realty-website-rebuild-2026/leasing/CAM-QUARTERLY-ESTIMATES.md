@@ -53,7 +53,7 @@ Calendar 2025 stays $4,513.97. Winter quarters are the swing: $1,248 (Q4 2025) a
 
 **Suite 100 (725 sq ft) latest 4 quarters:** about $3,615 (avg about $904/qtr): Q3 $472 · Q4 $946 · Q1 2026 $1,563 · Q2 2026 $634.
 
-**Open question for Vito:** the Q4 2025 bill (Jan 14) included a $1,010.47 "Jan/Feb 2026 estimate", and the Q1 2026 bill then charged the actual snow cost ($1,559.08) with no credit shown for that estimate. Confirm the estimate was not double-billed before telling prospects what winter costs; if it was a prepayment, true Q4+Q1 snow is lower.
+**Confirmed by Vito:** the $1,010.47 Jan/Feb 2026 estimate on the Q4 2025 bill was a true cost, so the Q1 2026 snow charge ($1,559.08) is not a double-bill and the figures above stand as quoted. (The estimate itself is kept out of the quarterly averages above, which use the Q4 2025 total of $1,247.74 and Q1 2026 total of $2,061.41.)
 
 ### Updated ready replies (use these instead of the 2025-only ones)
 **Short:** "CAM is billed quarterly as your pro-rata share of common-area costs. For Suite 101, the last four quarters came to about $4,770, roughly $1,190 a quarter on average. Summers run about $620 to $840 a quarter; winters with heavy snow can reach $1,250 to $2,060 because of snow removal. It's an estimate from actual bills, not a guarantee."
