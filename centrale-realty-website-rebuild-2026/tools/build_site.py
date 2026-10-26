@@ -247,6 +247,9 @@ page("legal/","Legal | Centrale Realty","Legal notices, fair housing and privacy
 
 
 # ---- Annsbury Dr fourplex (Shelby Twp) ----
+_ANN_ALT='Brick and stone fourplex townhouses with attached garages on Annsbury Drive, Shelby Township'
+ANN_BANNER=(('slides',[('annsbury-banner.jpg',_ANN_ALT+' by day'),('annsbury-banner-twilight.jpg',_ANN_ALT+' at twilight')],'nolabel')
+  if os.path.exists(os.path.join(SITE,'assets','images','annsbury-banner-twilight.jpg')) else ('annsbury-banner.jpg',_ANN_ALT))
 ANN_ADDR="Annsbury Drive, Shelby Township, MI 48316"
 EXTRA_HEAD['for-lease/annsbury-fourplex/']='\n  <style>.prose{max-width:1100px}</style>\n  <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateListing","name":"8424 Annsbury Drive, Shelby Township: three-bedroom townhouse for lease","url":"https://centralerealty.com/for-lease/annsbury-fourplex/","description":"Updated three-bedroom, 1.5-bath townhouse of approximately 1,600 sq ft with a one-car attached garage and full unfinished basement in a fourplex on Annsbury Drive, Shelby Township, Michigan.","image":"https://centralerealty.com/assets/images/annsbury-exterior.jpg"}</script>'
 EXTRA_HEAD['for-lease/annsbury-fourplex/floor-plans/']='\n  <style>.prose{max-width:1100px}</style>'
@@ -271,7 +274,7 @@ ann_body=('<div class="lst-top lst-center"><div><span class="lst-tag">Coming Soo
  '<p>To move in, the requirements are the first month&rsquo;s rent, a security deposit of one and a half (1.5) months&rsquo; rent, and a $350 cleaning fee. The cleaning fee may be waived if the home is taken as-is.</p>'
  '<h2>Arrange a <em>Private Viewing</em></h2><p>Contact Vito L. Randazzo, Associate Broker: office <a href="tel:+12486568830">(248) 656-8830</a> or <a href="mailto:vlrandaz@centralerealty.com">vlrandaz@centralerealty.com</a>. The agent is the owner.</p>'
  '<p class="lst-disc">Information deemed reliable but not guaranteed and subject to change without notice. Room sizes are approximate. Equal Housing Opportunity.</p>')
-page("for-lease/annsbury-fourplex/","8424 Annsbury Dr For Lease | Shelby Twp | Centrale Realty","Three-bedroom, 1.5-bath townhouse of about 1,600 sq ft with a one-car garage and full basement in a fourplex on Annsbury Drive, Shelby Township. Photos and floor plans.","Fourplex on <em>Annsbury Drive</em>",ann_body,banner=('annsbury-banner.jpg','Brick and stone fourplex townhouses with attached garages on Annsbury Drive, Shelby Township'))
+page("for-lease/annsbury-fourplex/","8424 Annsbury Dr For Lease | Shelby Twp | Centrale Realty","Three-bedroom, 1.5-bath townhouse of about 1,600 sq ft with a one-car garage and full basement in a fourplex on Annsbury Drive, Shelby Township. Photos and floor plans.","Fourplex on <em>Annsbury Drive</em>",ann_body,banner=ANN_BANNER)
 def ann_plan(side,title,units,garage,cap):
     dims=(722,781) if side=='right' else (681,722)
     return (f'<figure class="plan plan-wide"><h3>{title}</h3><p class="lst-sub">{units}</p>'
@@ -284,7 +287,7 @@ ann_fp_body=('<p class="lst-back"><a class="btn" href="../">&larr; Back to Annsb
  +'<h2>Approximate <em>Room Sizes</em></h2><table class="lst-dt"><tr><th scope="row">Primary Bedroom</th><td>16&prime;2&Prime; x 14&prime;3&Prime;</td></tr><tr><th scope="row">Bedroom 2</th><td>10&prime;8&Prime; x 12&prime;0&Prime;</td></tr><tr><th scope="row">Bedroom 3 / Den</th><td>11&prime;5&Prime; x 11&prime;4&Prime;</td></tr><tr><th scope="row">Living Room</th><td>16&prime;2&Prime; x 11&prime;4&Prime;</td></tr><tr><th scope="row">Dinette</th><td>12&prime;3&Prime; x 11&prime;0&Prime;</td></tr><tr><th scope="row">Kitchen</th><td>10&prime;8&Prime; x 11&prime;0&Prime;</td></tr></table>'
  '<h2><em>Coming Soon</em> for Lease</h2><p>8424 Annsbury Drive is coming soon for lease. <a href="../">See the details and photos.</a> Call for pricing: <a href="tel:+12486568830">(248) 656-8830</a>.</p>'
  '<p class="lst-disc">Information deemed reliable but not guaranteed and subject to change without notice. Room sizes are approximate. Equal Housing Opportunity.</p>')
-page("for-lease/annsbury-fourplex/floor-plans/","Annsbury Dr Fourplex Floor Plans | Shelby Township | Centrale Realty","Floor plans for the Annsbury Drive fourplex in Shelby Township: 8420 and 8428 with the garage on the left, 8424 and 8432 with the garage on the right.","Annsbury Drive <em>Floor Plans</em>",ann_fp_body,banner=('annsbury-banner.jpg','Brick and stone fourplex townhouses with attached garages on Annsbury Drive, Shelby Township'))
+page("for-lease/annsbury-fourplex/floor-plans/","Annsbury Dr Fourplex Floor Plans | Shelby Township | Centrale Realty","Floor plans for the Annsbury Drive fourplex in Shelby Township: 8420 and 8428 with the garage on the left, 8424 and 8432 with the garage on the right.","Annsbury Drive <em>Floor Plans</em>",ann_fp_body,banner=ANN_BANNER)
 
 # ---- sitemap page, 404, and crawler/support files ----
 PAGES=[("","Home","Centrale Realty, Inc. serving Metro Detroit since 1984."),
