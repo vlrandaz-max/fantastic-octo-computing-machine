@@ -263,9 +263,9 @@ ann_body=('<div class="lst-top lst-center"><div><span class="lst-tag">Coming Soo
  '<ul class="lst-facts"><li><b>3</b><span>Bedrooms</span></li><li><b>1.5</b><span>Baths</span></li><li><b>~1,600</b><span>Square Feet</span></li><li><b>1-Car</b><span>Attached Garage</span></li><li><b>Full</b><span>Unfinished Basement</span></li><li><b>Call</b><span>For Pricing</span></li></ul>'
  '<h2>Take a Look <em>Inside</em></h2><div class="lst-figs lst-uniform">'
  +ann_fig("exterior","Brick and stone fourplex townhouses with attached garages on Annsbury Drive, Shelby Township","The fourplex on Annsbury Drive.")
+ +ann_fig("exterior-twilight","The Annsbury Drive fourplex at twilight with lit windows","The fourplex at twilight. Photo digitally enhanced.")
  +ann_fig("kitchen-1","Kitchen and dinette with a patio door and stainless steel appliances","Kitchen and dinette with a patio door.")
  +ann_fig("kitchen-2","Kitchen with maple cabinets, granite counters and stainless steel appliances","Maple cabinets, granite counters and stainless steel appliances.")
- +ann_fig("kitchen-3","Kitchen with granite counters, a dining light fixture and a window","Kitchen with granite counters and plenty of cabinet space.")
  +ann_fig("living","Bright living room with luxury vinyl flooring","Bright living room.")
  +ann_fig("closets","Walk-in closet and storage closet with shelving","Closet and storage space.")+'</div>'
  '<h2>Approximate <em>Room Sizes</em></h2><table class="lst-dt"><tr><th scope="row">Primary Bedroom</th><td>16&prime;2&Prime; x 14&prime;3&Prime;</td></tr><tr><th scope="row">Bedroom 2</th><td>10&prime;8&Prime; x 12&prime;0&Prime;</td></tr><tr><th scope="row">Bedroom 3 / Den</th><td>11&prime;5&Prime; x 11&prime;4&Prime;</td></tr><tr><th scope="row">Living Room</th><td>16&prime;2&Prime; x 11&prime;4&Prime;</td></tr><tr><th scope="row">Dinette</th><td>12&prime;3&Prime; x 11&prime;0&Prime;</td></tr><tr><th scope="row">Kitchen</th><td>10&prime;8&Prime; x 11&prime;0&Prime;</td></tr></table>'
