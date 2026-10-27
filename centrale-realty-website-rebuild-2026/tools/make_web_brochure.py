@@ -36,7 +36,7 @@ css=css.replace('CGI,serif','"Cormorant Garamond",serif').replace('CG,serif','"C
 body=body.replace('class="b-sheet"','class="b-sheet"')
 # image sizes + alt text (layout shift, accessibility)
 from PIL import Image
-ALT={'logo-cr-black.png':'Centrale Realty','annsbury-exterior.jpg':'Brick and stone fourplex townhouses on Annsbury Drive','annsbury-kitchen-2.jpg':'Kitchen with maple cabinets, granite counters and stainless steel appliances','annsbury-kitchen-1.jpg':'Kitchen and dinette with a patio door','annsbury-3d-plan-garage-right.jpg':'3D floor plan of 8424 Annsbury Drive','annsbury-exterior-twilight.jpg':'The fourplex at twilight','annsbury-living.jpg':'Living room','annsbury-closets.jpg':'Closet and storage space','qr-annsbury.png':'QR code for the Annsbury Drive page','equal-housing.png':'Equal Housing Opportunity'}
+ALT={'logo-cr-black.png':'Centrale Realty','annsbury-exterior.jpg':'Brick and stone townhouses on Annsbury Drive','annsbury-kitchen-2.jpg':'Kitchen with maple cabinets, granite counters and stainless steel appliances','annsbury-kitchen-1.jpg':'Kitchen and dinette with a patio door','annsbury-3d-plan-garage-right.jpg':'3D floor plan of 8424 Annsbury Drive','annsbury-exterior-twilight.jpg':'The townhouses at twilight','annsbury-living.jpg':'Living room','annsbury-closets.jpg':'Closet and storage space','qr-annsbury.png':'QR code for the Annsbury Drive page','equal-housing.png':'Equal Housing Opportunity'}
 def fiximg(m):
     tag=m.group(0); f=re.search(r'src="([^"]+)"',tag).group(1); name=os.path.basename(f)
     path=os.path.join(ROOT,'site','assets','images',name) if os.path.exists(os.path.join(ROOT,'site','assets','images',name)) else os.path.join(ROOT,'site','assets',name)
