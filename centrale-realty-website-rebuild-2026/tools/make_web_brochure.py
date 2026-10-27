@@ -80,7 +80,7 @@ extra='''
 @media (max-width:520px){.bro .b-sheet{zoom:.36}}
 @page{size:8.5in 11in;margin:0}
 @media print{
- .skip,.topbar,.site-header,.site-footer,.page-title,.mobile-cta,.noprint,.b-actions{display:none!important}
+ .skip,.topbar,.site-header,.site-footer,.page-title,.hero,.stg-strip,.mobile-cta,.noprint,.b-actions{display:none!important}
  html,body{background:#fff!important}
  .page-body{padding:0!important;margin:0!important}
  .wrap,.prose{max-width:none!important;padding:0!important;margin:0!important;width:auto!important}

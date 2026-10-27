@@ -294,7 +294,7 @@ page("for-lease/annsbury-fourplex/floor-plans/","Annsbury Dr Townhouse Floor Pla
 
 # printable web brochure for 8424 (rent shown as "Call for Pricing"); built by tools/make_web_brochure.py
 EXTRA_HEAD['for-lease/annsbury-fourplex/brochure/']='\n  <style>.prose{max-width:none}</style>'
-page("for-lease/annsbury-fourplex/brochure/","Printable Brochure | 8424 Annsbury Dr | Centrale Realty","Printable brochure for 8424 Annsbury Drive, a three-bedroom townhouse coming soon for lease in Shelby Township. Call for pricing.","Printable <em>Brochure</em>",open(os.path.join(HERE,"annsbury_brochure_web.html"),encoding="utf-8").read())
+page("for-lease/annsbury-fourplex/brochure/","Printable Brochure | 8424 Annsbury Dr | Centrale Realty","Printable brochure for 8424 Annsbury Drive, a three-bedroom townhouse coming soon for lease in Shelby Township. Call for pricing.","Printable <em>Brochure</em>",open(os.path.join(HERE,"annsbury_brochure_web.html"),encoding="utf-8").read(),banner=ANN_BANNER)
 # ---- sitemap page, 404, and crawler/support files ----
 PAGES=[("","Home","Centrale Realty, Inc. serving Metro Detroit since 1984."),
 ("for-sale/","For Sale","Homes for sale in Metro Detroit."),
