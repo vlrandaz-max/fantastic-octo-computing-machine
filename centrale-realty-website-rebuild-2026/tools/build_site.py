@@ -95,6 +95,8 @@ def shell(path,title,desc,main,home=False,overlay=False,abs_root=False,noindex=F
     d=os.path.join(SITE,path); os.makedirs(d,exist_ok=True) if path else None
     open(os.path.join(d,"index.html") if path else os.path.join(SITE,"index.html"),"w").write(html)
 
+# pages that stay out of search results and the sitemap (still reachable by link)
+NOINDEX_PAGES={'for-lease/annsbury-fourplex/brochure/'}
 def page(path,title,desc,h1,body,home=False,banner=None):
     depth=path.count("/"); r="../"*depth
     tags=''
@@ -122,7 +124,7 @@ def page(path,title,desc,h1,body,home=False,banner=None):
       </div></div>
     </section>
   </main>'''
-    shell(path,title,desc,main,home,overlay=bool(banner))
+    shell(path,title,desc,main,home,overlay=bool(banner),noindex=path in NOINDEX_PAGES)
 
 TODO="<p>TODO: final copy from Centrale.</p>"
 
@@ -309,7 +311,6 @@ PAGES=[("","Home","Centrale Realty, Inc. serving Metro Detroit since 1984."),
 ("suite-101/","Suite 101 For Lease","956 sq ft lower-level office/medical space at 2490 Walton Blvd."),
 ("for-lease/annsbury-fourplex/","Annsbury Drive Fourplex For Lease","8424 Annsbury Dr, a three-bedroom townhouse in Shelby Twp, coming for lease."),
 ("for-lease/annsbury-fourplex/floor-plans/","Annsbury Drive Floor Plans","Floor plans for 8420, 8424, 8428 and 8432 Annsbury Dr, Shelby Twp."),
-("for-lease/annsbury-fourplex/brochure/","Annsbury Drive Printable Brochure","Printable brochure for 8424 Annsbury Dr, Shelby Twp. Call for pricing."),
 ("sitemap/","Sitemap","Every page on this site.")]
 lis="".join(f'<li><a href="../{u}">{t}</a> &mdash; {d}</li>' if u else f'<li><a href="../">{t}</a> &mdash; {d}</li>' for u,t,d in PAGES[:-1])
 page("sitemap/","Sitemap | Centrale Realty","Every page on the Centrale Realty, Inc. website.","<em>Sitemap</em>",f'''<ul class="sitemap-list">{lis}</ul>

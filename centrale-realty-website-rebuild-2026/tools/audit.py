@@ -113,6 +113,8 @@ for rel in pages:
     p.feed(open(os.path.join(ROOT, rel)).read())
     pages[rel] = p
 
+# pages intentionally kept out of search results and the sitemap (must match NOINDEX_PAGES in build_site.py)
+NOINDEX_OK = {"for-lease/annsbury-fourplex/brochure/index.html"}
 real = {r: p for r, p in pages.items() if r not in ("404.html","410.html")}
 link_graph = {}
 
@@ -174,7 +176,7 @@ for rel, p in pages.items():
         W(f"{rel}: description is {len(p.meta['description'])} chars (over 170)")
     if p.imgs_noalt:
         E(f"{rel}: {p.imgs_noalt} image(s) without alt attribute")
-    if rel not in ("404.html","410.html"):
+    if rel not in ("404.html","410.html") and rel not in NOINDEX_OK:
         want = BASE + page_url(rel)
         if p.canonical != want:
             E(f"{rel}: canonical {p.canonical} != {want}")
@@ -215,7 +217,7 @@ for rel in real:
 sm = os.path.join(ROOT, "sitemap.xml")
 if os.path.exists(sm):
     locs = set(re.findall(r"<loc>([^<]+)</loc>", open(sm).read()))
-    want = {BASE + page_url(r) for r in real}
+    want = {BASE + page_url(r) for r in real if r not in NOINDEX_OK}
     for m in sorted(want - locs):
         E(f"sitemap.xml missing {m}")
     for m in sorted(locs - want):
@@ -248,8 +250,10 @@ raw = {r: open(os.path.join(ROOT, r)).read() for r in pages}
 for rel, html in raw.items():
     if 'name="viewport"' not in html:
         E(f"{rel}: no viewport meta (mobile usability)")
-    if rel not in ("404.html","410.html") and re.search(r'<meta name="robots"[^>]*noindex', html):
+    if rel not in ("404.html","410.html") and re.search(r'<meta name="robots"[^>]*noindex', html) and rel not in NOINDEX_OK:
         E(f"{rel}: real page is noindex")
+    if rel in NOINDEX_OK and "noindex" not in html:
+        E(f"{rel}: should be noindex")
     if rel in ("404.html","410.html") and "noindex" not in html:
         W("404.html should be noindex")
     if len(re.findall(r'rel="canonical"', html)) > 1:
