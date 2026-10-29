@@ -41,3 +41,22 @@ IG hashtag sets are trimmed to 5. FB sets are the full list.
 **Pin as first comment:** Marble or quartz — which would you pick for a kitchen like this?
 
 **DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 3. `grandeur_primary_suite.mp4` — primary suite
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+**Caption**
+> The ceiling buyers notice first in the Grandeur's primary suite. Coffered beams overhead, a full-length mirror that catches the morning light, and the ensuite spa bath just through the door. Falcon Estates — Move-In Ready.
+> Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #PrimarySuiteGoals #LuxuryRealEstate #CofferedCeiling`
+
+**FB hashtags:** `#LuxuryHomeBuilder #CustomHomeBuilder #PrimarySuiteGoals #LuxuryRealEstate #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #FalconEstates #CofferedCeiling #SpaBathroomGoals #MasterSuiteInspo #MoveInReadyHome #InteriorDesignInspo #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #ModernLuxuryHome #OaklandCountyRealEstate #NewHomeConstruction`
+
+**Pin as first comment:** That full-length mirror or the coffered ceiling — which one caught your eye first?
+
+**DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
