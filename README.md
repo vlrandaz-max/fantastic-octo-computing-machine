@@ -60,3 +60,22 @@ IG hashtag sets are trimmed to 5. FB sets are the full list.
 **Pin as first comment:** That full-length mirror or the coffered ceiling — which one caught your eye first?
 
 **DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 4. `grandeur_kitchen_to_living.mp4` — kitchen to living (Day 11 of the 30-day plan)
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+**Caption**
+> Can you host 12 here? Watch this. Gold fixtures at the farmhouse sink, a full island for prep, and a sightline straight through to the fireplace and dining — all in one open flow. Falcon Estates — Move-In Ready.
+> Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #OpenConceptLiving #LuxuryKitchenDesign #EntertainingSpace`
+
+**FB hashtags:** `#LuxuryHomeBuilder #CustomHomeBuilder #OpenConceptLiving #LuxuryKitchenDesign #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #FalconEstates #BrassFixtures #EntertainingSpace #FamilyRoomGoals #FireplaceDesign #MoveInReadyHome #InteriorDesignInspo #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #ModernLuxuryHome #OaklandCountyRealEstate #NewHomeConstruction`
+
+**Pin as first comment:** Twelve at the table, or do you spread out between the kitchen and the fireplace?
+
+**DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
