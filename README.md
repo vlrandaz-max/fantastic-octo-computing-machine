@@ -4,6 +4,8 @@ The Grandeur, Falcon Estates. L&R Homes, Inc. branding on both CTA cards (The Gr
 
 IG hashtag sets are trimmed to 5. FB sets are the full list.
 
+**Restaged versions available (Oct 31, 2026):** `grandeur_kitchen.mp4`, `grandeur_kitchen_to_living.mp4`, `grandeur_primary_suite.mp4`, and `grandeur_exterior.mp4` each now have an AI-staged `_staged.mp4` counterpart (fruit bowl, cutting board, florals, dining table, entry topiaries added — architecture/fixtures untouched). The original kitchen reel especially was posted unstaged and underperformed; use the `_staged` version instead going forward. Same caption, hashtags, first comment, and DM copy apply to both — only the visuals changed.
+
 ---
 
 ## 1. `grandeur_exterior.mp4` — exterior twilight
