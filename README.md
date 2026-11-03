@@ -189,3 +189,24 @@ Closes the gap with Heritage and Grandeur, which both already had an exterior re
 **Pin as first comment:** Brick or stone — which one's doing the heavy lifting on this facade for you?
 
 **DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 11. `heritage_mudroom_kitchen_combo.mp4` — Heritage mudroom + kitchen combo (Day 6 of the 30-day plan)
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Was built and sent in chat earlier but never actually committed here — same mistake as the Grandeur primary suite reel, now fixed.
+
+**Caption**
+> Come home routine, Heritage edition: through the drop zone, coats on the hooks, straight into a kitchen built for what happens next. Lot 7, Pine Woods.
+> Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #ComeHomeRoutine #MudroomDesign #KitchenDesign`
+
+**FB hashtags:** `#MudroomDesign #KitchenDesign #ComeHomeRoutine #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #DropZoneGoals #WalkInPantry #MoveInReadyHome #FunctionalDesign #HomeChefLife #InteriorDesignInspo #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #OaklandCountyRealEstate #NewHomeConstruction #HomeownerGoals`
+
+**Pin as first comment:** Mudroom first or kitchen first — which room actually sells a house for you?
+
+**DM automation:** trigger — "Thanks for the interest in The Heritage! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Heritage's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
