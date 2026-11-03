@@ -169,3 +169,23 @@ Real unstaged gimbal walkthrough (as-built, shot 2026-10-09) cut together with t
 **Pin as first comment:** Built it or staged it — which version sells the house for you?
 
 **DM automation:** trigger — "Thanks for the interest in The Heritage! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Heritage's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 10. `majestic_exterior.mp4` — The Majestic, exterior twilight
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Closes the gap with Heritage and Grandeur, which both already had an exterior reel.
+
+**Caption**
+> Dark brick, warm stone, and every window lit from the inside out. The Majestic at dusk — the kind of curb appeal that makes you slow down on the drive-by. Immediate occupancy, Pine Woods.
+
+**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #CurbAppeal #TwilightPhotography #NewConstructionHomes`
+
+**FB hashtags:** `#CurbAppeal #TwilightPhotography #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #BrickAndStoneExterior #ImmediateOccupancy #CustomHomeDesign #CraftsmanshipMatters #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #ThreeCarGarage #OaklandCountyRealEstate #NewHomeConstruction #HomeownerGoals`
+
+**Pin as first comment:** Brick or stone — which one's doing the heavy lifting on this facade for you?
+
+**DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
