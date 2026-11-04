@@ -180,7 +180,7 @@ Real unstaged gimbal walkthrough (as-built, shot 2026-10-09) cut together with t
 Closes the gap with Heritage and Grandeur, which both already had an exterior reel.
 
 **Caption**
-> Dark brick, warm stone, and every window lit from the inside out. The Majestic at dusk — the kind of curb appeal that makes you slow down on the drive-by. Immediate occupancy, Pine Woods.
+> Every light in this photo is real — nobody staged the windows for the shot. This is just what The Majestic looks like at dusk on a Tuesday. Pine Woods, immediate occupancy.
 
 **IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #CurbAppeal #TwilightPhotography #NewConstructionHomes`
 
