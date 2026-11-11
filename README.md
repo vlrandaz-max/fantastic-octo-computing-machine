@@ -215,6 +215,8 @@ Was built and sent in chat earlier but never actually committed here — same mi
 
 ## 12. `majestic_great_room.mp4` — The Majestic, great room
 
+**Scheduled: Nov 11, 2026**
+
 - [ ] Posted to IG
 - [ ] Posted to FB
 
@@ -232,6 +234,8 @@ Was built and sent in chat earlier but never actually committed here — same mi
 ---
 
 ## 13. `majestic_breakfast_nook.mp4` — The Majestic, breakfast nook
+
+**Scheduled: Nov 15, 2026**
 
 - [ ] Posted to IG
 - [ ] Posted to FB
