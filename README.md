@@ -86,6 +86,8 @@ IG hashtag sets are trimmed to 5. FB sets are the full list.
 
 ## 5. `grandeur_primary_retreat.mp4` — primary suite + the spa bath
 
+**Scheduled: Nov 11, 2026**
+
 - [ ] Posted to IG
 - [ ] Posted to FB
 
@@ -106,6 +108,8 @@ Same primary suite as reel 3 (`grandeur-primary-suite-2.jpg` — a different sta
 
 ## 6. `grandeur_great_room.mp4` — great room
 
+**Scheduled: Nov 13, 2026**
+
 - [ ] Posted to IG
 - [ ] Posted to FB
 
@@ -123,6 +127,8 @@ Same primary suite as reel 3 (`grandeur-primary-suite-2.jpg` — a different sta
 ---
 
 ## 7. `grandeur_nooks_combo.mp4` — the small rooms that do the real work
+
+**Scheduled: Nov 15, 2026**
 
 - [ ] Posted to IG
 - [ ] Posted to FB
