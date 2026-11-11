@@ -210,3 +210,41 @@ Was built and sent in chat earlier but never actually committed here — same mi
 **Pin as first comment:** Mudroom first or kitchen first — which room actually sells a house for you?
 
 **DM automation:** trigger — "Thanks for the interest in The Heritage! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Heritage's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 12. `majestic_great_room.mp4` — The Majestic, great room
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+**Caption**
+> A fireplace, a worn-in leather sofa, a guitar that's clearly been played — not staged. The Majestic's great room looks lived-in because, soon enough, it will be. Pine Woods, immediate occupancy.
+
+**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #GreatRoomGoals #StoneFireplace #NewConstructionHomes`
+
+**FB hashtags:** `#GreatRoomGoals #StoneFireplace #TwoStoryWindows #LivingRoomGoals #CozyLuxury #InteriorDesignInspo #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #OaklandCountyRealEstate #ImmediateOccupancy`
+
+**Pin as first comment:** Stone fireplace or the two-story windows — what's the first thing you notice?
+
+**DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 13. `majestic_breakfast_nook.mp4` — The Majestic, breakfast nook
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Not the kitchen island shot from reel 1 — the bay-window breakfast nook, a distinct space off the same kitchen.
+
+**Caption**
+> Not the kitchen you photograph — the nook you actually eat breakfast in. A bay window, a round table, coffee before the day gets loud. The Majestic, Pine Woods, immediate occupancy.
+
+**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #BreakfastNookGoals #BayWindow #NewConstructionHomes`
+
+**FB hashtags:** `#BreakfastNookGoals #BayWindow #MorningCoffee #DiningNookInspo #InteriorDesignInspo #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #OaklandCountyRealEstate #ImmediateOccupancy`
+
+**Pin as first comment:** Round table by the window — who's claiming the best seat?
+
+**DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
