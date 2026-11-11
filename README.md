@@ -81,3 +81,61 @@ IG hashtag sets are trimmed to 5. FB sets are the full list.
 **Pin as first comment:** Twelve at the table, or do you spread out between the kitchen and the fireplace?
 
 **DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 5. `grandeur_primary_retreat.mp4` — primary suite + the spa bath
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Same primary suite as reel 3 (`grandeur-primary-suite-2.jpg` — a different staging pass/angle of that bedroom, not a new room), now paired with `grandeur-primary-bath.jpg`, the ensuite spa bath that reel only mentioned in the caption but never showed.
+
+**Caption**
+> You've seen this bedroom — the coffered ceiling, the brass mirror. What you haven't seen is what's through that door: a marble spa bath built for a soak, not a sprint. The Grandeur's primary retreat, start to finish. Falcon Estates, move-in ready.
+
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #SpaBathroomGoals #PrimarySuiteGoals #LuxuryRealEstate`
+
+**FB hashtags:** `#SpaBathroomGoals #PrimarySuiteGoals #CofferedCeiling #MarbleBathroom #SoakingTub #MasterSuiteInspo #InteriorDesignInspo #LuxuryRealEstate #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #FalconEstates #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #OaklandCountyRealEstate #NewHomeConstruction #LuxuryHomeBuilder #CustomHomeBuilder #MoveInReadyHome`
+
+**Pin as first comment:** Soaking tub or the oversized shower — which one's calling your name?
+
+**DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 6. `grandeur_great_room.mp4` — great room
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+**Caption**
+> Two stories of window, a stone-look fireplace, and a sofa worn in by an actual family, not a stager's inventory. The Grandeur's great room is built for the nights you don't plan — just end up there. Falcon Estates, move-in ready.
+
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #GreatRoomGoals #TwoStoryWindows #LuxuryRealEstate`
+
+**FB hashtags:** `#GreatRoomGoals #TwoStoryWindows #StoneFireplace #LivingRoomGoals #OpenConceptLiving #InteriorDesignInspo #LuxuryRealEstate #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #FalconEstates #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #OaklandCountyRealEstate #NewHomeConstruction #LuxuryHomeBuilder #CustomHomeBuilder #MoveInReadyHome`
+
+**Pin as first comment:** Stone fireplace or the two-story windows — what's the first thing you notice?
+
+**DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 7. `grandeur_nooks_combo.mp4` — the small rooms that do the real work
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+The command center/study, the coffee bar, and the vanity nook — three real built-ins, back to back. Practical-appeal angle rather than another wide luxury shot.
+
+**Caption**
+> The desk for school mornings. The coffee bar before anyone's fully awake. The vanity nook for five minutes alone before the day starts. The Grandeur's small rooms are where the real living happens. Falcon Estates, move-in ready.
+
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #BuiltForRealLife #HomeOrganizationIdeas #LuxuryRealEstate`
+
+**FB hashtags:** `#BuiltForRealLife #HomeOrganizationIdeas #CoffeeBarGoals #VanityGoals #FunctionalLuxury #InteriorDesignInspo #LuxuryRealEstate #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #FalconEstates #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #OaklandCountyRealEstate #NewHomeConstruction #LuxuryHomeBuilder #CustomHomeBuilder #MoveInReadyHome`
+
+**Pin as first comment:** Which nook would you claim first — the coffee bar or the desk?
+
+**DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
