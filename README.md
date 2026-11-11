@@ -243,7 +243,7 @@ Was built and sent in chat earlier but never actually committed here — same mi
 Not the kitchen island shot from reel 1 — the bay-window breakfast nook, a distinct space off the same kitchen.
 
 **Caption**
-> Not the kitchen you photograph — the nook you actually eat breakfast in. A bay window, a round table, coffee before the day gets loud. The Majestic, Pine Woods, immediate occupancy.
+> Every listing shows you the kitchen island. Here's the table nobody photographs but everybody uses — bay window, morning light, five minutes before the day starts moving. The Majestic, Pine Woods.
 
 **IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #BreakfastNookGoals #BayWindow #NewConstructionHomes`
 
