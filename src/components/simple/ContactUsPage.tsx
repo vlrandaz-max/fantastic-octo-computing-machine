@@ -15,10 +15,10 @@ const eyebrow: React.CSSProperties = {
   color: 'var(--color-brand-gold-dark)',
 };
 
-// Exteriors and interiors alternating across The Grandeur, The Majestic
-// and The Heritage.
+// Exteriors and interiors alternating. No Grandeur exterior: the featured
+// home photo beside the contact details is already one.
 const HERO_SLIDES = [
-  { src: withBase('/assets/home/coachwood-twilight-final.jpg'), position: 'center 62%' },
+  { src: withBase('/assets/home/madison-twilight.jpg'), position: 'center 60%' },
   { src: withBase('/assets/home/grandeur-kitchen-staged.jpg'), position: 'center' },
   { src: withBase('/assets/pine-woods/majestic-twilight-1-wide.jpg'), position: 'center 65%' },
   { src: withBase('/assets/home/grandeur-family-room.jpg'), position: 'center' },
