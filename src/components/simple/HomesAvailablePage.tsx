@@ -20,9 +20,9 @@ const eyebrow: React.CSSProperties = {
 const HERO_SLIDES = [
   { src: withBase('/assets/home/crestwood-twilight-2026.jpg'), position: 'center 55%' },
   { src: withBase('/assets/pine-woods/majestic-kitchen-staged.jpg'), position: 'center' },
-  { src: withBase('/assets/home/grandeur-kitchen-ai-staged.jpg'), position: 'center' },
-  { src: withBase('/assets/pine-woods/heritage-family-room.jpg'), position: 'center' },
   { src: withBase('/assets/pine-woods/majestic-exterior-twilight.jpg'), position: 'center 60%' },
+  { src: withBase('/assets/pine-woods/heritage-family-room.jpg'), position: 'center' },
+  { src: withBase('/assets/home/grandeur-kitchen-ai-staged.jpg'), position: 'center' },
   { src: withBase('/assets/home/grandeur-dining-room.jpg'), position: 'center' },
 ];
 
