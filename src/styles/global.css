@@ -479,7 +479,7 @@ button:focus-visible {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(11, 11, 11, 0.5) 0%,
+    rgba(11, 11, 11, 0.15) 0%,
     rgba(11, 11, 11, 0) 30%,
     rgba(11, 11, 11, 0.08) 45%,
     rgba(11, 11, 11, 0.88) 100%
@@ -494,29 +494,6 @@ button:focus-visible {
   border: 1px solid rgba(212, 184, 122, 0.38);
   pointer-events: none;
   transition: border-color 0.5s ease, inset 0.6s var(--ease-out);
-}
-
-.explore-tile-kind {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Jost', var(--font-body);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(248, 244, 238, 0.92);
-}
-
-.explore-tile-kind::before {
-  content: '';
-  width: 18px;
-  height: 1px;
-  background: var(--color-brand-gold-light);
 }
 
 .explore-tile-body {
@@ -627,10 +604,6 @@ button:focus-visible {
   }
   .explore-tile {
     aspect-ratio: 4 / 3;
-  }
-  .explore-tile-kind {
-    top: 26px;
-    left: 26px;
   }
   .explore-tile-body {
     left: 26px;

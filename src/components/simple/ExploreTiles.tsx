@@ -1,6 +1,5 @@
 import { Reveal } from '../Reveal';
 import { FALCON_ESTATES_HOMES, PINE_WOODS_HOMES, type HomeListing } from '../../data/site';
-import { GALLERY_PHOTOS } from '../../data/galleryPhotos';
 import { withBase } from '../../lib/url';
 
 const available = (homes: HomeListing[]) => homes.filter((h) => h.status !== 'sold').length;
@@ -13,15 +12,13 @@ const pineReady = available(PINE_WOODS_HOMES);
 // site.ts can never leave a stale count on the homepage.
 const TILES = [
   {
-    kind: 'Community',
     label: 'Falcon Estates',
-    detail: `${plural(FALCON_ESTATES_HOMES.length, 'residence')} · ${falconReady} move-in ready`,
+    detail: `${falconReady} move-in ready`,
     image: withBase('/assets/home/crestwood-twilight-2026.jpg'),
     href: withBase('/falcon-estates-rochester-hills'),
     position: '50% 50%',
   },
   {
-    kind: 'Community',
     label: 'Pine Woods',
     detail: `${plural(pineReady, 'home')} ready now`,
     image: withBase('/assets/pine-woods/majestic-twilight-2.jpg'),
@@ -29,7 +26,6 @@ const TILES = [
     position: '42% 50%',
   },
   {
-    kind: 'Listings',
     label: 'Homes Available',
     detail: `${plural(falconReady + pineReady, 'home')} ready to tour`,
     image: withBase('/assets/home/coachwood-twilight-final.jpg'),
@@ -37,9 +33,8 @@ const TILES = [
     position: '50% 50%',
   },
   {
-    kind: 'Portfolio',
     label: 'Gallery',
-    detail: `${GALLERY_PHOTOS.length} photographs`,
+    detail: 'Portfolio photographs',
     image: withBase('/assets/home/dining-room-staged-2.jpg'),
     href: withBase('/gallery'),
     position: '62% 50%',
@@ -54,7 +49,6 @@ export function ExploreTiles() {
           <a href={tile.href} className="explore-tile">
             <img src={tile.image} alt="" loading="lazy" style={{ objectPosition: tile.position }} />
             <span className="explore-tile-frame" aria-hidden="true" />
-            <span className="explore-tile-kind">{tile.kind}</span>
             <span className="explore-tile-body">
               <span className="explore-tile-title">{tile.label}</span>
               <span className="explore-tile-rule" aria-hidden="true" />
