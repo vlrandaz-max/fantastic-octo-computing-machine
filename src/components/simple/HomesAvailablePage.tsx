@@ -1,4 +1,4 @@
-import { SimpleNav } from './SimpleNav';
+import { ClassicNav } from './ClassicNav';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
 import { Reveal } from '../Reveal';
@@ -21,10 +21,7 @@ const eyebrow: React.CSSProperties = {
 export function HomesAvailablePage() {
   return (
     <div style={{ background: '#FFFFFF' }}>
-      <div style={{ position: 'relative', background: '#131210' }}>
-        <SimpleNav />
-        <div style={{ height: 220 }} />
-      </div>
+      <ClassicNav />
 
       <main>
       <section style={{ padding: '72px 40px 40px', textAlign: 'center' }}>

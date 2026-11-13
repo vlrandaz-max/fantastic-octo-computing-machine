@@ -50,7 +50,7 @@ export function SimpleFooter() {
           <p style={line}>Rochester Hills &amp; surrounding communities</p>
         </div>
         <div style={col}>
-          <p style={heading}>Schedule a Tour</p>
+          <p style={heading}>Visit a Home</p>
           <a
             href={withBase('/contact-us?intent=tour')}
             className="classic-btn-outline classic-hover-float"
@@ -65,7 +65,7 @@ export function SimpleFooter() {
               padding: '13px 22px',
             }}
           >
-            Find a Home
+            Schedule a Tour
           </a>
         </div>
       </div>

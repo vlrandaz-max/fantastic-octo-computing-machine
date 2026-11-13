@@ -225,7 +225,7 @@ export function Classic2HomePage() {
           <p className="classic-flanked" style={{ color: 'var(--color-brand-gold-dark)', marginBottom: 20 }}>
             Where We Build
           </p>
-          <h2 style={heading}>Explore Our Communities</h2>
+          <h2 style={heading}>Explore Our Communities &amp; Homes</h2>
           <ExploreTiles />
         </div>
       </section>
@@ -246,7 +246,7 @@ export function Classic2HomePage() {
           <p style={{ fontFamily: "'Jost', var(--font-body)", fontSize: 16, lineHeight: 1.85, color: 'rgba(248,244,238,0.82)', maxWidth: 640, margin: '0 auto 32px' }}>
             {COMPANY.ourStory.body[2]}
           </p>
-          <a href={withBase('/homes-available')} className="classic-btn-outline classic-hover-float" style={{ color: '#F8F4EE' }}>
+          <a href={withBase('/homes-available')} className="classic-btn-primary classic-hover-float">
             View Homes
           </a>
         </div>

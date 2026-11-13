@@ -50,9 +50,9 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
           </p>
         </div>
         <div>
-          <p style={colHeading}>Schedule a Visit</p>
-          <a href={COMPANY.phoneHref} className="classic-btn-outline classic-hover-float" style={{ color: 'var(--color-brand-dark)' }}>
-            Find a Home
+          <p style={colHeading}>Visit a Home</p>
+          <a href={withBase('/contact-us?intent=tour')} className="classic-btn-outline classic-hover-float" style={{ color: 'var(--color-brand-dark)' }}>
+            Schedule a Tour
           </a>
         </div>
       </div>

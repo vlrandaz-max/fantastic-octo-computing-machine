@@ -10,28 +10,31 @@ const linkStyle: React.CSSProperties = {
   color: '#F2F0E6',
 };
 
+const TOUR_HREF = withBase('/contact-us?intent=tour');
+
 /**
- * Sticky, always-solid dark header — a thin info bar (address / phone /
- * email) over a main row with logo left and nav right, styled after
- * rh.house's two-tier restaurant-site header (Jost for nav/body type, an
- * outlined CTA button rather than a filled one), sharing the same
- * NAV_LINKS as the rest of the site's conventional pages (e.g.
- * /pine-woods).
+ * The one site header — a thin info bar (address / phone / email) over a
+ * main row with logo left and nav right. Solid and sticky by default;
+ * `overlay` lays it transparently over a page's hero photograph instead.
  */
-export function ClassicNav({ homeHref = withBase('/') }: { homeHref?: string } = {}) {
+export function ClassicNav({ homeHref = withBase('/'), overlay = false }: { homeHref?: string; overlay?: boolean } = {}) {
   const [open, setOpen] = useState(false);
   const LINKS = [{ label: 'Home', href: homeHref }, ...NAV_LINKS.filter((l) => l.label !== 'Home')];
 
   return (
     <>
     <header
-      style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 30,
-        background: 'rgba(11,11,11,0.96)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
-      }}
+      style={
+        overlay
+          ? { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 20 }
+          : {
+              position: 'sticky',
+              top: 0,
+              zIndex: 30,
+              background: 'rgba(11,11,11,0.96)',
+              borderBottom: '1px solid rgba(255,255,255,0.08)',
+            }
+      }
     >
       <div
         className="classic-info-bar"
@@ -40,6 +43,7 @@ export function ClassicNav({ homeHref = withBase('/') }: { homeHref?: string } =
           justifyContent: 'center',
           gap: 36,
           padding: '9px 24px',
+          background: overlay ? 'rgba(19,18,16,0.55)' : undefined,
           borderBottom: '1px solid rgba(255,255,255,0.08)',
           fontFamily: "'Jost', var(--font-body)",
           fontSize: 12,
@@ -84,8 +88,8 @@ export function ClassicNav({ homeHref = withBase('/') }: { homeHref?: string } =
               {link.label}
             </a>
           ))}
-          <a href={COMPANY.phoneHref} className="classic-btn-outline classic-hover-float" style={{ color: '#F2F0E6' }}>
-            Find a Home
+          <a href={TOUR_HREF} className="classic-btn-primary classic-hover-float">
+            Schedule a Tour
           </a>
         </nav>
 
@@ -108,12 +112,8 @@ export function ClassicNav({ homeHref = withBase('/') }: { homeHref?: string } =
               {link.label}
             </a>
           ))}
-          <a
-            href={COMPANY.phoneHref}
-            className="classic-btn-outline"
-            style={{ color: '#F2F0E6', textAlign: 'center', marginTop: 10 }}
-          >
-            {COMPANY.phone}
+          <a href={TOUR_HREF} className="classic-btn-primary" style={{ textAlign: 'center', marginTop: 10 }}>
+            Schedule a Tour
           </a>
         </div>
       )}

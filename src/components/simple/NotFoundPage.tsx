@@ -1,4 +1,4 @@
-import { SimpleNav } from './SimpleNav';
+import { ClassicNav } from './ClassicNav';
 import { SimpleFooter } from './SimpleFooter';
 import { COMPANY, NAV_LINKS } from '../../data/site';
 import { withBase } from '../../lib/url';
@@ -19,10 +19,7 @@ const eyebrow: React.CSSProperties = {
 export function NotFoundPage() {
   return (
     <div style={{ background: '#FFFFFF' }}>
-      <div style={{ position: 'relative', background: '#131210' }}>
-        <SimpleNav />
-        <div style={{ height: 220 }} />
-      </div>
+      <ClassicNav />
 
       <main>
       <section style={{ padding: '72px 40px 96px', textAlign: 'center' }}>
