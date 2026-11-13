@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { ClassicNav } from './ClassicNav';
 import { ClassicFooter } from './ClassicFooter';
+import { ExploreTiles } from './ExploreTiles';
 import { Reveal, useReveal, type RevealType } from '../Reveal';
 import { COMPANY } from '../../data/site';
 import { withBase } from '../../lib/url';
@@ -25,13 +26,6 @@ const heading: React.CSSProperties = {
   margin: '16px 0 22px',
   overflowWrap: 'break-word',
 };
-
-const EXPLORE_CARDS = [
-  { label: 'Falcon Estates', image: withBase('/assets/home/crestwood-twilight-2026.jpg'), href: withBase('/falcon-estates-rochester-hills') },
-  { label: 'Pine Woods', image: withBase('/assets/pine-woods/majestic-twilight-2.jpg'), href: withBase('/pine-woods') },
-  { label: 'Homes Available', image: withBase('/assets/home/coachwood-twilight-final.jpg'), href: withBase('/homes-available') },
-  { label: 'Gallery', image: withBase('/assets/home/dining-room-staged-2.jpg'), href: withBase('/gallery') },
-];
 
 const CTA_SLIDES = [
   withBase('/assets/home/coachwood-aerial-twilight-2.jpg'),
@@ -225,36 +219,14 @@ export function Classic2HomePage() {
         </div>
       </section>
 
-      {/* Explore — same cards as /classic, with a staggered slide-in-from-below reveal */}
+      {/* Explore — full-photograph navigation tiles */}
       <section style={{ padding: '100px 32px', background: 'var(--bg1)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
           <p className="classic-flanked" style={{ color: 'var(--color-brand-gold-dark)', marginBottom: 20 }}>
             Where We Build
           </p>
           <h2 style={heading}>Explore Our Communities</h2>
-          <div className="classic-explore-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, marginTop: 56 }}>
-            {EXPLORE_CARDS.map((card, i) => (
-              <Reveal key={card.label} type="fade-in-up" delay={i * 100}>
-                <a href={card.href} className="classic-stem-card">
-                  <span className="classic-stem-photo">
-                    <img
-                      src={card.image}
-                      alt={card.label}
-                      loading="lazy"
-                      style={{ width: '100%', height: 300, objectFit: 'cover', display: 'block' }}
-                    />
-                  </span>
-                  <span className="classic-stem-line" />
-                  <span
-                    className="classic-btn-outline classic-hover-float"
-                    style={{ color: 'var(--color-brand-dark)', borderColor: 'var(--color-brand-gold)' }}
-                  >
-                    {card.label}
-                  </span>
-                </a>
-              </Reveal>
-            ))}
-          </div>
+          <ExploreTiles />
         </div>
       </section>
 
