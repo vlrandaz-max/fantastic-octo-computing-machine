@@ -2,7 +2,7 @@ import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { useRevealScope } from '../Reveal';
 import { withBase } from '../../lib/url';
-import { FALCON_ESTATES } from '../../data/site';
+import { FALCON_ESTATES, FALCON_ESTATES_HOMES, STATUS_LABEL } from '../../data/site';
 
 /**
  * Falcon Estates — the community landing page. Like GrandeurPage, this is a
@@ -168,19 +168,11 @@ const FALCON_STYLE = `
   .falcon-page .homes-inner { max-width: 1280px; margin: 0 auto; }
   .falcon-page .homes-h2 { font-family: var(--fe-font-display); font-size: clamp(2rem,3vw,2.5rem); font-weight: 300; color: #F2F0E6 !important; margin: 12px 0 40px; }
   .falcon-page .homes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .falcon-page .home-card { position: relative; display: block; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--fe-radius-sm); overflow: hidden; transition: box-shadow 220ms ease, transform 220ms ease; }
-  .falcon-page .home-card:hover { box-shadow: var(--fe-shadow-2); transform: translateY(-3px); }
-  .falcon-page .home-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 700ms cubic-bezier(0.25,0.1,0.25,1); }
-  .falcon-page .home-card:hover img { transform: scale(1.08); }
-  .falcon-page .home-card-badge { position: absolute; top: 14px; left: 14px; z-index: 2; font-size: 10px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; }
-  .falcon-page .home-card-badge.sold { background: #1C1A18; color: #F2F0E6; }
-  .falcon-page .home-card-badge.available { background: var(--fe-accent); color: #1C1A18; }
-  .falcon-page .home-card-body { padding: 20px 22px 24px; }
-  .falcon-page .home-card-name { font-family: var(--fe-font-display); font-style: italic; font-size: 1.5rem; font-weight: 400; color: #F2F0E6; margin-bottom: 10px; }
-  .falcon-page .home-card-cta { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fe-accent-light);
-    border-bottom: 1px solid rgba(196,160,90,0.4); padding-bottom: 3px; }
+  /* Home tiles reuse the site-wide .explore-tile/.home-tile styles; these two
+     rules undo this page's own blanket resets (all margins zeroed, all links
+     gold) inside the tiles. */
+  .falcon-page a.explore-tile { color: #F8F4EE; }
+  .falcon-page .explore-tile-rule { margin: 14px 0 12px; }
 
   /* LOCATION CTA */
   .falcon-page .location-band { background: linear-gradient(135deg, #1C1A18 0%, #2A2018 60%, #1E1A10 100%); padding: 72px 48px; }
@@ -287,46 +279,17 @@ const FALCON_BODY = `
     <div class="eyebrow" style="color: rgba(200,180,140,0.75);">Now Available</div>
     <h2 class="homes-h2">Homes in Falcon Estates</h2>
     <div class="homes-grid">
-      <a class="home-card reveal fade-in" style="animation-delay: 0ms" href="${withBase('/grandeur')}">
-        <span class="home-card-badge available">Immediate Occupancy</span>
-        <img decoding="async" src="${withBase('/assets/home/grandeur-exterior-twilight.jpg')}" alt="The Grandeur">
-        <div class="home-card-body">
-          <div class="home-card-name">The Grandeur</div>
-          <span class="home-card-cta">Click for Home Details &rarr;</span>
-        </div>
-      </a>
-      <a class="home-card reveal fade-in" style="animation-delay: 100ms" href="${withBase('/crestwood')}">
-        <span class="home-card-badge sold">Sold</span>
-        <img decoding="async" src="${withBase('/assets/home/crestwood-twilight-2026.jpg')}" alt="The Crestwood">
-        <div class="home-card-body">
-          <div class="home-card-name">The Crestwood</div>
-          <span class="home-card-cta">Click for Home Details &rarr;</span>
-        </div>
-      </a>
-      <a class="home-card reveal fade-in" style="animation-delay: 200ms" href="${withBase('/cambridge')}">
-        <span class="home-card-badge sold">Sold</span>
-        <img decoding="async" src="${withBase('/assets/home/cambridge-twilight.jpg')}" alt="The Cambridge">
-        <div class="home-card-body">
-          <div class="home-card-name">The Cambridge</div>
-          <span class="home-card-cta">Click for Home Details &rarr;</span>
-        </div>
-      </a>
-      <a class="home-card reveal fade-in" style="animation-delay: 300ms" href="${withBase('/madison')}">
-        <span class="home-card-badge sold">Sold</span>
-        <img decoding="async" src="${withBase('/assets/home/madison-twilight-aerial.jpg')}" alt="The Madison">
-        <div class="home-card-body">
-          <div class="home-card-name">The Madison</div>
-          <span class="home-card-cta">Click for Home Details &rarr;</span>
-        </div>
-      </a>
-      <a class="home-card reveal fade-in" style="animation-delay: 400ms" href="${withBase('/stratford')}">
-        <span class="home-card-badge sold">Sold</span>
-        <img decoding="async" src="${withBase('/assets/home/stratford-aerial-twilight.jpg')}" alt="The Stratford">
-        <div class="home-card-body">
-          <div class="home-card-name">The Stratford</div>
-          <span class="home-card-cta">Click for Home Details &rarr;</span>
-        </div>
-      </a>
+${FALCON_ESTATES_HOMES.map(
+  (home, i) => `      <a class="explore-tile home-tile${home.status === 'sold' ? ' is-sold' : ''} reveal fade-in-up" style="animation-delay: ${i * 100}ms" href="${home.href ?? withBase('/contact-us')}">
+        <img decoding="async" loading="lazy" src="${home.image}" alt="">
+        <span class="explore-tile-frame" aria-hidden="true"></span>
+        <span class="explore-tile-body">
+          <span class="explore-tile-title">${home.name}</span>
+          <span class="explore-tile-rule" aria-hidden="true"></span>
+          <span class="explore-tile-detail"><span class="home-tile-status">${STATUS_LABEL[home.status]}</span><span class="explore-tile-arrow" aria-hidden="true"></span></span>
+        </span>
+      </a>`,
+).join('\n')}
     </div>
   </div>
 </div>
