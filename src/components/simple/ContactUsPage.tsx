@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
+import { ExploreTiles } from './ExploreTiles';
 import { COMPANY, FALCON_ESTATES_HOMES, PINE_WOODS_HOMES, STATUS_LABEL } from '../../data/site';
 import { withBase } from '../../lib/url';
 
@@ -91,8 +92,8 @@ export function ContactUsPage() {
         </div>
       </section>
 
-      <section style={{ padding: '72px 40px 96px' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }} className="simple-grid-2">
+      <section style={{ padding: '72px 40px 88px' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }} className="simple-grid-2">
           <div>
             <p style={{ ...eyebrow, marginBottom: 18 }}>Reach Us Directly</p>
             {homeParam && (
@@ -139,13 +140,16 @@ export function ContactUsPage() {
             </a>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignSelf: 'start' }}>
           {FEATURED_HOME && (
-            <a href={FEATURED_HOME.href} className="photo-zoom" style={{ boxShadow: 'var(--shadow-2)' }}>
+            <a
+              href={FEATURED_HOME.href}
+              className="photo-zoom"
+              style={{ height: '100%', minHeight: 320, boxShadow: 'var(--shadow-2)' }}
+            >
               <img
                 src={FEATURED_HOME.image}
                 alt={`${FEATURED_HOME.name} at ${FEATURED_HOME.community}`}
-                style={{ width: '100%', aspectRatio: '3 / 2', objectFit: 'cover' }}
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
               />
               <span
                 style={{
@@ -173,31 +177,26 @@ export function ContactUsPage() {
               </span>
             </a>
           )}
-          <div
+        </div>
+      </section>
+
+      {/* Explore — the same photo tiles as the homepage */}
+      <section style={{ padding: '80px 32px 96px', background: 'var(--bg1)' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
+          <p style={eyebrow}>Keep Exploring</p>
+          <h2
             style={{
-              background: 'var(--bg1)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius-md)',
-              padding: '32px 28px',
+              fontFamily: 'var(--font-display)',
+              fontWeight: 300,
+              fontSize: 'clamp(1.9rem,3.5vw,2.6rem)',
+              color: 'var(--color-brand-dark)',
+              lineHeight: 1.15,
+              marginTop: 12,
             }}
           >
-            <p style={eyebrow}>Explore</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 16 }}>
-              <a href={withBase('/homes-available')} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
-                Homes Available →
-              </a>
-              <a href={withBase('/falcon-estates-rochester-hills')} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
-                Falcon Estates →
-              </a>
-              <a href={withBase('/pine-woods')} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
-                Pine Woods →
-              </a>
-              <a href={withBase('/gallery')} className="nav-link-hover" style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--color-brand-dark)' }}>
-                Photo Gallery →
-              </a>
-            </div>
-          </div>
-          </div>
+            Communities, Homes &amp; Gallery
+          </h2>
+          <ExploreTiles />
         </div>
       </section>
       </main>
