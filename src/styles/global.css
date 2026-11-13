@@ -979,3 +979,30 @@ button.classic-btn-primary:hover {
     display: none;
   }
 }
+
+/* Contact page hero — sized so the contact details still start within
+   the first screen on a laptop. */
+.contact-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--color-near-black);
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 48px 56px;
+}
+
+@media (max-width: 767px) {
+  .contact-hero {
+    min-height: 440px;
+  }
+  .contact-hero-content {
+    padding: 0 24px 40px;
+  }
+}
