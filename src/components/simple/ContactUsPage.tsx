@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ClassicNav } from './ClassicNav';
 import { SimpleFooter } from './SimpleFooter';
-import { COMPANY } from '../../data/site';
+import { COMPANY, FALCON_ESTATES_HOMES, PINE_WOODS_HOMES, STATUS_LABEL } from '../../data/site';
 import { withBase } from '../../lib/url';
 
 const eyebrow: React.CSSProperties = {
@@ -12,6 +12,10 @@ const eyebrow: React.CSSProperties = {
   textTransform: 'uppercase',
   color: 'var(--color-brand-gold-dark)',
 };
+
+// The first home still for sale — so the photo always shows something a
+// visitor can actually tour.
+const FEATURED_HOME = [...FALCON_ESTATES_HOMES, ...PINE_WOODS_HOMES].find((h) => h.status !== 'sold');
 
 /**
  * Contact Us — the single destination every CTA across the site points
@@ -94,13 +98,46 @@ export function ContactUsPage() {
             </a>
           </div>
 
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignSelf: 'start' }}>
+          {FEATURED_HOME && (
+            <a href={FEATURED_HOME.href} className="photo-zoom" style={{ boxShadow: 'var(--shadow-2)' }}>
+              <img
+                src={FEATURED_HOME.image}
+                alt={`${FEATURED_HOME.name} at ${FEATURED_HOME.community}`}
+                style={{ width: '100%', aspectRatio: '3 / 2', objectFit: 'cover' }}
+              />
+              <span
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  zIndex: 1,
+                  padding: '48px 22px 18px',
+                  background: 'linear-gradient(180deg, rgba(11,11,11,0) 0%, rgba(11,11,11,0.82) 100%)',
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  justifyContent: 'space-between',
+                  flexWrap: 'wrap',
+                  gap: '2px 16px',
+                  color: '#F2F0E6',
+                }}
+              >
+                <span style={{ fontFamily: 'var(--font-display)', fontSize: 22 }}>
+                  {FEATURED_HOME.name} · {FEATURED_HOME.community}
+                </span>
+                <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-brand-gold-light)', whiteSpace: 'nowrap' }}>
+                  {STATUS_LABEL[FEATURED_HOME.status]}
+                </span>
+              </span>
+            </a>
+          )}
           <div
             style={{
               background: 'var(--bg1)',
               border: '1px solid var(--border)',
               borderRadius: 'var(--radius-md)',
               padding: '32px 28px',
-              alignSelf: 'start',
             }}
           >
             <p style={eyebrow}>Explore</p>
@@ -118,6 +155,7 @@ export function ContactUsPage() {
                 Photo Gallery →
               </a>
             </div>
+          </div>
           </div>
         </div>
       </section>
