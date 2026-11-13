@@ -630,6 +630,133 @@ button:focus-visible {
   color: rgba(248, 244, 238, 0.72);
 }
 
+/* Gallery — the same tile, three across, opening the photo viewer. */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 36px;
+  margin-bottom: 44px;
+}
+
+.gallery-filter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 0 0 8px;
+  font-family: 'Jost', var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg2);
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition-base) ease, border-color var(--transition-base) ease;
+}
+
+.gallery-filter:hover {
+  color: var(--color-brand-dark);
+}
+
+.gallery-filter[aria-pressed='true'] {
+  color: var(--color-brand-gold-dark);
+  border-bottom-color: var(--color-brand-gold);
+}
+
+.gallery-filter-count {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--fg3);
+}
+
+.gallery-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.explore-tile.gallery-tile {
+  width: 100%;
+  padding: 0;
+  aspect-ratio: 4 / 3;
+  cursor: zoom-in;
+}
+
+.gallery-tile .explore-tile-frame {
+  inset: 10px;
+}
+
+.gallery-tile:hover .explore-tile-frame,
+.gallery-tile:focus-visible .explore-tile-frame {
+  inset: 14px;
+}
+
+.gallery-tile .explore-tile-body {
+  left: 26px;
+  right: 26px;
+  bottom: 24px;
+}
+
+.gallery-tile .explore-tile-title {
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+}
+
+.gallery-tile .explore-tile-rule {
+  margin: 12px 0 10px;
+}
+
+/* A small corner-bracket "expand" mark in place of the arrow, since these
+   open a photo rather than navigate. */
+.gallery-tile-expand {
+  position: relative;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-top: 1px solid var(--color-brand-gold-light);
+  border-right: 1px solid var(--color-brand-gold-light);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.gallery-tile-expand::after {
+  content: '';
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 8px;
+  height: 1px;
+  background: var(--color-brand-gold-light);
+  transform-origin: right center;
+  transform: rotate(-45deg);
+}
+
+.gallery-tile:hover .gallery-tile-expand,
+.gallery-tile:focus-visible .gallery-tile-expand {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 1024px) {
+  .gallery-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery-tiles {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .gallery-filters {
+    gap: 8px 22px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-tile-expand {
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .explore-tile,
   .explore-tile img,
@@ -715,9 +842,9 @@ button.classic-btn-primary:hover {
 
 /* Generic reusable hovers — a zoom+darken photo frame (self-contained,
    hovers on itself rather than requiring a parent wrapper class) and a
-   card lift, both sharing the same feel as .classic-stem-photo /
-   .gallery-thumb above. Used on HomeCard, home/floorplan galleries, and
-   the raw-HTML template pages (Falcon Estates, Grandeur). */
+   card lift, both sharing the same feel as .classic-stem-photo above.
+   Used on home/floorplan galleries and the raw-HTML template pages
+   (Falcon Estates, Grandeur). */
 .photo-zoom {
   display: block;
   overflow: hidden;
@@ -798,45 +925,6 @@ button.classic-btn-primary:hover {
   .hover-card-lift,
   .nav-link-hover::after {
     transition: none;
-  }
-}
-
-.gallery-thumb {
-  position: relative;
-  display: block;
-  overflow: hidden;
-}
-
-.gallery-thumb img {
-  transition: transform 500ms var(--ease-out, ease);
-}
-
-.gallery-thumb::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 9, 8, 0);
-  transition: background 400ms ease;
-  pointer-events: none;
-}
-
-.gallery-thumb:hover img,
-.gallery-thumb:focus-visible img {
-  transform: scale(1.08);
-}
-
-.gallery-thumb:hover::after,
-.gallery-thumb:focus-visible::after {
-  background: rgba(10, 9, 8, 0.28);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .gallery-thumb img {
-    transition: none;
-  }
-  .gallery-thumb:hover img,
-  .gallery-thumb:focus-visible img {
-    transform: none;
   }
 }
 

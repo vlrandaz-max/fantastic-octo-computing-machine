@@ -7,6 +7,14 @@ import { withBase } from '../lib/url';
 
 type Filter = 'all' | 'exterior' | 'interior';
 
+// Descriptions read "The Stratford — media room" or just "Kitchen"; split
+// into a tile title and a smaller detail line.
+function caption(alt: string, category: 'exterior' | 'interior') {
+  const [title, rest] = alt.split(' — ');
+  const detail = rest ?? (category === 'exterior' ? 'Exterior' : 'Interior');
+  return { title, detail: detail.charAt(0).toUpperCase() + detail.slice(1) };
+}
+
 const FILTERS: { key: Filter; label: string }[] = [
   { key: 'all', label: 'All Photos' },
   { key: 'exterior', label: 'Exteriors' },
@@ -71,61 +79,53 @@ export function GalleryPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '40px 40px 96px' }}>
-        <nav aria-label="Filter photos" style={{ display: 'flex', gap: 12, marginBottom: 32 }}>
-          {FILTERS.map((f) => (
-            <button
-              key={f.key}
-              type="button"
-              onClick={() => setFilter(f.key)}
-              style={{
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                padding: '10px 18px',
-                border: '1px solid ' + (filter === f.key ? 'var(--color-brand-gold)' : 'var(--border)'),
-                background: filter === f.key ? 'var(--color-brand-gold)' : 'transparent',
-                color: filter === f.key ? '#131210' : 'var(--fg2)',
-                cursor: 'pointer',
-              }}
-            >
-              {f.label}
-            </button>
-          ))}
+      <div style={{ background: 'var(--bg1)' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '56px 32px 96px' }}>
+        <nav aria-label="Filter photos" className="gallery-filters">
+          {FILTERS.map((f) => {
+            const count = f.key === 'all' ? GALLERY_PHOTOS.length : GALLERY_PHOTOS.filter((p) => p.category === f.key).length;
+            return (
+              <button
+                key={f.key}
+                type="button"
+                onClick={() => setFilter(f.key)}
+                className="gallery-filter"
+                aria-pressed={filter === f.key}
+              >
+                {f.label}
+                <span className="gallery-filter-count">{count}</span>
+              </button>
+            );
+          })}
         </nav>
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-            gap: 18,
-          }}
-        >
-          {photos.map((photo, i) => (
-            <Reveal key={photo.src} type="fade-in-up" delay={(i % 6) * 70}>
-              <button
-                type="button"
-                onClick={() => setLightboxIndex(i)}
-                className="gallery-thumb"
-                style={{ padding: 0, border: 'none', background: 'none', cursor: 'pointer', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-1)', width: '100%' }}
-                aria-label={`View larger: ${photo.alt}`}
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  style={{
-                    width: '100%',
-                    height: 240,
-                    objectFit: 'cover',
-                    display: 'block',
-                  }}
-                />
-              </button>
-            </Reveal>
-          ))}
+        <div className="gallery-tiles">
+          {photos.map((photo, i) => {
+            const { title, detail } = caption(photo.alt, photo.category);
+            return (
+              <Reveal key={photo.src} type="fade-in-up" delay={(i % 3) * 90}>
+                <button
+                  type="button"
+                  onClick={() => setLightboxIndex(i)}
+                  className="explore-tile gallery-tile"
+                  aria-label={`View larger: ${photo.alt}`}
+                >
+                  <img src={photo.src} alt="" loading="lazy" />
+                  <span className="explore-tile-frame" aria-hidden="true" />
+                  <span className="explore-tile-body">
+                    <span className="explore-tile-title">{title}</span>
+                    <span className="explore-tile-rule" aria-hidden="true" />
+                    <span className="explore-tile-detail">
+                      {detail}
+                      <span className="gallery-tile-expand" aria-hidden="true" />
+                    </span>
+                  </span>
+                </button>
+              </Reveal>
+            );
+          })}
         </div>
+      </div>
       </div>
 
       {lightboxIndex !== null && (
