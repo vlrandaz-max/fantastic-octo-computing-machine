@@ -209,7 +209,7 @@ export function PineWoodsPage() {
           >
             {PINE_WOODS_HOMES.map((home, i) => (
               <Reveal key={home.name} type="fade-in-up" delay={i * 100}>
-                <HomeCard home={home} dark />
+                <HomeCard home={home} />
               </Reveal>
             ))}
           </div>

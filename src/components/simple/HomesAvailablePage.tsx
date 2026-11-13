@@ -91,7 +91,7 @@ export function HomesAvailablePage() {
           </h2>
           <div
             className="simple-gallery-3"
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, maxWidth: 780, margin: '0 auto', textAlign: 'left' }}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, maxWidth: 820, margin: '0 auto', textAlign: 'left' }}
           >
             {PINE_WOODS_HOMES.map((home, i) => (
               <Reveal key={home.name} type="fade-in-up" delay={i * 100}>

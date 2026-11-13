@@ -612,6 +612,24 @@ button:focus-visible {
   }
 }
 
+/* Home listing cards reuse the Explore tile. Exterior photos are
+   landscape, so these stay 4:3 at every width. Available homes carry
+   their status in gold; sold ones in a quieter cream. */
+.explore-tile.home-tile {
+  aspect-ratio: 4 / 3;
+}
+
+.home-tile-status {
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-gold-light);
+}
+
+.home-tile.is-sold .home-tile-status {
+  color: rgba(248, 244, 238, 0.72);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .explore-tile,
   .explore-tile img,
