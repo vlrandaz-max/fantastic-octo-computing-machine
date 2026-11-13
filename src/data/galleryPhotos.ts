@@ -10,12 +10,12 @@ type RawPhoto = { src: string; alt: string; category: GalleryPhoto['category'] }
 
 /** Every real photograph currently available across the L&R Homes assets. */
 const RAW_PHOTOS: RawPhoto[] = [
-  { src: 'coachwood-aerial-twilight-2.jpg', alt: 'Coachwood — twilight aerial', category: 'exterior' },
+  { src: 'coachwood-aerial-twilight-2.jpg', alt: 'The Grandeur — twilight aerial', category: 'exterior' },
   { src: 'falcon-estates-hero.jpg', alt: 'Falcon Estates', category: 'exterior' },
-  { src: 'coachwood-twilight-2.jpg', alt: 'Coachwood — twilight', category: 'exterior' },
-  { src: 'coachwood-aerial-mls-2.jpg', alt: 'Coachwood — aerial', category: 'exterior' },
-  { src: 'coachwood-rear-aerial-mls.jpg', alt: 'Coachwood — rear aerial', category: 'exterior' },
-  { src: 'coachwood-rear-aerial-mls-2.jpg', alt: 'Coachwood — rear aerial', category: 'exterior' },
+  { src: 'coachwood-twilight-2.jpg', alt: 'The Grandeur — twilight', category: 'exterior' },
+  { src: 'coachwood-aerial-mls-2.jpg', alt: 'The Grandeur — aerial', category: 'exterior' },
+  { src: 'coachwood-rear-aerial-mls.jpg', alt: 'The Grandeur — rear aerial', category: 'exterior' },
+  { src: 'coachwood-rear-aerial-mls-2.jpg', alt: 'The Grandeur — rear aerial', category: 'exterior' },
   { src: '829-crestwood-front.jpg', alt: 'The Stratford — daytime exterior', category: 'exterior' },
   { src: 'stratford-twilight.jpg', alt: 'The Stratford — twilight exterior', category: 'exterior' },
   { src: 'stratford-aerial-twilight.jpg', alt: 'The Stratford — twilight exterior, aerial view', category: 'exterior' },
