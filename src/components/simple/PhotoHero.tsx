@@ -17,7 +17,7 @@ export function PhotoHero({
 }: {
   slides: HeroSlide[];
   eyebrow: string;
-  title: string;
+  title: React.ReactNode;
   subtitle: string;
 }) {
   return (

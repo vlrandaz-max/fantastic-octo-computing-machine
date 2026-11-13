@@ -1,6 +1,7 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
+import { PhotoHero } from './PhotoHero';
 import { Reveal } from '../Reveal';
 import { COMPANY, PINE_WOODS, PINE_WOODS_HOMES } from '../../data/site';
 import { withBase } from '../../lib/url';
@@ -27,12 +28,12 @@ const specColHeading: React.CSSProperties = {
 };
 
 const HERO_SLIDES = [
-  withBase('/assets/pine-woods/majestic-twilight-1-wide.jpg'),
-  withBase('/assets/pine-woods/majestic-kitchen-staged.jpg'),
-  withBase('/assets/pine-woods/heritage-twilight-4.jpg'),
-  withBase('/assets/pine-woods/heritage-kitchen.jpg'),
-  withBase('/assets/pine-woods/heritage-family-room.jpg'),
-  withBase('/assets/pine-woods/majestic-great-room.jpg'),
+  { src: withBase('/assets/pine-woods/majestic-twilight-1-wide.jpg'), position: 'center 65%' },
+  { src: withBase('/assets/pine-woods/majestic-kitchen-staged.jpg'), position: 'center' },
+  { src: withBase('/assets/pine-woods/heritage-twilight-4.jpg'), position: 'center 78%' },
+  { src: withBase('/assets/pine-woods/heritage-kitchen.jpg'), position: 'center' },
+  { src: withBase('/assets/pine-woods/heritage-family-room.jpg'), position: 'center' },
+  { src: withBase('/assets/pine-woods/majestic-great-room.jpg'), position: 'center' },
 ];
 
 /**
@@ -47,55 +48,16 @@ export function PineWoodsPage() {
         <SimpleNav />
       </div>
       <main>
-      {/* Hero */}
-      <section
-        style={{
-          position: 'relative',
-          minHeight: '70vh',
-          display: 'flex',
-          alignItems: 'flex-end',
-          overflow: 'hidden',
-        }}
-      >
-        <div style={{ position: 'absolute', inset: 0 }}>
-          {HERO_SLIDES.map((src) => (
-            <div key={src} className="classic-bg-slide" style={{ backgroundImage: `url('${src}')` }} />
-          ))}
-        </div>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(12,10,8,0.5) 0%, rgba(12,10,8,0.2) 40%, rgba(12,10,8,0.8) 100%)' }} />
-        <div style={{ position: 'relative', zIndex: 5, padding: '0 40px 64px', maxWidth: 900 }}>
-          <span
-            style={{
-              display: 'inline-block',
-              fontSize: 10,
-              fontWeight: 700,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: '#131210',
-              background: 'var(--color-brand-gold)',
-              padding: '6px 14px',
-              marginBottom: 18,
-            }}
-          >
-            {PINE_WOODS.heroBadge}
-          </span>
-          <h1
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 300,
-              fontSize: 'clamp(2.5rem,5.5vw,4rem)',
-              color: '#F2F0E6',
-              lineHeight: 1.1,
-              marginBottom: 10,
-            }}
-          >
-            {PINE_WOODS.name} <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold-light)' }}>— Rochester Hills</em>
-          </h1>
-          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 20, color: 'rgba(242,240,230,0.75)' }}>
-            {PINE_WOODS.tagline}
-          </p>
-        </div>
-      </section>
+      <PhotoHero
+        slides={HERO_SLIDES}
+        eyebrow={PINE_WOODS.heroBadge}
+        title={
+          <>
+            {PINE_WOODS.name} <em>— Rochester Hills</em>
+          </>
+        }
+        subtitle={PINE_WOODS.tagline}
+      />
 
       {/* Intro */}
       <section style={{ padding: '88px 40px', background: 'var(--bg1)' }}>

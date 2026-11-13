@@ -1131,6 +1131,11 @@ button.classic-btn-primary:hover {
   margin: 14px 0;
 }
 
+.photo-hero-title em {
+  font-style: italic;
+  color: var(--color-brand-gold-light);
+}
+
 .photo-hero-subtitle {
   font-family: var(--font-display);
   font-style: italic;
