@@ -1,4 +1,5 @@
-import { ClassicNav } from './ClassicNav';
+import { SimpleNav } from './SimpleNav';
+import { PhotoHero } from './PhotoHero';
 import { SimpleFooter } from './SimpleFooter';
 import { HomeCard } from './HomeCard';
 import { Reveal } from '../Reveal';
@@ -14,6 +15,17 @@ const eyebrow: React.CSSProperties = {
   color: 'var(--color-brand-gold-dark)',
 };
 
+// Exteriors and interiors alternating across the Falcon Estates and Pine
+// Woods homes — a different set from the contact page's header.
+const HERO_SLIDES = [
+  { src: withBase('/assets/home/crestwood-twilight-2026.jpg'), position: 'center 55%' },
+  { src: withBase('/assets/pine-woods/majestic-kitchen-staged.jpg'), position: 'center' },
+  { src: withBase('/assets/home/cambridge-twilight.jpg'), position: 'center 60%' },
+  { src: withBase('/assets/pine-woods/heritage-family-room.jpg'), position: 'center' },
+  { src: withBase('/assets/home/stratford-twilight.jpg'), position: 'center 60%' },
+  { src: withBase('/assets/home/grandeur-dining-room.jpg'), position: 'center' },
+];
+
 /**
  * Homes Available — aggregates listings from both communities (Falcon
  * Estates and Pine Woods), matching the real landrhomes.com page.
@@ -21,25 +33,21 @@ const eyebrow: React.CSSProperties = {
 export function HomesAvailablePage() {
   return (
     <div style={{ background: '#FFFFFF' }}>
-      <ClassicNav />
+      <div style={{ position: 'relative' }}>
+        <SimpleNav />
+      </div>
 
       <main>
+      <PhotoHero
+        slides={HERO_SLIDES}
+        eyebrow="Homes Available"
+        title={HOMES_AVAILABLE_INTRO.heading}
+        subtitle="Move-in ready homes in Falcon Estates and Pine Woods, Rochester Hills."
+      />
+
       <section style={{ padding: '72px 40px 40px', textAlign: 'center' }}>
         <p style={eyebrow}>{HOMES_AVAILABLE_INTRO.eyebrow}</p>
-        <h1
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontWeight: 300,
-            fontSize: 'clamp(2.25rem,4.5vw,3.25rem)',
-            color: 'var(--color-brand-dark)',
-            lineHeight: 1.15,
-            margin: '16px auto 20px',
-            maxWidth: 780,
-          }}
-        >
-          {HOMES_AVAILABLE_INTRO.heading}
-        </h1>
-        <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--fg2)', maxWidth: 680, margin: '0 auto' }}>
+        <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--fg2)', maxWidth: 680, margin: '16px auto 0' }}>
           {HOMES_AVAILABLE_INTRO.body}
         </p>
       </section>
@@ -61,8 +69,7 @@ export function HomesAvailablePage() {
             {FALCON_ESTATES.name}
           </h2>
           <div
-            className="simple-gallery-3"
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, textAlign: 'left' }}
+            className="home-tiles"
           >
             {FALCON_ESTATES_HOMES.map((home, i) => (
               <Reveal key={home.name} type="fade-in-up" delay={i * 100}>
@@ -90,8 +97,7 @@ export function HomesAvailablePage() {
             {PINE_WOODS.name}
           </h2>
           <div
-            className="simple-gallery-3"
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, maxWidth: 820, margin: '0 auto', textAlign: 'left' }}
+            className="home-tiles"
           >
             {PINE_WOODS_HOMES.map((home, i) => (
               <Reveal key={home.name} type="fade-in-up" delay={i * 100}>

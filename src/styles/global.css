@@ -612,6 +612,33 @@ button:focus-visible {
   }
 }
 
+/* Rows of home tiles: a fixed three-across tile width, centered, so a
+   short last row (or a two-home community) sits in the middle instead of
+   hanging off the left. */
+.home-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.home-tiles > * {
+  width: calc((100% - 40px) / 3);
+}
+
+@media (max-width: 1100px) {
+  .home-tiles > * {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-tiles > * {
+    width: 100%;
+  }
+}
+
 /* Home listing cards reuse the Explore tile. Exterior photos are
    landscape, so these stay 4:3 at every width. Available homes carry
    their status in gold; sold ones in a quieter cream. */
@@ -1059,9 +1086,10 @@ button.classic-btn-primary:hover {
   }
 }
 
-/* Contact page hero — sized so the contact details still start within
-   the first screen on a laptop. */
-.contact-hero {
+/* Crossfading photo header (PhotoHero) on Homes Available and Contact Us —
+   sized so the page content still starts within the first screen on a
+   laptop. */
+.photo-hero {
   position: relative;
   min-height: 520px;
   display: flex;
@@ -1070,18 +1098,51 @@ button.classic-btn-primary:hover {
   background: var(--color-near-black);
 }
 
-.contact-hero-content {
+.photo-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(95deg, rgba(16, 20, 30, 0.88) 0%, rgba(16, 20, 30, 0.5) 42%, rgba(16, 20, 30, 0.12) 75%),
+    linear-gradient(to top, rgba(12, 16, 24, 0.8) 0%, rgba(12, 16, 24, 0.05) 50%);
+}
+
+.photo-hero-content {
   position: relative;
   z-index: 2;
   max-width: 900px;
   padding: 0 48px 56px;
 }
 
+.photo-hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-brand-gold-light);
+}
+
+.photo-hero-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.05;
+  color: #f2f0e6;
+  margin: 14px 0;
+}
+
+.photo-hero-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  color: rgba(242, 240, 230, 0.8);
+}
+
 @media (max-width: 767px) {
-  .contact-hero {
+  .photo-hero {
     min-height: 440px;
   }
-  .contact-hero-content {
+  .photo-hero-content {
     padding: 0 24px 40px;
   }
 }

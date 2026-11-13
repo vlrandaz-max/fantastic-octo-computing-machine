@@ -167,7 +167,6 @@ const FALCON_STYLE = `
   .falcon-page .homes-band { background: linear-gradient(180deg, #1C1A18 0%, #131210 100%); padding: 96px 48px; }
   .falcon-page .homes-inner { max-width: 1280px; margin: 0 auto; }
   .falcon-page .homes-h2 { font-family: var(--fe-font-display); font-size: clamp(2rem,3vw,2.5rem); font-weight: 300; color: #F2F0E6 !important; margin: 12px 0 40px; }
-  .falcon-page .homes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   /* Home tiles reuse the site-wide .explore-tile/.home-tile styles; these two
      rules undo this page's own blanket resets (all margins zeroed, all links
      gold) inside the tiles. */
@@ -189,7 +188,6 @@ const FALCON_STYLE = `
   @media (max-width: 1023px) {
     .falcon-page .overview-inner { grid-template-columns: 1fr; }
     .falcon-page .amenities-grid { grid-template-columns: repeat(2, 1fr); }
-    .falcon-page .homes-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 767px) {
     .falcon-page .wrap, .falcon-page .hero-content, .falcon-page .overview-band, .falcon-page .amenities-band,
@@ -199,7 +197,6 @@ const FALCON_STYLE = `
     .falcon-page .stat-cell { flex: 1 1 50%; padding: 16px 20px; }
     .falcon-page .amenities-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
     .falcon-page .amenity-card { padding: 20px 16px; }
-    .falcon-page .homes-grid { grid-template-columns: 1fr; }
     .falcon-page .overview-photo { height: 280px; }
     .falcon-page .location-inner { flex-direction: column; align-items: flex-start; }
   }
@@ -278,7 +275,7 @@ const FALCON_BODY = `
   <div class="homes-inner">
     <div class="eyebrow" style="color: rgba(200,180,140,0.75);">Now Available</div>
     <h2 class="homes-h2">Homes in Falcon Estates</h2>
-    <div class="homes-grid">
+    <div class="home-tiles">
 ${FALCON_ESTATES_HOMES.map(
   (home, i) => `      <a class="explore-tile home-tile${home.status === 'sold' ? ' is-sold' : ''} reveal fade-in-up" style="animation-delay: ${i * 100}ms" href="${home.href ?? withBase('/contact-us')}">
         <img decoding="async" loading="lazy" src="${home.image}" alt="">

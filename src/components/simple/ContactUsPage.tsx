@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
 import { ExploreTiles } from './ExploreTiles';
+import { PhotoHero } from './PhotoHero';
 import { COMPANY, FALCON_ESTATES_HOMES, PINE_WOODS_HOMES, STATUS_LABEL } from '../../data/site';
 import { withBase } from '../../lib/url';
 
@@ -14,9 +15,8 @@ const eyebrow: React.CSSProperties = {
   color: 'var(--color-brand-gold-dark)',
 };
 
-// Six slides: the shared `.classic-bg-slide` crossfade (global.css) is
-// timed for exactly six. Exteriors and interiors alternate across The
-// Grandeur, The Majestic and The Heritage.
+// Exteriors and interiors alternating across The Grandeur, The Majestic
+// and The Heritage.
 const HERO_SLIDES = [
   { src: withBase('/assets/home/coachwood-twilight-final.jpg'), position: 'center 62%' },
   { src: withBase('/assets/home/grandeur-kitchen-staged.jpg'), position: 'center' },
@@ -53,44 +53,12 @@ export function ContactUsPage() {
       </div>
 
       <main>
-      {/* Hero — crossfading photo rotation, same treatment as Falcon Estates */}
-      <section className="contact-hero">
-        <div style={{ position: 'absolute', inset: 0 }}>
-          {HERO_SLIDES.map((slide) => (
-            <div
-              key={slide.src}
-              className="classic-bg-slide"
-              style={{ backgroundImage: `url('${slide.src}')`, backgroundPosition: slide.position }}
-            />
-          ))}
-        </div>
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'linear-gradient(95deg, rgba(16,20,30,0.88) 0%, rgba(16,20,30,0.5) 42%, rgba(16,20,30,0.12) 75%), linear-gradient(to top, rgba(12,16,24,0.8) 0%, rgba(12,16,24,0.05) 50%)',
-          }}
-        />
-        <div className="contact-hero-content">
-          <p style={{ ...eyebrow, color: 'var(--color-brand-gold-light)' }}>Get in Touch</p>
-          <h1
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 300,
-              fontSize: 'clamp(2.75rem,5.5vw,4.75rem)',
-              color: '#F2F0E6',
-              lineHeight: 1.05,
-              margin: '14px 0 14px',
-            }}
-          >
-            Your Next Home Awaits
-          </h1>
-          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 'clamp(1.15rem,2vw,1.5rem)', color: 'rgba(242,240,230,0.8)' }}>
-            Call, email, or arrange a private showing in Rochester Hills.
-          </p>
-        </div>
-      </section>
+      <PhotoHero
+        slides={HERO_SLIDES}
+        eyebrow="Get in Touch"
+        title="Your Next Home Awaits"
+        subtitle="Call, email, or arrange a private showing in Rochester Hills."
+      />
 
       <section style={{ padding: '72px 40px 88px' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }} className="simple-grid-2">
