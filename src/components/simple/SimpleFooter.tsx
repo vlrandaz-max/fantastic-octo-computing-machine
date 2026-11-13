@@ -17,7 +17,7 @@ export function SimpleFooter() {
   const line: React.CSSProperties = { fontSize: 14, color: 'var(--fg2)', lineHeight: 1.8 };
 
   return (
-    <footer style={{ background: '#FFFFFF', borderTop: '1px solid var(--border)' }}>
+    <footer style={{ background: 'var(--bg1)', borderTop: '1px solid var(--border)' }}>
       <div
         style={{
           maxWidth: 1280,

@@ -24,7 +24,7 @@ export function ClassicFooter({ homeHref }: { homeHref?: string } = {}) {
   const footerLinks = homeHref ? NAV_LINKS.map((l) => (l.label === 'Home' ? { ...l, href: homeHref } : l)) : NAV_LINKS;
 
   return (
-    <footer style={{ background: '#FFFFFF' }}>
+    <footer style={{ background: 'var(--bg1)', borderTop: '1px solid var(--border)' }}>
       <div
         className="classic-footer-grid"
         style={{
