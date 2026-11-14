@@ -28,7 +28,7 @@ const specColHeading: React.CSSProperties = {
 };
 
 const HERO_SLIDES = [
-  { src: withBase('/assets/pine-woods/majestic-twilight-1-wide.jpg'), position: 'center 65%' },
+  { src: withBase('/assets/pine-woods/majestic-aerial-twilight.jpg'), position: 'center 55%' },
   { src: withBase('/assets/pine-woods/majestic-kitchen-staged.jpg'), position: 'center' },
   { src: withBase('/assets/pine-woods/heritage-twilight-4.jpg'), position: 'center 78%' },
   { src: withBase('/assets/pine-woods/heritage-kitchen.jpg'), position: 'center' },
