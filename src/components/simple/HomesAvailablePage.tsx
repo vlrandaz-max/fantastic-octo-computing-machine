@@ -18,7 +18,7 @@ const eyebrow: React.CSSProperties = {
 // Exteriors and interiors alternating across the Falcon Estates and Pine
 // Woods homes — a different set from the contact page's header.
 const HERO_SLIDES = [
-  { src: withBase('/assets/home/crestwood-twilight-2026.jpg'), position: 'center 55%' },
+  { src: withBase('/assets/home/crestwood-twilight-front.jpg'), position: 'center 45%' },
   { src: withBase('/assets/pine-woods/majestic-kitchen-staged.jpg'), position: 'center' },
   { src: withBase('/assets/pine-woods/majestic-exterior-twilight.jpg'), position: 'center 60%' },
   { src: withBase('/assets/pine-woods/heritage-family-room.jpg'), position: 'center' },
