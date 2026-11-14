@@ -31,6 +31,12 @@ const HERO_SLIDES = [
 // visitor can actually tour.
 const FEATURED_HOME = [...FALCON_ESTATES_HOMES, ...PINE_WOODS_HOMES].find((h) => h.status !== 'sold');
 
+// The Grandeur's aerial here, so this page doesn't repeat the front view
+// its home tiles use elsewhere on the site.
+const FEATURED_IMAGES: Record<string, string> = {
+  'The Grandeur': withBase('/assets/home/coachwood-aerial-twilight-2.jpg'),
+};
+
 /**
  * Contact Us — the single destination every CTA across the site points
  * to. No form: per the original design brief, these pages collect no
@@ -116,7 +122,7 @@ export function ContactUsPage() {
               style={{ height: '100%', minHeight: 320, boxShadow: 'var(--shadow-2)' }}
             >
               <img
-                src={FEATURED_HOME.image}
+                src={FEATURED_IMAGES[FEATURED_HOME.name] ?? FEATURED_HOME.image}
                 alt={`${FEATURED_HOME.name} at ${FEATURED_HOME.community}`}
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
               />
