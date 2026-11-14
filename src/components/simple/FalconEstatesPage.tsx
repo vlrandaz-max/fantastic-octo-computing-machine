@@ -1,5 +1,6 @@
 import { SimpleNav } from './SimpleNav';
 import { SimpleFooter } from './SimpleFooter';
+import { PhotoHero } from './PhotoHero';
 import { useRevealScope } from '../Reveal';
 import { withBase } from '../../lib/url';
 import { FALCON_ESTATES, FALCON_ESTATES_HOMES, STATUS_LABEL } from '../../data/site';
@@ -35,21 +36,20 @@ import { FALCON_ESTATES, FALCON_ESTATES_HOMES, STATUS_LABEL } from '../../data/s
  * points at /assets/home/falcon-estates-site-plan.jpg, which doesn't
  * exist yet — it'll work as soon as that file is uploaded.
  *
- * Hero: a crossfading photo rotation (same `.classic-bg-slide` mechanism
- * Pine Woods' hero uses — a 36s cycle across 6 stacked slides, defined
- * once in global.css) instead of the single static background photo,
- * leading with the Crestwood's own twilight exterior and mixing in the
- * best exterior/interior shots of the Crestwood, Cambridge, and
- * Stratford — the three sold homes profiled below.
+ * Header: the shared PhotoHero used on Homes Available, Pine Woods and
+ * Contact Us, rotating the best exterior/interior shots of the Crestwood,
+ * Cambridge and Stratford — three of the homes profiled below. The
+ * community stats strip that used to overlay its bottom edge now sits
+ * directly under it as a solid band.
  */
 
 const HERO_SLIDES = [
-  withBase('/assets/home/crestwood-twilight-2026.jpg'),
-  withBase('/assets/home/cambridge-family-room-2.jpg'),
-  withBase('/assets/home/stratford-aerial-twilight.jpg'),
-  withBase('/assets/home/crestwood-owners-suite.jpg'),
-  withBase('/assets/home/cambridge-twilight.jpg'),
-  withBase('/assets/home/stratford-family-kitchen.jpg'),
+  { src: withBase('/assets/home/crestwood-twilight-2026.jpg'), position: 'center 55%' },
+  { src: withBase('/assets/home/cambridge-family-room-2.jpg'), position: 'center' },
+  { src: withBase('/assets/home/stratford-aerial-twilight.jpg'), position: 'center 60%' },
+  { src: withBase('/assets/home/crestwood-owners-suite.jpg'), position: 'center' },
+  { src: withBase('/assets/home/cambridge-twilight.jpg'), position: 'center 60%' },
+  { src: withBase('/assets/home/stratford-family-kitchen.jpg'), position: 'center' },
 ];
 
 const FALCON_STYLE = `
@@ -109,25 +109,8 @@ const FALCON_STYLE = `
   .falcon-page .btn-onDark { background: transparent; border-color: rgba(242,240,230,0.35); color: #F2F0E6; }
   .falcon-page .btn-onDark:hover { border-color: #F2F0E6; text-decoration: none; }
 
-  /* HERO */
-  .falcon-page .hero { position: relative; min-height: 560px; display: flex; flex-direction: column;
-    justify-content: flex-end; overflow: hidden; }
-  .falcon-page .hero-scrim { position: absolute; inset: 0;
-    background:
-      linear-gradient(95deg, rgba(16,20,30,0.90) 0%, rgba(16,20,30,0.55) 42%, rgba(16,20,30,0.15) 75%),
-      linear-gradient(to top, rgba(12,16,24,0.82) 0%, rgba(12,16,24,0.05) 50%); }
-  .falcon-page .hero-content { position: relative; z-index: 2; padding: 0 48px 56px; max-width: 900px; }
-  .falcon-page .hero-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(196,160,90,0.14);
-    border: 1px solid rgba(196,160,90,0.3); border-radius: 2px; padding: 6px 14px; margin-bottom: 20px; }
-  .falcon-page .hero-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fe-accent); }
-  .falcon-page .hero-pill span.label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D4B87A; }
-  .falcon-page .hero-h1 { font-family: var(--fe-font-display); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300;
-    line-height: 1.02; letter-spacing: -0.025em; color: #F2F0E6 !important; }
-  .falcon-page .hero-sub { font-family: var(--fe-font-display); font-style: italic; font-size: clamp(1.2rem, 2vw, 1.6rem);
-    font-weight: 300; color: rgba(242,240,230,0.62); max-width: 640px; margin-top: 16px; }
-
-  /* HERO STAT BAR */
-  .falcon-page .stat-bar { position: relative; z-index: 2; display: flex; border-top: 1px solid rgba(255,255,255,0.08); }
+  /* COMMUNITY STAT BAR (directly under the header) */
+  .falcon-page .stat-bar { position: relative; z-index: 2; display: flex; background: #131210; border-top: 1px solid rgba(255,255,255,0.08); }
   .falcon-page .stat-cell { flex: 1; background: rgba(20,28,48,0.4); backdrop-filter: blur(12px); padding: 20px 48px;
     border-right: 1px solid rgba(255,255,255,0.08); }
   .falcon-page .stat-cell:last-child { border-right: none; }
@@ -190,9 +173,8 @@ const FALCON_STYLE = `
     .falcon-page .amenities-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 767px) {
-    .falcon-page .wrap, .falcon-page .hero-content, .falcon-page .overview-band, .falcon-page .amenities-band,
+    .falcon-page .wrap, .falcon-page .overview-band, .falcon-page .amenities-band,
     .falcon-page .homes-band, .falcon-page .location-band, .falcon-page .fe-site-footer { padding-left: 20px; padding-right: 20px; }
-    .falcon-page .hero { min-height: 700px; }
     .falcon-page .stat-bar { flex-wrap: wrap; }
     .falcon-page .stat-cell { flex: 1 1 50%; padding: 16px 20px; }
     .falcon-page .amenities-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -203,20 +185,11 @@ const FALCON_STYLE = `
 `;
 
 const FALCON_BODY = `
-<!-- HERO -->
-<div class="hero">
-  ${HERO_SLIDES.map((src) => `<div class="classic-bg-slide" style="background-image: url('${src}')"></div>`).join('\n  ')}
-  <div class="hero-scrim"></div>
-  <div class="hero-content">
-    <div class="hero-pill"><span class="dot"></span><span class="label">Now Selling &middot; Rochester Hills</span></div>
-    <h1 class="hero-h1">Falcon Estates</h1>
-    <p class="hero-sub">European-inspired custom homes set within a 10-acre nature preserve, in the heart of Rochester Hills.</p>
-  </div>
-  <div class="stat-bar">
-    <div class="stat-cell"><div class="stat-value">10<span class="stat-unit">ac</span></div><div class="stat-label">Nature Preserve</div></div>
-    <div class="stat-cell"><div class="stat-value">Rochester</div><div class="stat-label">School District</div></div>
-    <div class="stat-cell"><div class="stat-value">Municipal</div><div class="stat-label">Water &amp; Sewer</div></div>
-  </div>
+<!-- COMMUNITY STATS -->
+<div class="stat-bar">
+  <div class="stat-cell"><div class="stat-value">10<span class="stat-unit">ac</span></div><div class="stat-label">Nature Preserve</div></div>
+  <div class="stat-cell"><div class="stat-value">Rochester</div><div class="stat-label">School District</div></div>
+  <div class="stat-cell"><div class="stat-value">Municipal</div><div class="stat-label">Water &amp; Sewer</div></div>
 </div>
 
 <!-- OVERVIEW -->
@@ -320,12 +293,24 @@ export function FalconEstatesPage() {
   const revealScope = useRevealScope<HTMLDivElement>();
 
   return (
-    <div className="falcon-page">
-      <style>{FALCON_STYLE}</style>
+    <div>
       <div style={{ position: 'relative' }}>
         <SimpleNav />
       </div>
-      <main ref={revealScope} dangerouslySetInnerHTML={{ __html: FALCON_BODY }} />
+      <main>
+        <PhotoHero
+          slides={HERO_SLIDES}
+          eyebrow="Now Selling · Rochester Hills"
+          title="Falcon Estates"
+          subtitle="European-inspired custom homes set within a 10-acre nature preserve, in the heart of Rochester Hills."
+        />
+        {/* The ported page's own stylesheet resets every margin and padding
+            under .falcon-page, so the shared header stays outside it. */}
+        <div className="falcon-page">
+          <style>{FALCON_STYLE}</style>
+          <div ref={revealScope} dangerouslySetInnerHTML={{ __html: FALCON_BODY }} />
+        </div>
+      </main>
       <SimpleFooter />
     </div>
   );
