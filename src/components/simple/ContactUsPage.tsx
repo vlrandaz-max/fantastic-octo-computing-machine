@@ -19,7 +19,7 @@ const eyebrow: React.CSSProperties = {
 // Pine Woods shots: the featured photo beside the contact details is
 // already a front view of The Grandeur.
 const HERO_SLIDES = [
-  { src: withBase('/assets/home/coachwood-aerial-twilight-2.jpg'), position: 'center 45%' },
+  { src: withBase('/assets/home/coachwood-aerial-dusk-front.jpg'), position: 'center 35%' },
   { src: withBase('/assets/home/grandeur-kitchen-staged.jpg'), position: 'center' },
   { src: withBase('/assets/pine-woods/majestic-twilight-1-wide.jpg'), position: 'center 65%' },
   { src: withBase('/assets/home/grandeur-family-room.jpg'), position: 'center' },
