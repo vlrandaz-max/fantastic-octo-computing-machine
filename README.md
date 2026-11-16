@@ -252,3 +252,23 @@ Not the kitchen island shot from reel 1 — the bay-window breakfast nook, a dis
 **Pin as first comment:** Round table by the window — who's claiming the best seat?
 
 **DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 14. `majestic_main_floor_walkthrough.mp4` — The Majestic, main-floor walkthrough
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Hook card first ("Primary suite on the main floor. Ready to move in now.") over the new aerial twilight photo, then four captioned main-floor rooms — Great Room, Kitchen & Nook, Library, Primary Suite — and a Town Properties end card with the specs and the TOUR call to action. 14.8 seconds, 1080×1920. The hook is on screen from the first frame, so pick frame 1 as the cover.
+
+**Caption**
+> Primary suite on the main floor — and the great room, kitchen, nook and library on the same level. The Majestic at Pine Woods: 2,662 sq ft, 3 bed, 3.1 bath, 3-car garage, ready for immediate occupancy. Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #FirstFloorPrimary #NewConstructionHomes #MoveInReady`
+
+**FB hashtags:** `#FirstFloorPrimary #MainFloorLiving #MoveInReady #ImmediateOccupancy #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #HomeTour #OpenConceptLiving #HomeOffice #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #OaklandCountyRealEstate`
+
+**Pin as first comment:** Main-floor primary or upstairs — which would you choose?
+
+**DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
