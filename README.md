@@ -145,3 +145,23 @@ The command center/study, the coffee bar, and the vanity nook — three real bui
 **Pin as first comment:** Which nook would you claim first — the coffee bar or the desk?
 
 **DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 8. `grandeur_two_laundry_rooms.mp4` — two laundry rooms, room by room
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Hook card first ("Two laundry rooms. One on each floor. The Grandeur, move-in ready.") over the front twilight exterior, then five captioned rooms in a new order — First-Floor Laundry, Second-Floor Laundry, Butler's Pantry, Dining Room, Primary Sitting Area — and an L&R Homes end card with the specs and the TOUR call to action. 16.9 seconds, 1080×1920. The hook is on screen from the first frame, so pick frame 1 as the cover. Laundry photos follow the Grandeur page's own labels (`laundry-staged-1.jpg` first floor, `grandeur-laundry-room.jpg` second floor).
+
+**Caption**
+> Two laundry rooms — one on each floor — plus a butler's pantry off the dining room and a sitting area inside the primary suite. The Grandeur in Falcon Estates: 4,170 sq ft, 4 bed, 4.5 bath, 3-car garage, move-in ready. Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #LaundryRoomGoals #LuxuryRealEstate #MoveInReady`
+
+**FB hashtags:** `#LaundryRoomGoals #SecondFloorLaundry #ButlersPantry #FunctionalLuxury #HomeOrganizationIdeas #MoveInReady #LuxuryRealEstate #NewConstructionHomes #FalconEstates #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #HomeTour #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #OaklandCountyRealEstate #LuxuryHomeBuilder #CustomHomeBuilder`
+
+**Pin as first comment:** Upstairs laundry: nice-to-have or non-negotiable?
+
+**DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
