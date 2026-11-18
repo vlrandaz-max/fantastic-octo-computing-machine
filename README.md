@@ -272,3 +272,23 @@ Hook card first ("Primary suite on the main floor. Ready to move in now.") over 
 **Pin as first comment:** Main-floor primary or upstairs — which would you choose?
 
 **DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 15. `majestic_second_floor.mp4` — The Majestic, the second floor
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Hook card ("There's a whole second floor. Loft, bonus room and a full bath.") over the wide twilight front, then the second-floor plan, the first-floor plan, the great-room-to-kitchen view and the 3-car garage, with a Town Properties end card. Floor plans are shown whole as framed cards rather than cropped. 14.8 seconds, 1080×1920; the hook is on screen from frame 1, so use it as the cover. Every shot is new to the Majestic reels.
+
+**Caption**
+> Most listings stop at the main floor. Upstairs at The Majestic: a loft, a bonus room and a full bath — room for a media room, home gym or second family room. Downstairs: the primary suite, library, great room and kitchen. 2,662 sq ft in Pine Woods, ready for immediate occupancy. Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #BonusRoom #FloorPlans #NewConstructionHomes`
+
+**FB hashtags:** `#BonusRoom #FloorPlans #LoftLiving #HomeGymIdeas #MediaRoom #ImmediateOccupancy #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #HomeTour #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #OaklandCountyRealEstate`
+
+**Pin as first comment:** Media room, home gym or second family room — what would your bonus room be?
+
+**DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
