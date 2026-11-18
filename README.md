@@ -165,3 +165,23 @@ Hook card first ("Two laundry rooms. One on each floor. The Grandeur, move-in re
 **Pin as first comment:** Upstairs laundry: nice-to-have or non-negotiable?
 
 **DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 9. `grandeur_front_door_to_patio.mp4` — front door to back patio
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Hook card ("From the front door to the back patio. The Grandeur, move-in ready.") over the aerial twilight, then Grand Foyer (doors to the oak staircase), Flex Room, Prep Kitchen and the back patio from the air, with an L&R Homes end card. 14.8 seconds, 1080×1920; the hook is on screen from frame 1, so use it as the cover. Every shot is new to the Grandeur reels.
+
+**Caption**
+> Double front doors and an oak staircase with wrought iron. A flex room with its own desk and coffee station. A prep kitchen with a farmhouse sink and a view of the garden. Then out back to the patio. The Grandeur in Falcon Estates: 4,170 sq ft, 4 bed, 4.5 bath, move-in ready. Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #GrandFoyer #LuxuryRealEstate #MoveInReady`
+
+**FB hashtags:** `#GrandFoyer #OakStaircase #FlexRoom #PrepKitchen #FarmhouseSink #PatioGoals #MoveInReady #LuxuryRealEstate #NewConstructionHomes #FalconEstates #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #HomeTour #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #OaklandCountyRealEstate #LuxuryHomeBuilder`
+
+**Pin as first comment:** Front door or back patio — where would your first evening here start?
+
+**DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
