@@ -185,3 +185,23 @@ Hook card ("From the front door to the back patio. The Grandeur, move-in ready."
 **Pin as first comment:** Front door or back patio — where would your first evening here start?
 
 **DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 10. `grandeur_first_floor_ceilings.mp4` — 9-foot ceilings, first floor
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Hook card ("9-foot ceilings on the entire first floor. The Grandeur, move-in ready.") over the aerial dusk front, then five first-floor rooms — Study, Kitchen Island, Nook, Family Room, Powder Room — and an L&R Homes end card. 16.9 seconds, 1080×1920; the hook is on screen from frame 1, so use it as the cover. Every shot is new to the Grandeur reels (the study, nook and powder room have never been in one).
+
+**Caption**
+> 9-foot ceilings throughout the first floor — the study, the kitchen island, the nook and even the powder room — and a two-story family room on top of that. The Grandeur in Falcon Estates: 4,170 sq ft, 4 bed, 4.5 bath, move-in ready. Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #HomeStudy #LuxuryRealEstate #MoveInReady`
+
+**FB hashtags:** `#HomeStudy #WorkFromHome #KitchenIsland #BreakfastNook #PowderRoom #TwoStoryFamilyRoom #MoveInReady #LuxuryRealEstate #NewConstructionHomes #FalconEstates #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #HomeTour #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #OaklandCountyRealEstate #LuxuryHomeBuilder`
+
+**Pin as first comment:** Study or nook — where does your morning start?
+
+**DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
