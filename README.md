@@ -188,20 +188,20 @@ Hook card ("From the front door to the back patio. The Grandeur, move-in ready."
 
 ---
 
-## 10. `grandeur_first_floor_ceilings.mp4` — 9-foot ceilings, first floor
+## 10. `grandeur_first_floor_craftsmanship.mp4` — 8-foot doors, oak floors
 
 - [ ] Posted to IG
 - [ ] Posted to FB
 
-Hook card ("9-foot ceilings on the entire first floor. The Grandeur, move-in ready.") over the aerial dusk front, then five first-floor rooms — Study, Kitchen Island, Nook, Family Room, Powder Room — and an L&R Homes end card. 16.9 seconds, 1080×1920; the hook is on screen from frame 1, so use it as the cover. Every shot is new to the Grandeur reels (the study, nook and powder room have never been in one).
+Hook card ("8-foot solid-core doors. Wide-plank oak floors. That's the first floor. Move-in ready.") over the aerial dusk front, then five first-floor rooms — Study, Kitchen Island, Nook, Family Room, Powder Room — and an L&R Homes end card. 16.9 seconds, 1080×1920; use frame 1 as the cover. Both hook features are from the Grandeur spec sheet (8′ solid-core Masonite doors and wide-plank oak flooring throughout the first floor) — chosen over ceiling height because most new construction has 9′ first-floor ceilings. Every shot is new to the Grandeur reels.
 
 **Caption**
-> 9-foot ceilings throughout the first floor — the study, the kitchen island, the nook and even the powder room — and a two-story family room on top of that. The Grandeur in Falcon Estates: 4,170 sq ft, 4 bed, 4.5 bath, move-in ready. Comment or DM "TOUR" for a private walkthrough + pricing.
+> Most new homes stop at standard 6'8" hollow doors. The Grandeur's first floor has 8-foot solid-core doors and wide-plank oak floors throughout — the study, the kitchen, the nook, the family room, even the powder room. 4,170 sq ft in Falcon Estates, 4 bed, 4.5 bath, move-in ready. Comment or DM "TOUR" for a private walkthrough + pricing.
 
-**IG hashtags:** `#FalconEstates #RochesterHillsMI #HomeStudy #LuxuryRealEstate #MoveInReady`
+**IG hashtags:** `#FalconEstates #RochesterHillsMI #OakFloors #LuxuryRealEstate #MoveInReady`
 
-**FB hashtags:** `#HomeStudy #WorkFromHome #KitchenIsland #BreakfastNook #PowderRoom #TwoStoryFamilyRoom #MoveInReady #LuxuryRealEstate #NewConstructionHomes #FalconEstates #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #HomeTour #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #OaklandCountyRealEstate #LuxuryHomeBuilder`
+**FB hashtags:** `#OakFloors #WidePlankFloors #SolidCoreDoors #CraftsmanshipMatters #HomeStudy #KitchenIsland #MoveInReady #LuxuryRealEstate #NewConstructionHomes #FalconEstates #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #HomeTour #CustomHomeDesign #RealEstateMichigan #HouseHunting #OaklandCountyRealEstate #LuxuryHomeBuilder #CustomHomeBuilder`
 
-**Pin as first comment:** Study or nook — where does your morning start?
+**Pin as first comment:** Would you notice the 8-foot doors on a walkthrough — or only once you lived with them?
 
 **DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
