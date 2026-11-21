@@ -292,3 +292,25 @@ Hook card ("There's a whole second floor. Loft, bonus room and a full bath.") ov
 **Pin as first comment:** Media room, home gym or second family room — what would your bonus room be?
 
 **DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 16. `majestic_one_day.mp4` — one day at The Majestic
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Hook card ("One day at The Majestic. From morning coffee to lights out.") over the front twilight, then a day in the house: 7 AM nook, 9 AM library, 6 PM dinner, 8 PM great room, 10 PM primary bedroom, and a Town Properties end card. 16.9 seconds, 1080×1920; use frame 1 as the cover.
+
+The Majestic had no unused interior photos left, so — by choice, Nov 21 — this reel reuses earlier Majestic interiors with a new story, order and captions, each panned the opposite way from its earlier reel. New Majestic photos (upstairs, baths, laundry, garage, backyard) are needed for the next one.
+
+**Caption**
+> 7 AM coffee in the nook. 9 AM in the library with the door shut. Dinner at six, the great room at eight, lights out at ten. One day at The Majestic in Pine Woods: 2,662 sq ft, 3 bed, 3.1 bath, ready for immediate occupancy. Comment or DM "TOUR" for a private walkthrough + pricing.
+
+**IG hashtags:** `#PineWoodsRochesterHills #RochesterHillsMI #DayInTheLife #NewConstructionHomes #ImmediateOccupancy`
+
+**FB hashtags:** `#DayInTheLife #MorningRoutine #HomeOffice #FamilyDinner #CozyEvenings #ImmediateOccupancy #NewConstructionHomes #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #MichiganRealEstate #HomeTour #CraftsmanshipMatters #CustomHomeDesign #RealEstateMichigan #HouseHunting #HomeBuildersMichigan #OaklandCountyRealEstate`
+
+**Pin as first comment:** Which hour would you spend here first — 7 AM or 8 PM?
+
+**DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
