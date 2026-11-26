@@ -314,3 +314,23 @@ The Majestic had no unused interior photos left, so — by choice, Nov 21 — th
 **Pin as first comment:** Which hour would you spend here first — 7 AM or 8 PM?
 
 **DM automation:** trigger — "Thanks for the interest in The Majestic! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Majestic's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 17. `majestic_thanksgiving.mp4` — Happy Thanksgiving (post Nov 26, 2026)
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Holiday greeting, not a sales reel. Opens on "Happy Thanksgiving. From our family to yours." over The Majestic's lit entry at twilight, then Gather (dining table), Share (kitchen), Linger (great room), Give Thanks (nook), and a Town Properties card: "Happy Thanksgiving from our family to yours. Grateful to be building homes in Pine Woods, Rochester Hills." 14.8 seconds, 1080×1920; use frame 1 as the cover.
+
+**Caption**
+> Happy Thanksgiving from all of us at Town Properties. Wherever you're gathering today, we hope there's a seat for everyone and leftovers for days. Thank you to the families who make Pine Woods feel like home — we're grateful for you.
+
+**IG hashtags:** `#HappyThanksgiving #PineWoodsRochesterHills #RochesterHillsMI #Grateful #TownPropertiesLLC`
+
+**FB hashtags:** `#HappyThanksgiving #Thanksgiving2026 #Grateful #GiveThanks #FamilyTime #HomeForTheHolidays #PineWoodsRochesterHills #TownPropertiesLLC #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #HomeBuildersMichigan`
+
+**Pin as first comment:** Who's hosting this year — and who's bringing the pie?
+
+**DM automation:** none — keep this one a greeting. If you want it on anyway: trigger — "Happy Thanksgiving from all of us at Town Properties! Thinking about a new home in the new year? Reply YES and we'll send you what's available in Pine Woods." · YES reply — "Here's what's available now: [link]. We'd love to show you around after the holiday: [calendar link]"
