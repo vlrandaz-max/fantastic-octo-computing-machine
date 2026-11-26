@@ -205,3 +205,23 @@ Hook card ("8-foot solid-core doors. Wide-plank oak floors. That's the first flo
 **Pin as first comment:** Would you notice the 8-foot doors on a walkthrough — or only once you lived with them?
 
 **DM automation:** trigger — "Thanks for the interest in The Grandeur! Want the private video tour + spec sheet? Reply YES." · YES reply — "Here's The Grandeur's full brochure + floor plans: [link]. Want to see it in person? Book a private tour here: [calendar link]"
+
+---
+
+## 11. `grandeur_thanksgiving.mp4` — Happy Thanksgiving (post Nov 26, 2026)
+
+- [ ] Posted to IG
+- [ ] Posted to FB
+
+Holiday greeting, not a sales reel. Opens on "Happy Thanksgiving. From our family to yours." over The Grandeur at twilight, then Gather (dining room), Share (kitchen), Linger (family room), Give Thanks (nook), and an L&R Homes card: "Happy Thanksgiving from our family to yours. Grateful to have built homes in Rochester Hills since 1973." 14.8 seconds, 1080×1920; use frame 1 as the cover.
+
+**Caption**
+> Happy Thanksgiving from all of us at L&R Homes. However your table looks today — big, small, loud or quiet — we hope it's full. Thank you to every family who has trusted us to build the place they gather. We're grateful for you.
+
+**IG hashtags:** `#HappyThanksgiving #RochesterHillsMI #FalconEstates #Grateful #LRHomes`
+
+**FB hashtags:** `#HappyThanksgiving #Thanksgiving2026 #Grateful #GiveThanks #FamilyTime #HomeForTheHolidays #RochesterHillsMI #OaklandCountyMI #MetroDetroitHomes #PureMichigan #FalconEstates #LRHomes #CustomHomeBuilder #CraftsmanshipMatters`
+
+**Pin as first comment:** What's the one dish that has to be on your table today?
+
+**DM automation:** none — keep this one a greeting. If you want it on anyway: trigger — "Happy Thanksgiving from all of us at L&R Homes! Thinking about a new home in the new year? Reply YES and we'll send you what's available." · YES reply — "Here's what's available now: [link]. We'd love to show you around after the holiday: [calendar link]"
